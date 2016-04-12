@@ -1,0 +1,25 @@
+{
+    "Textures": [
+        {
+            "Slot": 0,
+            "File": "",
+            "WrapU": 0,
+            "WrapV": 0,
+            "Filter": 2
+        }
+    ],
+    "VertexShader": {
+        "File": "render2d.vs",
+        "Params": []
+    },
+    "PixelShader": {
+        "File": "render2d_vc.ps",
+        "Params": []
+    },
+    "ColorWrite": true,
+    "DepthWrite": false,
+    "BlendMode": 3,
+    "CullMode": 0,
+    "FillMode": 0,
+    "DepthTest": 0
+}

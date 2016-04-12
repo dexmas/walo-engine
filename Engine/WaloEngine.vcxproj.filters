@@ -1,0 +1,1355 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Sources">
+      <UniqueIdentifier>{729c0de0-d17e-4977-8b62-f50412a86c98}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Externs">
+      <UniqueIdentifier>{3f3cce4c-0012-4069-99ba-b0b0fb6bc051}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\Core">
+      <UniqueIdentifier>{8e50a69a-0695-4c4a-9551-f8c46f8b7726}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\Device">
+      <UniqueIdentifier>{e37fee1d-1dc0-42c8-95e3-caadb80cc08e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\Device\Win32">
+      <UniqueIdentifier>{192e3f8d-2b88-4ba4-a714-44667834b399}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\Render">
+      <UniqueIdentifier>{d9078cf1-7410-482e-aa0a-acfb33845eec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\Render\OpenGL">
+      <UniqueIdentifier>{18859719-0964-46ea-adce-a77396cabe87}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\Filesystem">
+      <UniqueIdentifier>{998dd5ee-a7dc-4207-9dfe-9ca63e9077eb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Externs\rapidjson">
+      <UniqueIdentifier>{2eab6f3a-568f-4561-86a6-5c70e7866833}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Externs\rapidjson\include">
+      <UniqueIdentifier>{7492ab16-0745-407c-98e9-5770bcf0c80d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Externs\rapidjson\include\rapidjson">
+      <UniqueIdentifier>{dfd7b1be-bb16-4a57-b0de-3f88413681ed}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Externs\rapidjson\include\rapidjson\internal">
+      <UniqueIdentifier>{d94f73b4-87ce-4dd9-8832-4af0c5c55f7a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\Scene">
+      <UniqueIdentifier>{301ca579-ef62-43a8-be2e-ce6d19a0f3c5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\Scene\Scene2D">
+      <UniqueIdentifier>{03ddbca3-3abb-4893-9833-c8cc514be4f7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\Scene\Scene3D">
+      <UniqueIdentifier>{7c77d637-cdd7-48be-99aa-6815f498fb13}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Externs\pugixml">
+      <UniqueIdentifier>{a0ac0a11-d02e-4b01-bb91-54f2edcdb785}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Externs\openal">
+      <UniqueIdentifier>{50acd079-c100-4ada-88a4-e12f8b0253d5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Externs\openal\AL">
+      <UniqueIdentifier>{06dbc306-f861-4482-81b3-f3841c250b9e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Externs\openal\ALc">
+      <UniqueIdentifier>{cdb92755-0293-4b1f-a23d-39df25eac59f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Externs\openal\OpenAL32">
+      <UniqueIdentifier>{9597698d-dd3b-45dd-8c35-d48d3fa4e95c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Externs\vorbis">
+      <UniqueIdentifier>{794bbafc-781e-4d9c-92bc-94e4b41b0fce}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Externs\vorbis\vorbis">
+      <UniqueIdentifier>{34889661-77af-4899-8a55-bafdbb06f1bc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Externs\vorbis\lib">
+      <UniqueIdentifier>{2f0a4531-aa67-4d29-b350-cda615a595ee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Externs\vorbis\lib\books">
+      <UniqueIdentifier>{0a69d39e-9ee1-4dfe-843f-3c52331d9889}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Externs\vorbis\lib\modes">
+      <UniqueIdentifier>{a1efb13b-7a4d-4d99-ba6b-7d8479710c3b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Externs\vorbis\lib\books\coupled">
+      <UniqueIdentifier>{8b21de0c-bce4-4b9e-9ea9-89ac63cdf8fd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Externs\vorbis\lib\books\floor">
+      <UniqueIdentifier>{68c8f6d7-08f3-485a-8f33-cfb25a0cf0bb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Externs\vorbis\lib\books\uncoupled">
+      <UniqueIdentifier>{dd2f5631-ca68-4cd2-a626-077df4b95460}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Externs\libogg">
+      <UniqueIdentifier>{ae20b5b6-cd1d-46ad-a870-6a3594540e75}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Externs\libogg\ogg">
+      <UniqueIdentifier>{9732c172-bf88-49b2-8570-bcb8e545f0e4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\Scene\Sound">
+      <UniqueIdentifier>{dc4362dc-b04b-4e67-a2e3-b492d936338c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\Audio">
+      <UniqueIdentifier>{83d059ea-5f6c-491e-8ef1-96535351de91}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\Audio\SoundAL">
+      <UniqueIdentifier>{10f00820-4f1b-459a-9830-9054a04a5842}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\Scene\Physics2D">
+      <UniqueIdentifier>{49f6c456-51cb-436c-9c87-9c0e7eac6989}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Externs\box2d">
+      <UniqueIdentifier>{e214441f-453f-45b5-9237-3aa3095935ad}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Externs\box2d\box2d">
+      <UniqueIdentifier>{c9650c74-3531-4205-b92c-1f2cd950be51}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Externs\box2d\box2d\Collision">
+      <UniqueIdentifier>{f71631af-6770-424b-aa78-23db0a9b2542}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Externs\box2d\box2d\Collision\Shapes">
+      <UniqueIdentifier>{e0abfaec-8b15-4c6c-acc4-014dae572415}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Externs\box2d\box2d\Dynamics">
+      <UniqueIdentifier>{7c9e64f7-b909-4f34-a6dc-85d5d1a66cac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Externs\box2d\box2d\Dynamics\Contacts">
+      <UniqueIdentifier>{ad0ad81d-b5af-43f2-b8a2-4f0d2747725e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Externs\box2d\box2d\Dynamics\Joints">
+      <UniqueIdentifier>{52f08ef3-1215-4c59-b2a6-b9168050addb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Externs\box2d\box2d\Common">
+      <UniqueIdentifier>{9edf0c08-0ead-47d6-8db7-4b3e5cda51db}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Externs\box2d\box2d\Rope">
+      <UniqueIdentifier>{d4ae0ae9-4cea-4a23-9896-3b2a7a111500}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\Render\OpenGLES">
+      <UniqueIdentifier>{fb6653cd-8b49-4fd2-a2cf-69c509faf0fd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\Device\iOS">
+      <UniqueIdentifier>{f1abab2c-ad7d-4e95-9a0f-ba91340294be}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Externs\civetweb">
+      <UniqueIdentifier>{c9072a21-2a52-46ba-8bbc-19cbcfb81710}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Externs\civetweb\include">
+      <UniqueIdentifier>{5204094e-4862-4e88-9f55-6b84f6076c00}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Externs\civetweb\src">
+      <UniqueIdentifier>{a59e5af8-146a-4dee-8c17-1b0e235bf70c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Externs\glew">
+      <UniqueIdentifier>{a296d511-8881-4017-a5bf-cbe4c0d1f03d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Externs\lz4">
+      <UniqueIdentifier>{07c6100d-46be-4959-95bd-2191428ca5fd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Externs\stb">
+      <UniqueIdentifier>{71903c07-fa45-4dfb-9c2c-a7393e8bdc21}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\Scene\Input">
+      <UniqueIdentifier>{ed306af0-1e19-4c07-bb31-d431e795df08}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\Scene\Update">
+      <UniqueIdentifier>{d97afbc1-7e9a-4e2a-ba90-0c0b8e0de6c1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\Assets">
+      <UniqueIdentifier>{94c6b923-39e3-4019-8d04-27ff4c47708b}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\Externs\Civetweb\src\civetweb.c">
+      <Filter>Externs\civetweb\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\LZ4\lz4.c">
+      <Filter>Externs\lz4</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\LZ4\lz4hc.c">
+      <Filter>Externs\lz4</Filter>
+    </ClCompile>
+    <ClCompile Include="Device\Device.cpp">
+      <Filter>Sources\Device</Filter>
+    </ClCompile>
+    <ClCompile Include="Device\Win32\DeviceWin32.cpp">
+      <Filter>Sources\Device\Win32</Filter>
+    </ClCompile>
+    <ClCompile Include="Render\Render.cpp">
+      <Filter>Sources\Render</Filter>
+    </ClCompile>
+    <ClCompile Include="Render\OpenGL\RenderGL.cpp">
+      <Filter>Sources\Render\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Color.cpp">
+      <Filter>Sources\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Log.cpp">
+      <Filter>Sources\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Matrix.cpp">
+      <Filter>Sources\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Memory.cpp">
+      <Filter>Sources\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Render\VertexBuffer.cpp">
+      <Filter>Sources\Render</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\STB\stb_image.c">
+      <Filter>Externs\stb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\STB\stb_image_write.c">
+      <Filter>Externs\stb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\STB\stb_vorbis.c">
+      <Filter>Externs\stb</Filter>
+    </ClCompile>
+    <ClCompile Include="Render\IndexBuffer.cpp">
+      <Filter>Sources\Render</Filter>
+    </ClCompile>
+    <ClCompile Include="Render\MeshBuffer.cpp">
+      <Filter>Sources\Render</Filter>
+    </ClCompile>
+    <ClCompile Include="Filesystem\FileSystem.cpp">
+      <Filter>Sources\Filesystem</Filter>
+    </ClCompile>
+    <ClCompile Include="Filesystem\FileStream.cpp">
+      <Filter>Sources\Filesystem</Filter>
+    </ClCompile>
+    <ClCompile Include="Filesystem\Stream.cpp">
+      <Filter>Sources\Filesystem</Filter>
+    </ClCompile>
+    <ClCompile Include="Render\Image.cpp">
+      <Filter>Sources\Render</Filter>
+    </ClCompile>
+    <ClCompile Include="Render\Texture.cpp">
+      <Filter>Sources\Render</Filter>
+    </ClCompile>
+    <ClCompile Include="Render\OpenGL\TextureGL.cpp">
+      <Filter>Sources\Render\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="Render\OpenGL\VertexBufferGL.cpp">
+      <Filter>Sources\Render\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="Render\OpenGL\IndexBufferGL.cpp">
+      <Filter>Sources\Render\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\GLEW\glew.c">
+      <Filter>Externs\glew</Filter>
+    </ClCompile>
+    <ClCompile Include="Render\Mesh.cpp">
+      <Filter>Sources\Render</Filter>
+    </ClCompile>
+    <ClCompile Include="Render\OpenGL\ShaderGL.cpp">
+      <Filter>Sources\Render\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="Render\Shader.cpp">
+      <Filter>Sources\Render</Filter>
+    </ClCompile>
+    <ClCompile Include="Render\Material.cpp">
+      <Filter>Sources\Render</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\DebugRenderer.cpp">
+      <Filter>Sources\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\Node.cpp">
+      <Filter>Sources\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\Scene3D\Camera3D.cpp">
+      <Filter>Sources\Scene\Scene3D</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\Scene3D\Octree.cpp">
+      <Filter>Sources\Scene\Scene3D</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\Scene2D\Scene2D.cpp">
+      <Filter>Sources\Scene\Scene2D</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\Scene3D\Scene3D.cpp">
+      <Filter>Sources\Scene\Scene3D</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\pugixml\pugixml.cpp">
+      <Filter>Externs\pugixml</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\Scene2D\Font2D.cpp">
+      <Filter>Sources\Scene\Scene2D</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\Scene2D\Object2D.cpp">
+      <Filter>Sources\Scene\Scene2D</Filter>
+    </ClCompile>
+    <ClCompile Include="Sound\SoundStream.cpp">
+      <Filter>Sources\Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\openal\Alc\ALc.c">
+      <Filter>Externs\openal\ALc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\openal\Alc\alcConfig.c">
+      <Filter>Externs\openal\ALc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\openal\Alc\alcEcho.c">
+      <Filter>Externs\openal\ALc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\openal\Alc\alcModulator.c">
+      <Filter>Externs\openal\ALc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\openal\Alc\alcReverb.c">
+      <Filter>Externs\openal\ALc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\openal\Alc\alcRing.c">
+      <Filter>Externs\openal\ALc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\openal\Alc\alcThread.c">
+      <Filter>Externs\openal\ALc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\openal\Alc\alsa.c">
+      <Filter>Externs\openal\ALc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\openal\Alc\ALu.c">
+      <Filter>Externs\openal\ALc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\openal\Alc\android.cpp">
+      <Filter>Externs\openal\ALc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\openal\Alc\bs2b.c">
+      <Filter>Externs\openal\ALc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\openal\Alc\dsound.c">
+      <Filter>Externs\openal\ALc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\openal\Alc\null.c">
+      <Filter>Externs\openal\ALc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\openal\Alc\oss.c">
+      <Filter>Externs\openal\ALc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\openal\Alc\portaudio.c">
+      <Filter>Externs\openal\ALc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\openal\Alc\pulseaudio.c">
+      <Filter>Externs\openal\ALc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\openal\Alc\solaris.c">
+      <Filter>Externs\openal\ALc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\openal\Alc\wave.c">
+      <Filter>Externs\openal\ALc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\openal\Alc\winmm.c">
+      <Filter>Externs\openal\ALc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\openal\OpenAL32\alAuxEffectSlot.c">
+      <Filter>Externs\openal\OpenAL32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\openal\OpenAL32\alBuffer.c">
+      <Filter>Externs\openal\OpenAL32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\openal\OpenAL32\alDatabuffer.c">
+      <Filter>Externs\openal\OpenAL32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\openal\OpenAL32\alEffect.c">
+      <Filter>Externs\openal\OpenAL32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\openal\OpenAL32\alError.c">
+      <Filter>Externs\openal\OpenAL32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\openal\OpenAL32\alExtension.c">
+      <Filter>Externs\openal\OpenAL32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\openal\OpenAL32\alFilter.c">
+      <Filter>Externs\openal\OpenAL32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\openal\OpenAL32\alListener.c">
+      <Filter>Externs\openal\OpenAL32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\openal\OpenAL32\alSource.c">
+      <Filter>Externs\openal\OpenAL32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\openal\OpenAL32\alState.c">
+      <Filter>Externs\openal\OpenAL32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\openal\OpenAL32\alThunk.c">
+      <Filter>Externs\openal\OpenAL32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\vorbis\lib\analysis.c">
+      <Filter>Externs\vorbis\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\vorbis\lib\bitrate.c">
+      <Filter>Externs\vorbis\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\vorbis\lib\block.c">
+      <Filter>Externs\vorbis\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\vorbis\lib\codebook.c">
+      <Filter>Externs\vorbis\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\vorbis\lib\envelope.c">
+      <Filter>Externs\vorbis\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\vorbis\lib\floor0.c">
+      <Filter>Externs\vorbis\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\vorbis\lib\floor1.c">
+      <Filter>Externs\vorbis\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\vorbis\lib\info.c">
+      <Filter>Externs\vorbis\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\vorbis\lib\lookup.c">
+      <Filter>Externs\vorbis\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\vorbis\lib\lpc.c">
+      <Filter>Externs\vorbis\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\vorbis\lib\lsp.c">
+      <Filter>Externs\vorbis\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\vorbis\lib\mapping0.c">
+      <Filter>Externs\vorbis\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\vorbis\lib\mdct.c">
+      <Filter>Externs\vorbis\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\vorbis\lib\psy.c">
+      <Filter>Externs\vorbis\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\vorbis\lib\registry.c">
+      <Filter>Externs\vorbis\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\vorbis\lib\res0.c">
+      <Filter>Externs\vorbis\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\vorbis\lib\sharedbook.c">
+      <Filter>Externs\vorbis\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\vorbis\lib\smallft.c">
+      <Filter>Externs\vorbis\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\vorbis\lib\synthesis.c">
+      <Filter>Externs\vorbis\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\vorbis\lib\vorbisenc.c">
+      <Filter>Externs\vorbis\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\vorbis\lib\vorbisfile.c">
+      <Filter>Externs\vorbis\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\vorbis\lib\window.c">
+      <Filter>Externs\vorbis\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\libogg\src\bitwise.c">
+      <Filter>Externs\libogg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\libogg\src\framing.c">
+      <Filter>Externs\libogg</Filter>
+    </ClCompile>
+    <ClCompile Include="Sound\SoundManager.cpp">
+      <Filter>Sources\Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\box2d\box2d\Collision\b2BroadPhase.cpp">
+      <Filter>Externs\box2d\box2d\Collision</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\box2d\box2d\Collision\b2CollideCircle.cpp">
+      <Filter>Externs\box2d\box2d\Collision</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\box2d\box2d\Collision\b2CollideEdge.cpp">
+      <Filter>Externs\box2d\box2d\Collision</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\box2d\box2d\Collision\b2CollidePolygon.cpp">
+      <Filter>Externs\box2d\box2d\Collision</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\box2d\box2d\Collision\b2Collision.cpp">
+      <Filter>Externs\box2d\box2d\Collision</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\box2d\box2d\Collision\b2Distance.cpp">
+      <Filter>Externs\box2d\box2d\Collision</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\box2d\box2d\Collision\b2DynamicTree.cpp">
+      <Filter>Externs\box2d\box2d\Collision</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\box2d\box2d\Collision\b2TimeOfImpact.cpp">
+      <Filter>Externs\box2d\box2d\Collision</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\box2d\box2d\Collision\Shapes\b2ChainShape.cpp">
+      <Filter>Externs\box2d\box2d\Collision\Shapes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\box2d\box2d\Collision\Shapes\b2CircleShape.cpp">
+      <Filter>Externs\box2d\box2d\Collision\Shapes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\box2d\box2d\Collision\Shapes\b2EdgeShape.cpp">
+      <Filter>Externs\box2d\box2d\Collision\Shapes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\box2d\box2d\Collision\Shapes\b2PolygonShape.cpp">
+      <Filter>Externs\box2d\box2d\Collision\Shapes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\box2d\box2d\Dynamics\b2Body.cpp">
+      <Filter>Externs\box2d\box2d\Dynamics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\box2d\box2d\Dynamics\b2ContactManager.cpp">
+      <Filter>Externs\box2d\box2d\Dynamics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\box2d\box2d\Dynamics\b2Fixture.cpp">
+      <Filter>Externs\box2d\box2d\Dynamics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\box2d\box2d\Dynamics\b2Island.cpp">
+      <Filter>Externs\box2d\box2d\Dynamics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\box2d\box2d\Dynamics\b2World.cpp">
+      <Filter>Externs\box2d\box2d\Dynamics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\box2d\box2d\Dynamics\b2WorldCallbacks.cpp">
+      <Filter>Externs\box2d\box2d\Dynamics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\box2d\box2d\Dynamics\Contacts\b2ChainAndCircleContact.cpp">
+      <Filter>Externs\box2d\box2d\Dynamics\Contacts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\box2d\box2d\Dynamics\Contacts\b2ChainAndPolygonContact.cpp">
+      <Filter>Externs\box2d\box2d\Dynamics\Contacts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\box2d\box2d\Dynamics\Contacts\b2CircleContact.cpp">
+      <Filter>Externs\box2d\box2d\Dynamics\Contacts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\box2d\box2d\Dynamics\Contacts\b2Contact.cpp">
+      <Filter>Externs\box2d\box2d\Dynamics\Contacts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\box2d\box2d\Dynamics\Contacts\b2ContactSolver.cpp">
+      <Filter>Externs\box2d\box2d\Dynamics\Contacts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\box2d\box2d\Dynamics\Contacts\b2EdgeAndCircleContact.cpp">
+      <Filter>Externs\box2d\box2d\Dynamics\Contacts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\box2d\box2d\Dynamics\Contacts\b2EdgeAndPolygonContact.cpp">
+      <Filter>Externs\box2d\box2d\Dynamics\Contacts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\box2d\box2d\Dynamics\Contacts\b2PolygonAndCircleContact.cpp">
+      <Filter>Externs\box2d\box2d\Dynamics\Contacts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\box2d\box2d\Dynamics\Contacts\b2PolygonContact.cpp">
+      <Filter>Externs\box2d\box2d\Dynamics\Contacts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\box2d\box2d\Dynamics\Joints\b2DistanceJoint.cpp">
+      <Filter>Externs\box2d\box2d\Dynamics\Joints</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\box2d\box2d\Dynamics\Joints\b2FrictionJoint.cpp">
+      <Filter>Externs\box2d\box2d\Dynamics\Joints</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\box2d\box2d\Dynamics\Joints\b2GearJoint.cpp">
+      <Filter>Externs\box2d\box2d\Dynamics\Joints</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\box2d\box2d\Dynamics\Joints\b2Joint.cpp">
+      <Filter>Externs\box2d\box2d\Dynamics\Joints</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\box2d\box2d\Dynamics\Joints\b2MotorJoint.cpp">
+      <Filter>Externs\box2d\box2d\Dynamics\Joints</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\box2d\box2d\Dynamics\Joints\b2MouseJoint.cpp">
+      <Filter>Externs\box2d\box2d\Dynamics\Joints</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\box2d\box2d\Dynamics\Joints\b2PrismaticJoint.cpp">
+      <Filter>Externs\box2d\box2d\Dynamics\Joints</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\box2d\box2d\Dynamics\Joints\b2PulleyJoint.cpp">
+      <Filter>Externs\box2d\box2d\Dynamics\Joints</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\box2d\box2d\Dynamics\Joints\b2RevoluteJoint.cpp">
+      <Filter>Externs\box2d\box2d\Dynamics\Joints</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\box2d\box2d\Dynamics\Joints\b2RopeJoint.cpp">
+      <Filter>Externs\box2d\box2d\Dynamics\Joints</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\box2d\box2d\Dynamics\Joints\b2WeldJoint.cpp">
+      <Filter>Externs\box2d\box2d\Dynamics\Joints</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\box2d\box2d\Dynamics\Joints\b2WheelJoint.cpp">
+      <Filter>Externs\box2d\box2d\Dynamics\Joints</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\box2d\box2d\Common\b2BlockAllocator.cpp">
+      <Filter>Externs\box2d\box2d\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\box2d\box2d\Common\b2Draw.cpp">
+      <Filter>Externs\box2d\box2d\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\box2d\box2d\Common\b2Math.cpp">
+      <Filter>Externs\box2d\box2d\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\box2d\box2d\Common\b2Settings.cpp">
+      <Filter>Externs\box2d\box2d\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\box2d\box2d\Common\b2StackAllocator.cpp">
+      <Filter>Externs\box2d\box2d\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\box2d\box2d\Common\b2Timer.cpp">
+      <Filter>Externs\box2d\box2d\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\box2d\box2d\Rope\b2Rope.cpp">
+      <Filter>Externs\box2d\box2d\Rope</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Math.cpp">
+      <Filter>Sources\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\Physics2D\RigidBody2D.cpp">
+      <Filter>Sources\Scene\Physics2D</Filter>
+    </ClCompile>
+    <ClCompile Include="Render\OpenGLES\IndexBufferGLES.cpp">
+      <Filter>Sources\Render\OpenGLES</Filter>
+    </ClCompile>
+    <ClCompile Include="Render\OpenGLES\RenderGLES.cpp">
+      <Filter>Sources\Render\OpenGLES</Filter>
+    </ClCompile>
+    <ClCompile Include="Render\OpenGLES\ShaderGLES.cpp">
+      <Filter>Sources\Render\OpenGLES</Filter>
+    </ClCompile>
+    <ClCompile Include="Render\OpenGLES\TextureGLES.cpp">
+      <Filter>Sources\Render\OpenGLES</Filter>
+    </ClCompile>
+    <ClCompile Include="Render\OpenGLES\VertexBufferGLES.cpp">
+      <Filter>Sources\Render\OpenGLES</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\Sound\SoundSystem.cpp">
+      <Filter>Sources\Scene\Sound</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\String.cpp">
+      <Filter>Sources\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\Input\InputSystem.cpp">
+      <Filter>Sources\Scene\Input</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\Update\UpdateSystem.cpp">
+      <Filter>Sources\Scene\Update</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\Scene2D\Quadtree.cpp">
+      <Filter>Sources\Scene\Scene2D</Filter>
+    </ClCompile>
+    <ClCompile Include="Assets\Asset.cpp">
+      <Filter>Sources\Assets</Filter>
+    </ClCompile>
+    <ClCompile Include="Assets\AssetsDB.cpp">
+      <Filter>Sources\Assets</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\Physics2D\Physics2D.cpp">
+      <Filter>Sources\Scene\Physics2D</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\Physics2D\CollisionShape2D.cpp">
+      <Filter>Sources\Scene\Physics2D</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\Physics2D\CollisionBox2D.cpp">
+      <Filter>Sources\Scene\Physics2D</Filter>
+    </ClCompile>
+    <ClCompile Include="Game.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\Scene2D\Batch2D.cpp">
+      <Filter>Sources\Scene\Scene2D</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\Input\Gesturer.cpp">
+      <Filter>Sources\Scene\Input</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Externs\Civetweb\include\civetweb.h">
+      <Filter>Externs\civetweb\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\LZ4\lz4.h">
+      <Filter>Externs\lz4</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\LZ4\lz4hc.h">
+      <Filter>Externs\lz4</Filter>
+    </ClInclude>
+    <ClInclude Include="Config.hpp">
+      <Filter>Sources</Filter>
+    </ClInclude>
+    <ClInclude Include="Device\Device.hpp">
+      <Filter>Sources\Device</Filter>
+    </ClInclude>
+    <ClInclude Include="Device\Event.hpp">
+      <Filter>Sources\Device</Filter>
+    </ClInclude>
+    <ClInclude Include="Device\Thread.hpp">
+      <Filter>Sources\Device</Filter>
+    </ClInclude>
+    <ClInclude Include="Device\Win32\DeviceWin32.hpp">
+      <Filter>Sources\Device\Win32</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\Render.hpp">
+      <Filter>Sources\Render</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\OpenGL\RenderGL.hpp">
+      <Filter>Sources\Render\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Allocator.hpp">
+      <Filter>Sources\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Array.hpp">
+      <Filter>Sources\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Color.hpp">
+      <Filter>Sources\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\List.hpp">
+      <Filter>Sources\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Log.hpp">
+      <Filter>Sources\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Map.hpp">
+      <Filter>Sources\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Math.hpp">
+      <Filter>Sources\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Matrix.hpp">
+      <Filter>Sources\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Memory.hpp">
+      <Filter>Sources\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Rect.hpp">
+      <Filter>Sources\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\String.hpp">
+      <Filter>Sources\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Types.hpp">
+      <Filter>Sources\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Vector.hpp">
+      <Filter>Sources\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\VertexBuffer.hpp">
+      <Filter>Sources\Render</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\OpenGL\VertexBufferGL.hpp">
+      <Filter>Sources\Render\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\STB\stb_image.h">
+      <Filter>Externs\stb</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\STB\stb_image_write.h">
+      <Filter>Externs\stb</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\STB\stb_vorbis.h">
+      <Filter>Externs\stb</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\IndexBuffer.hpp">
+      <Filter>Sources\Render</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\OpenGL\IndexBufferGL.hpp">
+      <Filter>Sources\Render\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\MeshBuffer.hpp">
+      <Filter>Sources\Render</Filter>
+    </ClInclude>
+    <ClInclude Include="Device\Timer.hpp">
+      <Filter>Sources\Device</Filter>
+    </ClInclude>
+    <ClInclude Include="Filesystem\FileSystem.hpp">
+      <Filter>Sources\Filesystem</Filter>
+    </ClInclude>
+    <ClInclude Include="Filesystem\Stream.hpp">
+      <Filter>Sources\Filesystem</Filter>
+    </ClInclude>
+    <ClInclude Include="Filesystem\FileStream.hpp">
+      <Filter>Sources\Filesystem</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\Image.hpp">
+      <Filter>Sources\Render</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\Texture.hpp">
+      <Filter>Sources\Render</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\OpenGL\TextureGL.hpp">
+      <Filter>Sources\Render\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\GLEW\glew.h">
+      <Filter>Externs\glew</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\GLEW\glxew.h">
+      <Filter>Externs\glew</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\GLEW\wglew.h">
+      <Filter>Externs\glew</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\Mesh.hpp">
+      <Filter>Sources\Render</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\RenderTypes.hpp">
+      <Filter>Sources\Render</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\Shader.hpp">
+      <Filter>Sources\Render</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\OpenGL\ShaderGL.hpp">
+      <Filter>Sources\Render\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\OpenGL\ShaderProgramGL.hpp">
+      <Filter>Sources\Render\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\Material.hpp">
+      <Filter>Sources\Render</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\rapidjson\include\rapidjson\allocators.h">
+      <Filter>Externs\rapidjson\include\rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\rapidjson\include\rapidjson\document.h">
+      <Filter>Externs\rapidjson\include\rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\rapidjson\include\rapidjson\encodedstream.h">
+      <Filter>Externs\rapidjson\include\rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\rapidjson\include\rapidjson\encodings.h">
+      <Filter>Externs\rapidjson\include\rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\rapidjson\include\rapidjson\filereadstream.h">
+      <Filter>Externs\rapidjson\include\rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\rapidjson\include\rapidjson\filestream.h">
+      <Filter>Externs\rapidjson\include\rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\rapidjson\include\rapidjson\filewritestream.h">
+      <Filter>Externs\rapidjson\include\rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\rapidjson\include\rapidjson\prettywriter.h">
+      <Filter>Externs\rapidjson\include\rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\rapidjson\include\rapidjson\rapidjson.h">
+      <Filter>Externs\rapidjson\include\rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\rapidjson\include\rapidjson\reader.h">
+      <Filter>Externs\rapidjson\include\rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\rapidjson\include\rapidjson\stringbuffer.h">
+      <Filter>Externs\rapidjson\include\rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\rapidjson\include\rapidjson\writer.h">
+      <Filter>Externs\rapidjson\include\rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\rapidjson\include\rapidjson\internal\pow10.h">
+      <Filter>Externs\rapidjson\include\rapidjson\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\rapidjson\include\rapidjson\internal\stack.h">
+      <Filter>Externs\rapidjson\include\rapidjson\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\rapidjson\include\rapidjson\internal\strfunc.h">
+      <Filter>Externs\rapidjson\include\rapidjson\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\ShaderParameter.hpp">
+      <Filter>Sources\Render</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\BBox.hpp">
+      <Filter>Sources\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\Component.hpp">
+      <Filter>Sources\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\DebugRenderer.hpp">
+      <Filter>Sources\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\Node.hpp">
+      <Filter>Sources\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\Scene3D\Camera3D.hpp">
+      <Filter>Sources\Scene\Scene3D</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\Scene3D\Octree.hpp">
+      <Filter>Sources\Scene\Scene3D</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\Scene3D\Scene3D.hpp">
+      <Filter>Sources\Scene\Scene3D</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\Scene3D\StaticModel.hpp">
+      <Filter>Sources\Scene\Scene3D</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\Scene2D\Scene2D.hpp">
+      <Filter>Sources\Scene\Scene2D</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Plane.hpp">
+      <Filter>Sources\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\System.hpp">
+      <Filter>Sources\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\Scene2D\Sprite2D.hpp">
+      <Filter>Sources\Scene\Scene2D</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\Scene2D\Text2D.hpp">
+      <Filter>Sources\Scene\Scene2D</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\Scene2D\Font2D.hpp">
+      <Filter>Sources\Scene\Scene2D</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\pugixml\pugiconfig.hpp">
+      <Filter>Externs\pugixml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\pugixml\pugixml.hpp">
+      <Filter>Externs\pugixml</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\Sound\SoundSource.hpp">
+      <Filter>Sources\Scene\Sound</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\Sound\SoundSystem.hpp">
+      <Filter>Sources\Scene\Sound</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\Scene2D\Object2D.hpp">
+      <Filter>Sources\Scene\Scene2D</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\Scene3D\Object3D.hpp">
+      <Filter>Sources\Scene\Scene3D</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\Sound\SoundListener.hpp">
+      <Filter>Sources\Scene\Sound</Filter>
+    </ClInclude>
+    <ClInclude Include="Sound\SoundStream.hpp">
+      <Filter>Sources\Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="Sound\SoundPlayer.hpp">
+      <Filter>Sources\Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="Sound\SoundAL\SoundPlayerAL.hpp">
+      <Filter>Sources\Audio\SoundAL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\openal\config.h">
+      <Filter>Externs\openal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\openal\AL\al.h">
+      <Filter>Externs\openal\AL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\openal\AL\alc.h">
+      <Filter>Externs\openal\AL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\openal\AL\alext.h">
+      <Filter>Externs\openal\AL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\openal\AL\efx.h">
+      <Filter>Externs\openal\AL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\openal\AL\efx-creative.h">
+      <Filter>Externs\openal\AL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\openal\OpenAL32\alAuxEffectSlot.h">
+      <Filter>Externs\openal\OpenAL32</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\openal\OpenAL32\alBuffer.h">
+      <Filter>Externs\openal\OpenAL32</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\openal\OpenAL32\alDatabuffer.h">
+      <Filter>Externs\openal\OpenAL32</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\openal\OpenAL32\alEffect.h">
+      <Filter>Externs\openal\OpenAL32</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\openal\OpenAL32\alError.h">
+      <Filter>Externs\openal\OpenAL32</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\openal\OpenAL32\alFilter.h">
+      <Filter>Externs\openal\OpenAL32</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\openal\OpenAL32\alListener.h">
+      <Filter>Externs\openal\OpenAL32</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\openal\OpenAL32\alMain.h">
+      <Filter>Externs\openal\OpenAL32</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\openal\OpenAL32\alSource.h">
+      <Filter>Externs\openal\OpenAL32</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\openal\OpenAL32\alState.h">
+      <Filter>Externs\openal\OpenAL32</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\openal\OpenAL32\alThunk.h">
+      <Filter>Externs\openal\OpenAL32</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\openal\OpenAL32\alu.h">
+      <Filter>Externs\openal\OpenAL32</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\openal\OpenAL32\bs2b.h">
+      <Filter>Externs\openal\OpenAL32</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\vorbis\vorbis\codec.h">
+      <Filter>Externs\vorbis\vorbis</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\vorbis\vorbis\vorbisenc.h">
+      <Filter>Externs\vorbis\vorbis</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\vorbis\vorbis\vorbisfile.h">
+      <Filter>Externs\vorbis\vorbis</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\vorbis\lib\backends.h">
+      <Filter>Externs\vorbis\lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\vorbis\lib\bitrate.h">
+      <Filter>Externs\vorbis\lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\vorbis\lib\codebook.h">
+      <Filter>Externs\vorbis\lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\vorbis\lib\codec_internal.h">
+      <Filter>Externs\vorbis\lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\vorbis\lib\envelope.h">
+      <Filter>Externs\vorbis\lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\vorbis\lib\highlevel.h">
+      <Filter>Externs\vorbis\lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\vorbis\lib\lookup.h">
+      <Filter>Externs\vorbis\lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\vorbis\lib\lookup_data.h">
+      <Filter>Externs\vorbis\lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\vorbis\lib\lpc.h">
+      <Filter>Externs\vorbis\lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\vorbis\lib\lsp.h">
+      <Filter>Externs\vorbis\lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\vorbis\lib\masking.h">
+      <Filter>Externs\vorbis\lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\vorbis\lib\mdct.h">
+      <Filter>Externs\vorbis\lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\vorbis\lib\misc.h">
+      <Filter>Externs\vorbis\lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\vorbis\lib\os.h">
+      <Filter>Externs\vorbis\lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\vorbis\lib\psy.h">
+      <Filter>Externs\vorbis\lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\vorbis\lib\registry.h">
+      <Filter>Externs\vorbis\lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\vorbis\lib\scales.h">
+      <Filter>Externs\vorbis\lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\vorbis\lib\smallft.h">
+      <Filter>Externs\vorbis\lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\vorbis\lib\window.h">
+      <Filter>Externs\vorbis\lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\vorbis\lib\books\coupled\res_books_51.h">
+      <Filter>Externs\vorbis\lib\books\coupled</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\vorbis\lib\books\coupled\res_books_stereo.h">
+      <Filter>Externs\vorbis\lib\books\coupled</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\vorbis\lib\books\floor\floor_books.h">
+      <Filter>Externs\vorbis\lib\books\floor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\vorbis\lib\books\uncoupled\res_books_uncoupled.h">
+      <Filter>Externs\vorbis\lib\books\uncoupled</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\vorbis\lib\modes\floor_all.h">
+      <Filter>Externs\vorbis\lib\modes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\vorbis\lib\modes\psych_8.h">
+      <Filter>Externs\vorbis\lib\modes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\vorbis\lib\modes\psych_11.h">
+      <Filter>Externs\vorbis\lib\modes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\vorbis\lib\modes\psych_16.h">
+      <Filter>Externs\vorbis\lib\modes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\vorbis\lib\modes\psych_44.h">
+      <Filter>Externs\vorbis\lib\modes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\vorbis\lib\modes\residue_8.h">
+      <Filter>Externs\vorbis\lib\modes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\vorbis\lib\modes\residue_16.h">
+      <Filter>Externs\vorbis\lib\modes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\vorbis\lib\modes\residue_44.h">
+      <Filter>Externs\vorbis\lib\modes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\vorbis\lib\modes\residue_44p51.h">
+      <Filter>Externs\vorbis\lib\modes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\vorbis\lib\modes\residue_44u.h">
+      <Filter>Externs\vorbis\lib\modes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\vorbis\lib\modes\setup_8.h">
+      <Filter>Externs\vorbis\lib\modes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\vorbis\lib\modes\setup_11.h">
+      <Filter>Externs\vorbis\lib\modes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\vorbis\lib\modes\setup_16.h">
+      <Filter>Externs\vorbis\lib\modes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\vorbis\lib\modes\setup_22.h">
+      <Filter>Externs\vorbis\lib\modes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\vorbis\lib\modes\setup_32.h">
+      <Filter>Externs\vorbis\lib\modes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\vorbis\lib\modes\setup_44.h">
+      <Filter>Externs\vorbis\lib\modes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\vorbis\lib\modes\setup_44p51.h">
+      <Filter>Externs\vorbis\lib\modes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\vorbis\lib\modes\setup_44u.h">
+      <Filter>Externs\vorbis\lib\modes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\vorbis\lib\modes\setup_X.h">
+      <Filter>Externs\vorbis\lib\modes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\libogg\ogg\ogg.h">
+      <Filter>Externs\libogg\ogg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\libogg\ogg\os_types.h">
+      <Filter>Externs\libogg\ogg</Filter>
+    </ClInclude>
+    <ClInclude Include="Sound\SoundAL\SoundManagerAL.hpp">
+      <Filter>Sources\Audio\SoundAL</Filter>
+    </ClInclude>
+    <ClInclude Include="Sound\SoundManager.hpp">
+      <Filter>Sources\Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\Physics2D\RigidBody2D.hpp">
+      <Filter>Sources\Scene\Physics2D</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\box2d\Box2D.h">
+      <Filter>Externs\box2d</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\box2d\box2d\Collision\b2BroadPhase.h">
+      <Filter>Externs\box2d\box2d\Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\box2d\box2d\Collision\b2Collision.h">
+      <Filter>Externs\box2d\box2d\Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\box2d\box2d\Collision\b2Distance.h">
+      <Filter>Externs\box2d\box2d\Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\box2d\box2d\Collision\b2DynamicTree.h">
+      <Filter>Externs\box2d\box2d\Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\box2d\box2d\Collision\b2TimeOfImpact.h">
+      <Filter>Externs\box2d\box2d\Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\box2d\box2d\Collision\Shapes\b2ChainShape.h">
+      <Filter>Externs\box2d\box2d\Collision\Shapes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\box2d\box2d\Collision\Shapes\b2CircleShape.h">
+      <Filter>Externs\box2d\box2d\Collision\Shapes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\box2d\box2d\Collision\Shapes\b2EdgeShape.h">
+      <Filter>Externs\box2d\box2d\Collision\Shapes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\box2d\box2d\Collision\Shapes\b2PolygonShape.h">
+      <Filter>Externs\box2d\box2d\Collision\Shapes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\box2d\box2d\Collision\Shapes\b2Shape.h">
+      <Filter>Externs\box2d\box2d\Collision\Shapes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\box2d\box2d\Dynamics\b2Body.h">
+      <Filter>Externs\box2d\box2d\Dynamics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\box2d\box2d\Dynamics\b2ContactManager.h">
+      <Filter>Externs\box2d\box2d\Dynamics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\box2d\box2d\Dynamics\b2Fixture.h">
+      <Filter>Externs\box2d\box2d\Dynamics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\box2d\box2d\Dynamics\b2Island.h">
+      <Filter>Externs\box2d\box2d\Dynamics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\box2d\box2d\Dynamics\b2TimeStep.h">
+      <Filter>Externs\box2d\box2d\Dynamics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\box2d\box2d\Dynamics\b2World.h">
+      <Filter>Externs\box2d\box2d\Dynamics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\box2d\box2d\Dynamics\b2WorldCallbacks.h">
+      <Filter>Externs\box2d\box2d\Dynamics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\box2d\box2d\Dynamics\Contacts\b2ChainAndCircleContact.h">
+      <Filter>Externs\box2d\box2d\Dynamics\Contacts</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\box2d\box2d\Dynamics\Contacts\b2ChainAndPolygonContact.h">
+      <Filter>Externs\box2d\box2d\Dynamics\Contacts</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\box2d\box2d\Dynamics\Contacts\b2CircleContact.h">
+      <Filter>Externs\box2d\box2d\Dynamics\Contacts</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\box2d\box2d\Dynamics\Contacts\b2Contact.h">
+      <Filter>Externs\box2d\box2d\Dynamics\Contacts</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\box2d\box2d\Dynamics\Contacts\b2ContactSolver.h">
+      <Filter>Externs\box2d\box2d\Dynamics\Contacts</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\box2d\box2d\Dynamics\Contacts\b2EdgeAndCircleContact.h">
+      <Filter>Externs\box2d\box2d\Dynamics\Contacts</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\box2d\box2d\Dynamics\Contacts\b2EdgeAndPolygonContact.h">
+      <Filter>Externs\box2d\box2d\Dynamics\Contacts</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\box2d\box2d\Dynamics\Contacts\b2PolygonAndCircleContact.h">
+      <Filter>Externs\box2d\box2d\Dynamics\Contacts</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\box2d\box2d\Dynamics\Contacts\b2PolygonContact.h">
+      <Filter>Externs\box2d\box2d\Dynamics\Contacts</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\box2d\box2d\Dynamics\Joints\b2DistanceJoint.h">
+      <Filter>Externs\box2d\box2d\Dynamics\Joints</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\box2d\box2d\Dynamics\Joints\b2FrictionJoint.h">
+      <Filter>Externs\box2d\box2d\Dynamics\Joints</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\box2d\box2d\Dynamics\Joints\b2GearJoint.h">
+      <Filter>Externs\box2d\box2d\Dynamics\Joints</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\box2d\box2d\Dynamics\Joints\b2Joint.h">
+      <Filter>Externs\box2d\box2d\Dynamics\Joints</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\box2d\box2d\Dynamics\Joints\b2MotorJoint.h">
+      <Filter>Externs\box2d\box2d\Dynamics\Joints</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\box2d\box2d\Dynamics\Joints\b2MouseJoint.h">
+      <Filter>Externs\box2d\box2d\Dynamics\Joints</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\box2d\box2d\Dynamics\Joints\b2PrismaticJoint.h">
+      <Filter>Externs\box2d\box2d\Dynamics\Joints</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\box2d\box2d\Dynamics\Joints\b2PulleyJoint.h">
+      <Filter>Externs\box2d\box2d\Dynamics\Joints</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\box2d\box2d\Dynamics\Joints\b2RevoluteJoint.h">
+      <Filter>Externs\box2d\box2d\Dynamics\Joints</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\box2d\box2d\Dynamics\Joints\b2RopeJoint.h">
+      <Filter>Externs\box2d\box2d\Dynamics\Joints</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\box2d\box2d\Dynamics\Joints\b2WeldJoint.h">
+      <Filter>Externs\box2d\box2d\Dynamics\Joints</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\box2d\box2d\Dynamics\Joints\b2WheelJoint.h">
+      <Filter>Externs\box2d\box2d\Dynamics\Joints</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\box2d\box2d\Common\b2BlockAllocator.h">
+      <Filter>Externs\box2d\box2d\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\box2d\box2d\Common\b2Draw.h">
+      <Filter>Externs\box2d\box2d\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\box2d\box2d\Common\b2GrowableStack.h">
+      <Filter>Externs\box2d\box2d\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\box2d\box2d\Common\b2Math.h">
+      <Filter>Externs\box2d\box2d\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\box2d\box2d\Common\b2Settings.h">
+      <Filter>Externs\box2d\box2d\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\box2d\box2d\Common\b2StackAllocator.h">
+      <Filter>Externs\box2d\box2d\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\box2d\box2d\Common\b2Timer.h">
+      <Filter>Externs\box2d\box2d\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\box2d\box2d\Rope\b2Rope.h">
+      <Filter>Externs\box2d\box2d\Rope</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\Physics2D\Physics2D.hpp">
+      <Filter>Sources\Scene\Physics2D</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\Physics2D\CollisionBox2D.hpp">
+      <Filter>Sources\Scene\Physics2D</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\Physics2D\CollisionShape2D.hpp">
+      <Filter>Sources\Scene\Physics2D</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\OpenGLES\IndexBufferGLES.hpp">
+      <Filter>Sources\Render\OpenGLES</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\OpenGLES\RenderGLES.hpp">
+      <Filter>Sources\Render\OpenGLES</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\OpenGLES\ShaderGLES.hpp">
+      <Filter>Sources\Render\OpenGLES</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\OpenGLES\ShaderProgramGLES.hpp">
+      <Filter>Sources\Render\OpenGLES</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\OpenGLES\TextureGLES.hpp">
+      <Filter>Sources\Render\OpenGLES</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\OpenGLES\VertexBufferGLES.hpp">
+      <Filter>Sources\Render\OpenGLES</Filter>
+    </ClInclude>
+    <ClInclude Include="Device\iOS\DeviceIOS.hpp">
+      <Filter>Sources\Device\iOS</Filter>
+    </ClInclude>
+    <ClInclude Include="Device\iOS\GameViewController.h">
+      <Filter>Sources\Device\iOS</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\Input\InputSystem.hpp">
+      <Filter>Sources\Scene\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\Input\InputListener.hpp">
+      <Filter>Sources\Scene\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\Update\UpdateSystem.hpp">
+      <Filter>Sources\Scene\Update</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\Update\UpdateComponent.hpp">
+      <Filter>Sources\Scene\Update</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\Scene2D\Quadtree.hpp">
+      <Filter>Sources\Scene\Scene2D</Filter>
+    </ClInclude>
+    <ClInclude Include="Assets\Asset.hpp">
+      <Filter>Sources\Assets</Filter>
+    </ClInclude>
+    <ClInclude Include="Assets\AssetsDB.hpp">
+      <Filter>Sources\Assets</Filter>
+    </ClInclude>
+    <ClInclude Include="Game.hpp">
+      <Filter>Sources</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\LinkedList.hpp">
+      <Filter>Sources\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\Scene2D\Batch2D.hpp">
+      <Filter>Sources\Scene\Scene2D</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\Scene2D\Progress2D.hpp">
+      <Filter>Sources\Scene\Scene2D</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\Input\Gesturer.hpp">
+      <Filter>Sources\Scene\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="Device\iOS\AppDelegate.h">
+      <Filter>Sources\Device\iOS</Filter>
+    </ClInclude>
+    <ClInclude Include="Device\iOS\GameView.h">
+      <Filter>Sources\Device\iOS</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\Externs\Civetweb\src\md5.inl">
+      <Filter>Externs\civetweb\src</Filter>
+    </None>
+    <None Include="Device\iOS\DeviceIOS.mm">
+      <Filter>Sources\Device\iOS</Filter>
+    </None>
+    <None Include="Device\iOS\GameViewController.m">
+      <Filter>Sources\Device\iOS</Filter>
+    </None>
+    <None Include="Device\iOS\AppDelegate.mm">
+      <Filter>Sources\Device\iOS</Filter>
+    </None>
+    <None Include="Device\iOS\GameView.mm">
+      <Filter>Sources\Device\iOS</Filter>
+    </None>
+  </ItemGroup>
+</Project>

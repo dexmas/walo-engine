@@ -1,0 +1,232 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Externs\sqrat\sqmodule.h" />
+    <ClInclude Include="..\Externs\sqrat\sqrat.h" />
+    <ClInclude Include="..\Externs\sqrat\sqratimport.h" />
+    <ClInclude Include="..\Externs\sqrat\sqrat\sqratAllocator.h" />
+    <ClInclude Include="..\Externs\sqrat\sqrat\sqratArray.h" />
+    <ClInclude Include="..\Externs\sqrat\sqrat\sqratClass.h" />
+    <ClInclude Include="..\Externs\sqrat\sqrat\sqratClassType.h" />
+    <ClInclude Include="..\Externs\sqrat\sqrat\sqratConst.h" />
+    <ClInclude Include="..\Externs\sqrat\sqrat\sqratFunction.h" />
+    <ClInclude Include="..\Externs\sqrat\sqrat\sqratGlobalMethods.h" />
+    <ClInclude Include="..\Externs\sqrat\sqrat\sqratImpClass.h" />
+    <ClInclude Include="..\Externs\sqrat\sqrat\sqratMemberMethods.h" />
+    <ClInclude Include="..\Externs\sqrat\sqrat\sqratObject.h" />
+    <ClInclude Include="..\Externs\sqrat\sqrat\sqratOverloadMethods.h" />
+    <ClInclude Include="..\Externs\sqrat\sqrat\sqratTable.h" />
+    <ClInclude Include="..\Externs\sqrat\sqrat\sqratTypes.h" />
+    <ClInclude Include="..\Externs\sqrat\sqrat\sqratUtil.h" />
+    <ClInclude Include="..\Externs\sqrat\sqrat\sqratVM.h" />
+    <ClInclude Include="..\Externs\squirrel3\sqconfig.h" />
+    <ClInclude Include="..\Externs\squirrel3\sqstdaux.h" />
+    <ClInclude Include="..\Externs\squirrel3\sqstdblob.h" />
+    <ClInclude Include="..\Externs\squirrel3\sqstdio.h" />
+    <ClInclude Include="..\Externs\squirrel3\sqstdlib\sqstdblobimpl.h" />
+    <ClInclude Include="..\Externs\squirrel3\sqstdlib\sqstdstream.h" />
+    <ClInclude Include="..\Externs\squirrel3\sqstdmath.h" />
+    <ClInclude Include="..\Externs\squirrel3\sqstdstring.h" />
+    <ClInclude Include="..\Externs\squirrel3\sqstdsystem.h" />
+    <ClInclude Include="..\Externs\squirrel3\squirrel.h" />
+    <ClInclude Include="..\Externs\squirrel3\squirrel\sqarray.h" />
+    <ClInclude Include="..\Externs\squirrel3\squirrel\sqclass.h" />
+    <ClInclude Include="..\Externs\squirrel3\squirrel\sqclosure.h" />
+    <ClInclude Include="..\Externs\squirrel3\squirrel\sqcompiler.h" />
+    <ClInclude Include="..\Externs\squirrel3\squirrel\sqfuncproto.h" />
+    <ClInclude Include="..\Externs\squirrel3\squirrel\sqfuncstate.h" />
+    <ClInclude Include="..\Externs\squirrel3\squirrel\sqlexer.h" />
+    <ClInclude Include="..\Externs\squirrel3\squirrel\sqobject.h" />
+    <ClInclude Include="..\Externs\squirrel3\squirrel\sqopcodes.h" />
+    <ClInclude Include="..\Externs\squirrel3\squirrel\sqpcheader.h" />
+    <ClInclude Include="..\Externs\squirrel3\squirrel\sqstate.h" />
+    <ClInclude Include="..\Externs\squirrel3\squirrel\sqstring.h" />
+    <ClInclude Include="..\Externs\squirrel3\squirrel\sqtable.h" />
+    <ClInclude Include="..\Externs\squirrel3\squirrel\squserdata.h" />
+    <ClInclude Include="..\Externs\squirrel3\squirrel\squtf8.h" />
+    <ClInclude Include="..\Externs\squirrel3\squirrel\squtils.h" />
+    <ClInclude Include="..\Externs\squirrel3\squirrel\sqvm.h" />
+    <ClInclude Include="Utils\Serializer.hpp" />
+    <ClInclude Include="WaloPlayer.hpp" />
+    <ClInclude Include="Wrappers\CollisionBox2DWrapper.hpp" />
+    <ClInclude Include="Wrappers\CollisionShape2DWrapper.hpp" />
+    <ClInclude Include="Wrappers\SaveFileWrapper.hpp" />
+    <ClInclude Include="Wrappers\InputSystemWrapper.hpp" />
+    <ClInclude Include="Wrappers\Progress2DWrapper.hpp" />
+    <ClInclude Include="Wrappers\RigidBody2DWrapper.hpp" />
+    <ClInclude Include="Wrappers\SoundSourceWrapper.hpp" />
+    <ClInclude Include="Wrappers\Camera3DWrapper.hpp" />
+    <ClInclude Include="Wrappers\ColorWrapper.hpp" />
+    <ClInclude Include="Wrappers\ComponentWrapper.hpp" />
+    <ClInclude Include="Wrappers\FontWrapper.hpp" />
+    <ClInclude Include="Wrappers\MaterialWrapper.hpp" />
+    <ClInclude Include="Wrappers\MathWrapper.hpp" />
+    <ClInclude Include="Wrappers\MeshWrapper.hpp" />
+    <ClInclude Include="Wrappers\Model3DWrapper.hpp" />
+    <ClInclude Include="Wrappers\Node2DWrapper.hpp" />
+    <ClInclude Include="Wrappers\Node3DWrapper.hpp" />
+    <ClInclude Include="Wrappers\NodeWrapper.hpp" />
+    <ClInclude Include="Wrappers\PathMap.hpp" />
+    <ClInclude Include="Wrappers\RectWrapper.hpp" />
+    <ClInclude Include="Wrappers\AssetsDBWrapper.hpp" />
+    <ClInclude Include="Wrappers\AssetWrapper.hpp" />
+    <ClInclude Include="Wrappers\SoundStreamWrapper.hpp" />
+    <ClInclude Include="Wrappers\Sprite2DWrapper.hpp" />
+    <ClInclude Include="Wrappers\Text2DWrapper.hpp" />
+    <ClInclude Include="Wrappers\TextureWrapper.hpp" />
+    <ClInclude Include="Wrappers\VectorWrapper.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\Externs\sqrat\sqratimport.cpp" />
+    <ClCompile Include="..\Externs\squirrel3\sqstdlib\sqstdaux.cpp" />
+    <ClCompile Include="..\Externs\squirrel3\sqstdlib\sqstdblob.cpp" />
+    <ClCompile Include="..\Externs\squirrel3\sqstdlib\sqstdio.cpp" />
+    <ClCompile Include="..\Externs\squirrel3\sqstdlib\sqstdmath.cpp" />
+    <ClCompile Include="..\Externs\squirrel3\sqstdlib\sqstdrex.cpp" />
+    <ClCompile Include="..\Externs\squirrel3\sqstdlib\sqstdstream.cpp" />
+    <ClCompile Include="..\Externs\squirrel3\sqstdlib\sqstdstring.cpp" />
+    <ClCompile Include="..\Externs\squirrel3\sqstdlib\sqstdsystem.cpp" />
+    <ClCompile Include="..\Externs\squirrel3\squirrel\sqapi.cpp" />
+    <ClCompile Include="..\Externs\squirrel3\squirrel\sqbaselib.cpp" />
+    <ClCompile Include="..\Externs\squirrel3\squirrel\sqclass.cpp" />
+    <ClCompile Include="..\Externs\squirrel3\squirrel\sqcompiler.cpp" />
+    <ClCompile Include="..\Externs\squirrel3\squirrel\sqdebug.cpp" />
+    <ClCompile Include="..\Externs\squirrel3\squirrel\sqfuncstate.cpp" />
+    <ClCompile Include="..\Externs\squirrel3\squirrel\sqlexer.cpp" />
+    <ClCompile Include="..\Externs\squirrel3\squirrel\sqmem.cpp" />
+    <ClCompile Include="..\Externs\squirrel3\squirrel\sqobject.cpp" />
+    <ClCompile Include="..\Externs\squirrel3\squirrel\sqstate.cpp" />
+    <ClCompile Include="..\Externs\squirrel3\squirrel\sqtable.cpp" />
+    <ClCompile Include="..\Externs\squirrel3\squirrel\sqvm.cpp" />
+    <ClCompile Include="WaloPlayer.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Engine\WaloEngine.vcxproj">
+      <Project>{700556ad-07b8-40f2-9ea4-09f3959ff96f}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="..\WaloEngine.res" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{9CC248AB-C780-48B5-89C7-05DF0975E1A2}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>WaloPlayer</RootNamespace>
+    <ProjectName>WaloPlayer</ProjectName>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>..\..\DeepSpace\</OutDir>
+    <IntDir>..\Build\Temp\Bin\Win32\</IntDir>
+    <PostBuildEventUseInBuild>true</PostBuildEventUseInBuild>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>..\..\DeepSpace\</OutDir>
+    <IntDir>..\Build\Temp\Bin\Win32\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <AdditionalIncludeDirectories>..\Engine;..\Externs\squirrel3;..\Externs\sqrat;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PrecompiledHeaderFile />
+      <PrecompiledHeaderOutputFile />
+      <UndefinePreprocessorDefinitions>
+      </UndefinePreprocessorDefinitions>
+      <PreprocessToFile>false</PreprocessToFile>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>OpenGL32.lib;Winmm.lib;Imm32.lib;Version.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+    </PostBuildEvent>
+    <PostBuildEvent>
+      <Message>
+      </Message>
+    </PostBuildEvent>
+    <PreBuildEvent>
+      <Command>
+      </Command>
+    </PreBuildEvent>
+    <PreBuildEvent>
+      <Message>
+      </Message>
+    </PreBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <PrecompiledHeaderFile />
+      <PrecompiledHeaderOutputFile />
+      <AdditionalIncludeDirectories>..\Engine;..\Externs\squirrel3;..\Externs\sqrat;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>OpenGL32.lib;Winmm.lib;Imm32.lib;Version.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+      <Message>
+      </Message>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

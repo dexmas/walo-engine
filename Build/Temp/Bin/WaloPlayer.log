@@ -1,0 +1,90 @@
+﻿Build started 05.03.2015 16:10:17.
+     1>Project "D:\Work\Research\Walo\Projects\WaloEngine\Player\WaloPlayer.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I..\Engine /I..\Externs\squirrel3 /I..\Externs\sqrat /I..\Externs\rapidjson\include /I..\Externs\box2d /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _MBCS /Gm /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /GR /Fo"..\Build\Temp\Bin\\" /Fd"..\Build\Temp\Bin\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt WaloPlayer.cpp
+         WaloPlayer.cpp
+     1>d:\work\research\walo\projects\waloengine\engine\core\math.hpp(44): warning C4244: 'return' : conversion from 'float' to 's32', possible loss of data
+     1>d:\work\research\walo\projects\waloengine\engine\core\rect.hpp(19): warning C4244: '=' : conversion from 'const f32' to 's32', possible loss of data
+     1>d:\work\research\walo\projects\waloengine\engine\core\rect.hpp(21): warning C4244: '=' : conversion from 'const f32' to 's32', possible loss of data
+     1>d:\work\research\walo\projects\waloengine\engine\core\rect.hpp(23): warning C4244: '=' : conversion from 'const f32' to 's32', possible loss of data
+     1>d:\work\research\walo\projects\waloengine\engine\core\rect.hpp(25): warning C4244: '=' : conversion from 'const f32' to 's32', possible loss of data
+     1>d:\work\research\walo\projects\waloengine\engine\core\matrix.hpp(166): warning C4244: 'argument' : conversion from 'double' to 'f32', possible loss of data
+     1>d:\work\research\walo\projects\waloengine\engine\core\matrix.hpp(167): warning C4244: 'argument' : conversion from 'double' to 'f32', possible loss of data
+     1>d:\work\research\walo\projects\waloengine\engine\core\matrix.hpp(176): warning C4244: 'argument' : conversion from 'f32' to 'u32', possible loss of data
+     1>d:\work\research\walo\projects\waloengine\engine\core\matrix.hpp(176): warning C4244: 'argument' : conversion from 'f32' to 's32', possible loss of data
+     1>d:\work\research\walo\projects\waloengine\engine\core\color.hpp(15): warning C4244: 'initializing' : conversion from 'f32' to 'u8', possible loss of data
+     1>d:\work\research\walo\projects\waloengine\engine\scene\system.hpp(7): warning C4099: 'SInputEvent' : type name first seen using 'struct' now seen using 'class'
+                 d:\work\research\walo\projects\waloengine\engine\device\event.hpp(14) : see declaration of 'SInputEvent'
+     1>d:\work\research\walo\projects\waloengine\player\wrappers\vectorwrapper.hpp(38): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(356) : see declaration of 'sprintf'
+     1>d:\work\research\walo\projects\waloengine\player\wrappers\vectorwrapper.hpp(77): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(356) : see declaration of 'sprintf'
+     1>d:\work\research\walo\projects\waloengine\player\wrappers\rectwrapper.hpp(31): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(356) : see declaration of 'sprintf'
+     1>d:\work\research\walo\projects\waloengine\player\wrappers\colorwrapper.hpp(47): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(356) : see declaration of 'sprintf'
+     1>d:\work\research\walo\projects\waloengine\engine\scene\scene2d\sprite2d.hpp(50): warning C4244: 'argument' : conversion from 'const s32' to 'f32', possible loss of data
+     1>d:\work\research\walo\projects\waloengine\engine\scene\scene2d\text2d.hpp(276): warning C4244: '=' : conversion from 'u32' to 'f32', possible loss of data
+     1>d:\work\research\walo\projects\waloengine\engine\scene\scene2d\text2d.hpp(281): warning C4244: '=' : conversion from 'u32' to 'f32', possible loss of data
+     1>d:\work\research\walo\projects\waloengine\engine\scene\physics2d\physics2d.hpp(78): warning C4018: '<' : signed/unsigned mismatch
+     1>d:\work\research\walo\projects\waloengine\engine\scene\physics2d\rigidbody2d.hpp(43): warning C4150: deletion of pointer to incomplete type 'CCollision2D'; no destructor called
+                 d:\work\research\walo\projects\waloengine\engine\scene\physics2d\rigidbody2d.hpp(10) : see declaration of 'CCollision2D'
+     1>d:\work\research\walo\projects\waloengine\engine\scene\physics2d\collisionshape2d.hpp(82): warning C4244: '=' : conversion from 'f32' to 's32', possible loss of data
+     1>d:\work\research\walo\projects\waloengine\engine\scene\physics2d\collisionshape2d.hpp(83): warning C4244: '=' : conversion from 'f32' to 's32', possible loss of data
+     1>d:\work\research\walo\projects\waloengine\engine\scene\physics2d\collisionshape2d.hpp(84): warning C4244: '=' : conversion from 'f32' to 's32', possible loss of data
+     1>d:\work\research\walo\projects\waloengine\engine\scene\physics2d\collisionshape2d.hpp(85): warning C4244: '=' : conversion from 'f32' to 's32', possible loss of data
+     1>d:\work\research\walo\projects\waloengine\engine\scene\physics2d\collisionshape2d.hpp(89): warning C4620: no postfix form of 'operator ++' found for type 'CList<CComponent *>::CIterator', using prefix form
+                 d:\work\research\walo\projects\waloengine\engine\core\list.hpp(29) : see declaration of 'CList<CComponent *>::CIterator'
+     1>d:\work\research\walo\projects\waloengine\engine\scene\physics2d\collisionbox2d.hpp(52): warning C4244: '=' : conversion from 's32' to 'f32', possible loss of data
+     1>d:\work\research\walo\projects\waloengine\engine\scene\physics2d\collisionbox2d.hpp(53): warning C4244: '=' : conversion from 's32' to 'f32', possible loss of data
+     1>d:\work\research\walo\projects\waloengine\player\waloplayer.cpp(97): warning C4244: 'argument' : conversion from 's32' to 'f32', possible loss of data
+     1>d:\work\research\walo\projects\waloengine\player\waloplayer.cpp(123): warning C4244: 'argument' : conversion from 's32' to 'f32', possible loss of data
+     1>d:\work\research\walo\projects\waloengine\player\waloplayer.cpp(239): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(356) : see declaration of 'sprintf'
+     1>d:\work\research\walo\projects\waloengine\player\waloplayer.cpp(346): warning C4244: 'argument' : conversion from 'u32' to 'f32', possible loss of data
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"..\Build\Bin\WaloPlayer.exe" /INCREMENTAL /NOLOGO /LIBPATH:..\Build\Lib\Win32 WaloEngine_d.lib OpenGL32.lib Winmm.lib Imm32.lib Version.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"..\Build\Bin\WaloPlayer.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"..\Build\Bin\WaloPlayer.lib" /MACHINE:X86 ..\Build\Temp\Bin\sqratimport.obj
+         ..\Build\Temp\Bin\sqstdaux.obj
+         ..\Build\Temp\Bin\sqstdblob.obj
+         ..\Build\Temp\Bin\sqstdio.obj
+         ..\Build\Temp\Bin\sqstdmath.obj
+         ..\Build\Temp\Bin\sqstdrex.obj
+         ..\Build\Temp\Bin\sqstdstream.obj
+         ..\Build\Temp\Bin\sqstdstring.obj
+         ..\Build\Temp\Bin\sqstdsystem.obj
+         ..\Build\Temp\Bin\sqapi.obj
+         ..\Build\Temp\Bin\sqbaselib.obj
+         ..\Build\Temp\Bin\sqclass.obj
+         ..\Build\Temp\Bin\sqcompiler.obj
+         ..\Build\Temp\Bin\sqdebug.obj
+         ..\Build\Temp\Bin\sqfuncstate.obj
+         ..\Build\Temp\Bin\sqlexer.obj
+         ..\Build\Temp\Bin\sqmem.obj
+         ..\Build\Temp\Bin\sqobject.obj
+         ..\Build\Temp\Bin\sqstate.obj
+         ..\Build\Temp\Bin\sqtable.obj
+         ..\Build\Temp\Bin\sqvm.obj
+         ..\Build\Temp\Bin\WaloPlayer.obj
+            Creating library ..\Build\Bin\WaloPlayer.lib and object ..\Build\Bin\WaloPlayer.exp
+         WaloPlayer.vcxproj -> D:\Work\Research\Walo\Projects\WaloEngine\Player\..\Build\Bin\WaloPlayer.exe
+       PostBuildEvent:
+         del /q ..\Build\Bin\*.nut
+         xcopy /y Scripts\*.nut ..\Build\Bin
+         :VCEnd
+         Scripts\chest.nut
+         Scripts\dungeon.nut
+         Scripts\enemy.nut
+         Scripts\game.nut
+         Scripts\hud.nut
+         Scripts\Main.nut
+         Scripts\menu.nut
+         Scripts\player.nut
+         Scripts\state.nut
+         Scripts\unit.nut
+         Scripts\_main.nut
+         11 File(s) copied
+     1>Done Building Project "D:\Work\Research\Walo\Projects\WaloEngine\Player\WaloPlayer.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:03.34

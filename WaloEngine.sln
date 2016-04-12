@@ -1,0 +1,44 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Express 14 for Windows Desktop
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "WaloEngine", "Engine\WaloEngine.vcxproj", "{700556AD-07B8-40F2-9EA4-09F3959FF96F}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "WaloGame", "Game\WaloGame.vcxproj", "{AC240EEF-D248-428F-80EA-0394E3DA08AA}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "WaloPlayer", "Player\WaloPlayer.vcxproj", "{9CC248AB-C780-48B5-89C7-05DF0975E1A2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Debug|x64 = Debug|x64
+		Release|Win32 = Release|Win32
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{700556AD-07B8-40F2-9EA4-09F3959FF96F}.Debug|Win32.ActiveCfg = Debug|Win32
+		{700556AD-07B8-40F2-9EA4-09F3959FF96F}.Debug|Win32.Build.0 = Debug|Win32
+		{700556AD-07B8-40F2-9EA4-09F3959FF96F}.Debug|x64.ActiveCfg = Debug|Win32
+		{700556AD-07B8-40F2-9EA4-09F3959FF96F}.Release|Win32.ActiveCfg = Release|Win32
+		{700556AD-07B8-40F2-9EA4-09F3959FF96F}.Release|Win32.Build.0 = Release|Win32
+		{700556AD-07B8-40F2-9EA4-09F3959FF96F}.Release|x64.ActiveCfg = Release|Win32
+		{AC240EEF-D248-428F-80EA-0394E3DA08AA}.Debug|Win32.ActiveCfg = Debug|Win32
+		{AC240EEF-D248-428F-80EA-0394E3DA08AA}.Debug|Win32.Build.0 = Debug|Win32
+		{AC240EEF-D248-428F-80EA-0394E3DA08AA}.Debug|x64.ActiveCfg = Debug|x64
+		{AC240EEF-D248-428F-80EA-0394E3DA08AA}.Debug|x64.Build.0 = Debug|x64
+		{AC240EEF-D248-428F-80EA-0394E3DA08AA}.Release|Win32.ActiveCfg = Release|Win32
+		{AC240EEF-D248-428F-80EA-0394E3DA08AA}.Release|Win32.Build.0 = Release|Win32
+		{AC240EEF-D248-428F-80EA-0394E3DA08AA}.Release|x64.ActiveCfg = Release|x64
+		{AC240EEF-D248-428F-80EA-0394E3DA08AA}.Release|x64.Build.0 = Release|x64
+		{9CC248AB-C780-48B5-89C7-05DF0975E1A2}.Debug|Win32.ActiveCfg = Debug|Win32
+		{9CC248AB-C780-48B5-89C7-05DF0975E1A2}.Debug|Win32.Build.0 = Debug|Win32
+		{9CC248AB-C780-48B5-89C7-05DF0975E1A2}.Debug|x64.ActiveCfg = Debug|Win32
+		{9CC248AB-C780-48B5-89C7-05DF0975E1A2}.Release|Win32.ActiveCfg = Release|Win32
+		{9CC248AB-C780-48B5-89C7-05DF0975E1A2}.Release|Win32.Build.0 = Release|Win32
+		{9CC248AB-C780-48B5-89C7-05DF0975E1A2}.Release|x64.ActiveCfg = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

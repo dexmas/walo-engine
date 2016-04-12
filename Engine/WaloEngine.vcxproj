@@ -1,0 +1,717 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\Externs\box2d\box2d\Collision\b2BroadPhase.cpp" />
+    <ClCompile Include="..\Externs\box2d\box2d\Collision\b2CollideCircle.cpp" />
+    <ClCompile Include="..\Externs\box2d\box2d\Collision\b2CollideEdge.cpp" />
+    <ClCompile Include="..\Externs\box2d\box2d\Collision\b2CollidePolygon.cpp" />
+    <ClCompile Include="..\Externs\box2d\box2d\Collision\b2Collision.cpp" />
+    <ClCompile Include="..\Externs\box2d\box2d\Collision\b2Distance.cpp" />
+    <ClCompile Include="..\Externs\box2d\box2d\Collision\b2DynamicTree.cpp" />
+    <ClCompile Include="..\Externs\box2d\box2d\Collision\b2TimeOfImpact.cpp" />
+    <ClCompile Include="..\Externs\box2d\box2d\Collision\Shapes\b2ChainShape.cpp" />
+    <ClCompile Include="..\Externs\box2d\box2d\Collision\Shapes\b2CircleShape.cpp" />
+    <ClCompile Include="..\Externs\box2d\box2d\Collision\Shapes\b2EdgeShape.cpp" />
+    <ClCompile Include="..\Externs\box2d\box2d\Collision\Shapes\b2PolygonShape.cpp" />
+    <ClCompile Include="..\Externs\box2d\box2d\Common\b2BlockAllocator.cpp" />
+    <ClCompile Include="..\Externs\box2d\box2d\Common\b2Draw.cpp" />
+    <ClCompile Include="..\Externs\box2d\box2d\Common\b2Math.cpp" />
+    <ClCompile Include="..\Externs\box2d\box2d\Common\b2Settings.cpp" />
+    <ClCompile Include="..\Externs\box2d\box2d\Common\b2StackAllocator.cpp" />
+    <ClCompile Include="..\Externs\box2d\box2d\Common\b2Timer.cpp" />
+    <ClCompile Include="..\Externs\box2d\box2d\Dynamics\b2Body.cpp" />
+    <ClCompile Include="..\Externs\box2d\box2d\Dynamics\b2ContactManager.cpp" />
+    <ClCompile Include="..\Externs\box2d\box2d\Dynamics\b2Fixture.cpp" />
+    <ClCompile Include="..\Externs\box2d\box2d\Dynamics\b2Island.cpp" />
+    <ClCompile Include="..\Externs\box2d\box2d\Dynamics\b2World.cpp" />
+    <ClCompile Include="..\Externs\box2d\box2d\Dynamics\b2WorldCallbacks.cpp" />
+    <ClCompile Include="..\Externs\box2d\box2d\Dynamics\Contacts\b2ChainAndCircleContact.cpp" />
+    <ClCompile Include="..\Externs\box2d\box2d\Dynamics\Contacts\b2ChainAndPolygonContact.cpp" />
+    <ClCompile Include="..\Externs\box2d\box2d\Dynamics\Contacts\b2CircleContact.cpp" />
+    <ClCompile Include="..\Externs\box2d\box2d\Dynamics\Contacts\b2Contact.cpp" />
+    <ClCompile Include="..\Externs\box2d\box2d\Dynamics\Contacts\b2ContactSolver.cpp" />
+    <ClCompile Include="..\Externs\box2d\box2d\Dynamics\Contacts\b2EdgeAndCircleContact.cpp" />
+    <ClCompile Include="..\Externs\box2d\box2d\Dynamics\Contacts\b2EdgeAndPolygonContact.cpp" />
+    <ClCompile Include="..\Externs\box2d\box2d\Dynamics\Contacts\b2PolygonAndCircleContact.cpp" />
+    <ClCompile Include="..\Externs\box2d\box2d\Dynamics\Contacts\b2PolygonContact.cpp" />
+    <ClCompile Include="..\Externs\box2d\box2d\Dynamics\Joints\b2DistanceJoint.cpp" />
+    <ClCompile Include="..\Externs\box2d\box2d\Dynamics\Joints\b2FrictionJoint.cpp" />
+    <ClCompile Include="..\Externs\box2d\box2d\Dynamics\Joints\b2GearJoint.cpp" />
+    <ClCompile Include="..\Externs\box2d\box2d\Dynamics\Joints\b2Joint.cpp" />
+    <ClCompile Include="..\Externs\box2d\box2d\Dynamics\Joints\b2MotorJoint.cpp" />
+    <ClCompile Include="..\Externs\box2d\box2d\Dynamics\Joints\b2MouseJoint.cpp" />
+    <ClCompile Include="..\Externs\box2d\box2d\Dynamics\Joints\b2PrismaticJoint.cpp" />
+    <ClCompile Include="..\Externs\box2d\box2d\Dynamics\Joints\b2PulleyJoint.cpp" />
+    <ClCompile Include="..\Externs\box2d\box2d\Dynamics\Joints\b2RevoluteJoint.cpp" />
+    <ClCompile Include="..\Externs\box2d\box2d\Dynamics\Joints\b2RopeJoint.cpp" />
+    <ClCompile Include="..\Externs\box2d\box2d\Dynamics\Joints\b2WeldJoint.cpp" />
+    <ClCompile Include="..\Externs\box2d\box2d\Dynamics\Joints\b2WheelJoint.cpp" />
+    <ClCompile Include="..\Externs\box2d\box2d\Rope\b2Rope.cpp" />
+    <ClCompile Include="..\Externs\Civetweb\src\civetweb.c" />
+    <ClCompile Include="..\Externs\GLEW\glew.c">
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <ClCompile Include="..\Externs\libogg\src\bitwise.c">
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">4244;4996;4020;4305;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">4244;4996;4020;4305;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <ClCompile Include="..\Externs\libogg\src\framing.c">
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">4244;4996;4020;4305;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">4244;4996;4020;4305;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <ClCompile Include="..\Externs\LZ4\lz4.c" />
+    <ClCompile Include="..\Externs\LZ4\lz4hc.c" />
+    <ClCompile Include="..\Externs\openal\Alc\ALc.c">
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">4244;4996;4020;4305;4005;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">4244;4996;4020;4305;4005;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <ClCompile Include="..\Externs\openal\Alc\alcConfig.c">
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">4244;4996;4020;4305;4005;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">4244;4996;4020;4305;4005;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <ClCompile Include="..\Externs\openal\Alc\alcEcho.c">
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">4244;4996;4020;4305;4005;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">4244;4996;4020;4305;4005;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <ClCompile Include="..\Externs\openal\Alc\alcModulator.c">
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">4244;4996;4020;4305;4005;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">4244;4996;4020;4305;4005;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <ClCompile Include="..\Externs\openal\Alc\alcReverb.c">
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">4244;4996;4020;4305;4005;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">4244;4996;4020;4305;4005;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <ClCompile Include="..\Externs\openal\Alc\alcRing.c">
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">4244;4996;4020;4305;4005;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">4244;4996;4020;4305;4005;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <ClCompile Include="..\Externs\openal\Alc\alcThread.c">
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">4244;4996;4020;4305;4005;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">4244;4996;4020;4305;4005;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <ClCompile Include="..\Externs\openal\Alc\alsa.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Externs\openal\Alc\ALu.c">
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">4244;4996;4020;4305;4005;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">4244;4996;4020;4305;4005;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <ClCompile Include="..\Externs\openal\Alc\android.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Externs\openal\Alc\bs2b.c">
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">4244;4996;4020;4305;4005;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">4244;4996;4020;4305;4005;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <ClCompile Include="..\Externs\openal\Alc\dsound.c">
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">4244;4996;4020;4305;4005;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">4244;4996;4020;4305;4005;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <ClCompile Include="..\Externs\openal\Alc\null.c">
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">4244;4996;4020;4305;4005;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">4244;4996;4020;4305;4005;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <ClCompile Include="..\Externs\openal\Alc\oss.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Externs\openal\Alc\portaudio.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Externs\openal\Alc\pulseaudio.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Externs\openal\Alc\solaris.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Externs\openal\Alc\wave.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Externs\openal\Alc\winmm.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Externs\openal\OpenAL32\alAuxEffectSlot.c">
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">4244;4996;4020;4305;4005;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">4244;4996;4020;4305;4005;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <ClCompile Include="..\Externs\openal\OpenAL32\alBuffer.c">
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">4244;4996;4020;4305;4005;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">4244;4996;4020;4305;4005;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <ClCompile Include="..\Externs\openal\OpenAL32\alDatabuffer.c">
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">4244;4996;4020;4305;4005;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">4244;4996;4020;4305;4005;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <ClCompile Include="..\Externs\openal\OpenAL32\alEffect.c">
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">4244;4996;4020;4305;4005;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">4244;4996;4020;4305;4005;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <ClCompile Include="..\Externs\openal\OpenAL32\alError.c">
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">4244;4996;4020;4305;4005;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">4244;4996;4020;4305;4005;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <ClCompile Include="..\Externs\openal\OpenAL32\alExtension.c">
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">4244;4996;4020;4305;4005;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">4244;4996;4020;4305;4005;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <ClCompile Include="..\Externs\openal\OpenAL32\alFilter.c">
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">4244;4996;4020;4305;4005;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">4244;4996;4020;4305;4005;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <ClCompile Include="..\Externs\openal\OpenAL32\alListener.c">
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">4244;4996;4020;4305;4005;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">4244;4996;4020;4305;4005;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <ClCompile Include="..\Externs\openal\OpenAL32\alSource.c">
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">4244;4996;4020;4305;4005;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">4244;4996;4020;4305;4005;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <ClCompile Include="..\Externs\openal\OpenAL32\alState.c">
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">4244;4996;4020;4305;4005;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">4244;4996;4020;4305;4005;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <ClCompile Include="..\Externs\openal\OpenAL32\alThunk.c">
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">4244;4996;4020;4305;4005;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">4244;4996;4020;4305;4005;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <ClCompile Include="..\Externs\pugixml\pugixml.cpp" />
+    <ClCompile Include="..\Externs\STB\stb_image.c">
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">4996</DisableSpecificWarnings>
+    </ClCompile>
+    <ClCompile Include="..\Externs\STB\stb_image_write.c">
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">4996</DisableSpecificWarnings>
+    </ClCompile>
+    <ClCompile Include="..\Externs\STB\stb_vorbis.c">
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">4996</DisableSpecificWarnings>
+    </ClCompile>
+    <ClCompile Include="..\Externs\vorbis\lib\analysis.c">
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">4244;4996;4020;4305;4101;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">4244;4996;4020;4305;4101;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <ClCompile Include="..\Externs\vorbis\lib\bitrate.c">
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">4244;4996;4020;4305;4101;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">4244;4996;4020;4305;4101;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <ClCompile Include="..\Externs\vorbis\lib\block.c">
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">4244;4996;4020;4305;4101;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">4244;4996;4020;4305;4101;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <ClCompile Include="..\Externs\vorbis\lib\codebook.c">
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">4244;4996;4020;4305;4101;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">4244;4996;4020;4305;4101;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <ClCompile Include="..\Externs\vorbis\lib\envelope.c">
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">4244;4996;4020;4305;4101;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">4244;4996;4020;4305;4101;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <ClCompile Include="..\Externs\vorbis\lib\floor0.c">
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">4244;4996;4020;4305;4101;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">4244;4996;4020;4305;4101;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <ClCompile Include="..\Externs\vorbis\lib\floor1.c">
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">4244;4996;4020;4305;4101;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">4244;4996;4020;4305;4101;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <ClCompile Include="..\Externs\vorbis\lib\info.c">
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">4244;4996;4020;4305;4101;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">4244;4996;4020;4305;4101;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <ClCompile Include="..\Externs\vorbis\lib\lookup.c">
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">4244;4996;4020;4305;4101;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">4244;4996;4020;4305;4101;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <ClCompile Include="..\Externs\vorbis\lib\lpc.c">
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">4244;4996;4020;4305;4101;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">4244;4996;4020;4305;4101;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <ClCompile Include="..\Externs\vorbis\lib\lsp.c">
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">4244;4996;4020;4305;4101;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">4244;4996;4020;4305;4101;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <ClCompile Include="..\Externs\vorbis\lib\mapping0.c">
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">4244;4996;4020;4305;4101;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">4244;4996;4020;4305;4101;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <ClCompile Include="..\Externs\vorbis\lib\mdct.c">
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">4244;4996;4020;4305;4101;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">4244;4996;4020;4305;4101;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <ClCompile Include="..\Externs\vorbis\lib\psy.c">
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">4244;4996;4020;4305;4101;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">4244;4996;4020;4305;4101;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <ClCompile Include="..\Externs\vorbis\lib\registry.c">
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">4244;4996;4020;4305;4101;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">4244;4996;4020;4305;4101;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <ClCompile Include="..\Externs\vorbis\lib\res0.c">
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">4244;4996;4020;4305;4101;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">4244;4996;4020;4305;4101;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <ClCompile Include="..\Externs\vorbis\lib\sharedbook.c">
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">4244;4996;4020;4305;4101;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">4244;4996;4020;4305;4101;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <ClCompile Include="..\Externs\vorbis\lib\smallft.c">
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">4244;4996;4020;4305;4101;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">4244;4996;4020;4305;4101;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <ClCompile Include="..\Externs\vorbis\lib\synthesis.c">
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">4244;4996;4020;4305;4101;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">4244;4996;4020;4305;4101;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <ClCompile Include="..\Externs\vorbis\lib\vorbisenc.c">
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">4244;4996;4020;4305;4101;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">4244;4996;4020;4305;4101;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <ClCompile Include="..\Externs\vorbis\lib\vorbisfile.c">
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">4244;4996;4020;4305;4101;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">4244;4996;4020;4305;4101;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <ClCompile Include="..\Externs\vorbis\lib\window.c">
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">4244;4996;4020;4305;4101;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">4244;4996;4020;4305;4101;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <ClCompile Include="Assets\Asset.cpp" />
+    <ClCompile Include="Assets\AssetsDB.cpp" />
+    <ClCompile Include="Core\Color.cpp" />
+    <ClCompile Include="Core\Log.cpp" />
+    <ClCompile Include="Core\Math.cpp" />
+    <ClCompile Include="Core\Matrix.cpp" />
+    <ClCompile Include="Core\Memory.cpp" />
+    <ClCompile Include="Core\String.cpp" />
+    <ClCompile Include="Device\Device.cpp" />
+    <ClCompile Include="Device\Win32\DeviceWin32.cpp" />
+    <ClCompile Include="Filesystem\FileStream.cpp" />
+    <ClCompile Include="Filesystem\FileSystem.cpp" />
+    <ClCompile Include="Filesystem\Stream.cpp" />
+    <ClCompile Include="Game.cpp" />
+    <ClCompile Include="Render\Image.cpp" />
+    <ClCompile Include="Render\IndexBuffer.cpp" />
+    <ClCompile Include="Render\Material.cpp" />
+    <ClCompile Include="Render\Mesh.cpp" />
+    <ClCompile Include="Render\MeshBuffer.cpp" />
+    <ClCompile Include="Render\OpenGLES\IndexBufferGLES.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Render\OpenGLES\RenderGLES.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Render\OpenGLES\ShaderGLES.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Render\OpenGLES\TextureGLES.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Render\OpenGLES\VertexBufferGLES.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Render\OpenGL\IndexBufferGL.cpp" />
+    <ClCompile Include="Render\OpenGL\RenderGL.cpp" />
+    <ClCompile Include="Render\OpenGL\ShaderGL.cpp" />
+    <ClCompile Include="Render\OpenGL\TextureGL.cpp" />
+    <ClCompile Include="Render\OpenGL\VertexBufferGL.cpp" />
+    <ClCompile Include="Render\Render.cpp" />
+    <ClCompile Include="Render\Shader.cpp" />
+    <ClCompile Include="Render\Texture.cpp" />
+    <ClCompile Include="Render\VertexBuffer.cpp" />
+    <ClCompile Include="Scene\DebugRenderer.cpp" />
+    <ClCompile Include="Scene\Input\Gesturer.cpp" />
+    <ClCompile Include="Scene\Input\InputSystem.cpp" />
+    <ClCompile Include="Scene\Node.cpp" />
+    <ClCompile Include="Scene\Physics2D\CollisionBox2D.cpp" />
+    <ClCompile Include="Scene\Physics2D\CollisionShape2D.cpp" />
+    <ClCompile Include="Scene\Physics2D\Physics2D.cpp" />
+    <ClCompile Include="Scene\Physics2D\RigidBody2D.cpp" />
+    <ClCompile Include="Scene\Scene2D\Batch2D.cpp" />
+    <ClCompile Include="Scene\Scene2D\Object2D.cpp" />
+    <ClCompile Include="Scene\Scene2D\Font2D.cpp" />
+    <ClCompile Include="Scene\Scene2D\Quadtree.cpp" />
+    <ClCompile Include="Scene\Scene2D\Scene2D.cpp" />
+    <ClCompile Include="Scene\Scene3D\Camera3D.cpp" />
+    <ClCompile Include="Scene\Scene3D\Octree.cpp" />
+    <ClCompile Include="Scene\Scene3D\Scene3D.cpp" />
+    <ClCompile Include="Scene\Sound\SoundSystem.cpp" />
+    <ClCompile Include="Scene\Update\UpdateSystem.cpp" />
+    <ClCompile Include="Sound\SoundStream.cpp" />
+    <ClCompile Include="Sound\SoundManager.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Externs\box2d\Box2D.h" />
+    <ClInclude Include="..\Externs\box2d\box2d\Collision\b2BroadPhase.h" />
+    <ClInclude Include="..\Externs\box2d\box2d\Collision\b2Collision.h" />
+    <ClInclude Include="..\Externs\box2d\box2d\Collision\b2Distance.h" />
+    <ClInclude Include="..\Externs\box2d\box2d\Collision\b2DynamicTree.h" />
+    <ClInclude Include="..\Externs\box2d\box2d\Collision\b2TimeOfImpact.h" />
+    <ClInclude Include="..\Externs\box2d\box2d\Collision\Shapes\b2ChainShape.h" />
+    <ClInclude Include="..\Externs\box2d\box2d\Collision\Shapes\b2CircleShape.h" />
+    <ClInclude Include="..\Externs\box2d\box2d\Collision\Shapes\b2EdgeShape.h" />
+    <ClInclude Include="..\Externs\box2d\box2d\Collision\Shapes\b2PolygonShape.h" />
+    <ClInclude Include="..\Externs\box2d\box2d\Collision\Shapes\b2Shape.h" />
+    <ClInclude Include="..\Externs\box2d\box2d\Common\b2BlockAllocator.h" />
+    <ClInclude Include="..\Externs\box2d\box2d\Common\b2Draw.h" />
+    <ClInclude Include="..\Externs\box2d\box2d\Common\b2GrowableStack.h" />
+    <ClInclude Include="..\Externs\box2d\box2d\Common\b2Math.h" />
+    <ClInclude Include="..\Externs\box2d\box2d\Common\b2Settings.h" />
+    <ClInclude Include="..\Externs\box2d\box2d\Common\b2StackAllocator.h" />
+    <ClInclude Include="..\Externs\box2d\box2d\Common\b2Timer.h" />
+    <ClInclude Include="..\Externs\box2d\box2d\Dynamics\b2Body.h" />
+    <ClInclude Include="..\Externs\box2d\box2d\Dynamics\b2ContactManager.h" />
+    <ClInclude Include="..\Externs\box2d\box2d\Dynamics\b2Fixture.h" />
+    <ClInclude Include="..\Externs\box2d\box2d\Dynamics\b2Island.h" />
+    <ClInclude Include="..\Externs\box2d\box2d\Dynamics\b2TimeStep.h" />
+    <ClInclude Include="..\Externs\box2d\box2d\Dynamics\b2World.h" />
+    <ClInclude Include="..\Externs\box2d\box2d\Dynamics\b2WorldCallbacks.h" />
+    <ClInclude Include="..\Externs\box2d\box2d\Dynamics\Contacts\b2ChainAndCircleContact.h" />
+    <ClInclude Include="..\Externs\box2d\box2d\Dynamics\Contacts\b2ChainAndPolygonContact.h" />
+    <ClInclude Include="..\Externs\box2d\box2d\Dynamics\Contacts\b2CircleContact.h" />
+    <ClInclude Include="..\Externs\box2d\box2d\Dynamics\Contacts\b2Contact.h" />
+    <ClInclude Include="..\Externs\box2d\box2d\Dynamics\Contacts\b2ContactSolver.h" />
+    <ClInclude Include="..\Externs\box2d\box2d\Dynamics\Contacts\b2EdgeAndCircleContact.h" />
+    <ClInclude Include="..\Externs\box2d\box2d\Dynamics\Contacts\b2EdgeAndPolygonContact.h" />
+    <ClInclude Include="..\Externs\box2d\box2d\Dynamics\Contacts\b2PolygonAndCircleContact.h" />
+    <ClInclude Include="..\Externs\box2d\box2d\Dynamics\Contacts\b2PolygonContact.h" />
+    <ClInclude Include="..\Externs\box2d\box2d\Dynamics\Joints\b2DistanceJoint.h" />
+    <ClInclude Include="..\Externs\box2d\box2d\Dynamics\Joints\b2FrictionJoint.h" />
+    <ClInclude Include="..\Externs\box2d\box2d\Dynamics\Joints\b2GearJoint.h" />
+    <ClInclude Include="..\Externs\box2d\box2d\Dynamics\Joints\b2Joint.h" />
+    <ClInclude Include="..\Externs\box2d\box2d\Dynamics\Joints\b2MotorJoint.h" />
+    <ClInclude Include="..\Externs\box2d\box2d\Dynamics\Joints\b2MouseJoint.h" />
+    <ClInclude Include="..\Externs\box2d\box2d\Dynamics\Joints\b2PrismaticJoint.h" />
+    <ClInclude Include="..\Externs\box2d\box2d\Dynamics\Joints\b2PulleyJoint.h" />
+    <ClInclude Include="..\Externs\box2d\box2d\Dynamics\Joints\b2RevoluteJoint.h" />
+    <ClInclude Include="..\Externs\box2d\box2d\Dynamics\Joints\b2RopeJoint.h" />
+    <ClInclude Include="..\Externs\box2d\box2d\Dynamics\Joints\b2WeldJoint.h" />
+    <ClInclude Include="..\Externs\box2d\box2d\Dynamics\Joints\b2WheelJoint.h" />
+    <ClInclude Include="..\Externs\box2d\box2d\Rope\b2Rope.h" />
+    <ClInclude Include="..\Externs\Civetweb\include\civetweb.h" />
+    <ClInclude Include="..\Externs\GLEW\glew.h" />
+    <ClInclude Include="..\Externs\GLEW\glxew.h" />
+    <ClInclude Include="..\Externs\GLEW\wglew.h" />
+    <ClInclude Include="..\Externs\libogg\ogg\ogg.h" />
+    <ClInclude Include="..\Externs\libogg\ogg\os_types.h" />
+    <ClInclude Include="..\Externs\LZ4\lz4.h" />
+    <ClInclude Include="..\Externs\LZ4\lz4hc.h" />
+    <ClInclude Include="..\Externs\openal\AL\al.h" />
+    <ClInclude Include="..\Externs\openal\AL\alc.h" />
+    <ClInclude Include="..\Externs\openal\AL\alext.h" />
+    <ClInclude Include="..\Externs\openal\AL\efx-creative.h" />
+    <ClInclude Include="..\Externs\openal\AL\efx.h" />
+    <ClInclude Include="..\Externs\openal\config.h" />
+    <ClInclude Include="..\Externs\openal\OpenAL32\alAuxEffectSlot.h" />
+    <ClInclude Include="..\Externs\openal\OpenAL32\alBuffer.h" />
+    <ClInclude Include="..\Externs\openal\OpenAL32\alDatabuffer.h" />
+    <ClInclude Include="..\Externs\openal\OpenAL32\alEffect.h" />
+    <ClInclude Include="..\Externs\openal\OpenAL32\alError.h" />
+    <ClInclude Include="..\Externs\openal\OpenAL32\alFilter.h" />
+    <ClInclude Include="..\Externs\openal\OpenAL32\alListener.h" />
+    <ClInclude Include="..\Externs\openal\OpenAL32\alMain.h" />
+    <ClInclude Include="..\Externs\openal\OpenAL32\alSource.h" />
+    <ClInclude Include="..\Externs\openal\OpenAL32\alState.h" />
+    <ClInclude Include="..\Externs\openal\OpenAL32\alThunk.h" />
+    <ClInclude Include="..\Externs\openal\OpenAL32\alu.h" />
+    <ClInclude Include="..\Externs\openal\OpenAL32\bs2b.h" />
+    <ClInclude Include="..\Externs\pugixml\pugiconfig.hpp" />
+    <ClInclude Include="..\Externs\pugixml\pugixml.hpp" />
+    <ClInclude Include="..\Externs\rapidjson\include\rapidjson\allocators.h" />
+    <ClInclude Include="..\Externs\rapidjson\include\rapidjson\document.h" />
+    <ClInclude Include="..\Externs\rapidjson\include\rapidjson\encodedstream.h" />
+    <ClInclude Include="..\Externs\rapidjson\include\rapidjson\encodings.h" />
+    <ClInclude Include="..\Externs\rapidjson\include\rapidjson\filereadstream.h" />
+    <ClInclude Include="..\Externs\rapidjson\include\rapidjson\filestream.h" />
+    <ClInclude Include="..\Externs\rapidjson\include\rapidjson\filewritestream.h" />
+    <ClInclude Include="..\Externs\rapidjson\include\rapidjson\internal\pow10.h" />
+    <ClInclude Include="..\Externs\rapidjson\include\rapidjson\internal\stack.h" />
+    <ClInclude Include="..\Externs\rapidjson\include\rapidjson\internal\strfunc.h" />
+    <ClInclude Include="..\Externs\rapidjson\include\rapidjson\prettywriter.h" />
+    <ClInclude Include="..\Externs\rapidjson\include\rapidjson\rapidjson.h" />
+    <ClInclude Include="..\Externs\rapidjson\include\rapidjson\reader.h" />
+    <ClInclude Include="..\Externs\rapidjson\include\rapidjson\stringbuffer.h" />
+    <ClInclude Include="..\Externs\rapidjson\include\rapidjson\writer.h" />
+    <ClInclude Include="..\Externs\STB\stb_image.h" />
+    <ClInclude Include="..\Externs\STB\stb_image_write.h" />
+    <ClInclude Include="..\Externs\STB\stb_vorbis.h" />
+    <ClInclude Include="..\Externs\vorbis\lib\backends.h" />
+    <ClInclude Include="..\Externs\vorbis\lib\bitrate.h" />
+    <ClInclude Include="..\Externs\vorbis\lib\books\coupled\res_books_51.h" />
+    <ClInclude Include="..\Externs\vorbis\lib\books\coupled\res_books_stereo.h" />
+    <ClInclude Include="..\Externs\vorbis\lib\books\floor\floor_books.h" />
+    <ClInclude Include="..\Externs\vorbis\lib\books\uncoupled\res_books_uncoupled.h" />
+    <ClInclude Include="..\Externs\vorbis\lib\codebook.h" />
+    <ClInclude Include="..\Externs\vorbis\lib\codec_internal.h" />
+    <ClInclude Include="..\Externs\vorbis\lib\envelope.h" />
+    <ClInclude Include="..\Externs\vorbis\lib\highlevel.h" />
+    <ClInclude Include="..\Externs\vorbis\lib\lookup.h" />
+    <ClInclude Include="..\Externs\vorbis\lib\lookup_data.h" />
+    <ClInclude Include="..\Externs\vorbis\lib\lpc.h" />
+    <ClInclude Include="..\Externs\vorbis\lib\lsp.h" />
+    <ClInclude Include="..\Externs\vorbis\lib\masking.h" />
+    <ClInclude Include="..\Externs\vorbis\lib\mdct.h" />
+    <ClInclude Include="..\Externs\vorbis\lib\misc.h" />
+    <ClInclude Include="..\Externs\vorbis\lib\modes\floor_all.h" />
+    <ClInclude Include="..\Externs\vorbis\lib\modes\psych_11.h" />
+    <ClInclude Include="..\Externs\vorbis\lib\modes\psych_16.h" />
+    <ClInclude Include="..\Externs\vorbis\lib\modes\psych_44.h" />
+    <ClInclude Include="..\Externs\vorbis\lib\modes\psych_8.h" />
+    <ClInclude Include="..\Externs\vorbis\lib\modes\residue_16.h" />
+    <ClInclude Include="..\Externs\vorbis\lib\modes\residue_44.h" />
+    <ClInclude Include="..\Externs\vorbis\lib\modes\residue_44p51.h" />
+    <ClInclude Include="..\Externs\vorbis\lib\modes\residue_44u.h" />
+    <ClInclude Include="..\Externs\vorbis\lib\modes\residue_8.h" />
+    <ClInclude Include="..\Externs\vorbis\lib\modes\setup_11.h" />
+    <ClInclude Include="..\Externs\vorbis\lib\modes\setup_16.h" />
+    <ClInclude Include="..\Externs\vorbis\lib\modes\setup_22.h" />
+    <ClInclude Include="..\Externs\vorbis\lib\modes\setup_32.h" />
+    <ClInclude Include="..\Externs\vorbis\lib\modes\setup_44.h" />
+    <ClInclude Include="..\Externs\vorbis\lib\modes\setup_44p51.h" />
+    <ClInclude Include="..\Externs\vorbis\lib\modes\setup_44u.h" />
+    <ClInclude Include="..\Externs\vorbis\lib\modes\setup_8.h" />
+    <ClInclude Include="..\Externs\vorbis\lib\modes\setup_X.h" />
+    <ClInclude Include="..\Externs\vorbis\lib\os.h" />
+    <ClInclude Include="..\Externs\vorbis\lib\psy.h" />
+    <ClInclude Include="..\Externs\vorbis\lib\registry.h" />
+    <ClInclude Include="..\Externs\vorbis\lib\scales.h" />
+    <ClInclude Include="..\Externs\vorbis\lib\smallft.h" />
+    <ClInclude Include="..\Externs\vorbis\lib\window.h" />
+    <ClInclude Include="..\Externs\vorbis\vorbis\codec.h" />
+    <ClInclude Include="..\Externs\vorbis\vorbis\vorbisenc.h" />
+    <ClInclude Include="..\Externs\vorbis\vorbis\vorbisfile.h" />
+    <ClInclude Include="Assets\Asset.hpp" />
+    <ClInclude Include="Assets\AssetsDB.hpp" />
+    <ClInclude Include="Config.hpp" />
+    <ClInclude Include="Core\Allocator.hpp" />
+    <ClInclude Include="Core\Array.hpp" />
+    <ClInclude Include="Core\BBox.hpp" />
+    <ClInclude Include="Core\Color.hpp" />
+    <ClInclude Include="Core\LinkedList.hpp" />
+    <ClInclude Include="Core\List.hpp" />
+    <ClInclude Include="Core\Log.hpp" />
+    <ClInclude Include="Core\Map.hpp" />
+    <ClInclude Include="Core\Math.hpp" />
+    <ClInclude Include="Core\Matrix.hpp" />
+    <ClInclude Include="Core\Memory.hpp" />
+    <ClInclude Include="Core\Plane.hpp" />
+    <ClInclude Include="Core\Rect.hpp" />
+    <ClInclude Include="Core\String.hpp" />
+    <ClInclude Include="Core\Types.hpp" />
+    <ClInclude Include="Core\Vector.hpp" />
+    <ClInclude Include="Device\Device.hpp" />
+    <ClInclude Include="Device\Event.hpp" />
+    <ClInclude Include="Device\iOS\AppDelegate.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="Device\iOS\DeviceIOS.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="Device\iOS\GameView.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="Device\iOS\GameViewController.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="Device\Thread.hpp" />
+    <ClInclude Include="Device\Timer.hpp" />
+    <ClInclude Include="Device\Win32\DeviceWin32.hpp" />
+    <ClInclude Include="Filesystem\FileStream.hpp" />
+    <ClInclude Include="Filesystem\FileSystem.hpp" />
+    <ClInclude Include="Filesystem\Stream.hpp" />
+    <ClInclude Include="Game.hpp" />
+    <ClInclude Include="Render\Image.hpp" />
+    <ClInclude Include="Render\IndexBuffer.hpp" />
+    <ClInclude Include="Render\Material.hpp" />
+    <ClInclude Include="Render\Mesh.hpp" />
+    <ClInclude Include="Render\MeshBuffer.hpp" />
+    <ClInclude Include="Render\OpenGLES\IndexBufferGLES.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="Render\OpenGLES\RenderGLES.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="Render\OpenGLES\ShaderGLES.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="Render\OpenGLES\ShaderProgramGLES.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="Render\OpenGLES\TextureGLES.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="Render\OpenGLES\VertexBufferGLES.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="Render\OpenGL\IndexBufferGL.hpp" />
+    <ClInclude Include="Render\OpenGL\RenderGL.hpp" />
+    <ClInclude Include="Render\OpenGL\ShaderGL.hpp" />
+    <ClInclude Include="Render\OpenGL\ShaderProgramGL.hpp" />
+    <ClInclude Include="Render\OpenGL\TextureGL.hpp" />
+    <ClInclude Include="Render\OpenGL\VertexBufferGL.hpp" />
+    <ClInclude Include="Render\Render.hpp" />
+    <ClInclude Include="Render\RenderTypes.hpp" />
+    <ClInclude Include="Render\Shader.hpp" />
+    <ClInclude Include="Render\ShaderParameter.hpp" />
+    <ClInclude Include="Render\Texture.hpp" />
+    <ClInclude Include="Render\VertexBuffer.hpp" />
+    <ClInclude Include="Scene\Component.hpp" />
+    <ClInclude Include="Scene\DebugRenderer.hpp" />
+    <ClInclude Include="Scene\Input\Gesturer.hpp" />
+    <ClInclude Include="Scene\Input\InputListener.hpp" />
+    <ClInclude Include="Scene\Input\InputSystem.hpp" />
+    <ClInclude Include="Scene\Node.hpp" />
+    <ClInclude Include="Scene\Physics2D\CollisionShape2D.hpp" />
+    <ClInclude Include="Scene\Physics2D\CollisionBox2D.hpp" />
+    <ClInclude Include="Scene\Physics2D\Physics2D.hpp" />
+    <ClInclude Include="Scene\Physics2D\RigidBody2D.hpp" />
+    <ClInclude Include="Scene\Scene2D\Batch2D.hpp" />
+    <ClInclude Include="Scene\Scene2D\Object2D.hpp" />
+    <ClInclude Include="Scene\Scene2D\Font2D.hpp" />
+    <ClInclude Include="Scene\Scene2D\Progress2D.hpp" />
+    <ClInclude Include="Scene\Scene2D\Quadtree.hpp" />
+    <ClInclude Include="Scene\Scene2D\Scene2D.hpp" />
+    <ClInclude Include="Scene\Scene2D\Sprite2D.hpp" />
+    <ClInclude Include="Scene\Scene2D\Text2D.hpp" />
+    <ClInclude Include="Scene\Scene3D\Camera3D.hpp" />
+    <ClInclude Include="Scene\Scene3D\Object3D.hpp" />
+    <ClInclude Include="Scene\Scene3D\Octree.hpp" />
+    <ClInclude Include="Scene\Scene3D\Scene3D.hpp" />
+    <ClInclude Include="Scene\Scene3D\StaticModel.hpp" />
+    <ClInclude Include="Scene\Sound\SoundListener.hpp" />
+    <ClInclude Include="Scene\Sound\SoundSource.hpp" />
+    <ClInclude Include="Scene\Sound\SoundSystem.hpp" />
+    <ClInclude Include="Scene\System.hpp" />
+    <ClInclude Include="Scene\Update\UpdateComponent.hpp" />
+    <ClInclude Include="Scene\Update\UpdateSystem.hpp" />
+    <ClInclude Include="Sound\SoundAL\SoundManagerAL.hpp" />
+    <ClInclude Include="Sound\SoundAL\SoundPlayerAL.hpp" />
+    <ClInclude Include="Sound\SoundManager.hpp" />
+    <ClInclude Include="Sound\SoundPlayer.hpp" />
+    <ClInclude Include="Sound\SoundStream.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\Externs\Civetweb\src\md5.inl" />
+    <None Include="Device\iOS\AppDelegate.mm">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="Device\iOS\DeviceIOS.mm">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="Device\iOS\GameView.mm">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="Device\iOS\GameViewController.m">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{700556AD-07B8-40F2-9EA4-09F3959FF96F}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>WaloEngine</RootNamespace>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>..\Build\Bin\Lib\Win32\</OutDir>
+    <IntDir>..\Build\Temp\Lib\Win32\</IntDir>
+    <TargetName>$(ProjectName)_d</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>..\Build\Bin\Lib\Win32\</OutDir>
+    <IntDir>..\Build\Temp\Lib\Win32\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_DEBUG;GLEW_STATIC;AL_BUILD_LIBRARY;AL_ALEXT_PROTOTYPES;WIN32_LEAN_AND_MEAN;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>.\;..\Externs\Civetweb\include;..\Externs\LZ4;..\Externs\STB;..\Externs\GLEW;..\Externs\rapidjson\include;..\Externs\pugixml;..\Externs\openal;..\Externs\openal\OpenAL32;..\Externs\vorbis;..\Externs\libogg;..\Externs\box2d;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <Lib>
+      <AdditionalDependencies>
+      </AdditionalDependencies>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>GLEW_STATIC;AL_BUILD_LIBRARY;AL_ALEXT_PROTOTYPES;WIN32_LEAN_AND_MEAN;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>.\;..\Externs\Civetweb\include;..\Externs\LZ4;..\Externs\STB;..\Externs\GLEW;..\Externs\rapidjson\include;..\Externs\pugixml;..\Externs\openal;..\Externs\openal\OpenAL32;..\Externs\vorbis;..\Externs\libogg;..\Externs\box2d;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

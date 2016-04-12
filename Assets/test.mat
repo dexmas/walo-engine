@@ -1,0 +1,25 @@
+{
+    "Textures": [
+        {
+            "Slot": 0,
+            "File": "cube_texture.png",
+            "WrapU": 0,
+            "WrapV": 0,
+            "Filter": 2
+        }
+    ],
+    "VertexShader": {
+        "File": "basic.vs",
+        "Params": []
+    },
+    "PixelShader": {
+        "File": "basic.ps",
+        "Params": []
+    },
+    "ColorWrite": true,
+    "DepthWrite": true,
+    "BlendMode": 3,
+    "CullMode": 0,
+    "FillMode": 0,
+    "DepthTest": 5
+}

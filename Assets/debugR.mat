@@ -1,0 +1,19 @@
+{
+    "Textures": [],
+    "VertexShader": 
+	{
+        "File": "vcolor.vs",
+        "Params": []
+    },
+    "PixelShader": 
+	{
+        "File": "vcolor.ps",
+        "Params": []
+    },
+    "ColorWrite": true,
+    "DepthWrite": false,
+    "BlendMode": 1,
+    "CullMode": 0,
+    "FillMode": 0,
+    "DepthTest": 0
+}

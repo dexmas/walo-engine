@@ -1,0 +1,325 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Externs">
+      <UniqueIdentifier>{5978eb14-7b9d-4dc0-bc99-d49237a9f400}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Wrappers">
+      <UniqueIdentifier>{96bd0d30-e2bb-440d-9f5d-132dd47c14e2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Externs\squirrel3">
+      <UniqueIdentifier>{e2db9906-12e3-432c-a5a2-3f216c080b7b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Externs\sqrat">
+      <UniqueIdentifier>{6e8bc617-b38f-4d8e-8da0-1773044e64d4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Externs\squirrel3\squirrel">
+      <UniqueIdentifier>{52c34db3-7733-4324-85fa-a116a72c2f3c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Externs\squirrel3\sqstdlib">
+      <UniqueIdentifier>{77808f54-9126-40d1-8068-3aa00623c40f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Externs\sqrat\sqrat">
+      <UniqueIdentifier>{d1377007-4a13-47b7-839f-16576f4855c4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources">
+      <UniqueIdentifier>{d4454c4f-43f5-4462-ba5c-7cdebf0fb35b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utils">
+      <UniqueIdentifier>{91384d17-82a3-4992-930a-371dd4d5d84c}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Externs\sqrat\sqmodule.h">
+      <Filter>Externs\sqrat</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\sqrat\sqrat.h">
+      <Filter>Externs\sqrat</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\sqrat\sqratimport.h">
+      <Filter>Externs\sqrat</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\sqrat\sqrat\sqratAllocator.h">
+      <Filter>Externs\sqrat\sqrat</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\sqrat\sqrat\sqratArray.h">
+      <Filter>Externs\sqrat\sqrat</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\sqrat\sqrat\sqratClass.h">
+      <Filter>Externs\sqrat\sqrat</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\sqrat\sqrat\sqratClassType.h">
+      <Filter>Externs\sqrat\sqrat</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\sqrat\sqrat\sqratConst.h">
+      <Filter>Externs\sqrat\sqrat</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\sqrat\sqrat\sqratFunction.h">
+      <Filter>Externs\sqrat\sqrat</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\sqrat\sqrat\sqratGlobalMethods.h">
+      <Filter>Externs\sqrat\sqrat</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\sqrat\sqrat\sqratImpClass.h">
+      <Filter>Externs\sqrat\sqrat</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\sqrat\sqrat\sqratMemberMethods.h">
+      <Filter>Externs\sqrat\sqrat</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\sqrat\sqrat\sqratObject.h">
+      <Filter>Externs\sqrat\sqrat</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\sqrat\sqrat\sqratOverloadMethods.h">
+      <Filter>Externs\sqrat\sqrat</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\sqrat\sqrat\sqratTable.h">
+      <Filter>Externs\sqrat\sqrat</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\sqrat\sqrat\sqratTypes.h">
+      <Filter>Externs\sqrat\sqrat</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\sqrat\sqrat\sqratUtil.h">
+      <Filter>Externs\sqrat\sqrat</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\sqrat\sqrat\sqratVM.h">
+      <Filter>Externs\sqrat\sqrat</Filter>
+    </ClInclude>
+    <ClInclude Include="WaloPlayer.hpp" />
+    <ClInclude Include="Wrappers\VectorWrapper.hpp">
+      <Filter>Wrappers</Filter>
+    </ClInclude>
+    <ClInclude Include="Wrappers\TextureWrapper.hpp">
+      <Filter>Wrappers</Filter>
+    </ClInclude>
+    <ClInclude Include="Wrappers\Sprite2DWrapper.hpp">
+      <Filter>Wrappers</Filter>
+    </ClInclude>
+    <ClInclude Include="Wrappers\RectWrapper.hpp">
+      <Filter>Wrappers</Filter>
+    </ClInclude>
+    <ClInclude Include="Wrappers\Text2DWrapper.hpp">
+      <Filter>Wrappers</Filter>
+    </ClInclude>
+    <ClInclude Include="Wrappers\FontWrapper.hpp">
+      <Filter>Wrappers</Filter>
+    </ClInclude>
+    <ClInclude Include="Wrappers\ColorWrapper.hpp">
+      <Filter>Wrappers</Filter>
+    </ClInclude>
+    <ClInclude Include="Wrappers\Node2DWrapper.hpp">
+      <Filter>Wrappers</Filter>
+    </ClInclude>
+    <ClInclude Include="Wrappers\NodeWrapper.hpp">
+      <Filter>Wrappers</Filter>
+    </ClInclude>
+    <ClInclude Include="Wrappers\Node3DWrapper.hpp">
+      <Filter>Wrappers</Filter>
+    </ClInclude>
+    <ClInclude Include="Wrappers\Model3DWrapper.hpp">
+      <Filter>Wrappers</Filter>
+    </ClInclude>
+    <ClInclude Include="Wrappers\MeshWrapper.hpp">
+      <Filter>Wrappers</Filter>
+    </ClInclude>
+    <ClInclude Include="Wrappers\MaterialWrapper.hpp">
+      <Filter>Wrappers</Filter>
+    </ClInclude>
+    <ClInclude Include="Wrappers\Camera3DWrapper.hpp">
+      <Filter>Wrappers</Filter>
+    </ClInclude>
+    <ClInclude Include="Wrappers\PathMap.hpp">
+      <Filter>Wrappers</Filter>
+    </ClInclude>
+    <ClInclude Include="Wrappers\MathWrapper.hpp">
+      <Filter>Wrappers</Filter>
+    </ClInclude>
+    <ClInclude Include="Wrappers\ComponentWrapper.hpp">
+      <Filter>Wrappers</Filter>
+    </ClInclude>
+    <ClInclude Include="Wrappers\SoundSourceWrapper.hpp">
+      <Filter>Wrappers</Filter>
+    </ClInclude>
+    <ClInclude Include="Wrappers\SoundStreamWrapper.hpp">
+      <Filter>Wrappers</Filter>
+    </ClInclude>
+    <ClInclude Include="Wrappers\RigidBody2DWrapper.hpp">
+      <Filter>Wrappers</Filter>
+    </ClInclude>
+    <ClInclude Include="Wrappers\CollisionBox2DWrapper.hpp">
+      <Filter>Wrappers</Filter>
+    </ClInclude>
+    <ClInclude Include="Wrappers\CollisionShape2DWrapper.hpp">
+      <Filter>Wrappers</Filter>
+    </ClInclude>
+    <ClInclude Include="Wrappers\AssetWrapper.hpp">
+      <Filter>Wrappers</Filter>
+    </ClInclude>
+    <ClInclude Include="Wrappers\AssetsDBWrapper.hpp">
+      <Filter>Wrappers</Filter>
+    </ClInclude>
+    <ClInclude Include="Wrappers\InputSystemWrapper.hpp">
+      <Filter>Wrappers</Filter>
+    </ClInclude>
+    <ClInclude Include="Wrappers\Progress2DWrapper.hpp">
+      <Filter>Wrappers</Filter>
+    </ClInclude>
+    <ClInclude Include="Wrappers\SaveFileWrapper.hpp">
+      <Filter>Wrappers</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils\Serializer.hpp">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\squirrel3\sqconfig.h">
+      <Filter>Externs\squirrel3</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\squirrel3\sqstdaux.h">
+      <Filter>Externs\squirrel3</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\squirrel3\sqstdblob.h">
+      <Filter>Externs\squirrel3</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\squirrel3\sqstdio.h">
+      <Filter>Externs\squirrel3</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\squirrel3\sqstdmath.h">
+      <Filter>Externs\squirrel3</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\squirrel3\sqstdstring.h">
+      <Filter>Externs\squirrel3</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\squirrel3\sqstdsystem.h">
+      <Filter>Externs\squirrel3</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\squirrel3\squirrel.h">
+      <Filter>Externs\squirrel3</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\squirrel3\sqstdlib\sqstdblobimpl.h">
+      <Filter>Externs\squirrel3\sqstdlib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\squirrel3\sqstdlib\sqstdstream.h">
+      <Filter>Externs\squirrel3\sqstdlib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\squirrel3\squirrel\sqarray.h">
+      <Filter>Externs\squirrel3\squirrel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\squirrel3\squirrel\sqclass.h">
+      <Filter>Externs\squirrel3\squirrel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\squirrel3\squirrel\sqclosure.h">
+      <Filter>Externs\squirrel3\squirrel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\squirrel3\squirrel\sqcompiler.h">
+      <Filter>Externs\squirrel3\squirrel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\squirrel3\squirrel\sqfuncproto.h">
+      <Filter>Externs\squirrel3\squirrel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\squirrel3\squirrel\sqfuncstate.h">
+      <Filter>Externs\squirrel3\squirrel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\squirrel3\squirrel\sqlexer.h">
+      <Filter>Externs\squirrel3\squirrel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\squirrel3\squirrel\sqobject.h">
+      <Filter>Externs\squirrel3\squirrel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\squirrel3\squirrel\sqopcodes.h">
+      <Filter>Externs\squirrel3\squirrel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\squirrel3\squirrel\sqpcheader.h">
+      <Filter>Externs\squirrel3\squirrel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\squirrel3\squirrel\sqstate.h">
+      <Filter>Externs\squirrel3\squirrel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\squirrel3\squirrel\sqstring.h">
+      <Filter>Externs\squirrel3\squirrel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\squirrel3\squirrel\sqtable.h">
+      <Filter>Externs\squirrel3\squirrel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\squirrel3\squirrel\squserdata.h">
+      <Filter>Externs\squirrel3\squirrel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\squirrel3\squirrel\squtf8.h">
+      <Filter>Externs\squirrel3\squirrel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\squirrel3\squirrel\squtils.h">
+      <Filter>Externs\squirrel3\squirrel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\squirrel3\squirrel\sqvm.h">
+      <Filter>Externs\squirrel3\squirrel</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\Externs\sqrat\sqratimport.cpp">
+      <Filter>Externs\sqrat</Filter>
+    </ClCompile>
+    <ClCompile Include="WaloPlayer.cpp" />
+    <ClCompile Include="..\Externs\squirrel3\sqstdlib\sqstdaux.cpp">
+      <Filter>Externs\squirrel3\sqstdlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\squirrel3\sqstdlib\sqstdblob.cpp">
+      <Filter>Externs\squirrel3\sqstdlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\squirrel3\sqstdlib\sqstdio.cpp">
+      <Filter>Externs\squirrel3\sqstdlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\squirrel3\sqstdlib\sqstdmath.cpp">
+      <Filter>Externs\squirrel3\sqstdlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\squirrel3\sqstdlib\sqstdrex.cpp">
+      <Filter>Externs\squirrel3\sqstdlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\squirrel3\sqstdlib\sqstdstream.cpp">
+      <Filter>Externs\squirrel3\sqstdlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\squirrel3\sqstdlib\sqstdstring.cpp">
+      <Filter>Externs\squirrel3\sqstdlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\squirrel3\sqstdlib\sqstdsystem.cpp">
+      <Filter>Externs\squirrel3\sqstdlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\squirrel3\squirrel\sqapi.cpp">
+      <Filter>Externs\squirrel3\squirrel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\squirrel3\squirrel\sqbaselib.cpp">
+      <Filter>Externs\squirrel3\squirrel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\squirrel3\squirrel\sqclass.cpp">
+      <Filter>Externs\squirrel3\squirrel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\squirrel3\squirrel\sqcompiler.cpp">
+      <Filter>Externs\squirrel3\squirrel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\squirrel3\squirrel\sqdebug.cpp">
+      <Filter>Externs\squirrel3\squirrel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\squirrel3\squirrel\sqfuncstate.cpp">
+      <Filter>Externs\squirrel3\squirrel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\squirrel3\squirrel\sqlexer.cpp">
+      <Filter>Externs\squirrel3\squirrel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\squirrel3\squirrel\sqmem.cpp">
+      <Filter>Externs\squirrel3\squirrel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\squirrel3\squirrel\sqobject.cpp">
+      <Filter>Externs\squirrel3\squirrel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\squirrel3\squirrel\sqstate.cpp">
+      <Filter>Externs\squirrel3\squirrel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\squirrel3\squirrel\sqtable.cpp">
+      <Filter>Externs\squirrel3\squirrel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\squirrel3\squirrel\sqvm.cpp">
+      <Filter>Externs\squirrel3\squirrel</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="..\WaloEngine.res">
+      <Filter>Resources</Filter>
+    </Resource>
+  </ItemGroup>
+</Project>
