@@ -1,13 +1,19 @@
 #pragma once
 
+#include "Config.hpp"
+
 #include "Render/Render.hpp"
 #include "Core/List.hpp"
 #include "Core/Log.hpp"
 
-#ifdef WALO_PLATFORM_IOS
+#if defined(WALO_PLATFORM_IOS)
 #include <Device/iOS/DeviceIOS.hpp>
 #include <OpenGLES/ES2/gl.h>
 #include <OpenGLES/ES2/glext.h>
+#elif defined(WALO_PLATFORM_ANDROID)
+#include <Device/Android/DeviceAndroid.hpp>
+#include <GLES2/gl2.h>
+#include <GLES2/gl2ext.h>
 #endif
 
 #ifdef _DEBUG

@@ -8,6 +8,8 @@
 #include "Device/Linux/DeviceLinux.hpp"
 #elif defined(WALO_PLATFORM_IOS)
 #include "Device/iOS/DeviceIOS.hpp"
+#elif defined(WALO_PLATFORM_OSX)
+#include "Device/OSX/DeviceOSX.hpp"
 #elif defined(WALO_PLATFORM_WINPH) || defined(WALOENGINE_PLATFORM_WINRT)
 #include "Device/WinRT/DeviceWinRT.hpp"
 #include "Device/WinRT/CurlThreadWrapper.hpp"
@@ -35,6 +37,8 @@ CDevice* CDevice::CreateDevice()
 	return new CDeviceAndroid();
 #elif defined(WALO_PLATFORM_IOS)
 	return new CDeviceIOS();
+#elif defined(WALO_PLATFORM_OSX)
+    return new CDeviceOSX();
 #elif defined(WALO_PLATFORM_WINPH) || defined(WALO_PLATFORM_WINRT)
 	return new CDeviceWinRT();
 #elif defined(WALO_PLATFORM_LINUX)

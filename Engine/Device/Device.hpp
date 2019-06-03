@@ -30,7 +30,7 @@ public:
 	virtual bool	Flush() = 0;
 	virtual bool	SetContext() = 0;
 
-	const CVector2& GetScreenSize() const 
+	CVector2 GetScreenSize() const 
 	{
 		return m_ScreenSize;
 	}

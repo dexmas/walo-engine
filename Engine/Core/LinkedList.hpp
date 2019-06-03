@@ -113,7 +113,7 @@ public:
 		}
 	}
 
-	void Clean()
+	void Clear()
 	{
 		m_Head = 0;
 		m_Tail = 0;

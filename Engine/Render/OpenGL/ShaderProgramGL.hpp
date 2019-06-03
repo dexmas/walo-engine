@@ -3,7 +3,13 @@
 
 #include "Core/Map.hpp"
 
+#if defined(WALO_PLATFORM_WIN32)
 #include <glew.h>
+#elif defined(WALO_PLATFORM_OSX)
+#include <OpenGL/OpenGL.h>
+#include <OpenGL/gl3.h>
+#include <OpenGL/glext.h>
+#endif
 
 class CShaderUniformGL
 {
@@ -50,22 +56,35 @@ public:
 
 		// TODO: Bind only exist locations?
 		glBindAttribLocation(m_Handle, 0, "iPos");
-		glBindAttribLocation(m_Handle, 1, "iNormal");
+		//glBindAttribLocation(m_Handle, 1, "iNormal");
 		glBindAttribLocation(m_Handle, 2, "iColor");
 		glBindAttribLocation(m_Handle, 3, "iTexCoord1");
-		glBindAttribLocation(m_Handle, 4, "iTexCoord2");
-		glBindAttribLocation(m_Handle, 5, "iTexCoord3");
-		glBindAttribLocation(m_Handle, 6, "iTexCoord4");
-		glBindAttribLocation(m_Handle, 7, "iTangent");
+		//glBindAttribLocation(m_Handle, 4, "iTexCoord2");
+		//glBindAttribLocation(m_Handle, 5, "iTexCoord3");
+		//glBindAttribLocation(m_Handle, 6, "iTexCoord4");
+		//glBindAttribLocation(m_Handle, 7, "iTangent");
+		
+		TEST_GL_ERROR();
 
 		glAttachShader(m_Handle, m_VertexShader->GetHandle());
 		glAttachShader(m_Handle, m_PixelShader->GetHandle());
 		glLinkProgram(m_Handle);
-
+		
 		s32 linkStatus;
 		glGetProgramiv(m_Handle, GL_LINK_STATUS, &linkStatus);
+		
+		if(linkStatus == GL_FALSE)
+		{
+			LOG("! Shader link error.\n");
+			
+			return false;
+		}
+		
+		TEST_GL_ERROR();
 
 		glUseProgram(m_Handle);
+		
+		TEST_GL_ERROR();
 
 		const int MAX_PARAMETER_NAME_LENGTH = 256;
 		char uniformName[MAX_PARAMETER_NAME_LENGTH];
@@ -76,7 +95,7 @@ public:
 		{
 			unsigned type;
 			int count;
-        
+			
 			glGetActiveUniform(m_Handle, i, MAX_PARAMETER_NAME_LENGTH, 0, &count, &type, uniformName);
 			s32 location = glGetUniformLocation(m_Handle, uniformName);
 
@@ -127,6 +146,8 @@ public:
 				}
 			}
 		}
+        
+        TEST_GL_ERROR();
 
 		return (linkStatus == GL_TRUE);
 	}
@@ -160,6 +181,8 @@ public:
 				break;
 			}
 		}
+		
+		TEST_GL_ERROR();
 
 		return true;
 	}

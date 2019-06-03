@@ -6,7 +6,6 @@
 
 CCamera3D::CCamera3D():CComponentImpl<CScene3D>(ECT_CAMERA3D)
 {
-	m_View = CMatrix4::IDENTY;
 	m_Projection = CMatrix4::IDENTY;
 	m_Projection.Perspective(CMath::PI/2.5f, 4.0f/3.0f, 0.10f, 1000.0f);
 }

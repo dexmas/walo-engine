@@ -1,7 +1,7 @@
 #pragma once
 
 #include "Core/String.hpp"
-#include "FileSystem/Stream.hpp"
+#include "Filesystem/Stream.hpp"
 
 enum EAssetType
 {

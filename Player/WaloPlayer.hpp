@@ -22,6 +22,7 @@
 #include "Wrappers/Sprite2DWrapper.hpp"
 #include "Wrappers/Progress2DWrapper.hpp"
 #include "Wrappers/Text2DWrapper.hpp"
+#include "Wrappers/TileMap2DWrapper.hpp"
 #include "Wrappers/RigidBody2DWrapper.hpp"
 #include "Wrappers/CollisionShape2DWrapper.hpp"
 #include "Wrappers/CollisionBox2DWrapper.hpp"
@@ -30,8 +31,6 @@
 #include "Wrappers/Camera3DWrapper.hpp"
 #include "Wrappers/InputSystemWrapper.hpp"
 #include "Wrappers/SaveFileWrapper.hpp"
-
-#include "Wrappers/PathMap.hpp"
 
 class CPlayer: public CGame
 {
@@ -65,7 +64,9 @@ private:
 	static bool		  _ExecuteFile(HSQUIRRELVM _vm, const char* _fname);
 	static void		  _RegisterScriptClasses(HSQUIRRELVM _vm);
 
-	static HSQUIRRELVM	m_SquirrelVirtualMachine;
+#if defined(WALO_PLATFORM_WIN32)
+	static HANDLE m_hConsole;
+#endif
 
 	HSQOBJECT m_Object;
 

@@ -163,6 +163,24 @@
     <Filter Include="Sources\Assets">
       <UniqueIdentifier>{94c6b923-39e3-4019-8d04-27ff4c47708b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Externs\openal\ALc\backends">
+      <UniqueIdentifier>{11120146-d30f-4348-ac0b-252ca06f6eca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Externs\openal\OpenAL32\include">
+      <UniqueIdentifier>{005e6f45-4f7e-44a5-8adb-e738a8447bcd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\Filesystem\Android">
+      <UniqueIdentifier>{1dc0b7ec-0b13-4a61-b78c-49132c90d0c6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\Device\Android">
+      <UniqueIdentifier>{95eb4942-0042-4f9b-b20a-fee72aa49f07}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\Device\OSX">
+      <UniqueIdentifier>{03d89bc9-b50e-420f-883c-13de038cdc7c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Externs\tinythread">
+      <UniqueIdentifier>{9a28b7cb-1bb8-43d4-be6f-894ce6e00713}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Externs\Civetweb\src\civetweb.c">
@@ -279,101 +297,14 @@
     <ClCompile Include="Scene\Scene2D\Font2D.cpp">
       <Filter>Sources\Scene\Scene2D</Filter>
     </ClCompile>
+    <ClCompile Include="Scene\Scene2D\TileMap2D.cpp">
+      <Filter>Sources\Scene\Scene2D</Filter>
+    </ClCompile>
     <ClCompile Include="Scene\Scene2D\Object2D.cpp">
       <Filter>Sources\Scene\Scene2D</Filter>
     </ClCompile>
     <ClCompile Include="Sound\SoundStream.cpp">
       <Filter>Sources\Audio</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Externs\openal\Alc\ALc.c">
-      <Filter>Externs\openal\ALc</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Externs\openal\Alc\alcConfig.c">
-      <Filter>Externs\openal\ALc</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Externs\openal\Alc\alcEcho.c">
-      <Filter>Externs\openal\ALc</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Externs\openal\Alc\alcModulator.c">
-      <Filter>Externs\openal\ALc</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Externs\openal\Alc\alcReverb.c">
-      <Filter>Externs\openal\ALc</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Externs\openal\Alc\alcRing.c">
-      <Filter>Externs\openal\ALc</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Externs\openal\Alc\alcThread.c">
-      <Filter>Externs\openal\ALc</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Externs\openal\Alc\alsa.c">
-      <Filter>Externs\openal\ALc</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Externs\openal\Alc\ALu.c">
-      <Filter>Externs\openal\ALc</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Externs\openal\Alc\android.cpp">
-      <Filter>Externs\openal\ALc</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Externs\openal\Alc\bs2b.c">
-      <Filter>Externs\openal\ALc</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Externs\openal\Alc\dsound.c">
-      <Filter>Externs\openal\ALc</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Externs\openal\Alc\null.c">
-      <Filter>Externs\openal\ALc</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Externs\openal\Alc\oss.c">
-      <Filter>Externs\openal\ALc</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Externs\openal\Alc\portaudio.c">
-      <Filter>Externs\openal\ALc</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Externs\openal\Alc\pulseaudio.c">
-      <Filter>Externs\openal\ALc</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Externs\openal\Alc\solaris.c">
-      <Filter>Externs\openal\ALc</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Externs\openal\Alc\wave.c">
-      <Filter>Externs\openal\ALc</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Externs\openal\Alc\winmm.c">
-      <Filter>Externs\openal\ALc</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Externs\openal\OpenAL32\alAuxEffectSlot.c">
-      <Filter>Externs\openal\OpenAL32</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Externs\openal\OpenAL32\alBuffer.c">
-      <Filter>Externs\openal\OpenAL32</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Externs\openal\OpenAL32\alDatabuffer.c">
-      <Filter>Externs\openal\OpenAL32</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Externs\openal\OpenAL32\alEffect.c">
-      <Filter>Externs\openal\OpenAL32</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Externs\openal\OpenAL32\alError.c">
-      <Filter>Externs\openal\OpenAL32</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Externs\openal\OpenAL32\alExtension.c">
-      <Filter>Externs\openal\OpenAL32</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Externs\openal\OpenAL32\alFilter.c">
-      <Filter>Externs\openal\OpenAL32</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Externs\openal\OpenAL32\alListener.c">
-      <Filter>Externs\openal\OpenAL32</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Externs\openal\OpenAL32\alSource.c">
-      <Filter>Externs\openal\OpenAL32</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Externs\openal\OpenAL32\alState.c">
-      <Filter>Externs\openal\OpenAL32</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Externs\openal\OpenAL32\alThunk.c">
-      <Filter>Externs\openal\OpenAL32</Filter>
     </ClCompile>
     <ClCompile Include="..\Externs\vorbis\lib\analysis.c">
       <Filter>Externs\vorbis\lib</Filter>
@@ -648,6 +579,132 @@
     <ClCompile Include="Scene\Input\Gesturer.cpp">
       <Filter>Sources\Scene\Input</Filter>
     </ClCompile>
+    <ClCompile Include="..\Externs\openal\Alc\ALc.c">
+      <Filter>Externs\openal\ALc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\openal\Alc\alcConfig.c">
+      <Filter>Externs\openal\ALc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\openal\Alc\alcDedicated.c">
+      <Filter>Externs\openal\ALc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\openal\Alc\alcEcho.c">
+      <Filter>Externs\openal\ALc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\openal\Alc\alcModulator.c">
+      <Filter>Externs\openal\ALc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\openal\Alc\alcReverb.c">
+      <Filter>Externs\openal\ALc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\openal\Alc\alcRing.c">
+      <Filter>Externs\openal\ALc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\openal\Alc\alcThread.c">
+      <Filter>Externs\openal\ALc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\openal\Alc\ALu.c">
+      <Filter>Externs\openal\ALc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\openal\Alc\bs2b.c">
+      <Filter>Externs\openal\ALc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\openal\Alc\helpers.c">
+      <Filter>Externs\openal\ALc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\openal\Alc\hrtf.c">
+      <Filter>Externs\openal\ALc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\openal\Alc\mixer.c">
+      <Filter>Externs\openal\ALc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\openal\Alc\panning.c">
+      <Filter>Externs\openal\ALc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\openal\Alc\backends\alsa.c">
+      <Filter>Externs\openal\ALc\backends</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\openal\Alc\backends\android.c">
+      <Filter>Externs\openal\ALc\backends</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\openal\Alc\backends\coreaudio.c">
+      <Filter>Externs\openal\ALc\backends</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\openal\Alc\backends\dsound.c">
+      <Filter>Externs\openal\ALc\backends</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\openal\Alc\backends\loopback.c">
+      <Filter>Externs\openal\ALc\backends</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\openal\Alc\backends\mmdevapi.c">
+      <Filter>Externs\openal\ALc\backends</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\openal\Alc\backends\null.c">
+      <Filter>Externs\openal\ALc\backends</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\openal\Alc\backends\opensl.c">
+      <Filter>Externs\openal\ALc\backends</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\openal\Alc\backends\oss.c">
+      <Filter>Externs\openal\ALc\backends</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\openal\Alc\backends\portaudio.c">
+      <Filter>Externs\openal\ALc\backends</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\openal\Alc\backends\pulseaudio.c">
+      <Filter>Externs\openal\ALc\backends</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\openal\Alc\backends\sndio.c">
+      <Filter>Externs\openal\ALc\backends</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\openal\Alc\backends\solaris.c">
+      <Filter>Externs\openal\ALc\backends</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\openal\Alc\backends\wave.c">
+      <Filter>Externs\openal\ALc\backends</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\openal\Alc\backends\winmm.c">
+      <Filter>Externs\openal\ALc\backends</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\openal\OpenAL32\alAuxEffectSlot.c">
+      <Filter>Externs\openal\OpenAL32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\openal\OpenAL32\alBuffer.c">
+      <Filter>Externs\openal\OpenAL32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\openal\OpenAL32\alEffect.c">
+      <Filter>Externs\openal\OpenAL32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\openal\OpenAL32\alError.c">
+      <Filter>Externs\openal\OpenAL32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\openal\OpenAL32\alExtension.c">
+      <Filter>Externs\openal\OpenAL32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\openal\OpenAL32\alFilter.c">
+      <Filter>Externs\openal\OpenAL32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\openal\OpenAL32\alListener.c">
+      <Filter>Externs\openal\OpenAL32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\openal\OpenAL32\alSource.c">
+      <Filter>Externs\openal\OpenAL32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\openal\OpenAL32\alState.c">
+      <Filter>Externs\openal\OpenAL32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\openal\OpenAL32\alThunk.c">
+      <Filter>Externs\openal\OpenAL32</Filter>
+    </ClCompile>
+    <ClCompile Include="Filesystem\Android\FileStreamAndroid.cpp">
+      <Filter>Sources\Filesystem\Android</Filter>
+    </ClCompile>
+    <ClCompile Include="Device\Android\DeviceAndroid.cpp">
+      <Filter>Sources\Device\Android</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\tinythread\tinythread.cpp">
+      <Filter>Externs\tinythread</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Externs\Civetweb\include\civetweb.h">
@@ -666,9 +723,6 @@
       <Filter>Sources\Device</Filter>
     </ClInclude>
     <ClInclude Include="Device\Event.hpp">
-      <Filter>Sources\Device</Filter>
-    </ClInclude>
-    <ClInclude Include="Device\Thread.hpp">
       <Filter>Sources\Device</Filter>
     </ClInclude>
     <ClInclude Include="Device\Win32\DeviceWin32.hpp">
@@ -765,9 +819,6 @@
       <Filter>Sources\Render\OpenGL</Filter>
     </ClInclude>
     <ClInclude Include="..\Externs\GLEW\glew.h">
-      <Filter>Externs\glew</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Externs\GLEW\glxew.h">
       <Filter>Externs\glew</Filter>
     </ClInclude>
     <ClInclude Include="..\Externs\GLEW\wglew.h">
@@ -887,6 +938,9 @@
     <ClInclude Include="..\Externs\pugixml\pugixml.hpp">
       <Filter>Externs\pugixml</Filter>
     </ClInclude>
+    <ClInclude Include="Scene\Scene2D\TileMap2D.hpp">
+      <Filter>Sources\Scene\Scene2D</Filter>
+    </ClInclude>
     <ClInclude Include="Scene\Sound\SoundSource.hpp">
       <Filter>Sources\Scene\Sound</Filter>
     </ClInclude>
@@ -913,60 +967,6 @@
     </ClInclude>
     <ClInclude Include="..\Externs\openal\config.h">
       <Filter>Externs\openal</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Externs\openal\AL\al.h">
-      <Filter>Externs\openal\AL</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Externs\openal\AL\alc.h">
-      <Filter>Externs\openal\AL</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Externs\openal\AL\alext.h">
-      <Filter>Externs\openal\AL</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Externs\openal\AL\efx.h">
-      <Filter>Externs\openal\AL</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Externs\openal\AL\efx-creative.h">
-      <Filter>Externs\openal\AL</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Externs\openal\OpenAL32\alAuxEffectSlot.h">
-      <Filter>Externs\openal\OpenAL32</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Externs\openal\OpenAL32\alBuffer.h">
-      <Filter>Externs\openal\OpenAL32</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Externs\openal\OpenAL32\alDatabuffer.h">
-      <Filter>Externs\openal\OpenAL32</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Externs\openal\OpenAL32\alEffect.h">
-      <Filter>Externs\openal\OpenAL32</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Externs\openal\OpenAL32\alError.h">
-      <Filter>Externs\openal\OpenAL32</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Externs\openal\OpenAL32\alFilter.h">
-      <Filter>Externs\openal\OpenAL32</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Externs\openal\OpenAL32\alListener.h">
-      <Filter>Externs\openal\OpenAL32</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Externs\openal\OpenAL32\alMain.h">
-      <Filter>Externs\openal\OpenAL32</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Externs\openal\OpenAL32\alSource.h">
-      <Filter>Externs\openal\OpenAL32</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Externs\openal\OpenAL32\alState.h">
-      <Filter>Externs\openal\OpenAL32</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Externs\openal\OpenAL32\alThunk.h">
-      <Filter>Externs\openal\OpenAL32</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Externs\openal\OpenAL32\alu.h">
-      <Filter>Externs\openal\OpenAL32</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Externs\openal\OpenAL32\bs2b.h">
-      <Filter>Externs\openal\OpenAL32</Filter>
     </ClInclude>
     <ClInclude Include="..\Externs\vorbis\vorbis\codec.h">
       <Filter>Externs\vorbis\vorbis</Filter>
@@ -1334,6 +1334,84 @@
     <ClInclude Include="Device\iOS\GameView.h">
       <Filter>Sources\Device\iOS</Filter>
     </ClInclude>
+    <ClInclude Include="..\Externs\openal\AL\al.h">
+      <Filter>Externs\openal\AL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\openal\AL\alc.h">
+      <Filter>Externs\openal\AL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\openal\AL\alext.h">
+      <Filter>Externs\openal\AL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\openal\AL\efx.h">
+      <Filter>Externs\openal\AL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\openal\AL\efx-creative.h">
+      <Filter>Externs\openal\AL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\openal\AL\efx-presets.h">
+      <Filter>Externs\openal\AL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\openal\OpenAL32\Include\alAuxEffectSlot.h">
+      <Filter>Externs\openal\OpenAL32\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\openal\OpenAL32\Include\alBuffer.h">
+      <Filter>Externs\openal\OpenAL32\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\openal\OpenAL32\Include\alEffect.h">
+      <Filter>Externs\openal\OpenAL32\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\openal\OpenAL32\Include\alError.h">
+      <Filter>Externs\openal\OpenAL32\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\openal\OpenAL32\Include\alFilter.h">
+      <Filter>Externs\openal\OpenAL32\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\openal\OpenAL32\Include\alListener.h">
+      <Filter>Externs\openal\OpenAL32\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\openal\OpenAL32\Include\alMain.h">
+      <Filter>Externs\openal\OpenAL32\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\openal\OpenAL32\Include\alSource.h">
+      <Filter>Externs\openal\OpenAL32\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\openal\OpenAL32\Include\alState.h">
+      <Filter>Externs\openal\OpenAL32\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\openal\OpenAL32\Include\alThunk.h">
+      <Filter>Externs\openal\OpenAL32\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\openal\OpenAL32\Include\alu.h">
+      <Filter>Externs\openal\OpenAL32\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\openal\OpenAL32\Include\bs2b.h">
+      <Filter>Externs\openal\OpenAL32\include</Filter>
+    </ClInclude>
+    <ClInclude Include="Filesystem\Android\FileStreamAndroid.hpp">
+      <Filter>Sources\Filesystem\Android</Filter>
+    </ClInclude>
+    <ClInclude Include="Device\Android\DeviceAndroid.hpp">
+      <Filter>Sources\Device\Android</Filter>
+    </ClInclude>
+    <ClInclude Include="Device\OSX\AppDelegate.h">
+      <Filter>Sources\Device\OSX</Filter>
+    </ClInclude>
+    <ClInclude Include="Device\OSX\DeviceOSX.hpp">
+      <Filter>Sources\Device\OSX</Filter>
+    </ClInclude>
+    <ClInclude Include="Device\OSX\GameView.h">
+      <Filter>Sources\Device\OSX</Filter>
+    </ClInclude>
+    <ClInclude Include="Device\OSX\GameViewController.h">
+      <Filter>Sources\Device\OSX</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\tinythread\fast_mutex.h">
+      <Filter>Externs\tinythread</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Externs\tinythread\tinythread.h">
+      <Filter>Externs\tinythread</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\Externs\Civetweb\src\md5.inl">
@@ -1350,6 +1428,21 @@
     </None>
     <None Include="Device\iOS\GameView.mm">
       <Filter>Sources\Device\iOS</Filter>
+    </None>
+    <None Include="..\Externs\openal\Alc\hrtf_tables.inc">
+      <Filter>Externs\openal\ALc</Filter>
+    </None>
+    <None Include="Device\OSX\AppDelegate.mm">
+      <Filter>Sources\Device\OSX</Filter>
+    </None>
+    <None Include="Device\OSX\DeviceOSX.mm">
+      <Filter>Sources\Device\OSX</Filter>
+    </None>
+    <None Include="Device\OSX\GameView.mm">
+      <Filter>Sources\Device\OSX</Filter>
+    </None>
+    <None Include="Device\OSX\GameViewController.m">
+      <Filter>Sources\Device\OSX</Filter>
     </None>
   </ItemGroup>
 </Project>

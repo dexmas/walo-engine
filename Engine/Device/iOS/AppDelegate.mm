@@ -1,10 +1,8 @@
 
 #import "Device/iOS/AppDelegate.h"
-
 #include "Game.hpp"
-#include "Core/Log.hpp"
 
-#include "WaloPlayer.hpp"
+#include "Core/Log.hpp"
 
 BOOL     m_Active = FALSE;
 float    m_FrameInterval = 1.0f;
@@ -23,7 +21,7 @@ CFTimeInterval m_Timestamp = 0.0;
 {
     m_Active = FALSE;
     
-    CGame* game = CPlayer::Instance();
+    CGame* game = CGame::Instance();
     
     if(!game)
     {
@@ -65,7 +63,6 @@ CFTimeInterval m_Timestamp = 0.0;
     if(!game->Init())
     {
         LOG("WaloPlayer: Game initialization failed.\n");
-        system("pause");
         return 0;
     }
     
@@ -73,7 +70,7 @@ CFTimeInterval m_Timestamp = 0.0;
     
     if(!m_GameInstance)
     {
-        LOG("Critical Error: Game instance not created before app launch.\n");
+        LOG("Critical Error: Game instance was not created before app launch.\n");
         return NO;
     }
     

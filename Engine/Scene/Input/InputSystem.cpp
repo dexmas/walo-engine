@@ -2,13 +2,17 @@
 #include "Scene/Input/InputListener.hpp"
 #include "Scene/Input/Gesturer.hpp"
 
+#include <tinythread.h>
+
 CInputSystem::CInputSystem()
 {
+	m_Mutex = new tthread::mutex();
 	m_Gesturer = new CGesturer();
 }
 
 CInputSystem::~CInputSystem()
 {
+	delete m_Mutex;
 	delete m_Gesturer;
 }
 
@@ -33,9 +37,30 @@ void CInputSystem::RemoveComponent(CComponent* _comp)
 	Remove(lstnr);
 }
 
+void CInputSystem::PushInput(CInputEvent* _event)
+{
+	tthread::lock_guard<tthread::mutex> guard(*m_Mutex);
+
+	if(_event->InputType == CInputEvent::EIT_TOUCH)
+	{
+		CTouchEvent e = *((CTouchEvent*)_event);
+		m_TouchEvents.Insert(e);
+	}
+	else
+	if(_event->InputType == CInputEvent::EIT_KEYBOARD)
+	{
+		CKeyboardEvent e = *((CKeyboardEvent*)_event);
+		m_KeyboardEvents.Insert(e);
+	}
+	else
+	{
+		HandleInput(_event);
+	}
+}
+
 void CInputSystem::HandleInput(CInputEvent* _event)
 {
-	if(_event->Type != CInputEvent::EIT_GESTURE)
+	if(_event->InputType != CInputEvent::EIT_GESTURE)
 	{
 		if(m_Gesturer->HandleInput(_event))
 		{
@@ -57,6 +82,26 @@ void CInputSystem::HandleInput(CInputEvent* _event)
 
 		m_Iterator = m_Iterator->GetNext();
 	}
+}
+
+void CInputSystem::Update(f32 _dt)
+{
+	{
+	tthread::lock_guard<tthread::mutex> guard(*m_Mutex);
+
+	for(u32 i=0; i < m_TouchEvents.Size(); i++)
+	{
+		HandleInput(&(m_TouchEvents[i]));
+	}
+	m_TouchEvents.Clear();
+	for(u32 i=0; i < m_KeyboardEvents.Size(); i++)
+	{
+		HandleInput(&(m_KeyboardEvents[i]));
+	}
+	m_KeyboardEvents.Clear();
+	}
+
+	m_Gesturer->Update(_dt);
 }
 
 void CInputSystem::DropEvent()

@@ -10,10 +10,15 @@
 #include <stdarg.h>
 
 #if defined(WALO_PLATFORM_IOS)
-
 #import <UIKit/UIKit.h>
 #import <Device/iOS/AppDelegate.h>
-
+#elif defined(WALO_PLATFORM_OSX)
+#import <Cocoa/Cocoa.h>
+#import <Device/OSX/AppDelegate.h>
+#elif defined(WALO_PLATFORM_ANDROID)
+#include <Device/Android/DeviceAndroid.hpp>
+#elif defined(WALO_PLATFORM_WIN32)
+HANDLE CPlayer::m_hConsole = 0;
 #endif
 
 CPlayer::CPlayer()
@@ -73,6 +78,10 @@ void CPlayer::Configure()
 
 bool CPlayer::RunScript(const char* _fname)
 {
+#if defined(WALO_PLATFORM_WIN32)
+	m_hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+#endif
+
 	HSQUIRRELVM vm = sq_open(1024);
 
 	Sqrat::DefaultVM::Set(vm);
@@ -80,7 +89,7 @@ bool CPlayer::RunScript(const char* _fname)
 #ifdef _DEBUG
 	sq_enabledebuginfo(vm, true);
 #else
-	sq_enabledebuginfo(m_SquirrelVirtualMachine, false);
+	sq_enabledebuginfo(vm, false);
 #endif
 
 	// Register error handlers
@@ -130,6 +139,10 @@ bool CPlayer::RunScript(const char* _fname)
 
 void CPlayer::_PrintHandler(HSQUIRRELVM _vm, const SQChar* _text,...)
 {
+#if defined(WALO_PLATFORM_WIN32)
+	SetConsoleTextAttribute(m_hConsole, FOREGROUND_GREEN);
+#endif
+
 	va_list vl;
 	va_start(vl, _text);
 	VLOG(_text, vl);
@@ -148,9 +161,17 @@ SQInteger CPlayer::_RuntimeErrorHandler(HSQUIRRELVM _vm)
 		SQChar buf[512];
 		buf[0] = 0;
 
+#if defined(WALO_PLATFORM_WIN32)
+		SetConsoleTextAttribute(m_hConsole, FOREGROUND_RED);
+#endif
+
 		if(SQ_SUCCEEDED(sq_stackinfos(_vm, 1, &si)))
 		{
+#ifndef _SQ64
 			sprintf(buf, "%s : %d (%s)", si.source, si.line, si.funcname);
+#else
+			sprintf(buf, "%s : %lld (%s)", si.source, si.line, si.funcname);
+#endif
 		}
 
 		if(SQ_SUCCEEDED(sq_getstring(_vm, 2, &sErr)))
@@ -170,7 +191,15 @@ SQInteger CPlayer::_RuntimeErrorHandler(HSQUIRRELVM _vm)
 
 void CPlayer::_CompileErrorHandler(HSQUIRRELVM _vm, const SQChar* _desc, const SQChar* _source, SQInteger _line, SQInteger _column)
 {
+#if defined(WALO_PLATFORM_WIN32)
+	SetConsoleTextAttribute(m_hConsole, FOREGROUND_RED);
+#endif
+    
+#ifndef _SQ64
 	LOG_RELEASE("WaloPlayer: [Compile Error] %s(%d:%d): %s\n", _source, _line, _column, _desc);
+#else
+	LOG_RELEASE("WaloPlayer: [Compile Error] %s(%lld:%lld): %s\n", _source, _line, _column, _desc);
+#endif
 
 	fflush(stdout);
 }
@@ -310,6 +339,7 @@ void CPlayer::_RegisterScriptClasses(HSQUIRRELVM _vm)
 	CSprite2DWrapper::Register(_vm);
 	CProgress2DWrapper::Register(_vm);
 	CText2DWrapper::Register(_vm);
+	CTileMap2DWrapper::Register(_vm);
 	CRigidBody2DWrapper::Register(_vm);
 	CCollisionShape2DWrapper::Register(_vm);
 	CCollisionBox2DWrapper::Register(_vm);
@@ -318,8 +348,6 @@ void CPlayer::_RegisterScriptClasses(HSQUIRRELVM _vm)
 	CCamera3DWrapper::Register(_vm);
 	CInputSystemWrapper::Register(_vm);
 	CSaveFileWrapper::Register(_vm);
-
-	CPathMap::Register(_vm);
 
 	Sqrat::DerivedClass<CPlayer, CNodeWrapper, Sqrat::NoCopy<CPlayer> > cl(_vm);
 
@@ -337,12 +365,13 @@ void CPlayer::_RegisterScriptClasses(HSQUIRRELVM _vm)
 	Sqrat::RootTable(_vm).Bind("CGame", cl);
 }
 
+#if !defined(WALO_PLATFORM_ANDROID)
+
 int main(int _argc, char* _argv[])
 {
     if(!CPlayer::RunScript("main.nut"))
     {
-        system("pause");
-        return 0;
+        return -1;
     }
     
     CPlayer* pGame = (CPlayer*)CPlayer::Instance();
@@ -350,8 +379,7 @@ int main(int _argc, char* _argv[])
     if(!pGame)
     {
         LOG("WaloPlayer: Game instance not created in script.\n");
-        system("pause");
-        return 0;
+        return -1;
     }
 
 	pGame->Configure();
@@ -361,8 +389,7 @@ int main(int _argc, char* _argv[])
     if(!pGame->Init())
     {
         LOG("WaloPlayer: Game initialization failed.\n");
-        system("pause");
-        return 0;
+        return -1;
     }
 
 	while(!pGame->GetDevice()->GetClosed())
@@ -381,12 +408,23 @@ int main(int _argc, char* _argv[])
         return UIApplicationMain(_argc, _argv, nil, NSStringFromClass([AppDelegate class]));
     }
     
+#elif defined(WALO_PLATFORM_OSX)
+    
+    @autoreleasepool
+    {
+        [NSApplication sharedApplication];
+        [NSApp setDelegate:[[AppDelegate alloc] init]];
+        [NSApp run];
+    }
+    
 #else
 
     #error Entry point for WaloPlayer not defined
 
 #endif
-
+    
 	return 0;
 }
+
+#endif
 

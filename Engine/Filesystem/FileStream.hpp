@@ -1,6 +1,6 @@
 #pragma once
 
-#include "FileSystem/Stream.hpp"
+#include "Filesystem/Stream.hpp"
 #include "Core/String.hpp"
 
 #include <stdio.h>
@@ -10,7 +10,7 @@ class CFileStream: public CStream
 	friend class CFileSystem;
 
 public:
-	~CFileStream();
+	virtual ~CFileStream();
 
 	virtual bool Open();
 	virtual void Close();
@@ -27,6 +27,5 @@ protected:
 	bool m_Write;
 	CString m_Path;
 
-private:
 	CFileStream(CString _path, bool _write);
 };

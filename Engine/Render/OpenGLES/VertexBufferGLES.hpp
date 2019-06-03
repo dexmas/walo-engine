@@ -1,9 +1,16 @@
 #pragma once
 
+#include "Config.hpp"
+
 #include "Render/VertexBuffer.hpp"
 
+#if defined(WALO_PLATFORM_ANDROID)
+#include <GLES2/gl2.h>
+#include <GLES2/gl2ext.h>
+#else
 #include <OpenGLES/ES2/gl.h>
 #include <OpenGLES/ES2/glext.h>
+#endif
 
 const u32 g_GLVertexElementComponents[] =
 {

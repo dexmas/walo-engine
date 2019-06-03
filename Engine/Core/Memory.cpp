@@ -1,4 +1,4 @@
-#ifdef _DEBUG
+/*#ifdef _DEBUG
 
 #include "Core/Memory.hpp"
 #include "Core/Types.hpp"
@@ -45,4 +45,4 @@ void  operator delete[](void* block) throw()
 	}
 }
 
-#endif
+#endif*/

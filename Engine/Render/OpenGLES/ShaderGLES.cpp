@@ -2,8 +2,13 @@
 #include "Render/OpenGLES/ShaderGLES.hpp"
 #include "Core/String.hpp"
 
+#if defined(WALO_PLATFORM_ANDROID)
+#include <GLES2/gl2.h>
+#include <GLES2/gl2ext.h>
+#else
 #include <OpenGLES/ES2/gl.h>
 #include <OpenGLES/ES2/glext.h>
+#endif
 
 CShaderGLES::CShaderGLES(EShaderType _type):CShader(_type)
 {
@@ -25,9 +30,14 @@ CShaderGLES::~CShaderGLES()
 	glDeleteShader(m_Handle);
 }
 
-bool CShaderGLES::_Upload(void* _data)
+bool CShaderGLES::_Upload(const char* _data)
 {
-	glShaderSource(m_Handle, 1, (const char**)(&_data), 0);
+    CString shader = "#version 100\n";
+    shader += _data;
+    
+    const char* buffer = shader.CStr();
+    
+    glShaderSource(m_Handle, 1, &buffer, 0);
 	glCompileShader(m_Handle);
 
 	s32 compilationStatus;

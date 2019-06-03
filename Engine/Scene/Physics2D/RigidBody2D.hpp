@@ -17,7 +17,8 @@ public:
 	b2Body* GetBody() {return m_Body;}
 
 protected:
-	void OnEnabled(bool _enabled);
+	void SetEnabled(bool _enabled);
+
 	void OnTransformed();
 
 	void OnAttached(CComponent* _component);
@@ -25,6 +26,5 @@ protected:
 	void OnDetached(CComponent* _component);
 
 private:
-	CCollisionShape2D* m_CollisionShape;
 	b2Body* m_Body;
 };

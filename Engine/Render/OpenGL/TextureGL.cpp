@@ -1,4 +1,5 @@
 #include "Render/OpenGL/TextureGL.hpp"
+#include "Render/OpenGL/RenderGL.hpp"
 
 CTextureGL::CTextureGL()
 {
@@ -13,7 +14,6 @@ CTextureGL::~CTextureGL()
 bool CTextureGL::_UpdateSize()
 {
 	GLuint format = 0;
-	GLuint intfmt = 0;
 
 	switch(m_Components)
 	{
@@ -21,7 +21,7 @@ bool CTextureGL::_UpdateSize()
 		format = GL_ALPHA;
 		break;
 	case 2:
-		format = GL_LUMINANCE_ALPHA;
+		format = GL_ALPHA;
 		break;
 	case 3:
 		format = GL_RGB;
@@ -38,6 +38,8 @@ bool CTextureGL::_UpdateSize()
 
 	glBindTexture(GL_TEXTURE_2D, m_Handle);
 	glTexImage2D(GL_TEXTURE_2D, 0, format, m_TextureW, m_TextureH, 0, format, GL_UNSIGNED_BYTE, 0);
+    
+    TEST_GL_ERROR();
 
 	return true;
 }
@@ -45,7 +47,6 @@ bool CTextureGL::_UpdateSize()
 bool CTextureGL::_Upload(void* _data, u32 _x, u32 _y, u32 _w, u32 _h)
 {
 	GLuint format = 0;
-	GLuint intfmt = 0;
 
 	switch(m_Components)
 	{
@@ -53,7 +54,7 @@ bool CTextureGL::_Upload(void* _data, u32 _x, u32 _y, u32 _w, u32 _h)
 		format = GL_ALPHA;
 		break;
 	case 2:
-		format = GL_LUMINANCE_ALPHA;
+		format = GL_ALPHA;
 		break;
 	case 3:
 		format = GL_RGB;
@@ -78,6 +79,8 @@ bool CTextureGL::_Upload(void* _data, u32 _x, u32 _y, u32 _w, u32 _h)
 	{
 		glTexSubImage2D(GL_TEXTURE_2D, 0, _x, _y, _w, _h, format, GL_UNSIGNED_BYTE, _data);
 	}
+    
+    TEST_GL_ERROR();
 
 	return true;
 }

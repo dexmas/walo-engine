@@ -1,5 +1,30 @@
 #pragma once
 
+#include "Config.hpp"
+#include "Core/Log.hpp"
+
+#if defined(WALO_PLATFORM_WIN32)
+#include <glew.h>
+#elif defined(WALO_PLATFORM_OSX)
+#include <OpenGL/OpenGL.h>
+#include <OpenGL/gl3.h>
+#include <OpenGL/glext.h>
+#endif
+
+#ifdef _DEBUG
+static void TestGLError()
+{
+    GLenum errCode;
+    if((errCode = glGetError() ) != GL_NO_ERROR)
+    {
+        LOG("! OpenGL Error (%s).\n", (char*)glGetString(errCode));
+    }
+}
+#define TEST_GL_ERROR TestGLError
+#else
+#define TEST_GL_ERROR()
+#endif
+
 #include "Render/Render.hpp"
 #include "Core/List.hpp"
 
@@ -8,8 +33,6 @@
 #ifdef WALO_PLATFORM_WIN32
 #include <Windows.h>
 #endif
-
-#include <glew.h>
 
 class CRenderGL: public CRender
 {

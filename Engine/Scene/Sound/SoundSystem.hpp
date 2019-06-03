@@ -5,7 +5,11 @@
 #include "Core/LinkedList.hpp"
 #include "Sound/SoundManager.hpp"
 
-#include "Device/Thread.hpp"
+namespace tthread
+{
+class thread;
+class mutex;
+}
 
 class CSoundSource;
 
@@ -26,7 +30,8 @@ public:
 
 private:
 	
-	CThread m_SoundUpdateThread;
+	tthread::thread* m_Thread;
+	tthread::mutex* m_Mutex;
 	CSoundManager* m_SoundManager;
 
 	CSoundSource* m_Iterator;

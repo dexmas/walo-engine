@@ -278,7 +278,8 @@ public:
 		EGE_UNKNOWN = 0,
 		EGE_ROTOZOOM,
 		EGE_DRAG,
-		EGE_TAP
+		EGE_TAP,
+		EGE_LONGTAP
 	};
 
 	CGestureEvent(EGestureType _gesture)

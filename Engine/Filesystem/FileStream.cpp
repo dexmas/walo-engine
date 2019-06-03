@@ -1,4 +1,4 @@
-#include "FileSystem/FileStream.hpp"
+#include "Filesystem/FileStream.hpp"
 
 CFileStream::CFileStream(CString _path, bool _write)
 {
@@ -6,8 +6,6 @@ CFileStream::CFileStream(CString _path, bool _write)
 	m_Write = _write;
 	m_File = 0;
 	m_Opened = false;
-
-	Open();
 }
 
 CFileStream::~CFileStream()

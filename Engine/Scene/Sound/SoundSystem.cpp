@@ -1,7 +1,9 @@
 #include "Scene/Sound/SoundSystem.hpp"
 #include "Scene/Sound/SoundSource.hpp"
 
-static void* _ThreadRoutine(void* _param)
+#include <tinythread.h>
+
+static void _ThreadRoutine(void* _param)
 {
 	CSoundSystem* sSystem = (CSoundSystem*)_param;
 	while(1)
@@ -19,18 +21,21 @@ static void* _ThreadRoutine(void* _param)
 CSoundSystem::CSoundSystem()
 {
 	m_SoundManager = CSoundManager::CreateManager();
-	m_SoundUpdateThread.Start(&_ThreadRoutine, this);
+	m_Thread = new tthread::thread(_ThreadRoutine, this);
+	m_Mutex = new tthread::mutex();
 	m_Iterator = 0;
 }
 
 CSoundSystem::~CSoundSystem()
 {
-	m_SoundUpdateThread.Stop();
-
-	if(m_SoundManager)
+ 	if (m_Thread->joinable())
 	{
-		delete m_SoundManager;
+ 		m_Thread->join();
 	}
+
+	delete m_Thread;
+	delete m_Mutex;
+	delete m_SoundManager;
 }
 
 CSoundManager* CSoundSystem::GetSoundManager() 
@@ -60,6 +65,8 @@ void CSoundSystem::RemoveComponent(CComponent* _comp)
 
 void CSoundSystem::UpdateSound()
 {
+	tthread::lock_guard<tthread::mutex> guard(*m_Mutex);
+
 	m_Iterator = GetHead();
 
 	while(m_Iterator)

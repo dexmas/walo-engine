@@ -10,6 +10,8 @@
 #include "Render/OpenGL/RenderGL.hpp"
 #elif defined(WALO_PLATFORM_IOS)
 #include "Render/OpenGLES/RenderGLES.hpp"
+#elif defined(WALO_PLATFORM_OSX)
+#include "Render/OpenGL/RenderGL.hpp"
 #elif defined(WALO_PLATFORM_WINPH) || defined(WALO_PLATFORM_WINRT)
 #include "Render/DirectX11/RenderDX11.hpp"
 #endif
@@ -31,17 +33,13 @@ CRender::CRender()
 
 CRender* CRender::CreateRender()
 {
-#if defined(WALO_PLATFORM_WIN32)
+#if defined(WALO_PLATFORM_WIN32) || defined(WALO_PLATFORM_OSX) || defined(WALO_PLATFORM_LINUX)
 	return new CRenderGL();
 	//return new CRenderDX11();
-#elif defined(WALO_PLATFORM_ANDROID)
-	return new CRenderGLES();
-#elif defined(WALO_PLATFORM_IOS)
+#elif defined(WALO_PLATFORM_ANDROID) || defined(WALO_PLATFORM_IOS)
 	return new CRenderGLES();
 #elif defined(WALO_PLATFORM_WINPH) || defined(WALO_PLATFORM_WINRT)
 	return new CRenderDX11();
-#elif defined(WALO_PLATFORM_LINUX)
-	return new CRenderGL();
 #else
 	return 0;
 #endif
@@ -118,7 +116,7 @@ CIndexBuffer* CRender::GetIndexBuffer()
 	return m_IndexBuffer;
 }
 
-const CMatrix4& CRender::GetTransform(ETransformType _type) const
+CMatrix4& CRender::GetTransform(ETransformType _type)
 {
 	return m_Transformation[_type];
 }
@@ -225,7 +223,7 @@ void CRender::SetIndexBuffer(CIndexBuffer* _buffer)
 	_SetIndexBuffer(_buffer);
 }
 
-void CRender::SetTransform(ETransformType _type, const CMatrix4& _matrix)
+void CRender::SetTransform(ETransformType _type, CMatrix4& _matrix)
 {
 	m_Transformation[_type] = _matrix;
 }

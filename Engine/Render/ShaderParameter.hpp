@@ -18,25 +18,45 @@ public:
 		m_Matrix4Value = CMatrix4::IDENTY;
 	}
 
-	CShaderParameter(float _value):CShaderParameter(ESPT_FLOAT)
+	CShaderParameter(float _value)
 	{
-		m_FloatValue = _value;
-	}
+        m_Type = ESPT_FLOAT;
+        
+        m_FloatValue = _value;
+        m_Vector2Value = CVector2(0.0f, 0.0f);
+        m_Vector3Value = CVector3(0.0f, 0.0f, 0.0f);
+        m_Matrix4Value = CMatrix4::IDENTY;
+    }
 
-	CShaderParameter(const CVector2& _value):CShaderParameter(ESPT_VECTOR2)
+	CShaderParameter(const CVector2& _value)
 	{
-		m_Vector2Value = _value;
-	}
+        m_Type = ESPT_VECTOR2;
+        
+        m_FloatValue = 0.0f;
+        m_Vector2Value = _value;
+        m_Vector3Value = CVector3(0.0f, 0.0f, 0.0f);
+        m_Matrix4Value = CMatrix4::IDENTY;
+    }
 
-	CShaderParameter(const CVector3& _value):CShaderParameter(ESPT_VECTOR3)
+	CShaderParameter(const CVector3& _value)
 	{
-		m_Vector3Value = _value;
-	}
+        m_Type = ESPT_VECTOR3;
+        
+        m_FloatValue = 0.0f;
+        m_Vector2Value = CVector2(0.0f, 0.0f);
+        m_Vector3Value = _value;
+        m_Matrix4Value = CMatrix4::IDENTY;
+    }
 
-	CShaderParameter(const CMatrix4& _value):CShaderParameter(ESPT_MATRIX4)
+	CShaderParameter(const CMatrix4& _value)
 	{
-		m_Matrix4Value = _value;
-	}
+        m_Type = ESPT_MATRIX4;
+        
+        m_FloatValue = 0.0f;
+        m_Vector2Value = CVector2(0.0f, 0.0f);
+        m_Vector3Value = CVector3(0.0f, 0.0f, 0.0f);
+        m_Matrix4Value = _value;
+    }
 
 	EShaderParamType& GetType(){return m_Type;}
 

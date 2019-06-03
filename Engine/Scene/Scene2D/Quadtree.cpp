@@ -180,7 +180,7 @@ void CQuadtreeNode::_DecDrawables()
 		parent->_DecDrawables();
 }
 
-void CQuadtreeNode::QueryVisibility(const CRect& _camera, CList<CObject2D*>& _show, CList<CObject2D*>& _hide)
+void CQuadtreeNode::QueryVisibility(const CRect& _camera, CList<CObject2D*>& _showList, CList<CObject2D*>& _hideList)
 {
 	CList<CObject2D*>::CIterator it = m_Drawables.Begin();
 
@@ -193,14 +193,14 @@ void CQuadtreeNode::QueryVisibility(const CRect& _camera, CList<CObject2D*>& _sh
 		{
 			if (drw->m_CurrentBatch == 0)
 			{
-				_show.PushBack(drw);
+				_showList.PushBack(drw);
 			}
 		}
 		else
 		{
 			if (drw->m_CurrentBatch != 0)
 			{
-				_hide.PushBack(drw);
+				_hideList.PushBack(drw);
 			}
 		}
 
@@ -213,7 +213,7 @@ void CQuadtreeNode::QueryVisibility(const CRect& _camera, CList<CObject2D*>& _sh
 		{
 			if (_camera.Intersect(m_Childs[i]->GetBound()) != EI_OUTSIDE)
 			{
-				m_Childs[i]->QueryVisibility(_camera, _show, _hide);
+				m_Childs[i]->QueryVisibility(_camera, _showList, _hideList);
 			}
 		}
 	}

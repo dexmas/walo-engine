@@ -21,7 +21,7 @@ public:
 	void Unload();
 
 protected:
-	virtual bool _Upload(void* _data){return true;}
+	virtual bool _Upload(const char* _data){return true;}
 
 	u32 m_Handle;
 	EShaderType m_Type;

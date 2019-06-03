@@ -77,25 +77,41 @@ public:
 		return UTF16to8(m_Text);
 	}
 
-	void SetTextSize(CVector2& _size)
+	void SetSize(const CVector2& _size)
 	{
-		m_TextSize = _size;
+		m_Size = _size;
 
-		if(m_Font && m_Text.Size() > 0)
+		if (m_Font && m_Text.Size() > 0)
 		{
 			_PreprocessText();
 		}
-	}
 
-	CVector2 GetTextSize()
-	{
-		return m_TextSize;
+		m_Bound = CRect(-m_Center.X, -m_Center.Y, m_Size.X, m_Size.Y);
+		m_Transform.TransformAARect(m_Bound);
+
+		if (m_ClipChild && m_Node)
+		{
+			CClipEvent cevent(m_ClipChild, m_Bound);
+			m_Node->HandleEvent(&cevent);
+		}
+
+		m_VertexesDirty = true;
+
+		if (m_CurrentBatch)
+		{
+			m_CurrentBatch->Update(this);
+		}
 	}
 
 	void SetAlignment(EHAlignment _hal, EVAlignment _val)
 	{
 		m_HAlignment = _hal;
 		m_VAlignment = _val;
+
+		if (m_Font && m_Text.Size() > 0)
+		{
+			_PreprocessText();
+		}
 
 		m_VertexesDirty = true;
 
@@ -113,8 +129,8 @@ public:
 		m_Vertexes.SetUsed(m_GlyphCount << 2);
 		m_Positions.SetUsed(m_GlyphCount << 2);
 
-		f32 nXCoord = 0.0f;
-		f32 nYCoord = 0.0f;
+		f32 nXCoord = -m_Center.X;
+		f32 nYCoord = -m_Center.Y;
 
 		CTexture* texture = m_Font->GetTexture();
 
@@ -146,22 +162,22 @@ public:
 
 					if(m_HAlignment == EHA_CENTER)
 					{
-						ox = (m_TextSize.X - line.Width)/2.0f;
+						ox = (m_Size.X - line.Width)/2.0f;
 					}
 					else
 					if(m_HAlignment == EHA_RIGHT)
 					{
-						ox = m_TextSize.X - line.Width;
+						ox = m_Size.X - line.Width;
 					}
 
 					if(m_VAlignment == EVA_CENTER)
 					{
-						oy = (m_TextSize.Y - m_TextLines.Size()*m_Font->GetSize())/2.0f;
+						oy = (m_Size.Y - m_TextLines.Size()*m_Font->GetSize())/2.0f;
 					}
 					else
 					if(m_VAlignment == EVA_BOTTOM)
 					{
-						oy = m_TextSize.Y - m_TextLines.Size()*m_Font->GetSize();
+						oy = m_Size.Y - m_TextLines.Size()*m_Font->GetSize();
 					}
 
 					u32 idx = glyphCounter << 2;
@@ -202,7 +218,7 @@ public:
 					nXCoord += m_Font->GetSize();
 			}
 
-			nXCoord = 0.0;
+			nXCoord = -m_Center.X;
 			nYCoord += m_Font->GetSize();
 		}
 	}
@@ -273,7 +289,7 @@ private:
 				currWidth += m_Font->GetSize();
 			}
 
-			if(m_TextSize.X > 0 && currWidth > m_TextSize.X && lineWidth != 0)
+			if(m_Size.X > 0 && currWidth > m_Size.X && lineWidth != 0)
 			{
 				if(lastSpace == -1)
 					lastSpace = i;
@@ -297,23 +313,21 @@ private:
 		m_Size.X = maxWidth;
 		m_Size.Y = m_Font->GetSize() * m_TextLines.Size();
 
-		m_Center.X = m_Size.X - m_TextSize.X;
-		m_Center.Y = m_Size.Y - m_TextSize.Y;
+		m_Center.X = 0;
+		m_Center.Y = 0;
 
 		if(m_HAlignment == EHA_CENTER)
 		{
-			m_Center.X /= 2.0f;
+			m_Center.X = m_Size.X / 2.0f;
 		}
 
 		if(m_VAlignment == EVA_CENTER)
 		{
-			m_Center.Y /= 2.0f;
+			m_Center.Y = m_Size.Y / 2.0f;
 		}
 
-		m_Bound = CRect(-m_Center.X, -m_Center.Y, m_Size.X, m_Size.Y);
-		m_Transform.TransformAARect(m_Bound);
-
 		m_VertexesDirty = true;
+		m_TransformDirty = true;
 
 		if(m_CurrentBatch)
 		{
@@ -326,8 +340,6 @@ private:
 
 	EHAlignment m_HAlignment;
 	EVAlignment m_VAlignment;
-
-	CVector2 m_TextSize;
 
 	CList<STextLine> m_TextLines;
 	u32				 m_GlyphCount;

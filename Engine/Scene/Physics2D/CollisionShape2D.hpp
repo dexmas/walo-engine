@@ -32,7 +32,7 @@ protected:
 	virtual void _CreateFixture();
 	virtual void _ReleaseFixture();
 
-	void OnEnabled(bool _enabled);
+	void SetEnabled(bool _enabled);
 	void OnTransformed();
 
 	f32 m_ScaleX;

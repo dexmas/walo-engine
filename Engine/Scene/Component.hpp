@@ -1,26 +1,9 @@
 #pragma once
 
+#include "Scene/Node.hpp"
+#include "Scene/System.hpp"
+#include "Scene/ComponentType.hpp"
 #include "Game.hpp"
-
-class CNode;
-class CSystem;
-
-enum EComponentType
-{
-	ECT_OBJECT2D,
-	ECT_SPRITE2D,
-	ECT_PROGRESS2D,
-	ECT_TEXT2D,
-	ECT_CAMERA3D,
-	ECT_OBJECT3D,
-	ECT_STATICMODEL,
-	ECT_RIGIDBODY2D,
-	ECT_COLLISIONBOX2D,
-	ECT_SOUNDLISTENER,
-	ECT_SOUNDSOURCE,
-	ECT_INPUT,
-	ECT_UPDATE
-};
 
 class CComponent
 {
@@ -109,7 +92,6 @@ public:
 
 	virtual ~CComponentImpl()
 	{
-		int i = 0;
 	}
 
 	virtual void OnEnabled(bool _enabled)

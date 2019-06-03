@@ -38,6 +38,7 @@ public:
 		cl.Func("SetClip", &CNode2DWrapper::sqSetClip);
 
 		cl.Func("GetSize", &CNode2DWrapper::sqGetSize);
+		cl.Func("GetPosition", &CNode2DWrapper::sqGetPosition);
 
 		cl.Func("HitTest", &CNode2DWrapper::sqHitTest);
 
@@ -47,6 +48,11 @@ public:
 	void sqSetPosition(f32 _x, f32 _y)
 	{
 		SetPosition(CVector3(_x, _y, 0.0f));
+	}
+
+	CVector2 sqGetPosition()
+	{
+		return CVector2(GetPosition().X, GetPosition().Y);
 	}
 
 	void sqSetRotation(f32 _angle)

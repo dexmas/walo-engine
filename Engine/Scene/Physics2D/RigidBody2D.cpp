@@ -23,22 +23,24 @@ CRigidBody2D::CRigidBody2D():CComponentImpl(ECT_RIGIDBODY2D)
     bodyDef.userData = this;
     
     m_Body = m_System->GetWorld()->CreateBody(&bodyDef);
-    
-    m_CollisionShape = 0;
 }
 
 CRigidBody2D::~CRigidBody2D()
 {
-    if(m_CollisionShape)
-        delete m_CollisionShape;
-    
     m_System->GetWorld()->DestroyBody(m_Body);
 }
 
-void CRigidBody2D::OnEnabled(bool _enabled)
+void CRigidBody2D::SetEnabled(bool _enabled)
 {
-	m_Body->SetActive(_enabled);
-	m_Body->SetAwake(_enabled);
+	if(m_Enabled == _enabled)
+	{
+		return;
+	}
+
+	CComponentImpl::SetEnabled(_enabled);
+
+	m_Body->SetActive(m_Enabled);
+	m_Body->SetAwake(m_Enabled);
 }
 
 void CRigidBody2D::OnTransformed()

@@ -2,7 +2,12 @@
 
 #include "Core/Types.hpp"
 #include "Core/String.hpp"
-#include "FileSystem/FileStream.hpp"
+
+#if defined(WALO_PLATFORM_ANDROID)
+#include "Filesystem/Android/FileStreamAndroid.hpp"
+#else
+#include "Filesystem/FileStream.hpp"
+#endif
 
 class CFileSystem
 {
@@ -24,4 +29,8 @@ private:
 	CString m_RootPath;
 	CString m_SavePath;
 	CString m_CashePath;
+
+#if defined(WALO_PLATFORM_ANDROID)
+	AAssetManager* m_AssetManager;
+#endif
 };

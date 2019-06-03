@@ -1,4 +1,4 @@
-#pragma once
+/*#pragma once
 
 #ifdef _DEBUG
 
@@ -9,4 +9,4 @@ void* operator new[](size_t blocksize) throw(std::bad_alloc);
 void  operator delete(void* block) throw();
 void  operator delete[](void* block) throw();
 
-#endif
+#endif*/

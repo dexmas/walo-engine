@@ -71,6 +71,21 @@ public:
 		return *this;
 	}
 
+	inline bool operator == (const CVector2& _arg)
+	{
+		if ((CMath::Abs(X - _arg.X) < CMath::EPS) &&
+			(CMath::Abs(Y - _arg.Y) < CMath::EPS))
+		{
+			return true;
+		}
+		return false;
+	}
+
+	inline bool operator != (const CVector2& _arg)
+	{
+		return !(operator==(_arg));
+	}
+
 	f32 Dot(const CVector2& _other) const
 	{
 		return X * _other.X + Y * _other.Y;
@@ -169,6 +184,22 @@ public:
 		Z /= _arg;
 
 		return *this;
+	}
+
+	inline bool operator == (const CVector3& _arg)
+	{
+		if ((CMath::Abs(X - _arg.X) < CMath::EPS) &&
+			(CMath::Abs(Y - _arg.Y) < CMath::EPS) &&
+			(CMath::Abs(Z - _arg.Z) < CMath::EPS))
+		{
+			return true;
+		}
+		return false;
+	}
+
+	inline bool operator != (const CVector3& _arg)
+	{
+		return !(operator==(_arg));
 	}
 
 	inline void Normalize()

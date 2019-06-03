@@ -35,8 +35,11 @@ CNode::~CNode()
 	while(it != m_Components.End())
 	{
 		CComponent* cmp = *it;
+		it = m_Components.Erase(cmp);
+
+		RemoveComponent(cmp);
+
 		delete cmp;
-		++it;
 	}
 
 	CList<CNode*>::CIterator nit = m_Childs.Begin();
@@ -141,20 +144,29 @@ void CNode::GetComponents(CList<CComponent*>& _list)
 
 void CNode::SetPosition(const CVector3& _position)
 {
-	m_Position = _position;
-	OnTransformed();
+	if (m_Position != _position)
+	{
+		m_Position = _position;
+		OnTransformed();
+	}
 }
 
 void CNode::SetScale(const CVector3& _scale)
 {
-	m_Scale = _scale;
-	OnTransformed();
+	if (m_Scale != _scale)
+	{
+		m_Scale = _scale;
+		OnTransformed();
+	}
 }
 
 void CNode::SetRotation(const CVector3& _rotation)
 {
-	m_Rotation = _rotation;
-	OnTransformed();
+	if (m_Rotation != _rotation)
+	{
+		m_Rotation = _rotation;
+		OnTransformed();
+	}
 }
 
 void CNode::OnTransformed()

@@ -11,10 +11,8 @@
 CScene2D::CScene2D()
 {
 	m_Render = CGame::Instance()->GetRender();
-
-	CVector2 scrSize = CGame::Instance()->GetDevice()->GetScreenSize();
-	m_ScreenRect = CRect(0, 0, scrSize.X, scrSize.Y);
-	m_Projection.Ortho(scrSize.X, scrSize.Y, -1000.0f, 1000.0f);
+	m_ViewRect = CRect(0, 0, CGame::Instance()->GetDevice()->GetScreenSize().X, CGame::Instance()->GetDevice()->GetScreenSize().Y);
+	m_Projection.Ortho(m_ViewRect.Width, m_ViewRect.Height, -1000, 1000);
 }
 
 CScene2D::~CScene2D()
@@ -27,68 +25,62 @@ void CScene2D::AddComponent(CComponent* _comp)
 {
 	CObject2D* drw = (CObject2D*)_comp;
 
-	m_Quadtree.InsertObject(drw);
+	if(drw->GetType() == ECT_SPRITE2D || drw->GetType() == ECT_TEXT2D || drw->GetType() == ECT_PROGRESS2D || drw->GetType() == ECT_TILEMAP2D)
+	{
+		m_Quadtree.InsertObject(drw);
+	}
 }
 
 void CScene2D::RemoveComponent(CComponent* _comp)
 {
 	CObject2D* drw = (CObject2D*)_comp;
-	CQuadtreeNode* node = drw->m_QuadtreeNode;
-	
-	_RemoveVisible(drw);
 
-	if (node)
+	if(drw->GetType() == ECT_SPRITE2D || drw->GetType() == ECT_TEXT2D || drw->GetType() == ECT_PROGRESS2D || drw->GetType() == ECT_TILEMAP2D)
 	{
-		node->RemoveObject(drw);
-	}
-}
+		CQuadtreeNode* node = drw->m_QuadtreeNode;
 
-
-void CScene2D::_AddVisible(CObject2D* _drw)
-{
-	CBatch2D* batch = _FindBatch(_drw);
-
-	if(!batch)
-	{
-		LOG("Created new batch. Current batch count: %d\n", ++s_batch_count);
-
-		batch = new CBatch2D(_drw->GetMaterial(), _drw->GetTexture(), _drw->m_Clipped, _drw->m_ClipRect);
-		m_Batches.PushBack(batch);
-	}
-
-	batch->Add(_drw);
-}
-
-void CScene2D::_RemoveVisible(CObject2D* _drw)
-{
-	CBatch2D* batch = _drw->m_CurrentBatch;
-
-	if(batch)
-	{
-		batch->Remove(_drw);
-		
-		if(batch->Count() == 0)
+		if(node)
 		{
-			m_Batches.Remove(batch);
-			delete batch;
+			node->RemoveObject(drw);
+		}
 
-			LOG("Removed empty batch. Current batch count: %d\n", --s_batch_count);
+		CBatch2D* batch = drw->m_CurrentBatch;
+
+		if(batch)
+		{
+			batch->Remove(drw);
+
+			if (batch->Count() == 0)
+			{
+				m_Batches.Erase(batch);
+				delete batch;
+
+				LOG("Removed empty batch. Current batch count: %d\n", --s_batch_count);
+			}
 		}
 	}
 }
 
+void CScene2D::SetCamera(CRect& _camera)
+{
+	m_ViewRect = _camera;
+	m_Projection.Ortho(m_ViewRect.Width, m_ViewRect.Height, -1000, 1000);
+}
+
 CBatch2D* CScene2D::_FindBatch(CObject2D* _drw)
 {
-	CBatch2D* batch = m_Batches.GetHead();
+	CList<CBatch2D*>::CIterator it = m_Batches.Begin();
 
-	while (batch)
+	while (it != m_Batches.End())
 	{
+		CBatch2D* batch = *it;
+
 		if(batch->Compare(_drw))
 		{
 			return batch;
 		}
 
-		batch = batch->GetNext();
+		++it;
 	}
 
 	return 0;
@@ -98,39 +90,65 @@ void CScene2D::Render()
 {
 	m_Render->SetTransform(ETT_VIEWPROJ, m_Projection);
 
-	m_Show.Clear();
-	m_Hide.Clear();
+	m_ShowList.Clear();
+	m_HideList.Clear();
 
-	m_Quadtree.QueryVisibility(m_ScreenRect, m_Show, m_Hide);
+	m_Quadtree.QueryVisibility(m_ViewRect, m_ShowList, m_HideList);
 
-	CList<CObject2D*>::CIterator oi = m_Hide.Begin();
+	CList<CObject2D*>::CIterator it = m_HideList.Begin();
 
-	while (oi != m_Hide.End())
+	while(it != m_HideList.End())
 	{
-		_RemoveVisible(*oi);
+		CBatch2D* batch = (*it)->m_CurrentBatch;
 
-		++oi;
+		if(batch)
+		{
+			batch->Remove(*it);
+		
+			if(batch->Count() == 0)
+			{
+				m_Batches.Erase(batch);
+				delete batch;
+
+				LOG("Removed empty batch. Current batch count: %d\n", --s_batch_count);
+			}
+		}
+
+		++it;
 	}
 
-	oi = m_Show.Begin();
+	it = m_ShowList.Begin();
 
-	while (oi != m_Show.End())
+	while(it != m_ShowList.End())
 	{
-		_AddVisible(*oi);
+		CObject2D* drw = *it;
+		CBatch2D* batch = _FindBatch(drw);
 
-		++oi;
+		if(!batch)
+		{
+			LOG("Created new batch. Current batch count: %d\n", ++s_batch_count);
+
+			batch = new CBatch2D(drw->GetMaterial(), drw->GetTexture(), drw->m_Clipped, drw->m_ClipRect);
+			m_Batches.PushBack(batch);
+		}
+
+		batch->Add(drw);
+
+		++it;
 	}
 
-	CBatch2D* batch = m_Batches.GetHead();
+	CList<CBatch2D*>::CIterator jt = m_Batches.Begin();
 
-	while (batch)
+	while (jt != m_Batches.End())
 	{
+		CBatch2D* batch = *jt;
+
 		batch->Render();
 
 #ifdef _DEBUG
-		//batch->DebugRender();
+		batch->DebugRender();
 #endif
-		batch = batch->GetNext();
+		++jt;
 	}
 
 #ifdef _DEBUG

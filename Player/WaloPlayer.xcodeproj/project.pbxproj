@@ -7,36 +7,97 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		EF1C672D1B552F710058A19C /* Assets in Resources */ = {isa = PBXBuildFile; fileRef = EF1C672C1B552F710058A19C /* Assets */; };
-		FD1BA8721ABB7B720015722E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD1BA8711ABB7B720015722E /* QuartzCore.framework */; };
-		FDA0F82A1ABA3044000661CA /* WaloPlayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FDA0F8281ABA3044000661CA /* WaloPlayer.cpp */; };
-		FDA0F8731ABA3478000661CA /* sqratimport.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FDA0F8401ABA3478000661CA /* sqratimport.cpp */; };
-		FDA0F8741ABA3478000661CA /* sqstdaux.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FDA0F8471ABA3478000661CA /* sqstdaux.cpp */; };
-		FDA0F8751ABA3478000661CA /* sqstdblob.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FDA0F8481ABA3478000661CA /* sqstdblob.cpp */; };
-		FDA0F8761ABA3478000661CA /* sqstdio.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FDA0F84A1ABA3478000661CA /* sqstdio.cpp */; };
-		FDA0F8771ABA3478000661CA /* sqstdmath.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FDA0F84B1ABA3478000661CA /* sqstdmath.cpp */; };
-		FDA0F8781ABA3478000661CA /* sqstdrex.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FDA0F84C1ABA3478000661CA /* sqstdrex.cpp */; };
-		FDA0F8791ABA3478000661CA /* sqstdstream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FDA0F84D1ABA3478000661CA /* sqstdstream.cpp */; };
-		FDA0F87A1ABA3478000661CA /* sqstdstring.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FDA0F84F1ABA3478000661CA /* sqstdstring.cpp */; };
-		FDA0F87B1ABA3478000661CA /* sqstdsystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FDA0F8501ABA3478000661CA /* sqstdsystem.cpp */; };
-		FDA0F87C1ABA3478000661CA /* sqapi.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FDA0F8551ABA3478000661CA /* sqapi.cpp */; };
-		FDA0F87D1ABA3478000661CA /* sqbaselib.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FDA0F8571ABA3478000661CA /* sqbaselib.cpp */; };
-		FDA0F87E1ABA3478000661CA /* sqclass.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FDA0F8581ABA3478000661CA /* sqclass.cpp */; };
-		FDA0F87F1ABA3478000661CA /* sqcompiler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FDA0F85B1ABA3478000661CA /* sqcompiler.cpp */; };
-		FDA0F8801ABA3478000661CA /* sqdebug.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FDA0F85D1ABA3478000661CA /* sqdebug.cpp */; };
-		FDA0F8811ABA3478000661CA /* sqfuncstate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FDA0F85F1ABA3478000661CA /* sqfuncstate.cpp */; };
-		FDA0F8821ABA3478000661CA /* sqlexer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FDA0F8611ABA3478000661CA /* sqlexer.cpp */; };
-		FDA0F8831ABA3478000661CA /* sqmem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FDA0F8631ABA3478000661CA /* sqmem.cpp */; };
-		FDA0F8841ABA3478000661CA /* sqobject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FDA0F8641ABA3478000661CA /* sqobject.cpp */; };
-		FDA0F8851ABA3478000661CA /* sqstate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FDA0F8681ABA3478000661CA /* sqstate.cpp */; };
-		FDA0F8861ABA3478000661CA /* sqtable.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FDA0F86B1ABA3478000661CA /* sqtable.cpp */; };
-		FDA0F8871ABA3478000661CA /* sqvm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FDA0F8701ABA3478000661CA /* sqvm.cpp */; };
-		FDA0F8881ABA34A1000661CA /* libWaloEngine_d.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FDC100AC1AB7841F00BB41DD /* libWaloEngine_d.a */; };
-		FDA0F88A1ABA34B9000661CA /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDA0F8891ABA34B9000661CA /* OpenGLES.framework */; };
-		FDA0F88C1ABA34CE000661CA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDA0F88B1ABA34CE000661CA /* UIKit.framework */; };
-		FDA0F88E1ABA34DC000661CA /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDA0F88D1ABA34DC000661CA /* OpenAL.framework */; };
-		FDC100B11AB7844C00BB41DD /* Resources.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FDC100AE1AB7844C00BB41DD /* Resources.xcassets */; };
-		FDC100B21AB7844C00BB41DD /* Splash.xib in Resources */ = {isa = PBXBuildFile; fileRef = FDC100AF1AB7844C00BB41DD /* Splash.xib */; };
+		EF1213D9200F992B009E2F8E /* sqratimport.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF1213A5200F992A009E2F8E /* sqratimport.cpp */; };
+		EF1213DA200F992B009E2F8E /* sqratimport.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF1213A5200F992A009E2F8E /* sqratimport.cpp */; };
+		EF1213DB200F992B009E2F8E /* sqstdaux.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF1213AD200F992B009E2F8E /* sqstdaux.cpp */; };
+		EF1213DC200F992B009E2F8E /* sqstdaux.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF1213AD200F992B009E2F8E /* sqstdaux.cpp */; };
+		EF1213DD200F992B009E2F8E /* sqstdblob.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF1213AE200F992B009E2F8E /* sqstdblob.cpp */; };
+		EF1213DE200F992B009E2F8E /* sqstdblob.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF1213AE200F992B009E2F8E /* sqstdblob.cpp */; };
+		EF1213DF200F992B009E2F8E /* sqstdio.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF1213B0200F992B009E2F8E /* sqstdio.cpp */; };
+		EF1213E0200F992B009E2F8E /* sqstdio.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF1213B0200F992B009E2F8E /* sqstdio.cpp */; };
+		EF1213E1200F992B009E2F8E /* sqstdmath.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF1213B1200F992B009E2F8E /* sqstdmath.cpp */; };
+		EF1213E2200F992B009E2F8E /* sqstdmath.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF1213B1200F992B009E2F8E /* sqstdmath.cpp */; };
+		EF1213E3200F992B009E2F8E /* sqstdrex.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF1213B2200F992B009E2F8E /* sqstdrex.cpp */; };
+		EF1213E4200F992B009E2F8E /* sqstdrex.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF1213B2200F992B009E2F8E /* sqstdrex.cpp */; };
+		EF1213E5200F992B009E2F8E /* sqstdstream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF1213B3200F992B009E2F8E /* sqstdstream.cpp */; };
+		EF1213E6200F992B009E2F8E /* sqstdstream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF1213B3200F992B009E2F8E /* sqstdstream.cpp */; };
+		EF1213E7200F992B009E2F8E /* sqstdstring.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF1213B5200F992B009E2F8E /* sqstdstring.cpp */; };
+		EF1213E8200F992B009E2F8E /* sqstdstring.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF1213B5200F992B009E2F8E /* sqstdstring.cpp */; };
+		EF1213E9200F992B009E2F8E /* sqstdsystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF1213B6200F992B009E2F8E /* sqstdsystem.cpp */; };
+		EF1213EA200F992B009E2F8E /* sqstdsystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF1213B6200F992B009E2F8E /* sqstdsystem.cpp */; };
+		EF1213EB200F992B009E2F8E /* sqapi.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF1213BB200F992B009E2F8E /* sqapi.cpp */; };
+		EF1213EC200F992B009E2F8E /* sqapi.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF1213BB200F992B009E2F8E /* sqapi.cpp */; };
+		EF1213ED200F992B009E2F8E /* sqbaselib.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF1213BD200F992B009E2F8E /* sqbaselib.cpp */; };
+		EF1213EE200F992B009E2F8E /* sqbaselib.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF1213BD200F992B009E2F8E /* sqbaselib.cpp */; };
+		EF1213EF200F992B009E2F8E /* sqclass.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF1213BE200F992B009E2F8E /* sqclass.cpp */; };
+		EF1213F0200F992B009E2F8E /* sqclass.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF1213BE200F992B009E2F8E /* sqclass.cpp */; };
+		EF1213F1200F992B009E2F8E /* sqcompiler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF1213C1200F992B009E2F8E /* sqcompiler.cpp */; };
+		EF1213F2200F992B009E2F8E /* sqcompiler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF1213C1200F992B009E2F8E /* sqcompiler.cpp */; };
+		EF1213F3200F992B009E2F8E /* sqdebug.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF1213C3200F992B009E2F8E /* sqdebug.cpp */; };
+		EF1213F4200F992B009E2F8E /* sqdebug.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF1213C3200F992B009E2F8E /* sqdebug.cpp */; };
+		EF1213F5200F992B009E2F8E /* sqfuncstate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF1213C5200F992B009E2F8E /* sqfuncstate.cpp */; };
+		EF1213F6200F992B009E2F8E /* sqfuncstate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF1213C5200F992B009E2F8E /* sqfuncstate.cpp */; };
+		EF1213F7200F992B009E2F8E /* sqlexer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF1213C7200F992B009E2F8E /* sqlexer.cpp */; };
+		EF1213F8200F992B009E2F8E /* sqlexer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF1213C7200F992B009E2F8E /* sqlexer.cpp */; };
+		EF1213F9200F992B009E2F8E /* sqmem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF1213C9200F992B009E2F8E /* sqmem.cpp */; };
+		EF1213FA200F992B009E2F8E /* sqmem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF1213C9200F992B009E2F8E /* sqmem.cpp */; };
+		EF1213FB200F992B009E2F8E /* sqobject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF1213CA200F992B009E2F8E /* sqobject.cpp */; };
+		EF1213FC200F992B009E2F8E /* sqobject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF1213CA200F992B009E2F8E /* sqobject.cpp */; };
+		EF1213FD200F992B009E2F8E /* sqstate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF1213CE200F992B009E2F8E /* sqstate.cpp */; };
+		EF1213FE200F992B009E2F8E /* sqstate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF1213CE200F992B009E2F8E /* sqstate.cpp */; };
+		EF1213FF200F992B009E2F8E /* sqtable.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF1213D1200F992B009E2F8E /* sqtable.cpp */; };
+		EF121400200F992B009E2F8E /* sqtable.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF1213D1200F992B009E2F8E /* sqtable.cpp */; };
+		EF121401200F992B009E2F8E /* sqvm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF1213D6200F992B009E2F8E /* sqvm.cpp */; };
+		EF121402200F992B009E2F8E /* sqvm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF1213D6200F992B009E2F8E /* sqvm.cpp */; };
+		EF121423200F994B009E2F8E /* WaloPlayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF121406200F994B009E2F8E /* WaloPlayer.cpp */; };
+		EF121424200F994B009E2F8E /* WaloPlayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF121406200F994B009E2F8E /* WaloPlayer.cpp */; };
+		EF5BE4AA21C1214600D849F5 /* spacemap.nut in Resources */ = {isa = PBXBuildFile; fileRef = EF5BE4A921C1214600D849F5 /* spacemap.nut */; };
+		EF5BE4AB21C1214600D849F5 /* spacemap.nut in Resources */ = {isa = PBXBuildFile; fileRef = EF5BE4A921C1214600D849F5 /* spacemap.nut */; };
+		EF93BE4F2010B52C0004560E /* InfoIOS.plist in Resources */ = {isa = PBXBuildFile; fileRef = EF93BE4E2010B52C0004560E /* InfoIOS.plist */; };
+		EF93BE502010B5310004560E /* InfoOSX.plist in Resources */ = {isa = PBXBuildFile; fileRef = EF8C38C7200E275F0077FE8C /* InfoOSX.plist */; };
+		EF93BE542010B54C0004560E /* ResIOS.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF93BE532010B54C0004560E /* ResIOS.xcassets */; };
+		EF93BE562010B5550004560E /* ResOSX.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF93BE552010B5550004560E /* ResOSX.xcassets */; };
+		EF93BE622010B60A0004560E /* libWaloEngine_osx_d.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EF8C3897200E24CE0077FE8C /* libWaloEngine_osx_d.a */; };
+		EF93BE6C2010BBF60004560E /* Splash.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF93BE512010B5400004560E /* Splash.xib */; };
+		EF93BE6F2010CD820004560E /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF93BE6E2010CD7E0004560E /* OpenAL.framework */; };
+		EF93BE712010CD8E0004560E /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF93BE702010CD8B0004560E /* OpenGLES.framework */; };
+		EF93BE732010CDA70004560E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF93BE722010CDA10004560E /* UIKit.framework */; };
+		EF93BE752010CDC80004560E /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF93BE742010CDC30004560E /* OpenAL.framework */; };
+		EF93BE772010CDCF0004560E /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF93BE762010CDCF0004560E /* OpenGL.framework */; };
+		EF93BE792010CDE10004560E /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF93BE782010CDE10004560E /* Cocoa.framework */; };
+		EF93BEBC2010CE7B0004560E /* battlemap.nut in Resources */ = {isa = PBXBuildFile; fileRef = EF93BEAD2010CE790004560E /* battlemap.nut */; };
+		EF93BEBD2010CE7B0004560E /* battlemap.nut in Resources */ = {isa = PBXBuildFile; fileRef = EF93BEAD2010CE790004560E /* battlemap.nut */; };
+		EF93BEBE2010CE7B0004560E /* render2d.mat in Resources */ = {isa = PBXBuildFile; fileRef = EF93BEAE2010CE790004560E /* render2d.mat */; };
+		EF93BEBF2010CE7B0004560E /* render2d.mat in Resources */ = {isa = PBXBuildFile; fileRef = EF93BEAE2010CE790004560E /* render2d.mat */; };
+		EF93BEC02010CE7B0004560E /* render2d.vs in Resources */ = {isa = PBXBuildFile; fileRef = EF93BEAF2010CE790004560E /* render2d.vs */; };
+		EF93BEC12010CE7B0004560E /* render2d.vs in Resources */ = {isa = PBXBuildFile; fileRef = EF93BEAF2010CE790004560E /* render2d.vs */; };
+		EF93BEC22010CE7B0004560E /* render2d.ps in Resources */ = {isa = PBXBuildFile; fileRef = EF93BEB02010CE790004560E /* render2d.ps */; };
+		EF93BEC32010CE7B0004560E /* render2d.ps in Resources */ = {isa = PBXBuildFile; fileRef = EF93BEB02010CE790004560E /* render2d.ps */; };
+		EF93BEC42010CE7B0004560E /* vcolor.ps in Resources */ = {isa = PBXBuildFile; fileRef = EF93BEB12010CE790004560E /* vcolor.ps */; };
+		EF93BEC52010CE7B0004560E /* vcolor.ps in Resources */ = {isa = PBXBuildFile; fileRef = EF93BEB12010CE790004560E /* vcolor.ps */; };
+		EF93BEC62010CE7B0004560E /* battlesquad.nut in Resources */ = {isa = PBXBuildFile; fileRef = EF93BEB22010CE790004560E /* battlesquad.nut */; };
+		EF93BEC72010CE7B0004560E /* battlesquad.nut in Resources */ = {isa = PBXBuildFile; fileRef = EF93BEB22010CE790004560E /* battlesquad.nut */; };
+		EF93BEC82010CE7B0004560E /* main.nut in Resources */ = {isa = PBXBuildFile; fileRef = EF93BEB32010CE790004560E /* main.nut */; };
+		EF93BEC92010CE7B0004560E /* main.nut in Resources */ = {isa = PBXBuildFile; fileRef = EF93BEB32010CE790004560E /* main.nut */; };
+		EF93BECA2010CE7B0004560E /* ui in Resources */ = {isa = PBXBuildFile; fileRef = EF93BEB42010CE7A0004560E /* ui */; };
+		EF93BECB2010CE7B0004560E /* ui in Resources */ = {isa = PBXBuildFile; fileRef = EF93BEB42010CE7A0004560E /* ui */; };
+		EF93BECC2010CE7B0004560E /* vcolor.vs in Resources */ = {isa = PBXBuildFile; fileRef = EF93BEB52010CE7A0004560E /* vcolor.vs */; };
+		EF93BECD2010CE7B0004560E /* vcolor.vs in Resources */ = {isa = PBXBuildFile; fileRef = EF93BEB52010CE7A0004560E /* vcolor.vs */; };
+		EF93BECE2010CE7B0004560E /* debugR.mat in Resources */ = {isa = PBXBuildFile; fileRef = EF93BEB62010CE7A0004560E /* debugR.mat */; };
+		EF93BECF2010CE7B0004560E /* debugR.mat in Resources */ = {isa = PBXBuildFile; fileRef = EF93BEB62010CE7A0004560E /* debugR.mat */; };
+		EF93BED02010CE7B0004560E /* render2d_vc.ps in Resources */ = {isa = PBXBuildFile; fileRef = EF93BEB72010CE7A0004560E /* render2d_vc.ps */; };
+		EF93BED12010CE7B0004560E /* render2d_vc.ps in Resources */ = {isa = PBXBuildFile; fileRef = EF93BEB72010CE7A0004560E /* render2d_vc.ps */; };
+		EF93BED22010CE7B0004560E /* render2d_vc.mat in Resources */ = {isa = PBXBuildFile; fileRef = EF93BEB82010CE7A0004560E /* render2d_vc.mat */; };
+		EF93BED32010CE7B0004560E /* render2d_vc.mat in Resources */ = {isa = PBXBuildFile; fileRef = EF93BEB82010CE7A0004560E /* render2d_vc.mat */; };
+		EF93BED42010CE7B0004560E /* screens in Resources */ = {isa = PBXBuildFile; fileRef = EF93BEB92010CE7A0004560E /* screens */; };
+		EF93BED52010CE7B0004560E /* screens in Resources */ = {isa = PBXBuildFile; fileRef = EF93BEB92010CE7A0004560E /* screens */; };
+		EF93BED62010CE7B0004560E /* basemap.nut in Resources */ = {isa = PBXBuildFile; fileRef = EF93BEBA2010CE7A0004560E /* basemap.nut */; };
+		EF93BED72010CE7B0004560E /* basemap.nut in Resources */ = {isa = PBXBuildFile; fileRef = EF93BEBA2010CE7A0004560E /* basemap.nut */; };
+		EF93BED82010CE7B0004560E /* buildings in Resources */ = {isa = PBXBuildFile; fileRef = EF93BEBB2010CE7B0004560E /* buildings */; };
+		EF93BED92010CE7B0004560E /* buildings in Resources */ = {isa = PBXBuildFile; fileRef = EF93BEBB2010CE7B0004560E /* buildings */; };
+		EF93BEDB2010D1AD0004560E /* data in Resources */ = {isa = PBXBuildFile; fileRef = EF93BEDA2010D1AD0004560E /* data */; };
+		EF93BEDC2010D1AD0004560E /* data in Resources */ = {isa = PBXBuildFile; fileRef = EF93BEDA2010D1AD0004560E /* data */; };
+		FDA0F8881ABA34A1000661CA /* libWaloEngine_ios_d.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FDC100AC1AB7841F00BB41DD /* libWaloEngine_ios_d.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +107,20 @@
 			proxyType = 1;
 			remoteGlobalIDString = FDC1004E1AB7805800BB41DD;
 			remoteInfo = WaloEngine;
+		};
+		EF8C3896200E24CE0077FE8C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FDC100A71AB7841F00BB41DD /* WaloEngine.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EF8C37FF200E1B680077FE8C;
+			remoteInfo = WaloEngine_mac;
+		};
+		EF93BE5F2010B5FB0004560E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FDC100A71AB7841F00BB41DD /* WaloEngine.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = EF8C37FE200E1B670077FE8C;
+			remoteInfo = WaloEngine_osx;
 		};
 		FDC100AB1AB7841F00BB41DD /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -57,244 +132,331 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		EF1C672C1B552F710058A19C /* Assets */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Assets; path = ../Assets; sourceTree = "<group>"; };
-		FD1BA8711ABB7B720015722E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		FDA0F8281ABA3044000661CA /* WaloPlayer.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = WaloPlayer.cpp; sourceTree = "<group>"; };
-		FDA0F8291ABA3044000661CA /* WaloPlayer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = WaloPlayer.hpp; sourceTree = "<group>"; };
-		FDA0F82D1ABA3478000661CA /* sqmodule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqmodule.h; sourceTree = "<group>"; };
-		FDA0F82F1ABA3478000661CA /* sqratAllocator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqratAllocator.h; sourceTree = "<group>"; };
-		FDA0F8301ABA3478000661CA /* sqratArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqratArray.h; sourceTree = "<group>"; };
-		FDA0F8311ABA3478000661CA /* sqratClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqratClass.h; sourceTree = "<group>"; };
-		FDA0F8321ABA3478000661CA /* sqratClassType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqratClassType.h; sourceTree = "<group>"; };
-		FDA0F8331ABA3478000661CA /* sqratConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqratConst.h; sourceTree = "<group>"; };
-		FDA0F8341ABA3478000661CA /* sqratFunction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqratFunction.h; sourceTree = "<group>"; };
-		FDA0F8351ABA3478000661CA /* sqratGlobalMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqratGlobalMethods.h; sourceTree = "<group>"; };
-		FDA0F8361ABA3478000661CA /* sqratImpClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqratImpClass.h; sourceTree = "<group>"; };
-		FDA0F8371ABA3478000661CA /* sqratMemberMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqratMemberMethods.h; sourceTree = "<group>"; };
-		FDA0F8381ABA3478000661CA /* sqratObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqratObject.h; sourceTree = "<group>"; };
-		FDA0F8391ABA3478000661CA /* sqratOverloadMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqratOverloadMethods.h; sourceTree = "<group>"; };
-		FDA0F83A1ABA3478000661CA /* sqratScript.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqratScript.h; sourceTree = "<group>"; };
-		FDA0F83B1ABA3478000661CA /* sqratTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqratTable.h; sourceTree = "<group>"; };
-		FDA0F83C1ABA3478000661CA /* sqratTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqratTypes.h; sourceTree = "<group>"; };
-		FDA0F83D1ABA3478000661CA /* sqratUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqratUtil.h; sourceTree = "<group>"; };
-		FDA0F83E1ABA3478000661CA /* sqratVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqratVM.h; sourceTree = "<group>"; };
-		FDA0F83F1ABA3478000661CA /* sqrat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqrat.h; sourceTree = "<group>"; };
-		FDA0F8401ABA3478000661CA /* sqratimport.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = sqratimport.cpp; sourceTree = "<group>"; };
-		FDA0F8411ABA3478000661CA /* sqratimport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqratimport.h; sourceTree = "<group>"; };
-		FDA0F8431ABA3478000661CA /* sqstdaux.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqstdaux.h; sourceTree = "<group>"; };
-		FDA0F8441ABA3478000661CA /* sqstdblob.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqstdblob.h; sourceTree = "<group>"; };
-		FDA0F8451ABA3478000661CA /* sqstdio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqstdio.h; sourceTree = "<group>"; };
-		FDA0F8471ABA3478000661CA /* sqstdaux.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = sqstdaux.cpp; sourceTree = "<group>"; };
-		FDA0F8481ABA3478000661CA /* sqstdblob.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = sqstdblob.cpp; sourceTree = "<group>"; };
-		FDA0F8491ABA3478000661CA /* sqstdblobimpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqstdblobimpl.h; sourceTree = "<group>"; };
-		FDA0F84A1ABA3478000661CA /* sqstdio.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = sqstdio.cpp; sourceTree = "<group>"; };
-		FDA0F84B1ABA3478000661CA /* sqstdmath.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = sqstdmath.cpp; sourceTree = "<group>"; };
-		FDA0F84C1ABA3478000661CA /* sqstdrex.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = sqstdrex.cpp; sourceTree = "<group>"; };
-		FDA0F84D1ABA3478000661CA /* sqstdstream.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = sqstdstream.cpp; sourceTree = "<group>"; };
-		FDA0F84E1ABA3478000661CA /* sqstdstream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqstdstream.h; sourceTree = "<group>"; };
-		FDA0F84F1ABA3478000661CA /* sqstdstring.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = sqstdstring.cpp; sourceTree = "<group>"; };
-		FDA0F8501ABA3478000661CA /* sqstdsystem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = sqstdsystem.cpp; sourceTree = "<group>"; };
-		FDA0F8511ABA3478000661CA /* sqstdmath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqstdmath.h; sourceTree = "<group>"; };
-		FDA0F8521ABA3478000661CA /* sqstdstring.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqstdstring.h; sourceTree = "<group>"; };
-		FDA0F8531ABA3478000661CA /* sqstdsystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqstdsystem.h; sourceTree = "<group>"; };
-		FDA0F8551ABA3478000661CA /* sqapi.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = sqapi.cpp; sourceTree = "<group>"; };
-		FDA0F8561ABA3478000661CA /* sqarray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqarray.h; sourceTree = "<group>"; };
-		FDA0F8571ABA3478000661CA /* sqbaselib.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = sqbaselib.cpp; sourceTree = "<group>"; };
-		FDA0F8581ABA3478000661CA /* sqclass.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = sqclass.cpp; sourceTree = "<group>"; };
-		FDA0F8591ABA3478000661CA /* sqclass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqclass.h; sourceTree = "<group>"; };
-		FDA0F85A1ABA3478000661CA /* sqclosure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqclosure.h; sourceTree = "<group>"; };
-		FDA0F85B1ABA3478000661CA /* sqcompiler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = sqcompiler.cpp; sourceTree = "<group>"; };
-		FDA0F85C1ABA3478000661CA /* sqcompiler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqcompiler.h; sourceTree = "<group>"; };
-		FDA0F85D1ABA3478000661CA /* sqdebug.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = sqdebug.cpp; sourceTree = "<group>"; };
-		FDA0F85E1ABA3478000661CA /* sqfuncproto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqfuncproto.h; sourceTree = "<group>"; };
-		FDA0F85F1ABA3478000661CA /* sqfuncstate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = sqfuncstate.cpp; sourceTree = "<group>"; };
-		FDA0F8601ABA3478000661CA /* sqfuncstate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqfuncstate.h; sourceTree = "<group>"; };
-		FDA0F8611ABA3478000661CA /* sqlexer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = sqlexer.cpp; sourceTree = "<group>"; };
-		FDA0F8621ABA3478000661CA /* sqlexer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqlexer.h; sourceTree = "<group>"; };
-		FDA0F8631ABA3478000661CA /* sqmem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = sqmem.cpp; sourceTree = "<group>"; };
-		FDA0F8641ABA3478000661CA /* sqobject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = sqobject.cpp; sourceTree = "<group>"; };
-		FDA0F8651ABA3478000661CA /* sqobject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqobject.h; sourceTree = "<group>"; };
-		FDA0F8661ABA3478000661CA /* sqopcodes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqopcodes.h; sourceTree = "<group>"; };
-		FDA0F8671ABA3478000661CA /* sqpcheader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqpcheader.h; sourceTree = "<group>"; };
-		FDA0F8681ABA3478000661CA /* sqstate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = sqstate.cpp; sourceTree = "<group>"; };
-		FDA0F8691ABA3478000661CA /* sqstate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqstate.h; sourceTree = "<group>"; };
-		FDA0F86A1ABA3478000661CA /* sqstring.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqstring.h; sourceTree = "<group>"; };
-		FDA0F86B1ABA3478000661CA /* sqtable.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = sqtable.cpp; sourceTree = "<group>"; };
-		FDA0F86C1ABA3478000661CA /* sqtable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqtable.h; sourceTree = "<group>"; };
-		FDA0F86D1ABA3478000661CA /* squserdata.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = squserdata.h; sourceTree = "<group>"; };
-		FDA0F86E1ABA3478000661CA /* squtf8.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = squtf8.h; sourceTree = "<group>"; };
-		FDA0F86F1ABA3478000661CA /* squtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = squtils.h; sourceTree = "<group>"; };
-		FDA0F8701ABA3478000661CA /* sqvm.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = sqvm.cpp; sourceTree = "<group>"; };
-		FDA0F8711ABA3478000661CA /* sqvm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqvm.h; sourceTree = "<group>"; };
-		FDA0F8721ABA3478000661CA /* squirrel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = squirrel.h; sourceTree = "<group>"; };
-		FDA0F8891ABA34B9000661CA /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
-		FDA0F88B1ABA34CE000661CA /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		FDA0F88D1ABA34DC000661CA /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
-		FDC100731AB7812300BB41DD /* WaloPlayer_d.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WaloPlayer_d.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF121392200F992A009E2F8E /* sqmodule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqmodule.h; sourceTree = "<group>"; };
+		EF121394200F992A009E2F8E /* sqratAllocator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqratAllocator.h; sourceTree = "<group>"; };
+		EF121395200F992A009E2F8E /* sqratArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqratArray.h; sourceTree = "<group>"; };
+		EF121396200F992A009E2F8E /* sqratClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqratClass.h; sourceTree = "<group>"; };
+		EF121397200F992A009E2F8E /* sqratClassType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqratClassType.h; sourceTree = "<group>"; };
+		EF121398200F992A009E2F8E /* sqratConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqratConst.h; sourceTree = "<group>"; };
+		EF121399200F992A009E2F8E /* sqratFunction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqratFunction.h; sourceTree = "<group>"; };
+		EF12139A200F992A009E2F8E /* sqratGlobalMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqratGlobalMethods.h; sourceTree = "<group>"; };
+		EF12139B200F992A009E2F8E /* sqratImpClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqratImpClass.h; sourceTree = "<group>"; };
+		EF12139C200F992A009E2F8E /* sqratMemberMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqratMemberMethods.h; sourceTree = "<group>"; };
+		EF12139D200F992A009E2F8E /* sqratObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqratObject.h; sourceTree = "<group>"; };
+		EF12139E200F992A009E2F8E /* sqratOverloadMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqratOverloadMethods.h; sourceTree = "<group>"; };
+		EF12139F200F992A009E2F8E /* sqratScript.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqratScript.h; sourceTree = "<group>"; };
+		EF1213A0200F992A009E2F8E /* sqratTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqratTable.h; sourceTree = "<group>"; };
+		EF1213A1200F992A009E2F8E /* sqratTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqratTypes.h; sourceTree = "<group>"; };
+		EF1213A2200F992A009E2F8E /* sqratUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqratUtil.h; sourceTree = "<group>"; };
+		EF1213A3200F992A009E2F8E /* sqratVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqratVM.h; sourceTree = "<group>"; };
+		EF1213A4200F992A009E2F8E /* sqrat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqrat.h; sourceTree = "<group>"; };
+		EF1213A5200F992A009E2F8E /* sqratimport.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = sqratimport.cpp; sourceTree = "<group>"; };
+		EF1213A6200F992A009E2F8E /* sqratimport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqratimport.h; sourceTree = "<group>"; };
+		EF1213A8200F992B009E2F8E /* sqconfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqconfig.h; sourceTree = "<group>"; };
+		EF1213A9200F992B009E2F8E /* sqstdaux.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqstdaux.h; sourceTree = "<group>"; };
+		EF1213AA200F992B009E2F8E /* sqstdblob.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqstdblob.h; sourceTree = "<group>"; };
+		EF1213AB200F992B009E2F8E /* sqstdio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqstdio.h; sourceTree = "<group>"; };
+		EF1213AD200F992B009E2F8E /* sqstdaux.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = sqstdaux.cpp; sourceTree = "<group>"; };
+		EF1213AE200F992B009E2F8E /* sqstdblob.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = sqstdblob.cpp; sourceTree = "<group>"; };
+		EF1213AF200F992B009E2F8E /* sqstdblobimpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqstdblobimpl.h; sourceTree = "<group>"; };
+		EF1213B0200F992B009E2F8E /* sqstdio.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = sqstdio.cpp; sourceTree = "<group>"; };
+		EF1213B1200F992B009E2F8E /* sqstdmath.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = sqstdmath.cpp; sourceTree = "<group>"; };
+		EF1213B2200F992B009E2F8E /* sqstdrex.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = sqstdrex.cpp; sourceTree = "<group>"; };
+		EF1213B3200F992B009E2F8E /* sqstdstream.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = sqstdstream.cpp; sourceTree = "<group>"; };
+		EF1213B4200F992B009E2F8E /* sqstdstream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqstdstream.h; sourceTree = "<group>"; };
+		EF1213B5200F992B009E2F8E /* sqstdstring.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = sqstdstring.cpp; sourceTree = "<group>"; };
+		EF1213B6200F992B009E2F8E /* sqstdsystem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = sqstdsystem.cpp; sourceTree = "<group>"; };
+		EF1213B7200F992B009E2F8E /* sqstdmath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqstdmath.h; sourceTree = "<group>"; };
+		EF1213B8200F992B009E2F8E /* sqstdstring.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqstdstring.h; sourceTree = "<group>"; };
+		EF1213B9200F992B009E2F8E /* sqstdsystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqstdsystem.h; sourceTree = "<group>"; };
+		EF1213BB200F992B009E2F8E /* sqapi.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = sqapi.cpp; sourceTree = "<group>"; };
+		EF1213BC200F992B009E2F8E /* sqarray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqarray.h; sourceTree = "<group>"; };
+		EF1213BD200F992B009E2F8E /* sqbaselib.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = sqbaselib.cpp; sourceTree = "<group>"; };
+		EF1213BE200F992B009E2F8E /* sqclass.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = sqclass.cpp; sourceTree = "<group>"; };
+		EF1213BF200F992B009E2F8E /* sqclass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqclass.h; sourceTree = "<group>"; };
+		EF1213C0200F992B009E2F8E /* sqclosure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqclosure.h; sourceTree = "<group>"; };
+		EF1213C1200F992B009E2F8E /* sqcompiler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = sqcompiler.cpp; sourceTree = "<group>"; };
+		EF1213C2200F992B009E2F8E /* sqcompiler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqcompiler.h; sourceTree = "<group>"; };
+		EF1213C3200F992B009E2F8E /* sqdebug.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = sqdebug.cpp; sourceTree = "<group>"; };
+		EF1213C4200F992B009E2F8E /* sqfuncproto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqfuncproto.h; sourceTree = "<group>"; };
+		EF1213C5200F992B009E2F8E /* sqfuncstate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = sqfuncstate.cpp; sourceTree = "<group>"; };
+		EF1213C6200F992B009E2F8E /* sqfuncstate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqfuncstate.h; sourceTree = "<group>"; };
+		EF1213C7200F992B009E2F8E /* sqlexer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = sqlexer.cpp; sourceTree = "<group>"; };
+		EF1213C8200F992B009E2F8E /* sqlexer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqlexer.h; sourceTree = "<group>"; };
+		EF1213C9200F992B009E2F8E /* sqmem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = sqmem.cpp; sourceTree = "<group>"; };
+		EF1213CA200F992B009E2F8E /* sqobject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = sqobject.cpp; sourceTree = "<group>"; };
+		EF1213CB200F992B009E2F8E /* sqobject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqobject.h; sourceTree = "<group>"; };
+		EF1213CC200F992B009E2F8E /* sqopcodes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqopcodes.h; sourceTree = "<group>"; };
+		EF1213CD200F992B009E2F8E /* sqpcheader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqpcheader.h; sourceTree = "<group>"; };
+		EF1213CE200F992B009E2F8E /* sqstate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = sqstate.cpp; sourceTree = "<group>"; };
+		EF1213CF200F992B009E2F8E /* sqstate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqstate.h; sourceTree = "<group>"; };
+		EF1213D0200F992B009E2F8E /* sqstring.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqstring.h; sourceTree = "<group>"; };
+		EF1213D1200F992B009E2F8E /* sqtable.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = sqtable.cpp; sourceTree = "<group>"; };
+		EF1213D2200F992B009E2F8E /* sqtable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqtable.h; sourceTree = "<group>"; };
+		EF1213D3200F992B009E2F8E /* squserdata.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = squserdata.h; sourceTree = "<group>"; };
+		EF1213D4200F992B009E2F8E /* squtf8.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = squtf8.h; sourceTree = "<group>"; };
+		EF1213D5200F992B009E2F8E /* squtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = squtils.h; sourceTree = "<group>"; };
+		EF1213D6200F992B009E2F8E /* sqvm.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = sqvm.cpp; sourceTree = "<group>"; };
+		EF1213D7200F992B009E2F8E /* sqvm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqvm.h; sourceTree = "<group>"; };
+		EF1213D8200F992B009E2F8E /* squirrel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = squirrel.h; sourceTree = "<group>"; };
+		EF121404200F994B009E2F8E /* Serializer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Serializer.hpp; sourceTree = "<group>"; };
+		EF121405200F994B009E2F8E /* WaloPlayer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = WaloPlayer.hpp; sourceTree = "<group>"; };
+		EF121406200F994B009E2F8E /* WaloPlayer.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = WaloPlayer.cpp; sourceTree = "<group>"; };
+		EF121408200F994B009E2F8E /* AssetsDBWrapper.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = AssetsDBWrapper.hpp; sourceTree = "<group>"; };
+		EF121409200F994B009E2F8E /* AssetWrapper.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = AssetWrapper.hpp; sourceTree = "<group>"; };
+		EF12140A200F994B009E2F8E /* Camera3DWrapper.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Camera3DWrapper.hpp; sourceTree = "<group>"; };
+		EF12140B200F994B009E2F8E /* CollisionBox2DWrapper.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CollisionBox2DWrapper.hpp; sourceTree = "<group>"; };
+		EF12140C200F994B009E2F8E /* CollisionShape2DWrapper.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CollisionShape2DWrapper.hpp; sourceTree = "<group>"; };
+		EF12140D200F994B009E2F8E /* ColorWrapper.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ColorWrapper.hpp; sourceTree = "<group>"; };
+		EF12140E200F994B009E2F8E /* ComponentWrapper.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ComponentWrapper.hpp; sourceTree = "<group>"; };
+		EF12140F200F994B009E2F8E /* FontWrapper.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = FontWrapper.hpp; sourceTree = "<group>"; };
+		EF121410200F994B009E2F8E /* InputSystemWrapper.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = InputSystemWrapper.hpp; sourceTree = "<group>"; };
+		EF121411200F994B009E2F8E /* MaterialWrapper.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = MaterialWrapper.hpp; sourceTree = "<group>"; };
+		EF121412200F994B009E2F8E /* MathWrapper.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = MathWrapper.hpp; sourceTree = "<group>"; };
+		EF121413200F994B009E2F8E /* MeshWrapper.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = MeshWrapper.hpp; sourceTree = "<group>"; };
+		EF121414200F994B009E2F8E /* Model3DWrapper.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Model3DWrapper.hpp; sourceTree = "<group>"; };
+		EF121415200F994B009E2F8E /* Node2DWrapper.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Node2DWrapper.hpp; sourceTree = "<group>"; };
+		EF121416200F994B009E2F8E /* Node3DWrapper.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Node3DWrapper.hpp; sourceTree = "<group>"; };
+		EF121417200F994B009E2F8E /* NodeWrapper.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = NodeWrapper.hpp; sourceTree = "<group>"; };
+		EF121418200F994B009E2F8E /* Progress2DWrapper.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Progress2DWrapper.hpp; sourceTree = "<group>"; };
+		EF121419200F994B009E2F8E /* RectWrapper.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = RectWrapper.hpp; sourceTree = "<group>"; };
+		EF12141A200F994B009E2F8E /* RigidBody2DWrapper.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = RigidBody2DWrapper.hpp; sourceTree = "<group>"; };
+		EF12141B200F994B009E2F8E /* SaveFileWrapper.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = SaveFileWrapper.hpp; sourceTree = "<group>"; };
+		EF12141C200F994B009E2F8E /* SoundSourceWrapper.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = SoundSourceWrapper.hpp; sourceTree = "<group>"; };
+		EF12141D200F994B009E2F8E /* SoundStreamWrapper.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = SoundStreamWrapper.hpp; sourceTree = "<group>"; };
+		EF12141E200F994B009E2F8E /* Sprite2DWrapper.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Sprite2DWrapper.hpp; sourceTree = "<group>"; };
+		EF12141F200F994B009E2F8E /* Text2DWrapper.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Text2DWrapper.hpp; sourceTree = "<group>"; };
+		EF121420200F994B009E2F8E /* TextureWrapper.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = TextureWrapper.hpp; sourceTree = "<group>"; };
+		EF121421200F994B009E2F8E /* TileMap2DWrapper.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = TileMap2DWrapper.hpp; sourceTree = "<group>"; };
+		EF121422200F994B009E2F8E /* VectorWrapper.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = VectorWrapper.hpp; sourceTree = "<group>"; };
+		EF5BE4A921C1214600D849F5 /* spacemap.nut */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = spacemap.nut; path = ../../../DeepSpace/spacemap.nut; sourceTree = "<group>"; };
+		EF8C389C200E25000077FE8C /* WaloPlayer_osx_d.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WaloPlayer_osx_d.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF8C38C7200E275F0077FE8C /* InfoOSX.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = InfoOSX.plist; sourceTree = "<group>"; };
+		EF93BE4E2010B52C0004560E /* InfoIOS.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = InfoIOS.plist; sourceTree = "<group>"; };
+		EF93BE512010B5400004560E /* Splash.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Splash.xib; sourceTree = "<group>"; };
+		EF93BE532010B54C0004560E /* ResIOS.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ResIOS.xcassets; sourceTree = "<group>"; };
+		EF93BE552010B5550004560E /* ResOSX.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ResOSX.xcassets; sourceTree = "<group>"; };
+		EF93BE6E2010CD7E0004560E /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
+		EF93BE702010CD8B0004560E /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		EF93BE722010CDA10004560E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		EF93BE742010CDC30004560E /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/System/Library/Frameworks/OpenAL.framework; sourceTree = DEVELOPER_DIR; };
+		EF93BE762010CDCF0004560E /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/System/Library/Frameworks/OpenGL.framework; sourceTree = DEVELOPER_DIR; };
+		EF93BE782010CDE10004560E /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/System/Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
+		EF93BEAD2010CE790004560E /* battlemap.nut */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = battlemap.nut; path = ../../../DeepSpace/battlemap.nut; sourceTree = "<group>"; };
+		EF93BEAE2010CE790004560E /* render2d.mat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = render2d.mat; path = ../../../DeepSpace/render2d.mat; sourceTree = "<group>"; };
+		EF93BEAF2010CE790004560E /* render2d.vs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = render2d.vs; path = ../../../DeepSpace/render2d.vs; sourceTree = "<group>"; };
+		EF93BEB02010CE790004560E /* render2d.ps */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = render2d.ps; path = ../../../DeepSpace/render2d.ps; sourceTree = "<group>"; };
+		EF93BEB12010CE790004560E /* vcolor.ps */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = vcolor.ps; path = ../../../DeepSpace/vcolor.ps; sourceTree = "<group>"; };
+		EF93BEB22010CE790004560E /* battlesquad.nut */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = battlesquad.nut; path = ../../../DeepSpace/battlesquad.nut; sourceTree = "<group>"; };
+		EF93BEB32010CE790004560E /* main.nut */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = main.nut; path = ../../../DeepSpace/main.nut; sourceTree = "<group>"; };
+		EF93BEB42010CE7A0004560E /* ui */ = {isa = PBXFileReference; lastKnownFileType = folder; name = ui; path = ../../../DeepSpace/ui; sourceTree = "<group>"; };
+		EF93BEB52010CE7A0004560E /* vcolor.vs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = vcolor.vs; path = ../../../DeepSpace/vcolor.vs; sourceTree = "<group>"; };
+		EF93BEB62010CE7A0004560E /* debugR.mat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = debugR.mat; path = ../../../DeepSpace/debugR.mat; sourceTree = "<group>"; };
+		EF93BEB72010CE7A0004560E /* render2d_vc.ps */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = render2d_vc.ps; path = ../../../DeepSpace/render2d_vc.ps; sourceTree = "<group>"; };
+		EF93BEB82010CE7A0004560E /* render2d_vc.mat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = render2d_vc.mat; path = ../../../DeepSpace/render2d_vc.mat; sourceTree = "<group>"; };
+		EF93BEB92010CE7A0004560E /* screens */ = {isa = PBXFileReference; lastKnownFileType = folder; name = screens; path = ../../../DeepSpace/screens; sourceTree = "<group>"; };
+		EF93BEBA2010CE7A0004560E /* basemap.nut */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = basemap.nut; path = ../../../DeepSpace/basemap.nut; sourceTree = "<group>"; };
+		EF93BEBB2010CE7B0004560E /* buildings */ = {isa = PBXFileReference; lastKnownFileType = folder; name = buildings; path = ../../../DeepSpace/buildings; sourceTree = "<group>"; };
+		EF93BEDA2010D1AD0004560E /* data */ = {isa = PBXFileReference; lastKnownFileType = folder; name = data; path = ../../../DeepSpace/data; sourceTree = "<group>"; };
+		FDC100731AB7812300BB41DD /* WaloPlayer_ios_d.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WaloPlayer_ios_d.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDC100A71AB7841F00BB41DD /* WaloEngine.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = WaloEngine.xcodeproj; path = ../Engine/WaloEngine.xcodeproj; sourceTree = "<group>"; };
-		FDC100AD1AB7844C00BB41DD /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Resources/Info.plist; sourceTree = SOURCE_ROOT; };
-		FDC100AE1AB7844C00BB41DD /* Resources.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Resources.xcassets; path = Resources/Resources.xcassets; sourceTree = SOURCE_ROOT; };
-		FDC100AF1AB7844C00BB41DD /* Splash.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = Splash.xib; path = Resources/Splash.xib; sourceTree = SOURCE_ROOT; };
-		FDE208691ABE3EC000A0C7FB /* Camera3DWrapper.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Camera3DWrapper.hpp; sourceTree = "<group>"; };
-		FDE2086A1ABE3EC000A0C7FB /* CollisionBox2DWrapper.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CollisionBox2DWrapper.hpp; sourceTree = "<group>"; };
-		FDE2086B1ABE3EC000A0C7FB /* CollisionShape2DWrapper.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CollisionShape2DWrapper.hpp; sourceTree = "<group>"; };
-		FDE2086C1ABE3EC000A0C7FB /* ColorWrapper.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ColorWrapper.hpp; sourceTree = "<group>"; };
-		FDE2086D1ABE3EC000A0C7FB /* ComponentWrapper.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ComponentWrapper.hpp; sourceTree = "<group>"; };
-		FDE2086E1ABE3EC000A0C7FB /* FontWrapper.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = FontWrapper.hpp; sourceTree = "<group>"; };
-		FDE2086F1ABE3EC000A0C7FB /* MaterialWrapper.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = MaterialWrapper.hpp; sourceTree = "<group>"; };
-		FDE208701ABE3EC000A0C7FB /* MathWrapper.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = MathWrapper.hpp; sourceTree = "<group>"; };
-		FDE208711ABE3EC000A0C7FB /* MeshWrapper.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = MeshWrapper.hpp; sourceTree = "<group>"; };
-		FDE208721ABE3EC000A0C7FB /* Model3DWrapper.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Model3DWrapper.hpp; sourceTree = "<group>"; };
-		FDE208731ABE3EC000A0C7FB /* Node2DWrapper.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Node2DWrapper.hpp; sourceTree = "<group>"; };
-		FDE208741ABE3EC000A0C7FB /* Node3DWrapper.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Node3DWrapper.hpp; sourceTree = "<group>"; };
-		FDE208751ABE3EC000A0C7FB /* NodeWrapper.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = NodeWrapper.hpp; sourceTree = "<group>"; };
-		FDE208761ABE3EC000A0C7FB /* PathMap.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = PathMap.hpp; sourceTree = "<group>"; };
-		FDE208771ABE3EC000A0C7FB /* RectWrapper.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = RectWrapper.hpp; sourceTree = "<group>"; };
-		FDE208781ABE3EC000A0C7FB /* ResourceCacheWrapper.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ResourceCacheWrapper.hpp; sourceTree = "<group>"; };
-		FDE208791ABE3EC000A0C7FB /* ResourceWrapper.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ResourceWrapper.hpp; sourceTree = "<group>"; };
-		FDE2087A1ABE3EC000A0C7FB /* RigidBody2DWrapper.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = RigidBody2DWrapper.hpp; sourceTree = "<group>"; };
-		FDE2087C1ABE3EC000A0C7FB /* SoundSourceWrapper.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = SoundSourceWrapper.hpp; sourceTree = "<group>"; };
-		FDE2087D1ABE3EC000A0C7FB /* SoundStreamWrapper.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = SoundStreamWrapper.hpp; sourceTree = "<group>"; };
-		FDE2087E1ABE3EC000A0C7FB /* Sprite2DWrapper.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Sprite2DWrapper.hpp; sourceTree = "<group>"; };
-		FDE2087F1ABE3EC000A0C7FB /* Text2DWrapper.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Text2DWrapper.hpp; sourceTree = "<group>"; };
-		FDE208801ABE3EC000A0C7FB /* TextureWrapper.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = TextureWrapper.hpp; sourceTree = "<group>"; };
-		FDE208811ABE3EC000A0C7FB /* TileMap2DWrapper.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = TileMap2DWrapper.hpp; sourceTree = "<group>"; };
-		FDE208821ABE3EC000A0C7FB /* VectorWrapper.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = VectorWrapper.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		EF8C3899200E25000077FE8C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF93BE622010B60A0004560E /* libWaloEngine_osx_d.a in Frameworks */,
+				EF93BE772010CDCF0004560E /* OpenGL.framework in Frameworks */,
+				EF93BE752010CDC80004560E /* OpenAL.framework in Frameworks */,
+				EF93BE792010CDE10004560E /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FDC100701AB7812300BB41DD /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FD1BA8721ABB7B720015722E /* QuartzCore.framework in Frameworks */,
-				FDA0F88E1ABA34DC000661CA /* OpenAL.framework in Frameworks */,
-				FDA0F88C1ABA34CE000661CA /* UIKit.framework in Frameworks */,
-				FDA0F88A1ABA34B9000661CA /* OpenGLES.framework in Frameworks */,
-				FDA0F8881ABA34A1000661CA /* libWaloEngine_d.a in Frameworks */,
+				FDA0F8881ABA34A1000661CA /* libWaloEngine_ios_d.a in Frameworks */,
+				EF93BE6F2010CD820004560E /* OpenAL.framework in Frameworks */,
+				EF93BE712010CD8E0004560E /* OpenGLES.framework in Frameworks */,
+				EF93BE732010CDA70004560E /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		FDA0F82B1ABA3456000661CA /* Externs */ = {
+		EF121391200F992A009E2F8E /* sqrat */ = {
 			isa = PBXGroup;
 			children = (
-				FD1BA8711ABB7B720015722E /* QuartzCore.framework */,
-				FDA0F8891ABA34B9000661CA /* OpenGLES.framework */,
-				FDA0F88B1ABA34CE000661CA /* UIKit.framework */,
-				FDA0F88D1ABA34DC000661CA /* OpenAL.framework */,
-				FDA0F82C1ABA3478000661CA /* sqrat */,
-				FDA0F8421ABA3478000661CA /* squirrel3 */,
-			);
-			name = Externs;
-			sourceTree = "<group>";
-		};
-		FDA0F82C1ABA3478000661CA /* sqrat */ = {
-			isa = PBXGroup;
-			children = (
-				FDA0F82D1ABA3478000661CA /* sqmodule.h */,
-				FDA0F82E1ABA3478000661CA /* sqrat */,
-				FDA0F83F1ABA3478000661CA /* sqrat.h */,
-				FDA0F8401ABA3478000661CA /* sqratimport.cpp */,
-				FDA0F8411ABA3478000661CA /* sqratimport.h */,
+				EF121392200F992A009E2F8E /* sqmodule.h */,
+				EF121393200F992A009E2F8E /* sqrat */,
+				EF1213A4200F992A009E2F8E /* sqrat.h */,
+				EF1213A5200F992A009E2F8E /* sqratimport.cpp */,
+				EF1213A6200F992A009E2F8E /* sqratimport.h */,
 			);
 			name = sqrat;
 			path = ../Externs/sqrat;
 			sourceTree = "<group>";
 		};
-		FDA0F82E1ABA3478000661CA /* sqrat */ = {
+		EF121393200F992A009E2F8E /* sqrat */ = {
 			isa = PBXGroup;
 			children = (
-				FDA0F82F1ABA3478000661CA /* sqratAllocator.h */,
-				FDA0F8301ABA3478000661CA /* sqratArray.h */,
-				FDA0F8311ABA3478000661CA /* sqratClass.h */,
-				FDA0F8321ABA3478000661CA /* sqratClassType.h */,
-				FDA0F8331ABA3478000661CA /* sqratConst.h */,
-				FDA0F8341ABA3478000661CA /* sqratFunction.h */,
-				FDA0F8351ABA3478000661CA /* sqratGlobalMethods.h */,
-				FDA0F8361ABA3478000661CA /* sqratImpClass.h */,
-				FDA0F8371ABA3478000661CA /* sqratMemberMethods.h */,
-				FDA0F8381ABA3478000661CA /* sqratObject.h */,
-				FDA0F8391ABA3478000661CA /* sqratOverloadMethods.h */,
-				FDA0F83A1ABA3478000661CA /* sqratScript.h */,
-				FDA0F83B1ABA3478000661CA /* sqratTable.h */,
-				FDA0F83C1ABA3478000661CA /* sqratTypes.h */,
-				FDA0F83D1ABA3478000661CA /* sqratUtil.h */,
-				FDA0F83E1ABA3478000661CA /* sqratVM.h */,
+				EF121394200F992A009E2F8E /* sqratAllocator.h */,
+				EF121395200F992A009E2F8E /* sqratArray.h */,
+				EF121396200F992A009E2F8E /* sqratClass.h */,
+				EF121397200F992A009E2F8E /* sqratClassType.h */,
+				EF121398200F992A009E2F8E /* sqratConst.h */,
+				EF121399200F992A009E2F8E /* sqratFunction.h */,
+				EF12139A200F992A009E2F8E /* sqratGlobalMethods.h */,
+				EF12139B200F992A009E2F8E /* sqratImpClass.h */,
+				EF12139C200F992A009E2F8E /* sqratMemberMethods.h */,
+				EF12139D200F992A009E2F8E /* sqratObject.h */,
+				EF12139E200F992A009E2F8E /* sqratOverloadMethods.h */,
+				EF12139F200F992A009E2F8E /* sqratScript.h */,
+				EF1213A0200F992A009E2F8E /* sqratTable.h */,
+				EF1213A1200F992A009E2F8E /* sqratTypes.h */,
+				EF1213A2200F992A009E2F8E /* sqratUtil.h */,
+				EF1213A3200F992A009E2F8E /* sqratVM.h */,
 			);
 			path = sqrat;
 			sourceTree = "<group>";
 		};
-		FDA0F8421ABA3478000661CA /* squirrel3 */ = {
+		EF1213A7200F992B009E2F8E /* squirrel3 */ = {
 			isa = PBXGroup;
 			children = (
-				FDA0F8431ABA3478000661CA /* sqstdaux.h */,
-				FDA0F8441ABA3478000661CA /* sqstdblob.h */,
-				FDA0F8451ABA3478000661CA /* sqstdio.h */,
-				FDA0F8461ABA3478000661CA /* sqstdlib */,
-				FDA0F8511ABA3478000661CA /* sqstdmath.h */,
-				FDA0F8521ABA3478000661CA /* sqstdstring.h */,
-				FDA0F8531ABA3478000661CA /* sqstdsystem.h */,
-				FDA0F8541ABA3478000661CA /* squirrel */,
-				FDA0F8721ABA3478000661CA /* squirrel.h */,
+				EF1213A8200F992B009E2F8E /* sqconfig.h */,
+				EF1213A9200F992B009E2F8E /* sqstdaux.h */,
+				EF1213AA200F992B009E2F8E /* sqstdblob.h */,
+				EF1213AB200F992B009E2F8E /* sqstdio.h */,
+				EF1213AC200F992B009E2F8E /* sqstdlib */,
+				EF1213B7200F992B009E2F8E /* sqstdmath.h */,
+				EF1213B8200F992B009E2F8E /* sqstdstring.h */,
+				EF1213B9200F992B009E2F8E /* sqstdsystem.h */,
+				EF1213BA200F992B009E2F8E /* squirrel */,
+				EF1213D8200F992B009E2F8E /* squirrel.h */,
 			);
 			name = squirrel3;
 			path = ../Externs/squirrel3;
 			sourceTree = "<group>";
 		};
-		FDA0F8461ABA3478000661CA /* sqstdlib */ = {
+		EF1213AC200F992B009E2F8E /* sqstdlib */ = {
 			isa = PBXGroup;
 			children = (
-				FDA0F8471ABA3478000661CA /* sqstdaux.cpp */,
-				FDA0F8481ABA3478000661CA /* sqstdblob.cpp */,
-				FDA0F8491ABA3478000661CA /* sqstdblobimpl.h */,
-				FDA0F84A1ABA3478000661CA /* sqstdio.cpp */,
-				FDA0F84B1ABA3478000661CA /* sqstdmath.cpp */,
-				FDA0F84C1ABA3478000661CA /* sqstdrex.cpp */,
-				FDA0F84D1ABA3478000661CA /* sqstdstream.cpp */,
-				FDA0F84E1ABA3478000661CA /* sqstdstream.h */,
-				FDA0F84F1ABA3478000661CA /* sqstdstring.cpp */,
-				FDA0F8501ABA3478000661CA /* sqstdsystem.cpp */,
+				EF1213AD200F992B009E2F8E /* sqstdaux.cpp */,
+				EF1213AE200F992B009E2F8E /* sqstdblob.cpp */,
+				EF1213AF200F992B009E2F8E /* sqstdblobimpl.h */,
+				EF1213B0200F992B009E2F8E /* sqstdio.cpp */,
+				EF1213B1200F992B009E2F8E /* sqstdmath.cpp */,
+				EF1213B2200F992B009E2F8E /* sqstdrex.cpp */,
+				EF1213B3200F992B009E2F8E /* sqstdstream.cpp */,
+				EF1213B4200F992B009E2F8E /* sqstdstream.h */,
+				EF1213B5200F992B009E2F8E /* sqstdstring.cpp */,
+				EF1213B6200F992B009E2F8E /* sqstdsystem.cpp */,
 			);
 			path = sqstdlib;
 			sourceTree = "<group>";
 		};
-		FDA0F8541ABA3478000661CA /* squirrel */ = {
+		EF1213BA200F992B009E2F8E /* squirrel */ = {
 			isa = PBXGroup;
 			children = (
-				FDA0F8551ABA3478000661CA /* sqapi.cpp */,
-				FDA0F8561ABA3478000661CA /* sqarray.h */,
-				FDA0F8571ABA3478000661CA /* sqbaselib.cpp */,
-				FDA0F8581ABA3478000661CA /* sqclass.cpp */,
-				FDA0F8591ABA3478000661CA /* sqclass.h */,
-				FDA0F85A1ABA3478000661CA /* sqclosure.h */,
-				FDA0F85B1ABA3478000661CA /* sqcompiler.cpp */,
-				FDA0F85C1ABA3478000661CA /* sqcompiler.h */,
-				FDA0F85D1ABA3478000661CA /* sqdebug.cpp */,
-				FDA0F85E1ABA3478000661CA /* sqfuncproto.h */,
-				FDA0F85F1ABA3478000661CA /* sqfuncstate.cpp */,
-				FDA0F8601ABA3478000661CA /* sqfuncstate.h */,
-				FDA0F8611ABA3478000661CA /* sqlexer.cpp */,
-				FDA0F8621ABA3478000661CA /* sqlexer.h */,
-				FDA0F8631ABA3478000661CA /* sqmem.cpp */,
-				FDA0F8641ABA3478000661CA /* sqobject.cpp */,
-				FDA0F8651ABA3478000661CA /* sqobject.h */,
-				FDA0F8661ABA3478000661CA /* sqopcodes.h */,
-				FDA0F8671ABA3478000661CA /* sqpcheader.h */,
-				FDA0F8681ABA3478000661CA /* sqstate.cpp */,
-				FDA0F8691ABA3478000661CA /* sqstate.h */,
-				FDA0F86A1ABA3478000661CA /* sqstring.h */,
-				FDA0F86B1ABA3478000661CA /* sqtable.cpp */,
-				FDA0F86C1ABA3478000661CA /* sqtable.h */,
-				FDA0F86D1ABA3478000661CA /* squserdata.h */,
-				FDA0F86E1ABA3478000661CA /* squtf8.h */,
-				FDA0F86F1ABA3478000661CA /* squtils.h */,
-				FDA0F8701ABA3478000661CA /* sqvm.cpp */,
-				FDA0F8711ABA3478000661CA /* sqvm.h */,
+				EF1213BB200F992B009E2F8E /* sqapi.cpp */,
+				EF1213BC200F992B009E2F8E /* sqarray.h */,
+				EF1213BD200F992B009E2F8E /* sqbaselib.cpp */,
+				EF1213BE200F992B009E2F8E /* sqclass.cpp */,
+				EF1213BF200F992B009E2F8E /* sqclass.h */,
+				EF1213C0200F992B009E2F8E /* sqclosure.h */,
+				EF1213C1200F992B009E2F8E /* sqcompiler.cpp */,
+				EF1213C2200F992B009E2F8E /* sqcompiler.h */,
+				EF1213C3200F992B009E2F8E /* sqdebug.cpp */,
+				EF1213C4200F992B009E2F8E /* sqfuncproto.h */,
+				EF1213C5200F992B009E2F8E /* sqfuncstate.cpp */,
+				EF1213C6200F992B009E2F8E /* sqfuncstate.h */,
+				EF1213C7200F992B009E2F8E /* sqlexer.cpp */,
+				EF1213C8200F992B009E2F8E /* sqlexer.h */,
+				EF1213C9200F992B009E2F8E /* sqmem.cpp */,
+				EF1213CA200F992B009E2F8E /* sqobject.cpp */,
+				EF1213CB200F992B009E2F8E /* sqobject.h */,
+				EF1213CC200F992B009E2F8E /* sqopcodes.h */,
+				EF1213CD200F992B009E2F8E /* sqpcheader.h */,
+				EF1213CE200F992B009E2F8E /* sqstate.cpp */,
+				EF1213CF200F992B009E2F8E /* sqstate.h */,
+				EF1213D0200F992B009E2F8E /* sqstring.h */,
+				EF1213D1200F992B009E2F8E /* sqtable.cpp */,
+				EF1213D2200F992B009E2F8E /* sqtable.h */,
+				EF1213D3200F992B009E2F8E /* squserdata.h */,
+				EF1213D4200F992B009E2F8E /* squtf8.h */,
+				EF1213D5200F992B009E2F8E /* squtils.h */,
+				EF1213D6200F992B009E2F8E /* sqvm.cpp */,
+				EF1213D7200F992B009E2F8E /* sqvm.h */,
 			);
 			path = squirrel;
+			sourceTree = "<group>";
+		};
+		EF121403200F994B009E2F8E /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				EF121404200F994B009E2F8E /* Serializer.hpp */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		EF121407200F994B009E2F8E /* Wrappers */ = {
+			isa = PBXGroup;
+			children = (
+				EF121408200F994B009E2F8E /* AssetsDBWrapper.hpp */,
+				EF121409200F994B009E2F8E /* AssetWrapper.hpp */,
+				EF12140A200F994B009E2F8E /* Camera3DWrapper.hpp */,
+				EF12140B200F994B009E2F8E /* CollisionBox2DWrapper.hpp */,
+				EF12140C200F994B009E2F8E /* CollisionShape2DWrapper.hpp */,
+				EF12140D200F994B009E2F8E /* ColorWrapper.hpp */,
+				EF12140E200F994B009E2F8E /* ComponentWrapper.hpp */,
+				EF12140F200F994B009E2F8E /* FontWrapper.hpp */,
+				EF121410200F994B009E2F8E /* InputSystemWrapper.hpp */,
+				EF121411200F994B009E2F8E /* MaterialWrapper.hpp */,
+				EF121412200F994B009E2F8E /* MathWrapper.hpp */,
+				EF121413200F994B009E2F8E /* MeshWrapper.hpp */,
+				EF121414200F994B009E2F8E /* Model3DWrapper.hpp */,
+				EF121415200F994B009E2F8E /* Node2DWrapper.hpp */,
+				EF121416200F994B009E2F8E /* Node3DWrapper.hpp */,
+				EF121417200F994B009E2F8E /* NodeWrapper.hpp */,
+				EF121418200F994B009E2F8E /* Progress2DWrapper.hpp */,
+				EF121419200F994B009E2F8E /* RectWrapper.hpp */,
+				EF12141A200F994B009E2F8E /* RigidBody2DWrapper.hpp */,
+				EF12141B200F994B009E2F8E /* SaveFileWrapper.hpp */,
+				EF12141C200F994B009E2F8E /* SoundSourceWrapper.hpp */,
+				EF12141D200F994B009E2F8E /* SoundStreamWrapper.hpp */,
+				EF12141E200F994B009E2F8E /* Sprite2DWrapper.hpp */,
+				EF12141F200F994B009E2F8E /* Text2DWrapper.hpp */,
+				EF121420200F994B009E2F8E /* TextureWrapper.hpp */,
+				EF121421200F994B009E2F8E /* TileMap2DWrapper.hpp */,
+				EF121422200F994B009E2F8E /* VectorWrapper.hpp */,
+			);
+			path = Wrappers;
+			sourceTree = "<group>";
+		};
+		EF93BE6D2010CD7D0004560E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EF93BE782010CDE10004560E /* Cocoa.framework */,
+				EF93BE762010CDCF0004560E /* OpenGL.framework */,
+				EF93BE742010CDC30004560E /* OpenAL.framework */,
+				EF93BE722010CDA10004560E /* UIKit.framework */,
+				EF93BE702010CD8B0004560E /* OpenGLES.framework */,
+				EF93BE6E2010CD7E0004560E /* OpenAL.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FDA0F82B1ABA3456000661CA /* Externs */ = {
+			isa = PBXGroup;
+			children = (
+				EF121391200F992A009E2F8E /* sqrat */,
+				EF1213A7200F992B009E2F8E /* squirrel3 */,
+			);
+			name = Externs;
 			sourceTree = "<group>";
 		};
 		FDC1006A1AB7812300BB41DD = {
@@ -304,15 +466,16 @@
 				FDC100A01AB7817300BB41DD /* Resources */,
 				FDA0F82B1ABA3456000661CA /* Externs */,
 				FDC104831AB78FA700BB41DD /* Sources */,
-				EF1C672C1B552F710058A19C /* Assets */,
 				FDC100741AB7812300BB41DD /* Products */,
+				EF93BE6D2010CD7D0004560E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
 		FDC100741AB7812300BB41DD /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				FDC100731AB7812300BB41DD /* WaloPlayer_d.app */,
+				FDC100731AB7812300BB41DD /* WaloPlayer_ios_d.app */,
+				EF8C389C200E25000077FE8C /* WaloPlayer_osx_d.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -320,18 +483,37 @@
 		FDC100A01AB7817300BB41DD /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				FDC100AD1AB7844C00BB41DD /* Info.plist */,
-				FDC100AE1AB7844C00BB41DD /* Resources.xcassets */,
-				FDC100AF1AB7844C00BB41DD /* Splash.xib */,
+				EF5BE4A921C1214600D849F5 /* spacemap.nut */,
+				EF93BEDA2010D1AD0004560E /* data */,
+				EF93BEBA2010CE7A0004560E /* basemap.nut */,
+				EF93BEAD2010CE790004560E /* battlemap.nut */,
+				EF93BEB22010CE790004560E /* battlesquad.nut */,
+				EF93BEBB2010CE7B0004560E /* buildings */,
+				EF93BEB62010CE7A0004560E /* debugR.mat */,
+				EF93BEB32010CE790004560E /* main.nut */,
+				EF93BEB82010CE7A0004560E /* render2d_vc.mat */,
+				EF93BEB72010CE7A0004560E /* render2d_vc.ps */,
+				EF93BEAE2010CE790004560E /* render2d.mat */,
+				EF93BEB02010CE790004560E /* render2d.ps */,
+				EF93BEAF2010CE790004560E /* render2d.vs */,
+				EF93BEB92010CE7A0004560E /* screens */,
+				EF93BEB42010CE7A0004560E /* ui */,
+				EF93BEB12010CE790004560E /* vcolor.ps */,
+				EF93BEB52010CE7A0004560E /* vcolor.vs */,
+				EF93BE552010B5550004560E /* ResOSX.xcassets */,
+				EF93BE532010B54C0004560E /* ResIOS.xcassets */,
+				EF93BE512010B5400004560E /* Splash.xib */,
+				EF93BE4E2010B52C0004560E /* InfoIOS.plist */,
+				EF8C38C7200E275F0077FE8C /* InfoOSX.plist */,
 			);
-			name = Resources;
-			path = WaloPlayer;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		FDC100A81AB7841F00BB41DD /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				FDC100AC1AB7841F00BB41DD /* libWaloEngine_d.a */,
+				FDC100AC1AB7841F00BB41DD /* libWaloEngine_ios_d.a */,
+				EF8C3897200E24CE0077FE8C /* libWaloEngine_osx_d.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -339,51 +521,38 @@
 		FDC104831AB78FA700BB41DD /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				FDE208681ABE3EC000A0C7FB /* Wrappers */,
-				FDA0F8281ABA3044000661CA /* WaloPlayer.cpp */,
-				FDA0F8291ABA3044000661CA /* WaloPlayer.hpp */,
+				EF121407200F994B009E2F8E /* Wrappers */,
+				EF121403200F994B009E2F8E /* Utils */,
+				EF121406200F994B009E2F8E /* WaloPlayer.cpp */,
+				EF121405200F994B009E2F8E /* WaloPlayer.hpp */,
 			);
 			name = Sources;
-			sourceTree = "<group>";
-		};
-		FDE208681ABE3EC000A0C7FB /* Wrappers */ = {
-			isa = PBXGroup;
-			children = (
-				FDE208691ABE3EC000A0C7FB /* Camera3DWrapper.hpp */,
-				FDE2086A1ABE3EC000A0C7FB /* CollisionBox2DWrapper.hpp */,
-				FDE2086B1ABE3EC000A0C7FB /* CollisionShape2DWrapper.hpp */,
-				FDE2086C1ABE3EC000A0C7FB /* ColorWrapper.hpp */,
-				FDE2086D1ABE3EC000A0C7FB /* ComponentWrapper.hpp */,
-				FDE2086E1ABE3EC000A0C7FB /* FontWrapper.hpp */,
-				FDE2086F1ABE3EC000A0C7FB /* MaterialWrapper.hpp */,
-				FDE208701ABE3EC000A0C7FB /* MathWrapper.hpp */,
-				FDE208711ABE3EC000A0C7FB /* MeshWrapper.hpp */,
-				FDE208721ABE3EC000A0C7FB /* Model3DWrapper.hpp */,
-				FDE208731ABE3EC000A0C7FB /* Node2DWrapper.hpp */,
-				FDE208741ABE3EC000A0C7FB /* Node3DWrapper.hpp */,
-				FDE208751ABE3EC000A0C7FB /* NodeWrapper.hpp */,
-				FDE208761ABE3EC000A0C7FB /* PathMap.hpp */,
-				FDE208771ABE3EC000A0C7FB /* RectWrapper.hpp */,
-				FDE208781ABE3EC000A0C7FB /* ResourceCacheWrapper.hpp */,
-				FDE208791ABE3EC000A0C7FB /* ResourceWrapper.hpp */,
-				FDE2087A1ABE3EC000A0C7FB /* RigidBody2DWrapper.hpp */,
-				FDE2087C1ABE3EC000A0C7FB /* SoundSourceWrapper.hpp */,
-				FDE2087D1ABE3EC000A0C7FB /* SoundStreamWrapper.hpp */,
-				FDE2087E1ABE3EC000A0C7FB /* Sprite2DWrapper.hpp */,
-				FDE2087F1ABE3EC000A0C7FB /* Text2DWrapper.hpp */,
-				FDE208801ABE3EC000A0C7FB /* TextureWrapper.hpp */,
-				FDE208811ABE3EC000A0C7FB /* TileMap2DWrapper.hpp */,
-				FDE208821ABE3EC000A0C7FB /* VectorWrapper.hpp */,
-			);
-			path = Wrappers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		FDC100721AB7812300BB41DD /* WaloPlayer */ = {
+		EF8C389B200E25000077FE8C /* WaloPlayer_osx */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FDC1009A1AB7812300BB41DD /* Build configuration list for PBXNativeTarget "WaloPlayer" */;
+			buildConfigurationList = EF8C38AD200E25000077FE8C /* Build configuration list for PBXNativeTarget "WaloPlayer_osx" */;
+			buildPhases = (
+				EF8C3898200E25000077FE8C /* Sources */,
+				EF8C3899200E25000077FE8C /* Frameworks */,
+				EF8C389A200E25000077FE8C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EF93BE602010B5FB0004560E /* PBXTargetDependency */,
+			);
+			name = WaloPlayer_osx;
+			productName = WaloPlayer_osx;
+			productReference = EF8C389C200E25000077FE8C /* WaloPlayer_osx_d.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FDC100721AB7812300BB41DD /* WaloPlayer_ios */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FDC1009A1AB7812300BB41DD /* Build configuration list for PBXNativeTarget "WaloPlayer_ios" */;
 			buildPhases = (
 				FDC1006F1AB7812300BB41DD /* Sources */,
 				FDC100701AB7812300BB41DD /* Frameworks */,
@@ -394,9 +563,9 @@
 			dependencies = (
 				EF5388A61AB8693C00FFE483 /* PBXTargetDependency */,
 			);
-			name = WaloPlayer;
+			name = WaloPlayer_ios;
 			productName = WaloPlayer;
-			productReference = FDC100731AB7812300BB41DD /* WaloPlayer_d.app */;
+			productReference = FDC100731AB7812300BB41DD /* WaloPlayer_ios_d.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -405,11 +574,21 @@
 		FDC1006B1AB7812300BB41DD /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0620;
+				KnownAssetTags = (
+					New,
+				);
+				LastUpgradeCheck = 0910;
 				ORGANIZATIONNAME = DeXmas;
 				TargetAttributes = {
+					EF8C389B200E25000077FE8C = {
+						CreatedOnToolsVersion = 9.1;
+						DevelopmentTeam = 8SM49QADK9;
+						ProvisioningStyle = Automatic;
+					};
 					FDC100721AB7812300BB41DD = {
 						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = 8SM49QADK9;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -432,61 +611,141 @@
 			);
 			projectRoot = "";
 			targets = (
-				FDC100721AB7812300BB41DD /* WaloPlayer */,
+				FDC100721AB7812300BB41DD /* WaloPlayer_ios */,
+				EF8C389B200E25000077FE8C /* WaloPlayer_osx */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		FDC100AC1AB7841F00BB41DD /* libWaloEngine_d.a */ = {
+		EF8C3897200E24CE0077FE8C /* libWaloEngine_osx_d.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
-			path = libWaloEngine_d.a;
+			path = libWaloEngine_osx_d.a;
+			remoteRef = EF8C3896200E24CE0077FE8C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		FDC100AC1AB7841F00BB41DD /* libWaloEngine_ios_d.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libWaloEngine_ios_d.a;
 			remoteRef = FDC100AB1AB7841F00BB41DD /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
+		EF8C389A200E25000077FE8C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF93BECB2010CE7B0004560E /* ui in Resources */,
+				EF93BE502010B5310004560E /* InfoOSX.plist in Resources */,
+				EF93BEC92010CE7B0004560E /* main.nut in Resources */,
+				EF93BED32010CE7B0004560E /* render2d_vc.mat in Resources */,
+				EF5BE4AB21C1214600D849F5 /* spacemap.nut in Resources */,
+				EF93BEDC2010D1AD0004560E /* data in Resources */,
+				EF93BE562010B5550004560E /* ResOSX.xcassets in Resources */,
+				EF93BEC32010CE7B0004560E /* render2d.ps in Resources */,
+				EF93BED52010CE7B0004560E /* screens in Resources */,
+				EF93BEBF2010CE7B0004560E /* render2d.mat in Resources */,
+				EF93BEC52010CE7B0004560E /* vcolor.ps in Resources */,
+				EF93BED72010CE7B0004560E /* basemap.nut in Resources */,
+				EF93BECD2010CE7B0004560E /* vcolor.vs in Resources */,
+				EF93BEBD2010CE7B0004560E /* battlemap.nut in Resources */,
+				EF93BED92010CE7B0004560E /* buildings in Resources */,
+				EF93BEC72010CE7B0004560E /* battlesquad.nut in Resources */,
+				EF93BEC12010CE7B0004560E /* render2d.vs in Resources */,
+				EF93BECF2010CE7B0004560E /* debugR.mat in Resources */,
+				EF93BED12010CE7B0004560E /* render2d_vc.ps in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FDC100711AB7812300BB41DD /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FDC100B11AB7844C00BB41DD /* Resources.xcassets in Resources */,
-				EF1C672D1B552F710058A19C /* Assets in Resources */,
-				FDC100B21AB7844C00BB41DD /* Splash.xib in Resources */,
+				EF93BECA2010CE7B0004560E /* ui in Resources */,
+				EF93BECC2010CE7B0004560E /* vcolor.vs in Resources */,
+				EF93BED82010CE7B0004560E /* buildings in Resources */,
+				EF93BED22010CE7B0004560E /* render2d_vc.mat in Resources */,
+				EF93BEBE2010CE7B0004560E /* render2d.mat in Resources */,
+				EF93BED02010CE7B0004560E /* render2d_vc.ps in Resources */,
+				EF93BEDB2010D1AD0004560E /* data in Resources */,
+				EF93BEBC2010CE7B0004560E /* battlemap.nut in Resources */,
+				EF93BED62010CE7B0004560E /* basemap.nut in Resources */,
+				EF93BEC02010CE7B0004560E /* render2d.vs in Resources */,
+				EF93BE6C2010BBF60004560E /* Splash.xib in Resources */,
+				EF93BEC82010CE7B0004560E /* main.nut in Resources */,
+				EF93BEC22010CE7B0004560E /* render2d.ps in Resources */,
+				EF93BED42010CE7B0004560E /* screens in Resources */,
+				EF93BEC62010CE7B0004560E /* battlesquad.nut in Resources */,
+				EF93BE542010B54C0004560E /* ResIOS.xcassets in Resources */,
+				EF93BECE2010CE7B0004560E /* debugR.mat in Resources */,
+				EF93BE4F2010B52C0004560E /* InfoIOS.plist in Resources */,
+				EF93BEC42010CE7B0004560E /* vcolor.ps in Resources */,
+				EF5BE4AA21C1214600D849F5 /* spacemap.nut in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		EF8C3898200E25000077FE8C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF1213EC200F992B009E2F8E /* sqapi.cpp in Sources */,
+				EF1213FA200F992B009E2F8E /* sqmem.cpp in Sources */,
+				EF1213F6200F992B009E2F8E /* sqfuncstate.cpp in Sources */,
+				EF1213E0200F992B009E2F8E /* sqstdio.cpp in Sources */,
+				EF1213E2200F992B009E2F8E /* sqstdmath.cpp in Sources */,
+				EF121400200F992B009E2F8E /* sqtable.cpp in Sources */,
+				EF1213FE200F992B009E2F8E /* sqstate.cpp in Sources */,
+				EF1213E4200F992B009E2F8E /* sqstdrex.cpp in Sources */,
+				EF1213F2200F992B009E2F8E /* sqcompiler.cpp in Sources */,
+				EF1213F0200F992B009E2F8E /* sqclass.cpp in Sources */,
+				EF1213EE200F992B009E2F8E /* sqbaselib.cpp in Sources */,
+				EF1213E6200F992B009E2F8E /* sqstdstream.cpp in Sources */,
+				EF121402200F992B009E2F8E /* sqvm.cpp in Sources */,
+				EF1213F8200F992B009E2F8E /* sqlexer.cpp in Sources */,
+				EF1213DE200F992B009E2F8E /* sqstdblob.cpp in Sources */,
+				EF121424200F994B009E2F8E /* WaloPlayer.cpp in Sources */,
+				EF1213F4200F992B009E2F8E /* sqdebug.cpp in Sources */,
+				EF1213E8200F992B009E2F8E /* sqstdstring.cpp in Sources */,
+				EF1213DA200F992B009E2F8E /* sqratimport.cpp in Sources */,
+				EF1213FC200F992B009E2F8E /* sqobject.cpp in Sources */,
+				EF1213EA200F992B009E2F8E /* sqstdsystem.cpp in Sources */,
+				EF1213DC200F992B009E2F8E /* sqstdaux.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FDC1006F1AB7812300BB41DD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FDA0F87C1ABA3478000661CA /* sqapi.cpp in Sources */,
-				FDA0F8831ABA3478000661CA /* sqmem.cpp in Sources */,
-				FDA0F8811ABA3478000661CA /* sqfuncstate.cpp in Sources */,
-				FDA0F8761ABA3478000661CA /* sqstdio.cpp in Sources */,
-				FDA0F8771ABA3478000661CA /* sqstdmath.cpp in Sources */,
-				FDA0F8861ABA3478000661CA /* sqtable.cpp in Sources */,
-				FDA0F8851ABA3478000661CA /* sqstate.cpp in Sources */,
-				FDA0F8781ABA3478000661CA /* sqstdrex.cpp in Sources */,
-				FDA0F87F1ABA3478000661CA /* sqcompiler.cpp in Sources */,
-				FDA0F87E1ABA3478000661CA /* sqclass.cpp in Sources */,
-				FDA0F87D1ABA3478000661CA /* sqbaselib.cpp in Sources */,
-				FDA0F8791ABA3478000661CA /* sqstdstream.cpp in Sources */,
-				FDA0F8871ABA3478000661CA /* sqvm.cpp in Sources */,
-				FDA0F8821ABA3478000661CA /* sqlexer.cpp in Sources */,
-				FDA0F8751ABA3478000661CA /* sqstdblob.cpp in Sources */,
-				FDA0F8801ABA3478000661CA /* sqdebug.cpp in Sources */,
-				FDA0F87A1ABA3478000661CA /* sqstdstring.cpp in Sources */,
-				FDA0F8731ABA3478000661CA /* sqratimport.cpp in Sources */,
-				FDA0F82A1ABA3044000661CA /* WaloPlayer.cpp in Sources */,
-				FDA0F8841ABA3478000661CA /* sqobject.cpp in Sources */,
-				FDA0F87B1ABA3478000661CA /* sqstdsystem.cpp in Sources */,
-				FDA0F8741ABA3478000661CA /* sqstdaux.cpp in Sources */,
+				EF1213F7200F992B009E2F8E /* sqlexer.cpp in Sources */,
+				EF1213DD200F992B009E2F8E /* sqstdblob.cpp in Sources */,
+				EF121401200F992B009E2F8E /* sqvm.cpp in Sources */,
+				EF1213F9200F992B009E2F8E /* sqmem.cpp in Sources */,
+				EF1213F5200F992B009E2F8E /* sqfuncstate.cpp in Sources */,
+				EF1213E5200F992B009E2F8E /* sqstdstream.cpp in Sources */,
+				EF1213EF200F992B009E2F8E /* sqclass.cpp in Sources */,
+				EF1213EB200F992B009E2F8E /* sqapi.cpp in Sources */,
+				EF1213E1200F992B009E2F8E /* sqstdmath.cpp in Sources */,
+				EF1213F3200F992B009E2F8E /* sqdebug.cpp in Sources */,
+				EF1213DB200F992B009E2F8E /* sqstdaux.cpp in Sources */,
+				EF1213FD200F992B009E2F8E /* sqstate.cpp in Sources */,
+				EF1213ED200F992B009E2F8E /* sqbaselib.cpp in Sources */,
+				EF1213E9200F992B009E2F8E /* sqstdsystem.cpp in Sources */,
+				EF1213FB200F992B009E2F8E /* sqobject.cpp in Sources */,
+				EF121423200F994B009E2F8E /* WaloPlayer.cpp in Sources */,
+				EF1213D9200F992B009E2F8E /* sqratimport.cpp in Sources */,
+				EF1213F1200F992B009E2F8E /* sqcompiler.cpp in Sources */,
+				EF1213FF200F992B009E2F8E /* sqtable.cpp in Sources */,
+				EF1213DF200F992B009E2F8E /* sqstdio.cpp in Sources */,
+				EF1213E7200F992B009E2F8E /* sqstdstring.cpp in Sources */,
+				EF1213E3200F992B009E2F8E /* sqstdrex.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -498,9 +757,132 @@
 			name = WaloEngine;
 			targetProxy = EF5388A51AB8693C00FFE483 /* PBXContainerItemProxy */;
 		};
+		EF93BE602010B5FB0004560E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = WaloEngine_osx;
+			targetProxy = EF93BE5F2010B5FB0004560E /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		EF8C38AE200E25000077FE8C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIconOSX;
+				CLANG_ANALYZER_NONNULL = YES_NONAGGRESSIVE;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = NO;
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_LINK_OBJC_RUNTIME = NO;
+				CLANG_MODULES_AUTOLINK = NO;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = NO;
+				CLANG_WARN_COMMA = NO;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = NO;
+				CLANG_WARN_INFINITE_RECURSION = NO;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = NO;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = NO;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = NO;
+				CLANG_WARN_STRICT_PROTOTYPES = NO;
+				CLANG_WARN_SUSPICIOUS_MOVE = NO;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES;
+				CODE_SIGN_ENTITLEMENTS = "";
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 8SM49QADK9;
+				ENABLE_TESTABILITY = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Frameworks/OSX",
+				);
+				GCC_C_LANGUAGE_STANDARD = c11;
+				GCC_ENABLE_CPP_EXCEPTIONS = NO;
+				GCC_ENABLE_CPP_RTTI = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = NO;
+				GCC_NO_COMMON_BLOCKS = NO;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					_OSX,
+					"$(inherited)",
+				);
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				INFOPLIST_FILE = Resources/InfoOSX.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited)";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				OBJROOT = ../Temp/OSX;
+				ONLY_ACTIVE_ARCH = YES;
+				PRECOMPS_INCLUDE_HEADERS_FROM_BUILT_PRODUCTS_DIR = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "";
+				PRODUCT_NAME = "$(TARGET_NAME)_d";
+				PROVISIONING_PROFILE = "";
+				SDKROOT = macosx;
+				SYMROOT = ../Build/Bin/OSX;
+				VALIDATE_PRODUCT = NO;
+			};
+			name = Debug;
+		};
+		EF8C38AF200E25000077FE8C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIconOSX;
+				CLANG_ANALYZER_NONNULL = YES_NONAGGRESSIVE;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = NO;
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_LINK_OBJC_RUNTIME = NO;
+				CLANG_MODULES_AUTOLINK = NO;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = NO;
+				CLANG_WARN_COMMA = NO;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = NO;
+				CLANG_WARN_INFINITE_RECURSION = NO;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = NO;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = NO;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = NO;
+				CLANG_WARN_STRICT_PROTOTYPES = NO;
+				CLANG_WARN_SUSPICIOUS_MOVE = NO;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES;
+				CODE_SIGN_ENTITLEMENTS = "";
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 8SM49QADK9;
+				ENABLE_TESTABILITY = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Frameworks/OSX",
+				);
+				GCC_C_LANGUAGE_STANDARD = c11;
+				GCC_ENABLE_CPP_EXCEPTIONS = NO;
+				GCC_ENABLE_CPP_RTTI = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = NO;
+				GCC_NO_COMMON_BLOCKS = NO;
+				GCC_PREPROCESSOR_DEFINITIONS = _OSX;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				INFOPLIST_FILE = Resources/InfoOSX.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited)";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				OBJROOT = ../Temp/OSX;
+				PRECOMPS_INCLUDE_HEADERS_FROM_BUILT_PRODUCTS_DIR = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SDKROOT = macosx;
+				SYMROOT = ../Build/Bin/OSX;
+				VALIDATE_PRODUCT = NO;
+			};
+			name = Release;
+		};
 		FDC100981AB7812300BB41DD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -509,13 +891,21 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Valeri Vuchov (WDTMDP2J2J)";
@@ -524,11 +914,12 @@
 				CONFIGURATION_TEMP_DIR = "$(PROJECT_TEMP_DIR)/$(CONFIGURATION)";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
-					_IOS,
 					_DEBUG,
 					"$(inherited)",
 				);
@@ -546,15 +937,16 @@
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 				);
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				OBJROOT = ../Temp;
-				ONLY_ACTIVE_ARCH = NO;
+				ONLY_ACTIVE_ARCH = YES;
 				PROVISIONING_PROFILE = "92112d48-345f-460a-977f-4f01c75e6a8b";
 				SDKROOT = iphoneos;
 				SHARED_PRECOMPS_DIR = "$(PROJECT_TEMP_DIR)/$(CONFIGURATION)/SharedPrecompiledHeaders";
 				SYMROOT = ../Build/Bin/iOS;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				WARNING_CFLAGS = "-Wno-address-of-temporary";
 			};
 			name = Debug;
 		};
@@ -566,13 +958,21 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Valeri Vuchov (WDTMDP2J2J)";
@@ -583,7 +983,8 @@
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_PREPROCESSOR_DEFINITIONS = _IOS;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = "";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -597,7 +998,7 @@
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 				);
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OBJROOT = ../Temp;
 				ONLY_ACTIVE_ARCH = NO;
@@ -607,40 +1008,95 @@
 				SYMROOT = ../Build/Bin/iOS;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
+				WARNING_CFLAGS = "-Wno-address-of-temporary";
 			};
 			name = Release;
 		};
 		FDC1009B1AB7812300BB41DD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIconIOS;
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = NO;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_LINK_OBJC_RUNTIME = NO;
+				CLANG_MODULES_AUTOLINK = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Valeri Vuchov (WDTMDP2J2J)";
-				INFOPLIST_FILE = Resources/Info.plist;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8SM49QADK9;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks/iOS",
+				);
+				GCC_C_LANGUAGE_STANDARD = c11;
+				GCC_ENABLE_CPP_EXCEPTIONS = NO;
+				GCC_ENABLE_CPP_RTTI = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = NO;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					_IOS,
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = Resources/InfoIOS.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OBJROOT = ../Temp/iOS;
 				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.waloteam.wplayer;
 				PRODUCT_NAME = "$(TARGET_NAME)_d";
-				PROVISIONING_PROFILE = "295ede24-693f-4ab3-a435-31fdee113979";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				WARNING_CFLAGS = "";
 			};
 			name = Debug;
 		};
 		FDC1009C1AB7812300BB41DD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIconIOS;
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = NO;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_LINK_OBJC_RUNTIME = NO;
+				CLANG_MODULES_AUTOLINK = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Valeri Vuchov (WDTMDP2J2J)";
-				INFOPLIST_FILE = Resources/Info.plist;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8SM49QADK9;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks/iOS",
+				);
+				GCC_C_LANGUAGE_STANDARD = c11;
+				GCC_ENABLE_CPP_EXCEPTIONS = NO;
+				GCC_ENABLE_CPP_RTTI = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = NO;
+				GCC_PREPROCESSOR_DEFINITIONS = _IOS;
+				INFOPLIST_FILE = Resources/InfoIOS.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OBJROOT = ../Temp/iOS;
 				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.waloteam.wplayer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "295ede24-693f-4ab3-a435-31fdee113979";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				WARNING_CFLAGS = "";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		EF8C38AD200E25000077FE8C /* Build configuration list for PBXNativeTarget "WaloPlayer_osx" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EF8C38AE200E25000077FE8C /* Debug */,
+				EF8C38AF200E25000077FE8C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		FDC1006E1AB7812300BB41DD /* Build configuration list for PBXProject "WaloPlayer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -650,7 +1106,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		FDC1009A1AB7812300BB41DD /* Build configuration list for PBXNativeTarget "WaloPlayer" */ = {
+		FDC1009A1AB7812300BB41DD /* Build configuration list for PBXNativeTarget "WaloPlayer_ios" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FDC1009B1AB7812300BB41DD /* Debug */,

@@ -56,7 +56,7 @@ bool CObject2D::HitTest(const CVector2& _point)
 	if(haveCollider)
 		return false;
 
-	CVector2 p3(_point.X, _point.Y);
+	/*CVector2 p3(_point.X, _point.Y);
 	CVector2 p1(-m_Center.X, -m_Center.Y);
 	CVector2 p2(m_Size.X - m_Center.X, m_Size.Y - m_Center.Y);
 
@@ -64,6 +64,11 @@ bool CObject2D::HitTest(const CVector2& _point)
 	m_Transform.TransformVector(p2);
 
 	if(p3.X > p1.X && p3.X < p2.X && p3.Y > p1.Y && p3.Y < p2.Y)
+	{
+		return true;
+	}*/
+
+	if(_point.X > m_Bound.X && _point.X < (m_Bound.X + m_Bound.Width) && _point.Y > m_Bound.Y && _point.Y < (m_Bound.Y + m_Bound.Height))
 	{
 		return true;
 	}

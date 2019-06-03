@@ -6,9 +6,9 @@
 #include "Core/String.hpp"
 #include "Core/Matrix.hpp"
 #include "Device/Event.hpp"
+#include "Scene/ComponentType.hpp"
 
 class CComponent;
-enum EComponentType;
 
 class CNode
 {

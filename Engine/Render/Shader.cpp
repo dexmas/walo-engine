@@ -1,17 +1,17 @@
+#include "Core/String.hpp"
 #include "Render/Shader.hpp"
 
 bool CShader::Load(CStream* _stream)
 {
-	u32 len = _stream->Size();
-	char* buffer = new char[len+1];
-	_stream->Read(buffer, len);
-	buffer[len] = 0;
+    char* buffer = new char[_stream->Size()+1];
+	_stream->Read(buffer, _stream->Size());
+	buffer[_stream->Size()] = 0;
 
 	bool ret = _Upload(buffer);
-
-	delete buffer;
-
-	return ret;
+    
+    delete[] buffer;
+    
+    return ret;
 }
 
 void CShader::Unload()

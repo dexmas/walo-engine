@@ -1,9 +1,6 @@
 #include "Render/OpenGLES/RenderGLES.hpp"
 #include "Render/OpenGLES/IndexBufferGLES.hpp"
 
-#include <OpenGLES/ES2/gl.h>
-#include <OpenGLES/ES2/glext.h>
-
 CIndexBufferGLES::CIndexBufferGLES()
 {
 	glGenBuffers(1, &m_Handle);

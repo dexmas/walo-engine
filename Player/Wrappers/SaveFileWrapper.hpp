@@ -57,7 +57,7 @@ public:
 		Sqrat::Object ret(obj, Sqrat::DefaultVM::Get());
 		sq_pop(Sqrat::DefaultVM::Get(), 1);
 
-		delete buffer;
+		delete[] buffer;
 
 		return ret;
 	}

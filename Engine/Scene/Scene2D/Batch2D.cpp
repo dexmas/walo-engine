@@ -1,10 +1,12 @@
-#include <Scene/Scene2D/Batch2D.hpp>
+#include "Scene/Scene2D/Batch2D.hpp"
 #include <Scene/Scene2D/Object2D.hpp>
 
 #include <Core/Log.hpp>
 
 bool CBatch2D::Compare(CObject2D* _drw)
 {
+	if(_drw->GetType() == ECT_TEXT2D)
+		return false;
 	if(m_Material != _drw->GetMaterial())
 		return false;
 	if(m_Texture != _drw->GetTexture())

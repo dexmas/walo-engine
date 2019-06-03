@@ -47,13 +47,13 @@ public:
 	void SetMaterial(CMaterial* _material);
 	void SetVertexBuffer(CVertexBuffer* _buffer);
 	void SetIndexBuffer(CIndexBuffer* _buffer);
-	void SetTransform(ETransformType _type, const CMatrix4& _matrix);
+	void SetTransform(ETransformType _type, CMatrix4& _matrix);
 	void SetScissor(bool _clip, const CRect& _rect);
 
 	CMaterial*	   GetMaterial();
 	CVertexBuffer* GetVertexBuffer();
 	CIndexBuffer*  GetIndexBuffer();
-	const CMatrix4& GetTransform(ETransformType _type) const;
+	CMatrix4& GetTransform(ETransformType _type);
 
 	void ResetState();
 

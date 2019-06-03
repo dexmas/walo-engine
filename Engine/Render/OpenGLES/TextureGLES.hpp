@@ -1,6 +1,10 @@
 #include "Render/Texture.hpp"
 
+#if defined(WALO_PLATFORM_ANDROID)
+#include <GLES2/gl2.h>
+#else
 #include <OpenGLES/ES2/gl.h>
+#endif
 
 const GLenum g_GLTextureWrap[] =
 {

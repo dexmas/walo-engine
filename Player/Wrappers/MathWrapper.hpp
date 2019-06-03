@@ -12,6 +12,12 @@ public:
 	{
 		Sqrat::Class<CMathWrapper, Sqrat::NoConstructor> cl(vm);
 
+		cl.SetStaticValue<f32>("PI", CMathWrapper::PI);
+		cl.SetStaticValue<f32>("TWO_PI", CMathWrapper::TWO_PI);
+		cl.SetStaticValue<f32>("PI_DIV_TWO", CMathWrapper::PI_DIV_TWO);
+		cl.SetStaticValue<f32>("RADTODEG", CMathWrapper::RADTODEG);
+		cl.SetStaticValue<f32>("DEGTORAD", CMathWrapper::DEGTORAD);
+
 		cl.StaticFunc<s32(*)(s32,s32)>("MinI", &CMathWrapper::Min);
 		cl.StaticFunc<s32(*)(s32,s32)>("MaxI", &CMathWrapper::Max);
 		cl.StaticFunc<s32(*)(s32)>("AbsI", &CMathWrapper::Abs);

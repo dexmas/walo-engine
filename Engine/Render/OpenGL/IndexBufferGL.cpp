@@ -1,6 +1,5 @@
 #include "Render/OpenGL/IndexBufferGL.hpp"
-
-#include <glew.h>
+#include "Render/OpenGL/RenderGL.hpp"
 
 CIndexBufferGL::CIndexBufferGL()
 {
@@ -16,6 +15,8 @@ bool CIndexBufferGL::_UpdateSize()
 {
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, m_Handle);
 	glBufferData(GL_ELEMENT_ARRAY_BUFFER, m_IndexCount * m_IndexSize, 0, m_Dynamic?GL_DYNAMIC_DRAW:GL_STATIC_DRAW);
+    
+    TEST_GL_ERROR();
 
 	return true;
 }
@@ -23,6 +24,8 @@ bool CIndexBufferGL::_UpdateSize()
 bool CIndexBufferGL::_Upload(void* _data, u32 _start, u32 _count)
 {
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, m_Handle);
+    
+    TEST_GL_ERROR();
 
 	if(_start == 0 && _count == m_IndexCount)
 	{
@@ -33,7 +36,7 @@ bool CIndexBufferGL::_Upload(void* _data, u32 _start, u32 _count)
 		glBufferSubData(GL_ELEMENT_ARRAY_BUFFER, _start * m_IndexSize, _count * m_IndexSize, _data);
 	}
 
-	GLenum err = glGetError();
+	TEST_GL_ERROR();
 
 	return true;
 }

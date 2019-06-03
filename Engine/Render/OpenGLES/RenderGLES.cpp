@@ -199,12 +199,19 @@ void CRenderGLES::Clear(bool _color, bool _depth, f32 _depthValue)
         glClearDepthf(_depthValue);
     }
 
+	glDisable(GL_SCISSOR_TEST);
+	
 	glClear(glFlags);
-    
-    TEST_GL_ERROR();
+
+	if(m_ClipEnabled)
+	{
+		glEnable(GL_SCISSOR_TEST);
+	}
     
     _SetColorWrite(oldColorWrite);
     _SetDepthWrite(oldDepthWrite);
+    
+    TEST_GL_ERROR();
 }
 
 CTexture* CRenderGLES::CreateTexture()
@@ -349,16 +356,22 @@ void CRenderGLES::_SetShader(EShaderType _type, CShader* _shader)
 
 void CRenderGLES::_SetVertexBuffer(CVertexBuffer* _buffer)
 {
+    TEST_GL_ERROR();
+    
 	if(!_buffer)
 	{
 		glBindBuffer(GL_ARRAY_BUFFER, 0);
 		return;
 	}
+    
+    TEST_GL_ERROR();
 
 	glBindBuffer(GL_ARRAY_BUFFER, _buffer->GetHandle());
     u32 vertexSize = _buffer->GetVertexSize();
 	u32 elementMask = _buffer->GetElementMask();
-        
+    
+    TEST_GL_ERROR();
+    
     for(u32 j = 0; j < EVE_COUNT; ++j)
     {
         unsigned attrIndex = g_GLVertexAttrIndex[j];
@@ -371,6 +384,8 @@ void CRenderGLES::_SetVertexBuffer(CVertexBuffer* _buffer)
         }
     }
 
+    TEST_GL_ERROR();
+    
 	u32 disabledMask = ~elementMask;
 
 	for(u32 j = 0; j < EVE_COUNT; ++j)
@@ -416,10 +431,12 @@ void CRenderGLES::_SetScissor(bool _clip, const CRect& _rect)
 	if(_clip)
 	{
 		glEnable(GL_SCISSOR_TEST);
-		glScissor(_rect.X, _rect.Y, _rect.Width, _rect.Height);
+		glScissor(_rect.X, m_Viewport.Height - _rect.Y - _rect.Height, _rect.Width, _rect.Height);
 	}
 	else
+	{
 		glDisable(GL_SCISSOR_TEST);
+	}
 }
 
 void CRenderGLES::Render(EPrimitiveType _ptype, u32 _vstart, u32 _vcount)

@@ -2,6 +2,7 @@
 
 #include "Core/Types.hpp"
 #include "Core/List.hpp"
+#include "Core/LinkedList.hpp"
 #include "Core/Rect.hpp"
 
 #include "Scene/DebugRenderer.hpp"
@@ -20,7 +21,7 @@ public:
 	void DeleteChild(u32 _id);
 	void InsertObject(CObject2D* _drw);
 	void RemoveObject(CObject2D* _drw);
-	void QueryVisibility(const CRect& _camera, CList<CObject2D*>& _show, CList<CObject2D*>& _hide);
+	void QueryVisibility(const CRect& _camera, CList<CObject2D*>& _showList, CList<CObject2D*>& _hideList);
 
 	CRect& GetBound() { return m_Bound; }
 

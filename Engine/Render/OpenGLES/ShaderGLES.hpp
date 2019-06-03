@@ -8,5 +8,5 @@ public:
 	CShaderGLES(EShaderType _type);
 	~CShaderGLES();
 
-	bool _Upload(void* _data);
+	bool _Upload(const char* _data);
 };

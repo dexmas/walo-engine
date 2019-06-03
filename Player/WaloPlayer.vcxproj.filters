@@ -28,6 +28,69 @@
     <Filter Include="Utils">
       <UniqueIdentifier>{91384d17-82a3-4992-930a-371dd4d5d84c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Games">
+      <UniqueIdentifier>{e6c548a0-a4d8-4fa8-b1a6-2ae94ffda95c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Games\DeepSpace">
+      <UniqueIdentifier>{bf388244-42fe-4d85-b510-928e7d463ccc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Games\DeepSpace\buildings">
+      <UniqueIdentifier>{09d735d4-370d-467c-acc6-54a5d2a0e906}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Games\DeepSpace\ui">
+      <UniqueIdentifier>{64e69066-4940-4ff6-bb72-51c9d30c1690}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Games\DeepSpace\screens">
+      <UniqueIdentifier>{9d09528b-dd1e-4e60-b46d-bd3313b4f08b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Games\Adventure">
+      <UniqueIdentifier>{744fc9fb-5367-445a-a20a-a9299250151b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Games\Bomberman">
+      <UniqueIdentifier>{452e9771-c4a9-4075-be65-aca1c2e3765e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Games\Deflector">
+      <UniqueIdentifier>{d36c8c67-b986-4461-bf2a-ff47e4de0291}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Games\Deflector\common">
+      <UniqueIdentifier>{eb45928b-79e4-4279-9b03-dbcc3d77ea98}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Games\Deflector\levels">
+      <UniqueIdentifier>{6906fec7-5d5c-4f0e-b7b2-75a6298c2459}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Games\Deflector\objects">
+      <UniqueIdentifier>{db5bd4d6-ba49-486b-9483-00f6c574d059}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Games\Deflector\states">
+      <UniqueIdentifier>{01462c40-664f-4b69-842b-1a775a71e4d3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Games\Deflector\ui">
+      <UniqueIdentifier>{46120cb1-0740-4633-8194-2856da26f78d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Games\Match3">
+      <UniqueIdentifier>{70d6d919-5da2-4055-9c4d-161d30d0086b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Games\Match3\GameElements">
+      <UniqueIdentifier>{8d0842c8-b7d4-4495-801e-80dca6ecb3fc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Games\Match3\sqCore">
+      <UniqueIdentifier>{3b283420-3328-4dc8-9c97-51c6560d9c5f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Games\Match3\sqCore\UI">
+      <UniqueIdentifier>{57b840cd-2e64-4dfd-a578-c315c4c1ced5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Games\Match3\sqCore\utils">
+      <UniqueIdentifier>{f9cfeba7-0bce-4cb6-9837-0cc35a15c3d4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Games\Match3\StatesFramework">
+      <UniqueIdentifier>{a78ad976-58ae-4370-a97a-47f9cf3d69f3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Games\Match3\UIElements">
+      <UniqueIdentifier>{37714de7-dda7-449c-95de-d627233ae633}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Games\Match3\UIElements\Popup">
+      <UniqueIdentifier>{53d17052-2ad6-4ad6-9478-e4178d91dea2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Externs\sqrat\sqmodule.h">
@@ -125,6 +188,9 @@
       <Filter>Wrappers</Filter>
     </ClInclude>
     <ClInclude Include="Wrappers\Camera3DWrapper.hpp">
+      <Filter>Wrappers</Filter>
+    </ClInclude>
+    <ClInclude Include="Wrappers\TileMap2DWrapper.hpp">
       <Filter>Wrappers</Filter>
     </ClInclude>
     <ClInclude Include="Wrappers\PathMap.hpp">
@@ -321,5 +387,142 @@
     <Resource Include="..\WaloEngine.res">
       <Filter>Resources</Filter>
     </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\DeepSpace\basemap.nut">
+      <Filter>Games\DeepSpace</Filter>
+    </None>
+    <None Include="..\..\DeepSpace\main.nut">
+      <Filter>Games\DeepSpace</Filter>
+    </None>
+    <None Include="..\..\DeepSpace\buildings\builder.nut">
+      <Filter>Games\DeepSpace\buildings</Filter>
+    </None>
+    <None Include="..\..\DeepSpace\buildings\building.nut">
+      <Filter>Games\DeepSpace\buildings</Filter>
+    </None>
+    <None Include="..\..\DeepSpace\buildings\dkbuilding.nut">
+      <Filter>Games\DeepSpace\buildings</Filter>
+    </None>
+    <None Include="..\..\DeepSpace\buildings\dmbuilding.nut">
+      <Filter>Games\DeepSpace\buildings</Filter>
+    </None>
+    <None Include="..\..\DeepSpace\buildings\esbuilding.nut">
+      <Filter>Games\DeepSpace\buildings</Filter>
+    </None>
+    <None Include="..\..\DeepSpace\buildings\fabricator.nut">
+      <Filter>Games\DeepSpace\buildings</Filter>
+    </None>
+    <None Include="..\..\DeepSpace\buildings\hqbuilding.nut">
+      <Filter>Games\DeepSpace\buildings</Filter>
+    </None>
+    <None Include="..\..\DeepSpace\buildings\platform.nut">
+      <Filter>Games\DeepSpace\buildings</Filter>
+    </None>
+    <None Include="..\..\DeepSpace\ui\bar.nut">
+      <Filter>Games\DeepSpace\ui</Filter>
+    </None>
+    <None Include="..\..\DeepSpace\ui\button.nut">
+      <Filter>Games\DeepSpace\ui</Filter>
+    </None>
+    <None Include="..\..\DeepSpace\ui\icon.nut">
+      <Filter>Games\DeepSpace\ui</Filter>
+    </None>
+    <None Include="..\..\DeepSpace\ui\iconbutton.nut">
+      <Filter>Games\DeepSpace\ui</Filter>
+    </None>
+    <None Include="..\..\DeepSpace\ui\itemlist.nut">
+      <Filter>Games\DeepSpace\ui</Filter>
+    </None>
+    <None Include="..\..\DeepSpace\ui\panel.nut">
+      <Filter>Games\DeepSpace\ui</Filter>
+    </None>
+    <None Include="..\..\DeepSpace\ui\progress.nut">
+      <Filter>Games\DeepSpace\ui</Filter>
+    </None>
+    <None Include="..\..\DeepSpace\ui\skinbutton.nut">
+      <Filter>Games\DeepSpace\ui</Filter>
+    </None>
+    <None Include="..\..\DeepSpace\ui\skinpanel.nut">
+      <Filter>Games\DeepSpace\ui</Filter>
+    </None>
+    <None Include="..\..\DeepSpace\ui\skinprogress.nut">
+      <Filter>Games\DeepSpace\ui</Filter>
+    </None>
+    <None Include="..\..\DeepSpace\ui\skintext.nut">
+      <Filter>Games\DeepSpace\ui</Filter>
+    </None>
+    <None Include="..\..\DeepSpace\ui\textbox.nut">
+      <Filter>Games\DeepSpace\ui</Filter>
+    </None>
+    <None Include="..\..\DeepSpace\ui\ui.nut">
+      <Filter>Games\DeepSpace\ui</Filter>
+    </None>
+    <None Include="..\..\DeepSpace\screens\dkscreen.nut">
+      <Filter>Games\DeepSpace\screens</Filter>
+    </None>
+    <None Include="..\..\DeepSpace\screens\editpopup.nut">
+      <Filter>Games\DeepSpace\screens</Filter>
+    </None>
+    <None Include="..\..\DeepSpace\screens\hqscreen.nut">
+      <Filter>Games\DeepSpace\screens</Filter>
+    </None>
+    <None Include="..\..\DeepSpace\screens\hudpanel.nut">
+      <Filter>Games\DeepSpace\screens</Filter>
+    </None>
+    <None Include="..\..\DeepSpace\screens\screen.nut">
+      <Filter>Games\DeepSpace\screens</Filter>
+    </None>
+    <None Include="..\..\DeepSpace\screens\spacebase.nut">
+      <Filter>Games\DeepSpace\screens</Filter>
+    </None>
+    <None Include="..\..\DeepSpace\screens\battle.nut">
+      <Filter>Games\DeepSpace\screens</Filter>
+    </None>
+    <None Include="..\..\DeepSpace\battlemap.nut">
+      <Filter>Games\DeepSpace</Filter>
+    </None>
+    <None Include="..\..\DeepSpace\battlesquad.nut">
+      <Filter>Games\DeepSpace</Filter>
+    </None>
+    <None Include="..\..\Adventure\chest.nut">
+      <Filter>Games\Adventure</Filter>
+    </None>
+    <None Include="..\..\Adventure\dungeon.nut">
+      <Filter>Games\Adventure</Filter>
+    </None>
+    <None Include="..\..\Adventure\enemy.nut">
+      <Filter>Games\Adventure</Filter>
+    </None>
+    <None Include="..\..\Adventure\game.nut">
+      <Filter>Games\Adventure</Filter>
+    </None>
+    <None Include="..\..\Adventure\hud.nut">
+      <Filter>Games\Adventure</Filter>
+    </None>
+    <None Include="..\..\Adventure\main.nut">
+      <Filter>Games\Adventure</Filter>
+    </None>
+    <None Include="..\..\Adventure\menu.nut">
+      <Filter>Games\Adventure</Filter>
+    </None>
+    <None Include="..\..\Adventure\player.nut">
+      <Filter>Games\Adventure</Filter>
+    </None>
+    <None Include="..\..\Adventure\state.nut">
+      <Filter>Games\Adventure</Filter>
+    </None>
+    <None Include="..\..\Adventure\unit.nut">
+      <Filter>Games\Adventure</Filter>
+    </None>
+    <None Include="..\..\DeepSpace\screens\debrifing.nut">
+      <Filter>Games\DeepSpace\screens</Filter>
+    </None>
+    <None Include="..\..\DeepSpace\spacemap.nut">
+      <Filter>Games\DeepSpace</Filter>
+    </None>
+    <None Include="..\..\DeepSpace\screens\map.nut">
+      <Filter>Games\DeepSpace\screens</Filter>
+    </None>
   </ItemGroup>
 </Project>

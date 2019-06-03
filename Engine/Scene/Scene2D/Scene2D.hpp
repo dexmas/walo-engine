@@ -4,7 +4,7 @@
 #include "Scene/Node.hpp"
 #include "Core/LinkedList.hpp"
 #include "Scene/Scene2D/Quadtree.hpp"
-#include "Scene/Scene2D/Batch2d.hpp"
+#include "Scene/Scene2D/Batch2D.hpp"
 
 #include "Scene/DebugRenderer.hpp"
 
@@ -24,24 +24,25 @@ public:
 	void AddComponent(CComponent* _comp);
 	void RemoveComponent(CComponent* _comp);
 
+	void SetCamera(CRect& _camera);
+
 	void Render();
 
 private:
 
 	CBatch2D* _FindBatch(CObject2D* _drw);
 
-	void _AddVisible(CObject2D* _drw);
-	void _RemoveVisible(CObject2D* _drw);
-
 	CRender* m_Render;
 
 	CMatrix4 m_Projection;
-	CRect    m_ScreenRect;
+	CRect	 m_ViewRect;
 
 	CQuadtree m_Quadtree;
-	CList<CObject2D*> m_Show;
-	CList<CObject2D*> m_Hide;
-	CLinkedList<CBatch2D> m_Batches;
+
+	CList<CBatch2D*>  m_Batches;
+
+	CList<CObject2D*> m_ShowList;
+	CList<CObject2D*> m_HideList;
 
 	CDebugRenderer m_DebugRender;
 };

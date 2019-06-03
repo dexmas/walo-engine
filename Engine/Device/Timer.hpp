@@ -4,7 +4,7 @@
 
 #if defined(WALO_PLATFORM_WIN)
 #include <Windows.h>
-#elif defined(WALO_PLATFORM_IOS)
+#else
 #include <unistd.h>
 #include <sys/time.h>
 #endif
@@ -32,7 +32,7 @@ public:
 
 	void Sleep(u32 _ms)
 	{
-#ifdef WALO_PLATFORM_WIN
+#if defined(WALO_PLATFORM_WIN)
 		::Sleep(_ms);
 #else
 		usleep(_ms * 1000);

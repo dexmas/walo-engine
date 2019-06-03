@@ -76,11 +76,20 @@ void CGesturer::_HandleTap(f32 x, f32 y)
 	CGame::Instance()->GetSystem<CInputSystem>()->HandleInput(&gevent);
 }
 
+void CGesturer::_HandleLongTap(f32 x, f32 y)
+{
+	CGestureEvent gevent(CGestureEvent::EGE_LONGTAP);
+	gevent.Param1 = x;
+	gevent.Param2 = y;
+
+	CGame::Instance()->GetSystem<CInputSystem>()->HandleInput(&gevent);
+}
+
 bool CGesturer::HandleInput(CInputEvent* _event)
 {
 	bool recognizedDrag = false;
 
-#ifndef WALO_PLATFORM_WIN
+#if !defined(WALO_PLATFORM_WIN) && !defined(WALO_PLATFORM_OSX)
 	if(_event->InputType == CInputEvent::EIT_TOUCH)
 	{
 		CTouchEvent* tevent = (CTouchEvent*)_event;
@@ -121,6 +130,9 @@ bool CGesturer::HandleInput(CInputEvent* _event)
 				m_DragStart.X = tevent->Touches[0].X;
 				m_DragStart.Y = tevent->Touches[0].Y;
                 m_bDragging = false;
+                m_bPressed = true;
+
+				m_PressTime = 0.0f;
 			}
 			else
             if(tevent->Touches[0].TouchType == CTouchEvent::ETE_MOVE)
@@ -139,10 +151,15 @@ bool CGesturer::HandleInput(CInputEvent* _event)
             {
 				if(!m_bDragging)
 				{
-					_HandleTap(tevent->Touches[0].X, tevent->Touches[0].Y);
+					if(m_PressTime < 1.0f)
+					{
+						_HandleTap(tevent->Touches[0].X, tevent->Touches[0].Y);
+					}
+
 					recognizedDrag = true;
 				}
 
+                m_bPressed = false;
                 m_bDragging = false;
             }
             
@@ -155,16 +172,18 @@ bool CGesturer::HandleInput(CInputEvent* _event)
 	{
 		CMouseEvent* mevent = (CMouseEvent*)_event;
 
-		if((mevent->Buttons & CMouseEvent::EMBM_LEFT) && !m_MLBPressed)
+		if((mevent->Buttons & CMouseEvent::EMBM_LEFT) && !m_bPressed)
 		{
 			m_DragStart.X = mevent->X;
 			m_DragStart.Y = mevent->Y;
 
 			m_bDragging = false;
-			m_MLBPressed = true;
+			m_bPressed = true;
+
+			m_PressTime = 0.0f;
 		}
 		else
-        if((mevent->Buttons & CMouseEvent::EMBM_LEFT) && m_MLBPressed)
+        if((mevent->Buttons & CMouseEvent::EMBM_LEFT) && m_bPressed)
 		{
 			if(!m_bDragging)
 			{
@@ -178,7 +197,7 @@ bool CGesturer::HandleInput(CInputEvent* _event)
 		}
 		else
 		{
-			if((mevent->Buttons & CMouseEvent::EMBM_LEFT) == 0 && m_MLBPressed)
+			if((mevent->Buttons & CMouseEvent::EMBM_LEFT) == 0 && m_bPressed)
 			{
 				if(!m_bDragging)
 				{
@@ -186,7 +205,7 @@ bool CGesturer::HandleInput(CInputEvent* _event)
 					recognizedDrag = true;
 				}
 
-				m_MLBPressed = false;
+				m_bPressed = false;
 				m_bDragging = false;
 			}
 		}
@@ -218,5 +237,23 @@ void CGesturer::Reset()
 {
 	m_bZoomRot = false;
 	m_bDragging = false;
-	m_MLBPressed = false;
+	m_bPressed = false;
+	m_PressTime = 0.0f;
+}
+
+void CGesturer::Update(f32 _dt)
+{
+	if(m_bPressed && !m_bDragging && !m_bZoomRot)
+	{
+		m_PressTime += _dt;
+
+		if(m_PressTime > 1.0f)
+		{
+			_HandleLongTap(m_DragStart.X, m_DragStart.Y);
+
+			m_bPressed = false;
+			m_bDragging = false;
+			m_PressTime = 0.0;
+		}
+	}
 }

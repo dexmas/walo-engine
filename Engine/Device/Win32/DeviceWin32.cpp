@@ -116,7 +116,7 @@ LRESULT CALLBACK CDeviceWin32::WndProc(HWND hWnd, UINT message, WPARAM wParam, L
 
 		if(CGame::Instance())
 		{
-			CGame::Instance()->GetSystem<CInputSystem>()->HandleInput(&mevent);
+			CGame::Instance()->GetSystem<CInputSystem>()->PushInput(&mevent);
 
 			if(sPrevMouseLButtonState || (wParam & MK_LBUTTON))
 			{
@@ -131,7 +131,7 @@ LRESULT CALLBACK CDeviceWin32::WndProc(HWND hWnd, UINT message, WPARAM wParam, L
 
 				sPrevMouseLButtonState = (wParam & MK_LBUTTON);
 
-				CGame::Instance()->GetSystem<CInputSystem>()->HandleInput(&tevent);
+				CGame::Instance()->GetSystem<CInputSystem>()->PushInput(&tevent);
 			}
 		}
 		return 0;
@@ -194,7 +194,7 @@ LRESULT CALLBACK CDeviceWin32::WndProc(HWND hWnd, UINT message, WPARAM wParam, L
 
 			if(CGame::Instance())
 			{
-				CGame::Instance()->GetSystem<CInputSystem>()->HandleInput(&kevent);
+				CGame::Instance()->GetSystem<CInputSystem>()->PushInput(&kevent);
 			}
 
 			if(message == WM_SYSKEYDOWN || message == WM_SYSKEYUP)

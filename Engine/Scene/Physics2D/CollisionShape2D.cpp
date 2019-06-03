@@ -37,7 +37,7 @@ CRect CCollisionShape2D::_GetNodeBound()
 	{
 		CComponent* cm = *it;
 		EComponentType type = cm->GetType();
-		if(type == ECT_SPRITE2D || type == ECT_TEXT2D || type == ECT_PROGRESS2D)
+		if(type == ECT_SPRITE2D || type == ECT_TEXT2D || type == ECT_TILEMAP2D || type == ECT_PROGRESS2D)
 		{
 			CObject2D* obj2d = (CObject2D*)cm;
 				
@@ -168,12 +168,19 @@ void CCollisionShape2D::_ReleaseFixture()
 	}
 }
 
-void CCollisionShape2D::OnEnabled(bool _enabled)
+void CCollisionShape2D::SetEnabled(bool _enabled)
 {
+	if(m_Enabled == _enabled)
+	{
+		return;
+	}
+
+	CComponentImpl::SetEnabled(_enabled);
+
 	if(m_Body && m_Body->GetType() == b2_staticBody)
 	{
-		m_Body->SetActive(_enabled);
-		m_Body->SetAwake(_enabled);
+		m_Body->SetActive(m_Enabled);
+		m_Body->SetAwake(m_Enabled);
 	}
 }
 

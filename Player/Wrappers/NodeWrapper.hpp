@@ -68,8 +68,8 @@ public:
 		cl.Func("AddChild", &CNodeWrapper::AddChild);
 		cl.Func("RemoveChild", &CNodeWrapper::RemoveChild);
 
-		cl.Func("AddComponent", &CNodeWrapper::AddComponent);
-		cl.Func("RemoveComponent", &CNodeWrapper::RemoveComponent);
+		cl.Func("AddComponent", &CNodeWrapper::sqAddComponent);
+		cl.Func("RemoveComponent", &CNodeWrapper::sqRemoveComponent);
 
 		cl.Func("SetEnabled", &CNodeWrapper::SetEnabled);
 		cl.Func("GetEnabled", &CNodeWrapper::GetEnabled);
@@ -80,6 +80,20 @@ public:
 		cl.Prop<CComponent*>("Input", &CNodeWrapper::GetInputComponent);
 
 		Sqrat::RootTable(_vm).Bind("CNode", cl);
+	}
+
+	void sqAddComponent(const Sqrat::Object& _obj)
+	{
+		//#TODO: Dirty hack for avoid deleting component twice: first in CNode destructor call and then when delete Squirell class
+		sq_addref(Sqrat::DefaultVM::Get(), &(_obj.GetObject()));
+		CComponent* cmp = _obj.Cast<CComponent*>();
+
+		AddComponent(cmp);
+	}
+
+	void sqRemoveComponent(CComponent* _cmp)
+	{
+		RemoveComponent(_cmp);
 	}
 
 	void OnUpdate(f32 _dt)

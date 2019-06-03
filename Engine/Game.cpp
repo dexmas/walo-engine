@@ -1,10 +1,12 @@
-﻿
+
 #include "Game.hpp"
 #include "Core/Log.hpp"
 #include <stdio.h>
 
-#ifdef WALO_PLATFORM_WIN32
+#if defined(WALO_PLATFORM_WIN32)
 #include "Device/Win32/DeviceWin32.hpp"
+#elif defined(WALO_PLATFORM_OSX)
+#include "Device/OSX/DeviceOSX.hpp"
 #endif
 
 #ifdef _DEBUG
@@ -84,9 +86,9 @@ void CGame::Run(f32 _dt)
 {
     f32 fdt = _dt;
     
-#if defined(WALO_PLATFORM_WIN32)
+#if defined(WALO_PLATFORM_WIN32) || defined(WALO_PLATFORM_OSX)
 	u64 ct = m_Timer->GetCurentTime();
-	u64 dt = ct - m_LastTime;
+	s64 dt = ct - m_LastTime;
 	m_LastTime = ct;
 
 	if(dt < 0)
@@ -113,13 +115,23 @@ void CGame::Run(f32 _dt)
 	if(m_FPSTimer >= 1.0f)
 	{
 #if defined(WALO_PLATFORM_WIN32)
-		char buf[64];
-		sprintf_s(buf, 64, "WaloEngine [%d FPS]", m_FPSCounter);
+        CString chaption = "WaloEngine [";
+        chaption += m_FPSCounter;
+        chaption += "FPS]";
 
 		if(m_Device->GetType() == CDevice::EDT_WIN32)
 		{
-			((CDeviceWin32*)m_Device)->SetCaption(buf);
+			((CDeviceWin32*)m_Device)->SetCaption(chaption.CStr());
 		}
+#elif  defined(WALO_PLATFORM_OSX)
+        CString chaption = "WaloEngine [";
+        chaption += m_FPSCounter;
+        chaption += "FPS]";
+        
+        if(m_Device->GetType() == CDevice::EDT_OSX)
+        {
+            ((CDeviceOSX*)m_Device)->SetCaption(chaption.CStr());
+        }
 #endif
 
 		m_FPSCounter = 0;
@@ -129,6 +141,7 @@ void CGame::Run(f32 _dt)
 	if(m_Device->GetActive())
 	{
 		GetSystem<CUpdateSystem>()->Update(fdt);
+		GetSystem<CInputSystem>()->Update(fdt);
 
 		m_Render->BeginFrame();
 		{

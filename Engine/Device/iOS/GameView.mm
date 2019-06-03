@@ -4,7 +4,9 @@
 #include <Device/iOS/DeviceIOS.hpp>
 #include <Render/OpenGLES/RenderGLES.hpp>
 
-#include <Device/Event.hpp>
+#include "Device/Event.hpp"
+#include "Game.hpp"
+#include "Scene/Input/InputSystem.hpp"
 
 @interface CGameView (PrivateMethods)
 - (void)createFramebuffer;
@@ -25,8 +27,6 @@ int nextTouchId = 0;
 - (void)dealloc
 {
     [self deleteFramebuffer];
-    [Context release];
-    [super dealloc];
 }
 
 - (id)initWithFrame:(CGRect)_frame;
@@ -63,7 +63,6 @@ int nextTouchId = 0;
     
     if(!Context || ![EAGLContext setCurrentContext: Context])
     {
-        [self release];
         return nil;
     }
     
@@ -155,7 +154,7 @@ int nextTouchId = 0;
     {
         if([Touches objectForKey:touch] == nil)
         {
-            [Touches setObject:[NSNumber numberWithInteger:nextTouchId] forKey:[NSValue valueWithPointer:touch]];
+            [Touches setObject:[NSNumber numberWithInteger:nextTouchId] forKey:[NSValue valueWithNonretainedObject:touch]];
             nextTouchId++;
         }
     }
@@ -173,9 +172,9 @@ int nextTouchId = 0;
     
     for (UITouch* touch in touches)
     {
-        if ([Touches objectForKey:[NSValue valueWithPointer:touch]] != nil)
+        if ([Touches objectForKey:[NSValue valueWithNonretainedObject:touch]] != nil)
         {
-            [Touches removeObjectForKey:[NSValue valueWithPointer:touch]];
+            [Touches removeObjectForKey:[NSValue valueWithNonretainedObject:touch]];
         }
     }
     
@@ -189,9 +188,9 @@ int nextTouchId = 0;
     
     for(UITouch* touch in touches)
     {
-        if ([Touches objectForKey:[NSValue valueWithPointer:touch]] != nil)
+        if ([Touches objectForKey:[NSValue valueWithNonretainedObject:touch]] != nil)
         {
-            [Touches removeObjectForKey:[NSValue valueWithPointer:touch]];
+            [Touches removeObjectForKey:[NSValue valueWithNonretainedObject:touch]];
         }
     }
     
@@ -213,7 +212,7 @@ int nextTouchId = 0;
     {
         UITouch *touch = [touches anyObject];
         CGPoint point = [touch locationInView:self];
-        NSNumber *touchId = [Touches objectForKey:[NSValue valueWithPointer:touch]];
+        NSNumber *touchId = [Touches objectForKey:[NSValue valueWithNonretainedObject:touch]];
         
         CTouchEvent::ETouchEventType type = CTouchEvent::ETE_COUNT;
         
@@ -246,7 +245,7 @@ int nextTouchId = 0;
         {
             UITouch *touch = [[[event allTouches] allObjects] objectAtIndex:i];
             CGPoint point = [touch locationInView:self];
-            NSNumber *touchId = [Touches objectForKey:[NSValue valueWithPointer:touch]];
+            NSNumber *touchId = [Touches objectForKey:[NSValue valueWithNonretainedObject:touch]];
             
             CTouchEvent::ETouchEventType type = CTouchEvent::ETE_COUNT;
             
@@ -275,7 +274,7 @@ int nextTouchId = 0;
             Event.Touches[i].ID = [touchId intValue];
         }
     
-        CGame::Instance()->GetSystem<CInputSystem>()->(&Event);
+    CGame::Instance()->GetSystem<CInputSystem>()->PushInput(&Event);
 }
 
 @end

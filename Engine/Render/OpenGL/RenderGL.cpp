@@ -7,8 +7,6 @@
 #include "Render/OpenGL/VertexBufferGL.hpp"
 #include "Render/OpenGL/IndexBufferGL.hpp"
 
-#include <glew.h>
-
 static const u32 g_GLSrcBlend[] =
 {
     GL_ONE,					// EBM_REPLACE
@@ -48,12 +46,13 @@ static const u32 g_GLDestBlend[] =
     GL_FUNC_REVERSE_SUBTRACT	// EBM_SUBTRACTALPHA
 };*/
 
-static const u32 g_GLFillMode[] =
+//#TODO
+/*static const u32 g_GLFillMode[] =
 {
     GL_FILL, // EFM_SOLID
     GL_LINE, // EFM_WIREFRAME
     GL_POINT // EFM_POINT
-};
+};*/
 
 static const u32 g_GLCmpFunc[] =
 {
@@ -93,12 +92,15 @@ void CRenderGL::_SetColorWrite(bool _enabled)
         glColorMask(GL_TRUE, GL_TRUE, GL_TRUE, GL_TRUE);
     else
         glColorMask(GL_FALSE, GL_FALSE, GL_FALSE, GL_FALSE);
-        
+    
+    TEST_GL_ERROR();
 }
 
 void CRenderGL::_SetDepthWrite(bool _enabled)
 {
     glDepthMask(_enabled ? GL_TRUE : GL_FALSE);
+    
+    TEST_GL_ERROR();
 }
 
 void CRenderGL::_SetBlendMode(EBlendMode _mode)
@@ -110,6 +112,8 @@ void CRenderGL::_SetBlendMode(EBlendMode _mode)
         glEnable(GL_BLEND);
         glBlendFunc(g_GLSrcBlend[_mode], g_GLDestBlend[_mode]);
     }
+    
+    TEST_GL_ERROR();
 }
 
 void CRenderGL::_SetCullMode(ECullMode _mode)
@@ -122,11 +126,14 @@ void CRenderGL::_SetCullMode(ECullMode _mode)
         glEnable(GL_CULL_FACE);
         glCullFace(_mode == ECM_CCW ? GL_FRONT : GL_BACK);
     }
+    
+    TEST_GL_ERROR();
 }
 
 void CRenderGL::_SetFillMode(EFillMode _mode)
 {
-    glPolygonMode(GL_FRONT_AND_BACK, g_GLFillMode[_mode]);
+    //#TODO
+    //glPolygonMode(GL_FRONT_AND_BACK, g_GLFillMode[_mode]);
 }
 
 void CRenderGL::_SetDepthTest(EDepthTestMode _mode)
@@ -140,6 +147,8 @@ void CRenderGL::_SetDepthTest(EDepthTestMode _mode)
 		glEnable(GL_DEPTH_TEST);
 		glDepthFunc(g_GLCmpFunc[_mode]);
 	}
+    
+    TEST_GL_ERROR();
 }
 
 bool CRenderGL::Init()
@@ -148,6 +157,8 @@ bool CRenderGL::Init()
     glPixelStorei(GL_UNPACK_ALIGNMENT, 1);
 
 	CRender::Init();
+    
+    TEST_GL_ERROR();
 
 	return true;
 }
@@ -163,6 +174,8 @@ void CRenderGL::Clear(bool _color, bool _depth, f32 _depthValue)
         _SetDepthWrite(true);
     
     unsigned glFlags = 0;
+    
+    TEST_GL_ERROR();
 
     if(_color)
     {
@@ -174,18 +187,28 @@ void CRenderGL::Clear(bool _color, bool _depth, f32 _depthValue)
         glFlags |= GL_DEPTH_BUFFER_BIT;
         glClearDepth(_depthValue);
     }
+    
+    TEST_GL_ERROR();
 
 	glDisable(GL_SCISSOR_TEST);
+    
+    TEST_GL_ERROR();
 	
 	glClear(glFlags);
+    
+    TEST_GL_ERROR();
 
 	if(m_ClipEnabled)
 	{
 		glEnable(GL_SCISSOR_TEST);
 	}
     
+    TEST_GL_ERROR();
+    
     _SetColorWrite(oldColorWrite);
     _SetDepthWrite(oldDepthWrite);
+    
+    TEST_GL_ERROR();
 }
 
 CTexture* CRenderGL::CreateTexture()
@@ -215,31 +238,42 @@ void CRenderGL::_SetTexture(ETextureChanel _chanel, CTexture* _texture)
 		glActiveTexture(GL_TEXTURE0 + (u32)_chanel);
 		m_ActiveTexture = _chanel;
 	}
+    
+    TEST_GL_ERROR();
 
 	if(_texture)
 	{
 		if(!m_TexturesEnabled[_chanel])
 		{
 			m_TexturesEnabled[_chanel] = true;
-			glEnable(GL_TEXTURE_2D);
+			//glEnable(GL_TEXTURE_2D);
 		}
+        
+        TEST_GL_ERROR();
+        
 		glBindTexture(GL_TEXTURE_2D, _texture->GetHandle());
 	}
 	else
 	{
 		glBindTexture(GL_TEXTURE_2D, 0);
-		glDisable(GL_TEXTURE_2D);
+		//glDisable(GL_TEXTURE_2D);
 	}
+    
+    TEST_GL_ERROR();
 }
 
 void CRenderGL::_SetTextureUWrap(ETextureChanel _chanel, ETextureWrap _wrap)
 {
-	 glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, g_GLTextureWrap[_wrap]);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, g_GLTextureWrap[_wrap]);
+    
+    TEST_GL_ERROR();
 }
 
 void CRenderGL::_SetTextureVWrap(ETextureChanel _chanel, ETextureWrap _wrap)
 {
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, g_GLTextureWrap[_wrap]);
+    
+    TEST_GL_ERROR();
 }
 
 void CRenderGL::_SetTextureFilter(ETextureChanel _chanel, ETextureFilter _filter)
@@ -265,6 +299,8 @@ void CRenderGL::_SetTextureFilter(ETextureChanel _chanel, ETextureFilter _filter
 	default:
 		break;
 	}
+    
+    TEST_GL_ERROR();
 }
 
 void CRenderGL::_SetShader(EShaderType _type, CShader* _shader)
@@ -312,20 +348,28 @@ void CRenderGL::_SetShader(EShaderType _type, CShader* _shader)
 		m_CurrentProgram = prog;
 		glUseProgram(prog->GetHandle());
 	}
+    
+    TEST_GL_ERROR();
 }
 
 void CRenderGL::_SetVertexBuffer(CVertexBuffer* _buffer)
 {
+    TEST_GL_ERROR();
+    
 	if(!_buffer)
 	{
 		glBindBuffer(GL_ARRAY_BUFFER, 0);
 		return;
 	}
+    
+    TEST_GL_ERROR();
 
 	glBindBuffer(GL_ARRAY_BUFFER, _buffer->GetHandle());
     u32 vertexSize = _buffer->GetVertexSize();
 	u32 elementMask = _buffer->GetElementMask();
-        
+    
+    TEST_GL_ERROR();
+    
     for(u32 j = 0; j < EVE_COUNT; ++j)
     {
         unsigned attrIndex = g_GLVertexAttrIndex[j];
@@ -338,6 +382,8 @@ void CRenderGL::_SetVertexBuffer(CVertexBuffer* _buffer)
         }
     }
 
+    TEST_GL_ERROR();
+    
 	u32 disabledMask = ~elementMask;
 
 	for(u32 j = 0; j < EVE_COUNT; ++j)
@@ -350,16 +396,22 @@ void CRenderGL::_SetVertexBuffer(CVertexBuffer* _buffer)
             glDisableVertexAttribArray(attrIndex);
         }
     }
+    
+    TEST_GL_ERROR();
 }
 
 void CRenderGL::_SetIndexBuffer(CIndexBuffer* _buffer)
 {
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, _buffer->GetHandle());
+    
+    TEST_GL_ERROR();
 }
 
 void CRenderGL::_SetViewport(CRect& _viewport)
 {
 	glViewport(_viewport.X, _viewport.Y, _viewport.Width, _viewport.Height);
+    
+    TEST_GL_ERROR();
 }
 
 bool CRenderGL::_SetShaderParameter(CString& _name, EShaderParamType _type, void* _param)
@@ -398,6 +450,8 @@ void CRenderGL::Render(EPrimitiveType _ptype, u32 _vstart, u32 _vcount)
         glDrawArrays(GL_LINES, _vstart, _vcount);
         break;
     }
+    
+    TEST_GL_ERROR();
 }
 
 void CRenderGL::RenderIndexed(EPrimitiveType _ptype, u32 _istart, u32 _icount)
@@ -422,4 +476,6 @@ void CRenderGL::RenderIndexed(EPrimitiveType _ptype, u32 _istart, u32 _icount)
             glDrawElements(GL_LINES, _icount, GL_UNSIGNED_INT, (const GLvoid*)(_istart * indexSize));
         break;
     }
+    
+    TEST_GL_ERROR();
 }

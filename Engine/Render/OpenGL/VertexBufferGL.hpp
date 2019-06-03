@@ -1,8 +1,16 @@
 #pragma once
 
+#include "Config.hpp"
+
 #include "Render/VertexBuffer.hpp"
 
+#if defined(WALO_PLATFORM_WIN32)
 #include <glew.h>
+#elif defined(WALO_PLATFORM_OSX)
+#include <OpenGL/OpenGL.h>
+#include <OpenGL/gl3.h>
+#include <OpenGL/glext.h>
+#endif
 
 const u32 g_GLVertexElementComponents[] =
 {

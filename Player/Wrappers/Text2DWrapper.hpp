@@ -19,8 +19,6 @@ public:
 		cl.Func("SetText", &CText2DWrapper::sqSetText);
 		cl.Func("SetFont", &CText2DWrapper::sqSetFont);
 		cl.Func("SetAlignment", &CText2DWrapper::sqSetAlignment);
-
-		cl.Func("GetTextSize", &CText2DWrapper::sqGetTextSize);
 		
 		Sqrat::RootTable(_vm).Bind("CText2D", cl);
 	}
@@ -38,10 +36,5 @@ public:
 	void sqSetFont(CFont2D* _font)
 	{
 		GetObject2D<CText2D>()->SetFont(_font);
-	}
-
-	CVector2 sqGetTextSize()
-	{
-		return GetObject2D<CText2D>()->GetTextSize();
 	}
 };

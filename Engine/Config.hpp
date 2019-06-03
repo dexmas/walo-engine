@@ -12,6 +12,8 @@
 	#endif
 #elif defined(_IOS)
 	#define WALO_PLATFORM_IOS
+#elif defined(_OSX)
+    #define WALO_PLATFORM_OSX
 #elif defined(_ANDROID)
 	#define WALO_PLATFORM_ANDROID
 #elif defined(_LINUX)
