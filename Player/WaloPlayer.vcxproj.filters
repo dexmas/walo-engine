@@ -389,139 +389,139 @@
     </Resource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\..\DeepSpace\basemap.nut">
+    <None Include="..\..\deepspace-game\basemap.nut">
       <Filter>Games\DeepSpace</Filter>
     </None>
-    <None Include="..\..\DeepSpace\main.nut">
+    <None Include="..\..\deepspace-game\main.nut">
       <Filter>Games\DeepSpace</Filter>
     </None>
-    <None Include="..\..\DeepSpace\buildings\builder.nut">
+    <None Include="..\..\deepspace-game\buildings\builder.nut">
       <Filter>Games\DeepSpace\buildings</Filter>
     </None>
-    <None Include="..\..\DeepSpace\buildings\building.nut">
+    <None Include="..\..\deepspace-game\buildings\building.nut">
       <Filter>Games\DeepSpace\buildings</Filter>
     </None>
-    <None Include="..\..\DeepSpace\buildings\dkbuilding.nut">
+    <None Include="..\..\deepspace-game\buildings\dkbuilding.nut">
       <Filter>Games\DeepSpace\buildings</Filter>
     </None>
-    <None Include="..\..\DeepSpace\buildings\dmbuilding.nut">
+    <None Include="..\..\deepspace-game\buildings\dmbuilding.nut">
       <Filter>Games\DeepSpace\buildings</Filter>
     </None>
-    <None Include="..\..\DeepSpace\buildings\esbuilding.nut">
+    <None Include="..\..\deepspace-game\buildings\esbuilding.nut">
       <Filter>Games\DeepSpace\buildings</Filter>
     </None>
-    <None Include="..\..\DeepSpace\buildings\fabricator.nut">
+    <None Include="..\..\deepspace-game\buildings\fabricator.nut">
       <Filter>Games\DeepSpace\buildings</Filter>
     </None>
-    <None Include="..\..\DeepSpace\buildings\hqbuilding.nut">
+    <None Include="..\..\deepspace-game\buildings\hqbuilding.nut">
       <Filter>Games\DeepSpace\buildings</Filter>
     </None>
-    <None Include="..\..\DeepSpace\buildings\platform.nut">
+    <None Include="..\..\deepspace-game\buildings\platform.nut">
       <Filter>Games\DeepSpace\buildings</Filter>
     </None>
-    <None Include="..\..\DeepSpace\ui\bar.nut">
+    <None Include="..\..\deepspace-game\ui\bar.nut">
       <Filter>Games\DeepSpace\ui</Filter>
     </None>
-    <None Include="..\..\DeepSpace\ui\button.nut">
+    <None Include="..\..\deepspace-game\ui\button.nut">
       <Filter>Games\DeepSpace\ui</Filter>
     </None>
-    <None Include="..\..\DeepSpace\ui\icon.nut">
+    <None Include="..\..\deepspace-game\ui\icon.nut">
       <Filter>Games\DeepSpace\ui</Filter>
     </None>
-    <None Include="..\..\DeepSpace\ui\iconbutton.nut">
+    <None Include="..\..\deepspace-game\ui\iconbutton.nut">
       <Filter>Games\DeepSpace\ui</Filter>
     </None>
-    <None Include="..\..\DeepSpace\ui\itemlist.nut">
+    <None Include="..\..\deepspace-game\ui\itemlist.nut">
       <Filter>Games\DeepSpace\ui</Filter>
     </None>
-    <None Include="..\..\DeepSpace\ui\panel.nut">
+    <None Include="..\..\deepspace-game\ui\panel.nut">
       <Filter>Games\DeepSpace\ui</Filter>
     </None>
-    <None Include="..\..\DeepSpace\ui\progress.nut">
+    <None Include="..\..\deepspace-game\ui\progress.nut">
       <Filter>Games\DeepSpace\ui</Filter>
     </None>
-    <None Include="..\..\DeepSpace\ui\skinbutton.nut">
+    <None Include="..\..\deepspace-game\ui\skinbutton.nut">
       <Filter>Games\DeepSpace\ui</Filter>
     </None>
-    <None Include="..\..\DeepSpace\ui\skinpanel.nut">
+    <None Include="..\..\deepspace-game\ui\skinpanel.nut">
       <Filter>Games\DeepSpace\ui</Filter>
     </None>
-    <None Include="..\..\DeepSpace\ui\skinprogress.nut">
+    <None Include="..\..\deepspace-game\ui\skinprogress.nut">
       <Filter>Games\DeepSpace\ui</Filter>
     </None>
-    <None Include="..\..\DeepSpace\ui\skintext.nut">
+    <None Include="..\..\deepspace-game\ui\skintext.nut">
       <Filter>Games\DeepSpace\ui</Filter>
     </None>
-    <None Include="..\..\DeepSpace\ui\textbox.nut">
+    <None Include="..\..\deepspace-game\ui\textbox.nut">
       <Filter>Games\DeepSpace\ui</Filter>
     </None>
-    <None Include="..\..\DeepSpace\ui\ui.nut">
+    <None Include="..\..\deepspace-game\ui\ui.nut">
       <Filter>Games\DeepSpace\ui</Filter>
     </None>
-    <None Include="..\..\DeepSpace\screens\dkscreen.nut">
+    <None Include="..\..\deepspace-game\screens\dkscreen.nut">
       <Filter>Games\DeepSpace\screens</Filter>
     </None>
-    <None Include="..\..\DeepSpace\screens\editpopup.nut">
+    <None Include="..\..\deepspace-game\screens\editpopup.nut">
       <Filter>Games\DeepSpace\screens</Filter>
     </None>
-    <None Include="..\..\DeepSpace\screens\hqscreen.nut">
+    <None Include="..\..\deepspace-game\screens\hqscreen.nut">
       <Filter>Games\DeepSpace\screens</Filter>
     </None>
-    <None Include="..\..\DeepSpace\screens\hudpanel.nut">
+    <None Include="..\..\deepspace-game\screens\hudpanel.nut">
       <Filter>Games\DeepSpace\screens</Filter>
     </None>
-    <None Include="..\..\DeepSpace\screens\screen.nut">
+    <None Include="..\..\deepspace-game\screens\screen.nut">
       <Filter>Games\DeepSpace\screens</Filter>
     </None>
-    <None Include="..\..\DeepSpace\screens\spacebase.nut">
+    <None Include="..\..\deepspace-game\screens\spacebase.nut">
       <Filter>Games\DeepSpace\screens</Filter>
     </None>
-    <None Include="..\..\DeepSpace\screens\battle.nut">
+    <None Include="..\..\deepspace-game\screens\battle.nut">
       <Filter>Games\DeepSpace\screens</Filter>
     </None>
-    <None Include="..\..\DeepSpace\battlemap.nut">
+    <None Include="..\..\deepspace-game\battlemap.nut">
       <Filter>Games\DeepSpace</Filter>
     </None>
-    <None Include="..\..\DeepSpace\battlesquad.nut">
+    <None Include="..\..\deepspace-game\battlesquad.nut">
       <Filter>Games\DeepSpace</Filter>
     </None>
-    <None Include="..\..\Adventure\chest.nut">
+    <None Include="..\..\adventure-game\chest.nut">
       <Filter>Games\Adventure</Filter>
     </None>
-    <None Include="..\..\Adventure\dungeon.nut">
+    <None Include="..\..\adventure-game\dungeon.nut">
       <Filter>Games\Adventure</Filter>
     </None>
-    <None Include="..\..\Adventure\enemy.nut">
+    <None Include="..\..\adventure-game\enemy.nut">
       <Filter>Games\Adventure</Filter>
     </None>
-    <None Include="..\..\Adventure\game.nut">
+    <None Include="..\..\adventure-game\game.nut">
       <Filter>Games\Adventure</Filter>
     </None>
-    <None Include="..\..\Adventure\hud.nut">
+    <None Include="..\..\adventure-game\hud.nut">
       <Filter>Games\Adventure</Filter>
     </None>
-    <None Include="..\..\Adventure\main.nut">
+    <None Include="..\..\adventure-game\main.nut">
       <Filter>Games\Adventure</Filter>
     </None>
-    <None Include="..\..\Adventure\menu.nut">
+    <None Include="..\..\adventure-game\menu.nut">
       <Filter>Games\Adventure</Filter>
     </None>
-    <None Include="..\..\Adventure\player.nut">
+    <None Include="..\..\adventure-game\player.nut">
       <Filter>Games\Adventure</Filter>
     </None>
-    <None Include="..\..\Adventure\state.nut">
+    <None Include="..\..\adventure-game\state.nut">
       <Filter>Games\Adventure</Filter>
     </None>
-    <None Include="..\..\Adventure\unit.nut">
+    <None Include="..\..\adventure-game\unit.nut">
       <Filter>Games\Adventure</Filter>
     </None>
-    <None Include="..\..\DeepSpace\screens\debrifing.nut">
+    <None Include="..\..\deepspace-game\screens\debrifing.nut">
       <Filter>Games\DeepSpace\screens</Filter>
     </None>
-    <None Include="..\..\DeepSpace\spacemap.nut">
+    <None Include="..\..\deepspace-game\spacemap.nut">
       <Filter>Games\DeepSpace</Filter>
     </None>
-    <None Include="..\..\DeepSpace\screens\map.nut">
+    <None Include="..\..\deepspace-game\screens\map.nut">
       <Filter>Games\DeepSpace\screens</Filter>
     </None>
   </ItemGroup>

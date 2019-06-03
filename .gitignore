@@ -1,0 +1,5 @@
+/.vs
+/Build/Bin/Win32/*.*
+/Build/Lib/Win32/*.*
+/Build/Temp
+*.user
