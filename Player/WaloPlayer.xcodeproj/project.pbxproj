@@ -51,53 +51,55 @@
 		EF121402200F992B009E2F8E /* sqvm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF1213D6200F992B009E2F8E /* sqvm.cpp */; };
 		EF121423200F994B009E2F8E /* WaloPlayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF121406200F994B009E2F8E /* WaloPlayer.cpp */; };
 		EF121424200F994B009E2F8E /* WaloPlayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF121406200F994B009E2F8E /* WaloPlayer.cpp */; };
-		EF5BE4AA21C1214600D849F5 /* spacemap.nut in Resources */ = {isa = PBXBuildFile; fileRef = EF5BE4A921C1214600D849F5 /* spacemap.nut */; };
-		EF5BE4AB21C1214600D849F5 /* spacemap.nut in Resources */ = {isa = PBXBuildFile; fileRef = EF5BE4A921C1214600D849F5 /* spacemap.nut */; };
-		EF93BE4F2010B52C0004560E /* InfoIOS.plist in Resources */ = {isa = PBXBuildFile; fileRef = EF93BE4E2010B52C0004560E /* InfoIOS.plist */; };
-		EF93BE502010B5310004560E /* InfoOSX.plist in Resources */ = {isa = PBXBuildFile; fileRef = EF8C38C7200E275F0077FE8C /* InfoOSX.plist */; };
-		EF93BE542010B54C0004560E /* ResIOS.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF93BE532010B54C0004560E /* ResIOS.xcassets */; };
-		EF93BE562010B5550004560E /* ResOSX.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF93BE552010B5550004560E /* ResOSX.xcassets */; };
 		EF93BE622010B60A0004560E /* libWaloEngine_osx_d.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EF8C3897200E24CE0077FE8C /* libWaloEngine_osx_d.a */; };
-		EF93BE6C2010BBF60004560E /* Splash.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF93BE512010B5400004560E /* Splash.xib */; };
 		EF93BE6F2010CD820004560E /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF93BE6E2010CD7E0004560E /* OpenAL.framework */; };
 		EF93BE712010CD8E0004560E /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF93BE702010CD8B0004560E /* OpenGLES.framework */; };
 		EF93BE732010CDA70004560E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF93BE722010CDA10004560E /* UIKit.framework */; };
 		EF93BE752010CDC80004560E /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF93BE742010CDC30004560E /* OpenAL.framework */; };
 		EF93BE772010CDCF0004560E /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF93BE762010CDCF0004560E /* OpenGL.framework */; };
 		EF93BE792010CDE10004560E /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF93BE782010CDE10004560E /* Cocoa.framework */; };
-		EF93BEBC2010CE7B0004560E /* battlemap.nut in Resources */ = {isa = PBXBuildFile; fileRef = EF93BEAD2010CE790004560E /* battlemap.nut */; };
-		EF93BEBD2010CE7B0004560E /* battlemap.nut in Resources */ = {isa = PBXBuildFile; fileRef = EF93BEAD2010CE790004560E /* battlemap.nut */; };
-		EF93BEBE2010CE7B0004560E /* render2d.mat in Resources */ = {isa = PBXBuildFile; fileRef = EF93BEAE2010CE790004560E /* render2d.mat */; };
-		EF93BEBF2010CE7B0004560E /* render2d.mat in Resources */ = {isa = PBXBuildFile; fileRef = EF93BEAE2010CE790004560E /* render2d.mat */; };
-		EF93BEC02010CE7B0004560E /* render2d.vs in Resources */ = {isa = PBXBuildFile; fileRef = EF93BEAF2010CE790004560E /* render2d.vs */; };
-		EF93BEC12010CE7B0004560E /* render2d.vs in Resources */ = {isa = PBXBuildFile; fileRef = EF93BEAF2010CE790004560E /* render2d.vs */; };
-		EF93BEC22010CE7B0004560E /* render2d.ps in Resources */ = {isa = PBXBuildFile; fileRef = EF93BEB02010CE790004560E /* render2d.ps */; };
-		EF93BEC32010CE7B0004560E /* render2d.ps in Resources */ = {isa = PBXBuildFile; fileRef = EF93BEB02010CE790004560E /* render2d.ps */; };
-		EF93BEC42010CE7B0004560E /* vcolor.ps in Resources */ = {isa = PBXBuildFile; fileRef = EF93BEB12010CE790004560E /* vcolor.ps */; };
-		EF93BEC52010CE7B0004560E /* vcolor.ps in Resources */ = {isa = PBXBuildFile; fileRef = EF93BEB12010CE790004560E /* vcolor.ps */; };
-		EF93BEC62010CE7B0004560E /* battlesquad.nut in Resources */ = {isa = PBXBuildFile; fileRef = EF93BEB22010CE790004560E /* battlesquad.nut */; };
-		EF93BEC72010CE7B0004560E /* battlesquad.nut in Resources */ = {isa = PBXBuildFile; fileRef = EF93BEB22010CE790004560E /* battlesquad.nut */; };
-		EF93BEC82010CE7B0004560E /* main.nut in Resources */ = {isa = PBXBuildFile; fileRef = EF93BEB32010CE790004560E /* main.nut */; };
-		EF93BEC92010CE7B0004560E /* main.nut in Resources */ = {isa = PBXBuildFile; fileRef = EF93BEB32010CE790004560E /* main.nut */; };
-		EF93BECA2010CE7B0004560E /* ui in Resources */ = {isa = PBXBuildFile; fileRef = EF93BEB42010CE7A0004560E /* ui */; };
-		EF93BECB2010CE7B0004560E /* ui in Resources */ = {isa = PBXBuildFile; fileRef = EF93BEB42010CE7A0004560E /* ui */; };
-		EF93BECC2010CE7B0004560E /* vcolor.vs in Resources */ = {isa = PBXBuildFile; fileRef = EF93BEB52010CE7A0004560E /* vcolor.vs */; };
-		EF93BECD2010CE7B0004560E /* vcolor.vs in Resources */ = {isa = PBXBuildFile; fileRef = EF93BEB52010CE7A0004560E /* vcolor.vs */; };
-		EF93BECE2010CE7B0004560E /* debugR.mat in Resources */ = {isa = PBXBuildFile; fileRef = EF93BEB62010CE7A0004560E /* debugR.mat */; };
-		EF93BECF2010CE7B0004560E /* debugR.mat in Resources */ = {isa = PBXBuildFile; fileRef = EF93BEB62010CE7A0004560E /* debugR.mat */; };
-		EF93BED02010CE7B0004560E /* render2d_vc.ps in Resources */ = {isa = PBXBuildFile; fileRef = EF93BEB72010CE7A0004560E /* render2d_vc.ps */; };
-		EF93BED12010CE7B0004560E /* render2d_vc.ps in Resources */ = {isa = PBXBuildFile; fileRef = EF93BEB72010CE7A0004560E /* render2d_vc.ps */; };
-		EF93BED22010CE7B0004560E /* render2d_vc.mat in Resources */ = {isa = PBXBuildFile; fileRef = EF93BEB82010CE7A0004560E /* render2d_vc.mat */; };
-		EF93BED32010CE7B0004560E /* render2d_vc.mat in Resources */ = {isa = PBXBuildFile; fileRef = EF93BEB82010CE7A0004560E /* render2d_vc.mat */; };
-		EF93BED42010CE7B0004560E /* screens in Resources */ = {isa = PBXBuildFile; fileRef = EF93BEB92010CE7A0004560E /* screens */; };
-		EF93BED52010CE7B0004560E /* screens in Resources */ = {isa = PBXBuildFile; fileRef = EF93BEB92010CE7A0004560E /* screens */; };
-		EF93BED62010CE7B0004560E /* basemap.nut in Resources */ = {isa = PBXBuildFile; fileRef = EF93BEBA2010CE7A0004560E /* basemap.nut */; };
-		EF93BED72010CE7B0004560E /* basemap.nut in Resources */ = {isa = PBXBuildFile; fileRef = EF93BEBA2010CE7A0004560E /* basemap.nut */; };
-		EF93BED82010CE7B0004560E /* buildings in Resources */ = {isa = PBXBuildFile; fileRef = EF93BEBB2010CE7B0004560E /* buildings */; };
-		EF93BED92010CE7B0004560E /* buildings in Resources */ = {isa = PBXBuildFile; fileRef = EF93BEBB2010CE7B0004560E /* buildings */; };
-		EF93BEDB2010D1AD0004560E /* data in Resources */ = {isa = PBXBuildFile; fileRef = EF93BEDA2010D1AD0004560E /* data */; };
-		EF93BEDC2010D1AD0004560E /* data in Resources */ = {isa = PBXBuildFile; fileRef = EF93BEDA2010D1AD0004560E /* data */; };
 		FDA0F8881ABA34A1000661CA /* libWaloEngine_ios_d.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FDC100AC1AB7841F00BB41DD /* libWaloEngine_ios_d.a */; };
+		FDF3B0C722A96CF80029DABD /* debugR.mat in Resources */ = {isa = PBXBuildFile; fileRef = FDF3B0B622A96CF70029DABD /* debugR.mat */; };
+		FDF3B0C822A96CF80029DABD /* debugR.mat in Resources */ = {isa = PBXBuildFile; fileRef = FDF3B0B622A96CF70029DABD /* debugR.mat */; };
+		FDF3B0C922A96CF80029DABD /* battlesquad.nut in Resources */ = {isa = PBXBuildFile; fileRef = FDF3B0B722A96CF70029DABD /* battlesquad.nut */; };
+		FDF3B0CA22A96CF80029DABD /* battlesquad.nut in Resources */ = {isa = PBXBuildFile; fileRef = FDF3B0B722A96CF70029DABD /* battlesquad.nut */; };
+		FDF3B0CB22A96CF80029DABD /* basemap.nut in Resources */ = {isa = PBXBuildFile; fileRef = FDF3B0B822A96CF70029DABD /* basemap.nut */; };
+		FDF3B0CC22A96CF80029DABD /* basemap.nut in Resources */ = {isa = PBXBuildFile; fileRef = FDF3B0B822A96CF70029DABD /* basemap.nut */; };
+		FDF3B0CD22A96CF80029DABD /* ui in Resources */ = {isa = PBXBuildFile; fileRef = FDF3B0B922A96CF70029DABD /* ui */; };
+		FDF3B0CE22A96CF80029DABD /* ui in Resources */ = {isa = PBXBuildFile; fileRef = FDF3B0B922A96CF70029DABD /* ui */; };
+		FDF3B0CF22A96CF80029DABD /* battlemap.nut in Resources */ = {isa = PBXBuildFile; fileRef = FDF3B0BA22A96CF70029DABD /* battlemap.nut */; };
+		FDF3B0D022A96CF80029DABD /* battlemap.nut in Resources */ = {isa = PBXBuildFile; fileRef = FDF3B0BA22A96CF70029DABD /* battlemap.nut */; };
+		FDF3B0D122A96CF80029DABD /* main.nut in Resources */ = {isa = PBXBuildFile; fileRef = FDF3B0BB22A96CF70029DABD /* main.nut */; };
+		FDF3B0D222A96CF80029DABD /* main.nut in Resources */ = {isa = PBXBuildFile; fileRef = FDF3B0BB22A96CF70029DABD /* main.nut */; };
+		FDF3B0D322A96CF80029DABD /* screens in Resources */ = {isa = PBXBuildFile; fileRef = FDF3B0BC22A96CF70029DABD /* screens */; };
+		FDF3B0D422A96CF80029DABD /* screens in Resources */ = {isa = PBXBuildFile; fileRef = FDF3B0BC22A96CF70029DABD /* screens */; };
+		FDF3B0D522A96CF80029DABD /* render2d_vc.ps in Resources */ = {isa = PBXBuildFile; fileRef = FDF3B0BD22A96CF70029DABD /* render2d_vc.ps */; };
+		FDF3B0D622A96CF80029DABD /* render2d_vc.ps in Resources */ = {isa = PBXBuildFile; fileRef = FDF3B0BD22A96CF70029DABD /* render2d_vc.ps */; };
+		FDF3B0D722A96CF80029DABD /* data in Resources */ = {isa = PBXBuildFile; fileRef = FDF3B0BE22A96CF70029DABD /* data */; };
+		FDF3B0D822A96CF80029DABD /* data in Resources */ = {isa = PBXBuildFile; fileRef = FDF3B0BE22A96CF70029DABD /* data */; };
+		FDF3B0D922A96CF80029DABD /* render2d.vs in Resources */ = {isa = PBXBuildFile; fileRef = FDF3B0BF22A96CF70029DABD /* render2d.vs */; };
+		FDF3B0DA22A96CF80029DABD /* render2d.vs in Resources */ = {isa = PBXBuildFile; fileRef = FDF3B0BF22A96CF70029DABD /* render2d.vs */; };
+		FDF3B0DB22A96CF80029DABD /* vcolor.ps in Resources */ = {isa = PBXBuildFile; fileRef = FDF3B0C022A96CF70029DABD /* vcolor.ps */; };
+		FDF3B0DC22A96CF80029DABD /* vcolor.ps in Resources */ = {isa = PBXBuildFile; fileRef = FDF3B0C022A96CF70029DABD /* vcolor.ps */; };
+		FDF3B0DD22A96CF80029DABD /* spacemap.nut in Resources */ = {isa = PBXBuildFile; fileRef = FDF3B0C122A96CF70029DABD /* spacemap.nut */; };
+		FDF3B0DE22A96CF80029DABD /* spacemap.nut in Resources */ = {isa = PBXBuildFile; fileRef = FDF3B0C122A96CF70029DABD /* spacemap.nut */; };
+		FDF3B0DF22A96CF80029DABD /* render2d.mat in Resources */ = {isa = PBXBuildFile; fileRef = FDF3B0C222A96CF70029DABD /* render2d.mat */; };
+		FDF3B0E022A96CF80029DABD /* render2d.mat in Resources */ = {isa = PBXBuildFile; fileRef = FDF3B0C222A96CF70029DABD /* render2d.mat */; };
+		FDF3B0E122A96CF80029DABD /* buildings in Resources */ = {isa = PBXBuildFile; fileRef = FDF3B0C322A96CF80029DABD /* buildings */; };
+		FDF3B0E222A96CF80029DABD /* buildings in Resources */ = {isa = PBXBuildFile; fileRef = FDF3B0C322A96CF80029DABD /* buildings */; };
+		FDF3B0E322A96CF80029DABD /* render2d.ps in Resources */ = {isa = PBXBuildFile; fileRef = FDF3B0C422A96CF80029DABD /* render2d.ps */; };
+		FDF3B0E422A96CF80029DABD /* render2d.ps in Resources */ = {isa = PBXBuildFile; fileRef = FDF3B0C422A96CF80029DABD /* render2d.ps */; };
+		FDF3B0E522A96CF80029DABD /* vcolor.vs in Resources */ = {isa = PBXBuildFile; fileRef = FDF3B0C522A96CF80029DABD /* vcolor.vs */; };
+		FDF3B0E622A96CF80029DABD /* vcolor.vs in Resources */ = {isa = PBXBuildFile; fileRef = FDF3B0C522A96CF80029DABD /* vcolor.vs */; };
+		FDF3B0E722A96CF80029DABD /* render2d_vc.mat in Resources */ = {isa = PBXBuildFile; fileRef = FDF3B0C622A96CF80029DABD /* render2d_vc.mat */; };
+		FDF3B0E822A96CF80029DABD /* render2d_vc.mat in Resources */ = {isa = PBXBuildFile; fileRef = FDF3B0C622A96CF80029DABD /* render2d_vc.mat */; };
+		FDF3B0F022A96F800029DABD /* Splash.xib in Resources */ = {isa = PBXBuildFile; fileRef = FDF3B0EA22A96F800029DABD /* Splash.xib */; };
+		FDF3B0F322A96F800029DABD /* InfoOSX.plist in Resources */ = {isa = PBXBuildFile; fileRef = FDF3B0EB22A96F800029DABD /* InfoOSX.plist */; };
+		FDF3B0F422A96F800029DABD /* InfoIOS.plist in Resources */ = {isa = PBXBuildFile; fileRef = FDF3B0EC22A96F800029DABD /* InfoIOS.plist */; };
+		FDF3B0F722A96F800029DABD /* ResOSX.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FDF3B0ED22A96F800029DABD /* ResOSX.xcassets */; };
+		FDF3B0F822A96F800029DABD /* ResIOS.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FDF3B0EE22A96F800029DABD /* ResIOS.xcassets */; };
+		FDF3B0FA22A96F800029DABD /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = FDF3B0EF22A96F800029DABD /* Icon.png */; };
+		FDF3B0FB22A96F800029DABD /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = FDF3B0EF22A96F800029DABD /* Icon.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -229,37 +231,38 @@
 		EF121420200F994B009E2F8E /* TextureWrapper.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = TextureWrapper.hpp; sourceTree = "<group>"; };
 		EF121421200F994B009E2F8E /* TileMap2DWrapper.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = TileMap2DWrapper.hpp; sourceTree = "<group>"; };
 		EF121422200F994B009E2F8E /* VectorWrapper.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = VectorWrapper.hpp; sourceTree = "<group>"; };
-		EF5BE4A921C1214600D849F5 /* spacemap.nut */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = spacemap.nut; path = ../../../DeepSpace/spacemap.nut; sourceTree = "<group>"; };
 		EF8C389C200E25000077FE8C /* WaloPlayer_osx_d.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WaloPlayer_osx_d.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		EF8C38C7200E275F0077FE8C /* InfoOSX.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = InfoOSX.plist; sourceTree = "<group>"; };
-		EF93BE4E2010B52C0004560E /* InfoIOS.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = InfoIOS.plist; sourceTree = "<group>"; };
-		EF93BE512010B5400004560E /* Splash.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Splash.xib; sourceTree = "<group>"; };
-		EF93BE532010B54C0004560E /* ResIOS.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ResIOS.xcassets; sourceTree = "<group>"; };
-		EF93BE552010B5550004560E /* ResOSX.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ResOSX.xcassets; sourceTree = "<group>"; };
 		EF93BE6E2010CD7E0004560E /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
 		EF93BE702010CD8B0004560E /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		EF93BE722010CDA10004560E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		EF93BE742010CDC30004560E /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/System/Library/Frameworks/OpenAL.framework; sourceTree = DEVELOPER_DIR; };
 		EF93BE762010CDCF0004560E /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/System/Library/Frameworks/OpenGL.framework; sourceTree = DEVELOPER_DIR; };
 		EF93BE782010CDE10004560E /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/System/Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
-		EF93BEAD2010CE790004560E /* battlemap.nut */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = battlemap.nut; path = ../../../DeepSpace/battlemap.nut; sourceTree = "<group>"; };
-		EF93BEAE2010CE790004560E /* render2d.mat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = render2d.mat; path = ../../../DeepSpace/render2d.mat; sourceTree = "<group>"; };
-		EF93BEAF2010CE790004560E /* render2d.vs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = render2d.vs; path = ../../../DeepSpace/render2d.vs; sourceTree = "<group>"; };
-		EF93BEB02010CE790004560E /* render2d.ps */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = render2d.ps; path = ../../../DeepSpace/render2d.ps; sourceTree = "<group>"; };
-		EF93BEB12010CE790004560E /* vcolor.ps */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = vcolor.ps; path = ../../../DeepSpace/vcolor.ps; sourceTree = "<group>"; };
-		EF93BEB22010CE790004560E /* battlesquad.nut */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = battlesquad.nut; path = ../../../DeepSpace/battlesquad.nut; sourceTree = "<group>"; };
-		EF93BEB32010CE790004560E /* main.nut */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = main.nut; path = ../../../DeepSpace/main.nut; sourceTree = "<group>"; };
-		EF93BEB42010CE7A0004560E /* ui */ = {isa = PBXFileReference; lastKnownFileType = folder; name = ui; path = ../../../DeepSpace/ui; sourceTree = "<group>"; };
-		EF93BEB52010CE7A0004560E /* vcolor.vs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = vcolor.vs; path = ../../../DeepSpace/vcolor.vs; sourceTree = "<group>"; };
-		EF93BEB62010CE7A0004560E /* debugR.mat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = debugR.mat; path = ../../../DeepSpace/debugR.mat; sourceTree = "<group>"; };
-		EF93BEB72010CE7A0004560E /* render2d_vc.ps */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = render2d_vc.ps; path = ../../../DeepSpace/render2d_vc.ps; sourceTree = "<group>"; };
-		EF93BEB82010CE7A0004560E /* render2d_vc.mat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = render2d_vc.mat; path = ../../../DeepSpace/render2d_vc.mat; sourceTree = "<group>"; };
-		EF93BEB92010CE7A0004560E /* screens */ = {isa = PBXFileReference; lastKnownFileType = folder; name = screens; path = ../../../DeepSpace/screens; sourceTree = "<group>"; };
-		EF93BEBA2010CE7A0004560E /* basemap.nut */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = basemap.nut; path = ../../../DeepSpace/basemap.nut; sourceTree = "<group>"; };
-		EF93BEBB2010CE7B0004560E /* buildings */ = {isa = PBXFileReference; lastKnownFileType = folder; name = buildings; path = ../../../DeepSpace/buildings; sourceTree = "<group>"; };
-		EF93BEDA2010D1AD0004560E /* data */ = {isa = PBXFileReference; lastKnownFileType = folder; name = data; path = ../../../DeepSpace/data; sourceTree = "<group>"; };
 		FDC100731AB7812300BB41DD /* WaloPlayer_ios_d.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WaloPlayer_ios_d.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDC100A71AB7841F00BB41DD /* WaloEngine.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = WaloEngine.xcodeproj; path = ../Engine/WaloEngine.xcodeproj; sourceTree = "<group>"; };
+		FDF3B0B622A96CF70029DABD /* debugR.mat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = debugR.mat; path = "../../../deepspace-game/debugR.mat"; sourceTree = "<group>"; };
+		FDF3B0B722A96CF70029DABD /* battlesquad.nut */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = battlesquad.nut; path = "../../../deepspace-game/battlesquad.nut"; sourceTree = "<group>"; };
+		FDF3B0B822A96CF70029DABD /* basemap.nut */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = basemap.nut; path = "../../../deepspace-game/basemap.nut"; sourceTree = "<group>"; };
+		FDF3B0B922A96CF70029DABD /* ui */ = {isa = PBXFileReference; lastKnownFileType = folder; name = ui; path = "../../../deepspace-game/ui"; sourceTree = "<group>"; };
+		FDF3B0BA22A96CF70029DABD /* battlemap.nut */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = battlemap.nut; path = "../../../deepspace-game/battlemap.nut"; sourceTree = "<group>"; };
+		FDF3B0BB22A96CF70029DABD /* main.nut */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = main.nut; path = "../../../deepspace-game/main.nut"; sourceTree = "<group>"; };
+		FDF3B0BC22A96CF70029DABD /* screens */ = {isa = PBXFileReference; lastKnownFileType = folder; name = screens; path = "../../../deepspace-game/screens"; sourceTree = "<group>"; };
+		FDF3B0BD22A96CF70029DABD /* render2d_vc.ps */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = render2d_vc.ps; path = "../../../deepspace-game/render2d_vc.ps"; sourceTree = "<group>"; };
+		FDF3B0BE22A96CF70029DABD /* data */ = {isa = PBXFileReference; lastKnownFileType = folder; name = data; path = "../../../deepspace-game/data"; sourceTree = "<group>"; };
+		FDF3B0BF22A96CF70029DABD /* render2d.vs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = render2d.vs; path = "../../../deepspace-game/render2d.vs"; sourceTree = "<group>"; };
+		FDF3B0C022A96CF70029DABD /* vcolor.ps */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = vcolor.ps; path = "../../../deepspace-game/vcolor.ps"; sourceTree = "<group>"; };
+		FDF3B0C122A96CF70029DABD /* spacemap.nut */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = spacemap.nut; path = "../../../deepspace-game/spacemap.nut"; sourceTree = "<group>"; };
+		FDF3B0C222A96CF70029DABD /* render2d.mat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = render2d.mat; path = "../../../deepspace-game/render2d.mat"; sourceTree = "<group>"; };
+		FDF3B0C322A96CF80029DABD /* buildings */ = {isa = PBXFileReference; lastKnownFileType = folder; name = buildings; path = "../../../deepspace-game/buildings"; sourceTree = "<group>"; };
+		FDF3B0C422A96CF80029DABD /* render2d.ps */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = render2d.ps; path = "../../../deepspace-game/render2d.ps"; sourceTree = "<group>"; };
+		FDF3B0C522A96CF80029DABD /* vcolor.vs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = vcolor.vs; path = "../../../deepspace-game/vcolor.vs"; sourceTree = "<group>"; };
+		FDF3B0C622A96CF80029DABD /* render2d_vc.mat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = render2d_vc.mat; path = "../../../deepspace-game/render2d_vc.mat"; sourceTree = "<group>"; };
+		FDF3B0EA22A96F800029DABD /* Splash.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = Splash.xib; path = Resources/Splash.xib; sourceTree = "<group>"; };
+		FDF3B0EB22A96F800029DABD /* InfoOSX.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = InfoOSX.plist; path = Resources/InfoOSX.plist; sourceTree = "<group>"; };
+		FDF3B0EC22A96F800029DABD /* InfoIOS.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = InfoIOS.plist; path = Resources/InfoIOS.plist; sourceTree = "<group>"; };
+		FDF3B0ED22A96F800029DABD /* ResOSX.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = ResOSX.xcassets; path = Resources/ResOSX.xcassets; sourceTree = "<group>"; };
+		FDF3B0EE22A96F800029DABD /* ResIOS.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = ResIOS.xcassets; path = Resources/ResIOS.xcassets; sourceTree = "<group>"; };
+		FDF3B0EF22A96F800029DABD /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = Resources/Icon.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -463,6 +466,7 @@
 			isa = PBXGroup;
 			children = (
 				FDC100A71AB7841F00BB41DD /* WaloEngine.xcodeproj */,
+				FDF3B0E922A96F5A0029DABD /* Assets */,
 				FDC100A01AB7817300BB41DD /* Resources */,
 				FDA0F82B1ABA3456000661CA /* Externs */,
 				FDC104831AB78FA700BB41DD /* Sources */,
@@ -483,28 +487,23 @@
 		FDC100A01AB7817300BB41DD /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				EF5BE4A921C1214600D849F5 /* spacemap.nut */,
-				EF93BEDA2010D1AD0004560E /* data */,
-				EF93BEBA2010CE7A0004560E /* basemap.nut */,
-				EF93BEAD2010CE790004560E /* battlemap.nut */,
-				EF93BEB22010CE790004560E /* battlesquad.nut */,
-				EF93BEBB2010CE7B0004560E /* buildings */,
-				EF93BEB62010CE7A0004560E /* debugR.mat */,
-				EF93BEB32010CE790004560E /* main.nut */,
-				EF93BEB82010CE7A0004560E /* render2d_vc.mat */,
-				EF93BEB72010CE7A0004560E /* render2d_vc.ps */,
-				EF93BEAE2010CE790004560E /* render2d.mat */,
-				EF93BEB02010CE790004560E /* render2d.ps */,
-				EF93BEAF2010CE790004560E /* render2d.vs */,
-				EF93BEB92010CE7A0004560E /* screens */,
-				EF93BEB42010CE7A0004560E /* ui */,
-				EF93BEB12010CE790004560E /* vcolor.ps */,
-				EF93BEB52010CE7A0004560E /* vcolor.vs */,
-				EF93BE552010B5550004560E /* ResOSX.xcassets */,
-				EF93BE532010B54C0004560E /* ResIOS.xcassets */,
-				EF93BE512010B5400004560E /* Splash.xib */,
-				EF93BE4E2010B52C0004560E /* InfoIOS.plist */,
-				EF8C38C7200E275F0077FE8C /* InfoOSX.plist */,
+				FDF3B0B822A96CF70029DABD /* basemap.nut */,
+				FDF3B0BA22A96CF70029DABD /* battlemap.nut */,
+				FDF3B0B722A96CF70029DABD /* battlesquad.nut */,
+				FDF3B0C322A96CF80029DABD /* buildings */,
+				FDF3B0BE22A96CF70029DABD /* data */,
+				FDF3B0B622A96CF70029DABD /* debugR.mat */,
+				FDF3B0BB22A96CF70029DABD /* main.nut */,
+				FDF3B0C622A96CF80029DABD /* render2d_vc.mat */,
+				FDF3B0BD22A96CF70029DABD /* render2d_vc.ps */,
+				FDF3B0C222A96CF70029DABD /* render2d.mat */,
+				FDF3B0C422A96CF80029DABD /* render2d.ps */,
+				FDF3B0BF22A96CF70029DABD /* render2d.vs */,
+				FDF3B0BC22A96CF70029DABD /* screens */,
+				FDF3B0C122A96CF70029DABD /* spacemap.nut */,
+				FDF3B0B922A96CF70029DABD /* ui */,
+				FDF3B0C022A96CF70029DABD /* vcolor.ps */,
+				FDF3B0C522A96CF80029DABD /* vcolor.vs */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -527,6 +526,19 @@
 				EF121405200F994B009E2F8E /* WaloPlayer.hpp */,
 			);
 			name = Sources;
+			sourceTree = "<group>";
+		};
+		FDF3B0E922A96F5A0029DABD /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				FDF3B0EF22A96F800029DABD /* Icon.png */,
+				FDF3B0EC22A96F800029DABD /* InfoIOS.plist */,
+				FDF3B0EB22A96F800029DABD /* InfoOSX.plist */,
+				FDF3B0EE22A96F800029DABD /* ResIOS.xcassets */,
+				FDF3B0ED22A96F800029DABD /* ResOSX.xcassets */,
+				FDF3B0EA22A96F800029DABD /* Splash.xib */,
+			);
+			name = Assets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -597,6 +609,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -639,25 +652,26 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EF93BECB2010CE7B0004560E /* ui in Resources */,
-				EF93BE502010B5310004560E /* InfoOSX.plist in Resources */,
-				EF93BEC92010CE7B0004560E /* main.nut in Resources */,
-				EF93BED32010CE7B0004560E /* render2d_vc.mat in Resources */,
-				EF5BE4AB21C1214600D849F5 /* spacemap.nut in Resources */,
-				EF93BEDC2010D1AD0004560E /* data in Resources */,
-				EF93BE562010B5550004560E /* ResOSX.xcassets in Resources */,
-				EF93BEC32010CE7B0004560E /* render2d.ps in Resources */,
-				EF93BED52010CE7B0004560E /* screens in Resources */,
-				EF93BEBF2010CE7B0004560E /* render2d.mat in Resources */,
-				EF93BEC52010CE7B0004560E /* vcolor.ps in Resources */,
-				EF93BED72010CE7B0004560E /* basemap.nut in Resources */,
-				EF93BECD2010CE7B0004560E /* vcolor.vs in Resources */,
-				EF93BEBD2010CE7B0004560E /* battlemap.nut in Resources */,
-				EF93BED92010CE7B0004560E /* buildings in Resources */,
-				EF93BEC72010CE7B0004560E /* battlesquad.nut in Resources */,
-				EF93BEC12010CE7B0004560E /* render2d.vs in Resources */,
-				EF93BECF2010CE7B0004560E /* debugR.mat in Resources */,
-				EF93BED12010CE7B0004560E /* render2d_vc.ps in Resources */,
+				FDF3B0CE22A96CF80029DABD /* ui in Resources */,
+				FDF3B0F722A96F800029DABD /* ResOSX.xcassets in Resources */,
+				FDF3B0D422A96CF80029DABD /* screens in Resources */,
+				FDF3B0CC22A96CF80029DABD /* basemap.nut in Resources */,
+				FDF3B0D022A96CF80029DABD /* battlemap.nut in Resources */,
+				FDF3B0E222A96CF80029DABD /* buildings in Resources */,
+				FDF3B0E622A96CF80029DABD /* vcolor.vs in Resources */,
+				FDF3B0DC22A96CF80029DABD /* vcolor.ps in Resources */,
+				FDF3B0FB22A96F800029DABD /* Icon.png in Resources */,
+				FDF3B0DA22A96CF80029DABD /* render2d.vs in Resources */,
+				FDF3B0D822A96CF80029DABD /* data in Resources */,
+				FDF3B0F322A96F800029DABD /* InfoOSX.plist in Resources */,
+				FDF3B0E022A96CF80029DABD /* render2d.mat in Resources */,
+				FDF3B0CA22A96CF80029DABD /* battlesquad.nut in Resources */,
+				FDF3B0D622A96CF80029DABD /* render2d_vc.ps in Resources */,
+				FDF3B0E422A96CF80029DABD /* render2d.ps in Resources */,
+				FDF3B0D222A96CF80029DABD /* main.nut in Resources */,
+				FDF3B0C822A96CF80029DABD /* debugR.mat in Resources */,
+				FDF3B0DE22A96CF80029DABD /* spacemap.nut in Resources */,
+				FDF3B0E822A96CF80029DABD /* render2d_vc.mat in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -665,26 +679,27 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EF93BECA2010CE7B0004560E /* ui in Resources */,
-				EF93BECC2010CE7B0004560E /* vcolor.vs in Resources */,
-				EF93BED82010CE7B0004560E /* buildings in Resources */,
-				EF93BED22010CE7B0004560E /* render2d_vc.mat in Resources */,
-				EF93BEBE2010CE7B0004560E /* render2d.mat in Resources */,
-				EF93BED02010CE7B0004560E /* render2d_vc.ps in Resources */,
-				EF93BEDB2010D1AD0004560E /* data in Resources */,
-				EF93BEBC2010CE7B0004560E /* battlemap.nut in Resources */,
-				EF93BED62010CE7B0004560E /* basemap.nut in Resources */,
-				EF93BEC02010CE7B0004560E /* render2d.vs in Resources */,
-				EF93BE6C2010BBF60004560E /* Splash.xib in Resources */,
-				EF93BEC82010CE7B0004560E /* main.nut in Resources */,
-				EF93BEC22010CE7B0004560E /* render2d.ps in Resources */,
-				EF93BED42010CE7B0004560E /* screens in Resources */,
-				EF93BEC62010CE7B0004560E /* battlesquad.nut in Resources */,
-				EF93BE542010B54C0004560E /* ResIOS.xcassets in Resources */,
-				EF93BECE2010CE7B0004560E /* debugR.mat in Resources */,
-				EF93BE4F2010B52C0004560E /* InfoIOS.plist in Resources */,
-				EF93BEC42010CE7B0004560E /* vcolor.ps in Resources */,
-				EF5BE4AA21C1214600D849F5 /* spacemap.nut in Resources */,
+				FDF3B0CD22A96CF80029DABD /* ui in Resources */,
+				FDF3B0D322A96CF80029DABD /* screens in Resources */,
+				FDF3B0F422A96F800029DABD /* InfoIOS.plist in Resources */,
+				FDF3B0CB22A96CF80029DABD /* basemap.nut in Resources */,
+				FDF3B0CF22A96CF80029DABD /* battlemap.nut in Resources */,
+				FDF3B0E122A96CF80029DABD /* buildings in Resources */,
+				FDF3B0E522A96CF80029DABD /* vcolor.vs in Resources */,
+				FDF3B0DB22A96CF80029DABD /* vcolor.ps in Resources */,
+				FDF3B0FA22A96F800029DABD /* Icon.png in Resources */,
+				FDF3B0D922A96CF80029DABD /* render2d.vs in Resources */,
+				FDF3B0F022A96F800029DABD /* Splash.xib in Resources */,
+				FDF3B0D722A96CF80029DABD /* data in Resources */,
+				FDF3B0DF22A96CF80029DABD /* render2d.mat in Resources */,
+				FDF3B0C922A96CF80029DABD /* battlesquad.nut in Resources */,
+				FDF3B0D522A96CF80029DABD /* render2d_vc.ps in Resources */,
+				FDF3B0E322A96CF80029DABD /* render2d.ps in Resources */,
+				FDF3B0D122A96CF80029DABD /* main.nut in Resources */,
+				FDF3B0F822A96F800029DABD /* ResIOS.xcassets in Resources */,
+				FDF3B0C722A96CF80029DABD /* debugR.mat in Resources */,
+				FDF3B0DD22A96CF80029DABD /* spacemap.nut in Resources */,
+				FDF3B0E722A96CF80029DABD /* render2d_vc.mat in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1046,7 +1061,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)_d";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				WARNING_CFLAGS = "";
+				WARNING_CFLAGS = "-Wno-address-of-temporary";
 			};
 			name = Debug;
 		};
@@ -1081,7 +1096,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				WARNING_CFLAGS = "";
+				WARNING_CFLAGS = "-Wno-address-of-temporary";
 			};
 			name = Release;
 		};
