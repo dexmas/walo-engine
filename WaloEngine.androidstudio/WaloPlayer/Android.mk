@@ -1,22 +1,17 @@
-abspath_wa = $(join $(filter %:,$(subst :,: ,$1)),$(abspath $(filter-out %:,$(subst :,: ,$1))))
 
 LOCAL_PATH := $(call my-dir)
 
-JNI_SRC_PATH := $(call abspath_wa, $(LOCAL_PATH)/src/main/cpp)
-PLAYER_PATH := $(call abspath_wa, $(LOCAL_PATH)/../../Player)
-ENGINE_PATH := $(call abspath_wa, $(LOCAL_PATH)/../../Engine)
-EXTERNS_PATH := $(call abspath_wa, $(LOCAL_PATH)/../../Externs)
-ENGINE_LIB_PATH := $(call abspath_wa, $(LOCAL_PATH)/../WaloEngine/obj/local)
+JNI_SRC_PATH := src/main/cpp
+PLAYER_PATH  := ../../Player
+ENGINE_PATH  := ../../Engine
+EXTERNS_PATH := ../../Externs
 
 include $(CLEAR_VARS)
-LOCAL_MODULE := waloengine
-LOCAL_SRC_FILES := $(ENGINE_LIB_PATH)/$(TARGET_ARCH_ABI)/libwaloengine.a
-LOCAL_EXPORT_C_INCLUDES := $(ENGINE_PATH)
-include $(PREBUILT_STATIC_LIBRARY)
 
-include $(CLEAR_VARS)
 LOCAL_MODULE    := waloplayer
-LOCAL_CFLAGS    := -std=c++11 -O0  -Wno-address-of-temporary
+
+LOCAL_CFLAGS := -O0 -w -D_ANDROID -D_DEBUG -fpermissive -Wno-address-of-temporary
+
 LOCAL_SRC_FILES := \
     $(JNI_SRC_PATH)/jni_interface.cpp \
 	$(PLAYER_PATH)/WaloPlayer.cpp \
@@ -48,8 +43,11 @@ LOCAL_C_INCLUDES :=	\
 	$(EXTERNS_PATH)/squirrel3 \
 	$(EXTERNS_PATH)/sqrat
 
-LOCAL_CFLAGS += -D_ANDROID -D_DEBUG -fpermissive
-LOCAL_STATIC_LIBRARIES := waloengine
 LOCAL_LDLIBS := -llog -lGLESv2 -lOpenSLES -landroid
 
+LOCAL_WHOLE_STATIC_LIBRARIES := waloengine
+
 include $(BUILD_SHARED_LIBRARY)
+
+$(call import-add-path, ..)
+$(call import-module, WaloEngine)

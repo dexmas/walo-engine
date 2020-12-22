@@ -1,15 +1,14 @@
-abspath_wa = $(join $(filter %:,$(subst :,: ,$1)),$(abspath $(filter-out %:,$(subst :,: ,$1))))
 
 LOCAL_PATH := $(call my-dir)
 
-JNI_SRC_PATH := $(call abspath_wa, $(LOCAL_PATH)/../../Engine)
-EXTERNS_PATH := $(call abspath_wa, $(LOCAL_PATH)/../../Externs)
+JNI_SRC_PATH := ../../Engine
+EXTERNS_PATH := ../../Externs
 
 include $(CLEAR_VARS)
 
 LOCAL_MODULE    := waloengine
 
-LOCAL_CFLAGS    := -std=c++11 -O0 -Wno-address-of-temporary
+LOCAL_CFLAGS := -O0 -w -D_ANDROID -D_DEBUG -fpermissive -Wno-address-of-temporary
 
 LOCAL_SRC_FILES := \
 	$(EXTERNS_PATH)/box2d/box2d/Collision/Shapes/b2ChainShape.cpp \
@@ -70,7 +69,6 @@ LOCAL_SRC_FILES := \
 	$(EXTERNS_PATH)/openal/ALc/backends/android.c \
 	$(EXTERNS_PATH)/openal/ALc/backends/loopback.c \
 	$(EXTERNS_PATH)/openal/ALc/backends/null.c \
-	$(EXTERNS_PATH)/openal/ALc/backends/opensl.c \
 	$(EXTERNS_PATH)/openal/ALc/backends/opensl.c \
 	$(EXTERNS_PATH)/openal/ALc/ALc.c \
 	$(EXTERNS_PATH)/openal/ALc/alcConfig.c \
@@ -146,7 +144,6 @@ LOCAL_SRC_FILES := \
 	$(JNI_SRC_PATH)/Render/IndexBuffer.cpp \
 	$(JNI_SRC_PATH)/Render/Material.cpp \
 	$(JNI_SRC_PATH)/Render/Mesh.cpp \
-	$(JNI_SRC_PATH)/Render/IndexBuffer.cpp \
 	$(JNI_SRC_PATH)/Render/MeshBuffer.cpp \
 	$(JNI_SRC_PATH)/Render/Render.cpp \
 	$(JNI_SRC_PATH)/Render/Shader.cpp \
@@ -187,7 +184,5 @@ LOCAL_C_INCLUDES :=	\
 	$(EXTERNS_PATH)/rapidjson/include \
 	$(EXTERNS_PATH)/vorbis \
 	$(EXTERNS_PATH)/vorbis/lib
-				
-LOCAL_CFLAGS += -D_ANDROID -D_DEBUG -fpermissive
 
 include $(BUILD_STATIC_LIBRARY)

@@ -3,3 +3,13 @@
 /Build/Lib/Win32/*.*
 /Build/Temp
 *.user
+/WaloEngine.androidstudio/WaloPlayer/.cxx
+/WaloEngine.androidstudio/WaloPlayer/build
+/WaloEngine.androidstudio/WaloPlayer/libs
+/WaloEngine.androidstudio/WaloPlayer/obj
+/WaloEngine.androidstudio/WaloEngine/.cxx
+/WaloEngine.androidstudio/WaloEngine/build
+/WaloEngine.androidstudio/WaloEngine/obj
+/WaloEngine.androidstudio/local.properties
+/WaloEngine.androidstudio/.gradle
+/WaloEngine.androidstudio/.idea
