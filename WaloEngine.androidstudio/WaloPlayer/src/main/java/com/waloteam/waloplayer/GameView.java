@@ -12,6 +12,8 @@ import javax.microedition.khronos.opengles.GL10;
 
 class GameView extends GLSurfaceView
 {
+    private Renderer mRenderer;
+
     public GameView(Context context)
     {
         super(context);
@@ -35,7 +37,8 @@ class GameView extends GLSurfaceView
 
         setEGLConfigChooser( translucent ? new ConfigChooser(8,8,8,8, depth, stencil) : new ConfigChooser(5,6,5,0, depth, stencil) );
 
-        setRenderer(new Renderer());
+        this.mRenderer = new Renderer();
+        setRenderer(this.mRenderer);
     }
 
     private static class ContextFactory implements GLSurfaceView.EGLContextFactory
@@ -54,6 +57,37 @@ class GameView extends GLSurfaceView
         public void destroyContext(EGL10 egl, EGLDisplay display, EGLContext context)
         {
             egl.eglDestroyContext(display, context);
+        }
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        this.setRenderMode(RENDERMODE_CONTINUOUSLY);
+        this.queueEvent(new Runnable() {
+            @Override
+            public void run() {
+                GameView.this.mRenderer.handleOnResume();
+            }
+        });
+    }
+
+    @Override
+    public void onPause() {
+        this.queueEvent(new Runnable() {
+            @Override
+            public void run() {
+                GameView.this.mRenderer.handleOnPause();
+            }
+        });
+        this.setRenderMode(RENDERMODE_WHEN_DIRTY);
+        //super.onPause();
+    }
+
+    @Override
+    protected void onSizeChanged(final int pNewSurfaceWidth, final int pNewSurfaceHeight, final int pOldSurfaceWidth, final int pOldSurfaceHeight) {
+        if(!this.isInEditMode()) {
+            this.mRenderer.setScreenWidthAndHeight(pNewSurfaceWidth, pNewSurfaceHeight);
         }
     }
 
@@ -139,20 +173,66 @@ class GameView extends GLSurfaceView
 
     private static class Renderer implements GLSurfaceView.Renderer
     {
+        private final static long NANOSECONDSPERSECOND = 1000000000L;
+        private final static long NANOSECONDSPERMICROSECOND = 1000000L;
+
+        private static long sAnimationInterval = (long) (1.0 / 60 * Renderer.NANOSECONDSPERSECOND);
+
+        private long mLastTickInNanoSeconds;
+
+        private int mScreenWidth;
+        private int mScreenHeight;
+
+        private boolean mNativeInitCompleted = false;
+
+        public void setScreenWidthAndHeight(final int surfaceWidth, final int surfaceHeight) {
+            mScreenWidth = surfaceWidth;
+            mScreenHeight = surfaceHeight;
+        }
+
         public void onDrawFrame(GL10 gl)
         {
-            NativeWrapper.Update();
+            if (sAnimationInterval <= 1.0 / 60 * Renderer.NANOSECONDSPERSECOND) {
+                double dt = (double)sAnimationInterval / (double)Renderer.NANOSECONDSPERSECOND;
+                NativeWrapper.Update((float)dt);
+            } else {
+                final long now = System.nanoTime();
+                final long interval = now - mLastTickInNanoSeconds;
+
+                if (interval < Renderer.sAnimationInterval) {
+                    try {
+                        long ms = (Renderer.sAnimationInterval - interval) / (long)Renderer.NANOSECONDSPERSECOND;
+                        Thread.sleep(ms);
+                    } catch (final Exception e) {
+                    }
+                }
+
+                mLastTickInNanoSeconds = System.nanoTime();
+                double dt = (double)interval / (double)Renderer.NANOSECONDSPERSECOND;
+                NativeWrapper.Update((float)dt);
+            }
         }
 
         public void onSurfaceChanged(GL10 gl, int width, int height)
         {
-            NativeWrapper.InitRender(width, height);
+            int i = 0; //Do nothing
         }
 
         public void onSurfaceCreated(GL10 gl, EGLConfig config)
         {
-            // Do nothing.
-            int i = 0;
+            NativeWrapper.InitRender(this.mScreenWidth, this.mScreenHeight);
+            this.mLastTickInNanoSeconds = System.nanoTime();
+            this.mNativeInitCompleted = true;
+        }
+
+        public void handleOnPause() {
+            if (this.mNativeInitCompleted)
+                NativeWrapper.Pause();
+        }
+
+        public void handleOnResume() {
+            if (this.mNativeInitCompleted)
+                NativeWrapper.Resume();
         }
     }
 }

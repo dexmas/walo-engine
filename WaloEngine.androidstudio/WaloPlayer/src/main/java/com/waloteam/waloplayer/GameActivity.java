@@ -34,14 +34,10 @@ public class GameActivity extends Activity
     {
         super.onPause();
         mView.onPause();
-
-        NativeWrapper.Pause();
     }
 
     @Override protected void onResume()
     {
-        NativeWrapper.Resume();
-
         super.onResume();
         mView.onResume();
     }

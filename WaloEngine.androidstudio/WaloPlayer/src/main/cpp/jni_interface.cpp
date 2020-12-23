@@ -108,9 +108,9 @@ extern "C"
         return true;
     }
 
-	JNIEXPORT void JNICALL Java_com_waloteam_waloplayer_NativeWrapper_Update()
+	JNIEXPORT void JNICALL Java_com_waloteam_waloplayer_NativeWrapper_Update(jfloat _dt)
 	{
-        pGame->Run(0.04f);
+        pGame->Run(_dt);
 	}
 
 	JNIEXPORT void JNICALL Java_com_waloteam_waloplayer_NativeWrapper_Pause()
