@@ -59,6 +59,8 @@
 		EF93BE772010CDCF0004560E /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF93BE762010CDCF0004560E /* OpenGL.framework */; };
 		EF93BE792010CDE10004560E /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF93BE782010CDE10004560E /* Cocoa.framework */; };
 		FDA0F8881ABA34A1000661CA /* libWaloEngine_ios_d.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FDC100AC1AB7841F00BB41DD /* libWaloEngine_ios_d.a */; };
+		FDCDAA1125966AD9004A70CE /* hexmap.nut in Resources */ = {isa = PBXBuildFile; fileRef = FDCDAA1025966AD9004A70CE /* hexmap.nut */; };
+		FDCDAA1225966AD9004A70CE /* hexmap.nut in Resources */ = {isa = PBXBuildFile; fileRef = FDCDAA1025966AD9004A70CE /* hexmap.nut */; };
 		FDF3B0C722A96CF80029DABD /* debugR.mat in Resources */ = {isa = PBXBuildFile; fileRef = FDF3B0B622A96CF70029DABD /* debugR.mat */; };
 		FDF3B0C822A96CF80029DABD /* debugR.mat in Resources */ = {isa = PBXBuildFile; fileRef = FDF3B0B622A96CF70029DABD /* debugR.mat */; };
 		FDF3B0C922A96CF80029DABD /* battlesquad.nut in Resources */ = {isa = PBXBuildFile; fileRef = FDF3B0B722A96CF70029DABD /* battlesquad.nut */; };
@@ -240,6 +242,7 @@
 		EF93BE782010CDE10004560E /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/System/Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
 		FDC100731AB7812300BB41DD /* WaloPlayer_ios_d.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WaloPlayer_ios_d.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDC100A71AB7841F00BB41DD /* WaloEngine.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = WaloEngine.xcodeproj; path = ../Engine/WaloEngine.xcodeproj; sourceTree = "<group>"; };
+		FDCDAA1025966AD9004A70CE /* hexmap.nut */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = hexmap.nut; path = "../../../deepspace-game/hexmap.nut"; sourceTree = "<group>"; };
 		FDF3B0B622A96CF70029DABD /* debugR.mat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = debugR.mat; path = "../../../deepspace-game/debugR.mat"; sourceTree = "<group>"; };
 		FDF3B0B722A96CF70029DABD /* battlesquad.nut */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = battlesquad.nut; path = "../../../deepspace-game/battlesquad.nut"; sourceTree = "<group>"; };
 		FDF3B0B822A96CF70029DABD /* basemap.nut */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = basemap.nut; path = "../../../deepspace-game/basemap.nut"; sourceTree = "<group>"; };
@@ -487,6 +490,7 @@
 		FDC100A01AB7817300BB41DD /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				FDCDAA1025966AD9004A70CE /* hexmap.nut */,
 				FDF3B0B822A96CF70029DABD /* basemap.nut */,
 				FDF3B0BA22A96CF70029DABD /* battlemap.nut */,
 				FDF3B0B722A96CF70029DABD /* battlesquad.nut */,
@@ -659,6 +663,7 @@
 				FDF3B0D022A96CF80029DABD /* battlemap.nut in Resources */,
 				FDF3B0E222A96CF80029DABD /* buildings in Resources */,
 				FDF3B0E622A96CF80029DABD /* vcolor.vs in Resources */,
+				FDCDAA1225966AD9004A70CE /* hexmap.nut in Resources */,
 				FDF3B0DC22A96CF80029DABD /* vcolor.ps in Resources */,
 				FDF3B0FB22A96F800029DABD /* Icon.png in Resources */,
 				FDF3B0DA22A96CF80029DABD /* render2d.vs in Resources */,
@@ -697,6 +702,7 @@
 				FDF3B0E322A96CF80029DABD /* render2d.ps in Resources */,
 				FDF3B0D122A96CF80029DABD /* main.nut in Resources */,
 				FDF3B0F822A96F800029DABD /* ResIOS.xcassets in Resources */,
+				FDCDAA1125966AD9004A70CE /* hexmap.nut in Resources */,
 				FDF3B0C722A96CF80029DABD /* debugR.mat in Resources */,
 				FDF3B0DD22A96CF80029DABD /* spacemap.nut in Resources */,
 				FDF3B0E722A96CF80029DABD /* render2d_vc.mat in Resources */,
@@ -1040,6 +1046,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer: Valeri Vuchov (WDTMDP2J2J)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 8SM49QADK9;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1078,6 +1085,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer: Valeri Vuchov (WDTMDP2J2J)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 8SM49QADK9;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
