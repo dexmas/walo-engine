@@ -54,7 +54,13 @@ public:
 
 	CVector2 GetSize() const 
 	{
-		return m_Size;
+		CVector2 sz = m_Size;
+		if (m_Node)
+		{
+			sz.X *= m_Node->GetScale().X;
+			sz.Y *= m_Node->GetScale().Y;
+		}
+		return sz;
 	}
 
 	void SetCenter(const CVector2& _center)

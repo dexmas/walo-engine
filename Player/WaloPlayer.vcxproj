@@ -141,7 +141,7 @@
     <None Include="..\..\deepspace-game\buildings\hqbuilding.nut" />
     <None Include="..\..\deepspace-game\buildings\platform.nut" />
     <None Include="..\..\deepspace-game\main.nut" />
-    <None Include="..\..\deepspace-game\screens\battle.nut" />
+    <None Include="..\..\deepspace-game\screens\battlescreen.nut" />
     <None Include="..\..\deepspace-game\screens\debrifing.nut" />
     <None Include="..\..\deepspace-game\screens\dkscreen.nut" />
     <None Include="..\..\deepspace-game\screens\editpopup.nut" />
@@ -150,8 +150,9 @@
     <None Include="..\..\deepspace-game\screens\screen.nut" />
     <None Include="..\..\deepspace-game\screens\spacebase.nut" />
     <None Include="..\..\deepspace-game\battlesquad.nut" />
-    <None Include="..\..\deepspace-game\screens\map.nut" />
+    <None Include="..\..\deepspace-game\screens\exploremap.nut" />
     <None Include="..\..\deepspace-game\spacemap.nut" />
+    <None Include="..\..\deepspace-game\hexmap.nut" />
     <None Include="..\..\deepspace-game\ui\bar.nut" />
     <None Include="..\..\deepspace-game\ui\button.nut" />
     <None Include="..\..\deepspace-game\ui\icon.nut" />

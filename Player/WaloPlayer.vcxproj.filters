@@ -476,9 +476,6 @@
     <None Include="..\..\deepspace-game\screens\spacebase.nut">
       <Filter>Games\DeepSpace\screens</Filter>
     </None>
-    <None Include="..\..\deepspace-game\screens\battle.nut">
-      <Filter>Games\DeepSpace\screens</Filter>
-    </None>
     <None Include="..\..\deepspace-game\battlemap.nut">
       <Filter>Games\DeepSpace</Filter>
     </None>
@@ -521,7 +518,13 @@
     <None Include="..\..\deepspace-game\spacemap.nut">
       <Filter>Games\DeepSpace</Filter>
     </None>
-    <None Include="..\..\deepspace-game\screens\map.nut">
+    <None Include="..\..\deepspace-game\hexmap.nut">
+      <Filter>Games\DeepSpace</Filter>
+    </None>
+    <None Include="..\..\deepspace-game\screens\exploremap.nut">
+      <Filter>Games\DeepSpace\screens</Filter>
+    </None>
+    <None Include="..\..\deepspace-game\screens\battlescreen.nut">
       <Filter>Games\DeepSpace\screens</Filter>
     </None>
   </ItemGroup>
