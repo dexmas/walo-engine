@@ -67,29 +67,17 @@
     <Filter Include="Games\Deflector\ui">
       <UniqueIdentifier>{46120cb1-0740-4633-8194-2856da26f78d}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Games\Match3">
-      <UniqueIdentifier>{70d6d919-5da2-4055-9c4d-161d30d0086b}</UniqueIdentifier>
+    <Filter Include="Games\TDS">
+      <UniqueIdentifier>{2d30da41-1914-44d7-b254-8d75d16d61a1}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Games\Match3\GameElements">
-      <UniqueIdentifier>{8d0842c8-b7d4-4495-801e-80dca6ecb3fc}</UniqueIdentifier>
+    <Filter Include="Games\Breakout">
+      <UniqueIdentifier>{668f0d34-a8dc-4100-b4d6-c29d7c645eb6}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Games\Match3\sqCore">
-      <UniqueIdentifier>{3b283420-3328-4dc8-9c97-51c6560d9c5f}</UniqueIdentifier>
+    <Filter Include="Games\Breakout\ui">
+      <UniqueIdentifier>{548bdcc1-80d4-4ef7-8b4e-f4bccad8ba06}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Games\Match3\sqCore\UI">
-      <UniqueIdentifier>{57b840cd-2e64-4dfd-a578-c315c4c1ced5}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Games\Match3\sqCore\utils">
-      <UniqueIdentifier>{f9cfeba7-0bce-4cb6-9837-0cc35a15c3d4}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Games\Match3\StatesFramework">
-      <UniqueIdentifier>{a78ad976-58ae-4370-a97a-47f9cf3d69f3}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Games\Match3\UIElements">
-      <UniqueIdentifier>{37714de7-dda7-449c-95de-d627233ae633}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Games\Match3\UIElements\Popup">
-      <UniqueIdentifier>{53d17052-2ad6-4ad6-9478-e4178d91dea2}</UniqueIdentifier>
+    <Filter Include="Games\Breakout\screens">
+      <UniqueIdentifier>{bf1ac15e-cb8f-4e93-900e-2510a6f0a090}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -526,6 +514,390 @@
     </None>
     <None Include="..\..\deepspace-game\screens\battlescreen.nut">
       <Filter>Games\DeepSpace\screens</Filter>
+    </None>
+    <None Include="..\..\bomberman-game\bomb.nut">
+      <Filter>Games\Bomberman</Filter>
+    </None>
+    <None Include="..\..\bomberman-game\enemy.nut">
+      <Filter>Games\Bomberman</Filter>
+    </None>
+    <None Include="..\..\bomberman-game\game.nut">
+      <Filter>Games\Bomberman</Filter>
+    </None>
+    <None Include="..\..\bomberman-game\gpad.nut">
+      <Filter>Games\Bomberman</Filter>
+    </None>
+    <None Include="..\..\bomberman-game\item.nut">
+      <Filter>Games\Bomberman</Filter>
+    </None>
+    <None Include="..\..\bomberman-game\main.nut">
+      <Filter>Games\Bomberman</Filter>
+    </None>
+    <None Include="..\..\bomberman-game\menu.nut">
+      <Filter>Games\Bomberman</Filter>
+    </None>
+    <None Include="..\..\bomberman-game\player.nut">
+      <Filter>Games\Bomberman</Filter>
+    </None>
+    <None Include="..\..\bomberman-game\sndmgr.nut">
+      <Filter>Games\Bomberman</Filter>
+    </None>
+    <None Include="..\..\bomberman-game\state.nut">
+      <Filter>Games\Bomberman</Filter>
+    </None>
+    <None Include="..\..\bomberman-game\tile.nut">
+      <Filter>Games\Bomberman</Filter>
+    </None>
+    <None Include="..\..\bomberman-game\unit.nut">
+      <Filter>Games\Bomberman</Filter>
+    </None>
+    <None Include="..\..\tds-game\ammo.nut">
+      <Filter>Games\TDS</Filter>
+    </None>
+    <None Include="..\..\tds-game\bullet.nut">
+      <Filter>Games\TDS</Filter>
+    </None>
+    <None Include="..\..\tds-game\enemy.nut">
+      <Filter>Games\TDS</Filter>
+    </None>
+    <None Include="..\..\tds-game\game.nut">
+      <Filter>Games\TDS</Filter>
+    </None>
+    <None Include="..\..\tds-game\gpad.nut">
+      <Filter>Games\TDS</Filter>
+    </None>
+    <None Include="..\..\tds-game\main.nut">
+      <Filter>Games\TDS</Filter>
+    </None>
+    <None Include="..\..\tds-game\menu.nut">
+      <Filter>Games\TDS</Filter>
+    </None>
+    <None Include="..\..\tds-game\player.nut">
+      <Filter>Games\TDS</Filter>
+    </None>
+    <None Include="..\..\tds-game\scores.nut">
+      <Filter>Games\TDS</Filter>
+    </None>
+    <None Include="..\..\tds-game\state.nut">
+      <Filter>Games\TDS</Filter>
+    </None>
+    <None Include="..\..\tds-game\unit.nut">
+      <Filter>Games\TDS</Filter>
+    </None>
+    <None Include="..\..\deflektor-game\main.nut">
+      <Filter>Games\Deflector</Filter>
+    </None>
+    <None Include="..\..\deflektor-game\common\grid.nut">
+      <Filter>Games\Deflector\common</Filter>
+    </None>
+    <None Include="..\..\deflektor-game\common\gridcell.nut">
+      <Filter>Games\Deflector\common</Filter>
+    </None>
+    <None Include="..\..\deflektor-game\common\ray.nut">
+      <Filter>Games\Deflector\common</Filter>
+    </None>
+    <None Include="..\..\deflektor-game\common\raysprite.nut">
+      <Filter>Games\Deflector\common</Filter>
+    </None>
+    <None Include="..\..\deflektor-game\common\soundmanager.nut">
+      <Filter>Games\Deflector\common</Filter>
+    </None>
+    <None Include="..\..\deflektor-game\levels\level.nut">
+      <Filter>Games\Deflector\levels</Filter>
+    </None>
+    <None Include="..\..\deflektor-game\levels\level_01.nut">
+      <Filter>Games\Deflector\levels</Filter>
+    </None>
+    <None Include="..\..\deflektor-game\levels\level_02.nut">
+      <Filter>Games\Deflector\levels</Filter>
+    </None>
+    <None Include="..\..\deflektor-game\levels\level_03.nut">
+      <Filter>Games\Deflector\levels</Filter>
+    </None>
+    <None Include="..\..\deflektor-game\levels\level_04.nut">
+      <Filter>Games\Deflector\levels</Filter>
+    </None>
+    <None Include="..\..\deflektor-game\levels\level_05.nut">
+      <Filter>Games\Deflector\levels</Filter>
+    </None>
+    <None Include="..\..\deflektor-game\levels\level_06.nut">
+      <Filter>Games\Deflector\levels</Filter>
+    </None>
+    <None Include="..\..\deflektor-game\levels\level_07.nut">
+      <Filter>Games\Deflector\levels</Filter>
+    </None>
+    <None Include="..\..\deflektor-game\levels\level_08.nut">
+      <Filter>Games\Deflector\levels</Filter>
+    </None>
+    <None Include="..\..\deflektor-game\levels\level_09.nut">
+      <Filter>Games\Deflector\levels</Filter>
+    </None>
+    <None Include="..\..\deflektor-game\levels\level_10.nut">
+      <Filter>Games\Deflector\levels</Filter>
+    </None>
+    <None Include="..\..\deflektor-game\levels\level_11.nut">
+      <Filter>Games\Deflector\levels</Filter>
+    </None>
+    <None Include="..\..\deflektor-game\levels\level_12.nut">
+      <Filter>Games\Deflector\levels</Filter>
+    </None>
+    <None Include="..\..\deflektor-game\levels\level_13.nut">
+      <Filter>Games\Deflector\levels</Filter>
+    </None>
+    <None Include="..\..\deflektor-game\levels\level_14.nut">
+      <Filter>Games\Deflector\levels</Filter>
+    </None>
+    <None Include="..\..\deflektor-game\levels\level_15.nut">
+      <Filter>Games\Deflector\levels</Filter>
+    </None>
+    <None Include="..\..\deflektor-game\levels\level_16.nut">
+      <Filter>Games\Deflector\levels</Filter>
+    </None>
+    <None Include="..\..\deflektor-game\levels\level_17.nut">
+      <Filter>Games\Deflector\levels</Filter>
+    </None>
+    <None Include="..\..\deflektor-game\levels\level_18.nut">
+      <Filter>Games\Deflector\levels</Filter>
+    </None>
+    <None Include="..\..\deflektor-game\levels\level_19.nut">
+      <Filter>Games\Deflector\levels</Filter>
+    </None>
+    <None Include="..\..\deflektor-game\levels\level_20.nut">
+      <Filter>Games\Deflector\levels</Filter>
+    </None>
+    <None Include="..\..\deflektor-game\levels\level_21.nut">
+      <Filter>Games\Deflector\levels</Filter>
+    </None>
+    <None Include="..\..\deflektor-game\levels\level_22.nut">
+      <Filter>Games\Deflector\levels</Filter>
+    </None>
+    <None Include="..\..\deflektor-game\levels\level_23.nut">
+      <Filter>Games\Deflector\levels</Filter>
+    </None>
+    <None Include="..\..\deflektor-game\levels\level_24.nut">
+      <Filter>Games\Deflector\levels</Filter>
+    </None>
+    <None Include="..\..\deflektor-game\levels\level_25.nut">
+      <Filter>Games\Deflector\levels</Filter>
+    </None>
+    <None Include="..\..\deflektor-game\levels\level_26.nut">
+      <Filter>Games\Deflector\levels</Filter>
+    </None>
+    <None Include="..\..\deflektor-game\levels\level_27.nut">
+      <Filter>Games\Deflector\levels</Filter>
+    </None>
+    <None Include="..\..\deflektor-game\levels\level_28.nut">
+      <Filter>Games\Deflector\levels</Filter>
+    </None>
+    <None Include="..\..\deflektor-game\levels\level_29.nut">
+      <Filter>Games\Deflector\levels</Filter>
+    </None>
+    <None Include="..\..\deflektor-game\levels\level_30.nut">
+      <Filter>Games\Deflector\levels</Filter>
+    </None>
+    <None Include="..\..\deflektor-game\levels\level_31.nut">
+      <Filter>Games\Deflector\levels</Filter>
+    </None>
+    <None Include="..\..\deflektor-game\levels\level_32.nut">
+      <Filter>Games\Deflector\levels</Filter>
+    </None>
+    <None Include="..\..\deflektor-game\levels\level_33.nut">
+      <Filter>Games\Deflector\levels</Filter>
+    </None>
+    <None Include="..\..\deflektor-game\levels\level_34.nut">
+      <Filter>Games\Deflector\levels</Filter>
+    </None>
+    <None Include="..\..\deflektor-game\levels\level_35.nut">
+      <Filter>Games\Deflector\levels</Filter>
+    </None>
+    <None Include="..\..\deflektor-game\levels\level_36.nut">
+      <Filter>Games\Deflector\levels</Filter>
+    </None>
+    <None Include="..\..\deflektor-game\levels\level_37.nut">
+      <Filter>Games\Deflector\levels</Filter>
+    </None>
+    <None Include="..\..\deflektor-game\levels\level_38.nut">
+      <Filter>Games\Deflector\levels</Filter>
+    </None>
+    <None Include="..\..\deflektor-game\levels\level_39.nut">
+      <Filter>Games\Deflector\levels</Filter>
+    </None>
+    <None Include="..\..\deflektor-game\levels\level_40.nut">
+      <Filter>Games\Deflector\levels</Filter>
+    </None>
+    <None Include="..\..\deflektor-game\levels\level_41.nut">
+      <Filter>Games\Deflector\levels</Filter>
+    </None>
+    <None Include="..\..\deflektor-game\levels\level_42.nut">
+      <Filter>Games\Deflector\levels</Filter>
+    </None>
+    <None Include="..\..\deflektor-game\levels\level_43.nut">
+      <Filter>Games\Deflector\levels</Filter>
+    </None>
+    <None Include="..\..\deflektor-game\levels\level_44.nut">
+      <Filter>Games\Deflector\levels</Filter>
+    </None>
+    <None Include="..\..\deflektor-game\levels\level_45.nut">
+      <Filter>Games\Deflector\levels</Filter>
+    </None>
+    <None Include="..\..\deflektor-game\levels\level_46.nut">
+      <Filter>Games\Deflector\levels</Filter>
+    </None>
+    <None Include="..\..\deflektor-game\levels\level_47.nut">
+      <Filter>Games\Deflector\levels</Filter>
+    </None>
+    <None Include="..\..\deflektor-game\levels\level_48.nut">
+      <Filter>Games\Deflector\levels</Filter>
+    </None>
+    <None Include="..\..\deflektor-game\levels\level_49.nut">
+      <Filter>Games\Deflector\levels</Filter>
+    </None>
+    <None Include="..\..\deflektor-game\levels\level_50.nut">
+      <Filter>Games\Deflector\levels</Filter>
+    </None>
+    <None Include="..\..\deflektor-game\levels\level_51.nut">
+      <Filter>Games\Deflector\levels</Filter>
+    </None>
+    <None Include="..\..\deflektor-game\levels\level_52.nut">
+      <Filter>Games\Deflector\levels</Filter>
+    </None>
+    <None Include="..\..\deflektor-game\levels\level_53.nut">
+      <Filter>Games\Deflector\levels</Filter>
+    </None>
+    <None Include="..\..\deflektor-game\levels\level_54.nut">
+      <Filter>Games\Deflector\levels</Filter>
+    </None>
+    <None Include="..\..\deflektor-game\levels\level_55.nut">
+      <Filter>Games\Deflector\levels</Filter>
+    </None>
+    <None Include="..\..\deflektor-game\levels\level_56.nut">
+      <Filter>Games\Deflector\levels</Filter>
+    </None>
+    <None Include="..\..\deflektor-game\levels\level_57.nut">
+      <Filter>Games\Deflector\levels</Filter>
+    </None>
+    <None Include="..\..\deflektor-game\levels\level_58.nut">
+      <Filter>Games\Deflector\levels</Filter>
+    </None>
+    <None Include="..\..\deflektor-game\levels\level_59.nut">
+      <Filter>Games\Deflector\levels</Filter>
+    </None>
+    <None Include="..\..\deflektor-game\levels\level_60.nut">
+      <Filter>Games\Deflector\levels</Filter>
+    </None>
+    <None Include="..\..\deflektor-game\objects\barrier.nut">
+      <Filter>Games\Deflector\objects</Filter>
+    </None>
+    <None Include="..\..\deflektor-game\objects\barrierholder.nut">
+      <Filter>Games\Deflector\objects</Filter>
+    </None>
+    <None Include="..\..\deflektor-game\objects\bonus.nut">
+      <Filter>Games\Deflector\objects</Filter>
+    </None>
+    <None Include="..\..\deflektor-game\objects\emitter.nut">
+      <Filter>Games\Deflector\objects</Filter>
+    </None>
+    <None Include="..\..\deflektor-game\objects\mine.nut">
+      <Filter>Games\Deflector\objects</Filter>
+    </None>
+    <None Include="..\..\deflektor-game\objects\mirror.nut">
+      <Filter>Games\Deflector\objects</Filter>
+    </None>
+    <None Include="..\..\deflektor-game\objects\object.nut">
+      <Filter>Games\Deflector\objects</Filter>
+    </None>
+    <None Include="..\..\deflektor-game\objects\portal.nut">
+      <Filter>Games\Deflector\objects</Filter>
+    </None>
+    <None Include="..\..\deflektor-game\objects\randomizer.nut">
+      <Filter>Games\Deflector\objects</Filter>
+    </None>
+    <None Include="..\..\deflektor-game\objects\receiver.nut">
+      <Filter>Games\Deflector\objects</Filter>
+    </None>
+    <None Include="..\..\deflektor-game\objects\spinner.nut">
+      <Filter>Games\Deflector\objects</Filter>
+    </None>
+    <None Include="..\..\deflektor-game\states\credits.nut">
+      <Filter>Games\Deflector\states</Filter>
+    </None>
+    <None Include="..\..\deflektor-game\states\game.nut">
+      <Filter>Games\Deflector\states</Filter>
+    </None>
+    <None Include="..\..\deflektor-game\states\igm.nut">
+      <Filter>Games\Deflector\states</Filter>
+    </None>
+    <None Include="..\..\deflektor-game\states\info.nut">
+      <Filter>Games\Deflector\states</Filter>
+    </None>
+    <None Include="..\..\deflektor-game\states\levellist.nut">
+      <Filter>Games\Deflector\states</Filter>
+    </None>
+    <None Include="..\..\deflektor-game\states\logo.nut">
+      <Filter>Games\Deflector\states</Filter>
+    </None>
+    <None Include="..\..\deflektor-game\states\mainmenu.nut">
+      <Filter>Games\Deflector\states</Filter>
+    </None>
+    <None Include="..\..\deflektor-game\states\state.nut">
+      <Filter>Games\Deflector\states</Filter>
+    </None>
+    <None Include="..\..\deflektor-game\ui\blinkingtext.nut">
+      <Filter>Games\Deflector\ui</Filter>
+    </None>
+    <None Include="..\..\deflektor-game\ui\button.nut">
+      <Filter>Games\Deflector\ui</Filter>
+    </None>
+    <None Include="..\..\deflektor-game\ui\hud.nut">
+      <Filter>Games\Deflector\ui</Filter>
+    </None>
+    <None Include="..\..\deflektor-game\ui\progressbar.nut">
+      <Filter>Games\Deflector\ui</Filter>
+    </None>
+    <None Include="..\..\breakout-game\main.nut">
+      <Filter>Games\Breakout</Filter>
+    </None>
+    <None Include="..\..\breakout-game\ui\bar.nut">
+      <Filter>Games\Breakout\ui</Filter>
+    </None>
+    <None Include="..\..\breakout-game\ui\button.nut">
+      <Filter>Games\Breakout\ui</Filter>
+    </None>
+    <None Include="..\..\breakout-game\ui\icon.nut">
+      <Filter>Games\Breakout\ui</Filter>
+    </None>
+    <None Include="..\..\breakout-game\ui\iconbutton.nut">
+      <Filter>Games\Breakout\ui</Filter>
+    </None>
+    <None Include="..\..\breakout-game\ui\itemlist.nut">
+      <Filter>Games\Breakout\ui</Filter>
+    </None>
+    <None Include="..\..\breakout-game\ui\panel.nut">
+      <Filter>Games\Breakout\ui</Filter>
+    </None>
+    <None Include="..\..\breakout-game\ui\progress.nut">
+      <Filter>Games\Breakout\ui</Filter>
+    </None>
+    <None Include="..\..\breakout-game\ui\skinbutton.nut">
+      <Filter>Games\Breakout\ui</Filter>
+    </None>
+    <None Include="..\..\breakout-game\ui\skinpanel.nut">
+      <Filter>Games\Breakout\ui</Filter>
+    </None>
+    <None Include="..\..\breakout-game\ui\skinprogress.nut">
+      <Filter>Games\Breakout\ui</Filter>
+    </None>
+    <None Include="..\..\breakout-game\ui\skintext.nut">
+      <Filter>Games\Breakout\ui</Filter>
+    </None>
+    <None Include="..\..\breakout-game\ui\textbox.nut">
+      <Filter>Games\Breakout\ui</Filter>
+    </None>
+    <None Include="..\..\breakout-game\ui\ui.nut">
+      <Filter>Games\Breakout\ui</Filter>
+    </None>
+    <None Include="..\..\breakout-game\screens\screen.nut">
+      <Filter>Games\Breakout\screens</Filter>
     </None>
   </ItemGroup>
 </Project>
