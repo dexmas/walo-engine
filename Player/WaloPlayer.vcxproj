@@ -142,18 +142,18 @@
     <None Include="..\..\bomberman-game\state.nut" />
     <None Include="..\..\bomberman-game\tile.nut" />
     <None Include="..\..\bomberman-game\unit.nut" />
+    <None Include="..\..\breakout-game\ball.nut" />
     <None Include="..\..\breakout-game\main.nut" />
+    <None Include="..\..\breakout-game\paddle.nut" />
+    <None Include="..\..\breakout-game\screens\game.nut" />
     <None Include="..\..\breakout-game\screens\screen.nut" />
-    <None Include="..\..\breakout-game\ui\bar.nut" />
+    <None Include="..\..\breakout-game\screens\start.nut" />
     <None Include="..\..\breakout-game\ui\button.nut" />
     <None Include="..\..\breakout-game\ui\icon.nut" />
     <None Include="..\..\breakout-game\ui\iconbutton.nut" />
-    <None Include="..\..\breakout-game\ui\itemlist.nut" />
     <None Include="..\..\breakout-game\ui\panel.nut" />
-    <None Include="..\..\breakout-game\ui\progress.nut" />
     <None Include="..\..\breakout-game\ui\skinbutton.nut" />
     <None Include="..\..\breakout-game\ui\skinpanel.nut" />
-    <None Include="..\..\breakout-game\ui\skinprogress.nut" />
     <None Include="..\..\breakout-game\ui\skintext.nut" />
     <None Include="..\..\breakout-game\ui\textbox.nut" />
     <None Include="..\..\breakout-game\ui\ui.nut" />
@@ -334,7 +334,7 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
-    <OutDir>..\..\deepspace-game\</OutDir>
+    <OutDir>..\..\breakout-game\</OutDir>
     <IntDir>..\Build\Temp\Bin\Win32\</IntDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">

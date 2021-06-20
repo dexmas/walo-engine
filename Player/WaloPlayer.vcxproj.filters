@@ -857,9 +857,6 @@
     <None Include="..\..\breakout-game\main.nut">
       <Filter>Games\Breakout</Filter>
     </None>
-    <None Include="..\..\breakout-game\ui\bar.nut">
-      <Filter>Games\Breakout\ui</Filter>
-    </None>
     <None Include="..\..\breakout-game\ui\button.nut">
       <Filter>Games\Breakout\ui</Filter>
     </None>
@@ -869,22 +866,13 @@
     <None Include="..\..\breakout-game\ui\iconbutton.nut">
       <Filter>Games\Breakout\ui</Filter>
     </None>
-    <None Include="..\..\breakout-game\ui\itemlist.nut">
-      <Filter>Games\Breakout\ui</Filter>
-    </None>
     <None Include="..\..\breakout-game\ui\panel.nut">
-      <Filter>Games\Breakout\ui</Filter>
-    </None>
-    <None Include="..\..\breakout-game\ui\progress.nut">
       <Filter>Games\Breakout\ui</Filter>
     </None>
     <None Include="..\..\breakout-game\ui\skinbutton.nut">
       <Filter>Games\Breakout\ui</Filter>
     </None>
     <None Include="..\..\breakout-game\ui\skinpanel.nut">
-      <Filter>Games\Breakout\ui</Filter>
-    </None>
-    <None Include="..\..\breakout-game\ui\skinprogress.nut">
       <Filter>Games\Breakout\ui</Filter>
     </None>
     <None Include="..\..\breakout-game\ui\skintext.nut">
@@ -898,6 +886,18 @@
     </None>
     <None Include="..\..\breakout-game\screens\screen.nut">
       <Filter>Games\Breakout\screens</Filter>
+    </None>
+    <None Include="..\..\breakout-game\screens\start.nut">
+      <Filter>Games\Breakout\screens</Filter>
+    </None>
+    <None Include="..\..\breakout-game\screens\game.nut">
+      <Filter>Games\Breakout\screens</Filter>
+    </None>
+    <None Include="..\..\breakout-game\paddle.nut">
+      <Filter>Games\Breakout</Filter>
+    </None>
+    <None Include="..\..\breakout-game\ball.nut">
+      <Filter>Games\Breakout</Filter>
     </None>
   </ItemGroup>
 </Project>
