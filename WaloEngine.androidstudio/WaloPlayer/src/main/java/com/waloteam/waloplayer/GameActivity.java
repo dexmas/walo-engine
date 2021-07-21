@@ -3,14 +3,14 @@ package com.waloteam.waloplayer;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.MotionEvent;
-import android.support.v4.content.ContextCompat;
-import android.support.v4.app.ActivityCompat;
-import android.Manifest;
-import android.content.pm.PackageManager;
+import android.view.ViewGroup;
+import android.widget.FrameLayout;
 
 public class GameActivity extends Activity
 {
-    GameView mView;
+    GameView mView = null;
+    FrameLayout mFrameLayout = null;
+
     int[] idArr = new int[5];
     float[] xArr = new float[5];
     float[] yArr = new float[5];
@@ -20,8 +20,20 @@ public class GameActivity extends Activity
     @Override protected void onCreate(Bundle icicle)
     {
         super.onCreate(icicle);
+
+        // FrameLayout
+        ViewGroup.LayoutParams framelayout_params = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+
+        mFrameLayout = new FrameLayout(this);
+        mFrameLayout.setLayoutParams(framelayout_params);
+
         mView = new GameView(getApplication());
-        setContentView(mView);
+
+        // ...add to FrameLayout
+        mFrameLayout.addView(mView);
+
+        // Set framelayout as the content view
+        setContentView(mFrameLayout);
 
         String packagePath = getApplicationContext().getPackageResourcePath();
         String scriptPath = "assets/";
