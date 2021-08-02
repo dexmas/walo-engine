@@ -63,7 +63,7 @@ public:
 
 	static void Register(HSQUIRRELVM _vm)
 	{
-		Sqrat::Class<CNodeWrapper, Sqrat::NoCopy<CNodeWrapper> > cl(_vm);
+		Sqrat::Class<CNodeWrapper, Sqrat::NoCopy<CNodeWrapper> > cl(_vm, "CNode");
 
 		cl.Func("AddChild", &CNodeWrapper::AddChild);
 		cl.Func("RemoveChild", &CNodeWrapper::RemoveChild);
@@ -77,7 +77,7 @@ public:
 		cl.Func("SetName", &CNodeWrapper::SetName);
 		cl.Func("GetName", &CNodeWrapper::GetName);
 
-		cl.Prop<CComponent*>("Input", &CNodeWrapper::GetInputComponent);
+		cl.Prop("Input", &CNodeWrapper::GetInputComponent);
 
 		Sqrat::RootTable(_vm).Bind("CNode", cl);
 	}
@@ -116,11 +116,11 @@ public:
 				CTouchEvent* tevent = (CTouchEvent*)ievent;
 
 				Sqrat::Function hndlr(m_Object, "InputTouch");
-
-				for(u32 i = 0; i < tevent->TouchCount; i++)
-				{
-					hndlr.Execute<u32, u32, f32, f32>(tevent->Touches[i].ID, tevent->Touches[i].TouchType, tevent->Touches[i].X, tevent->Touches[i].Y);
-				}
+				if (!hndlr.IsNull())
+					for(u32 i = 0; i < tevent->TouchCount; i++)
+					{
+						hndlr.Execute<u32, u32, f32, f32>(tevent->Touches[i].ID, tevent->Touches[i].TouchType, tevent->Touches[i].X, tevent->Touches[i].Y);
+					}
 			}
 			else
 			if(ievent->InputType == CInputEvent::EIT_MOUSE)
@@ -128,8 +128,8 @@ public:
 				CMouseEvent* mevent = (CMouseEvent*)ievent;
 
 				Sqrat::Function hndlr(m_Object, "InputMouse");
-
-				hndlr.Execute<u32, f32, f32, f32, u32>(mevent->Event, mevent->X, mevent->Y, mevent->Wheel, mevent->Buttons);
+				if(!hndlr.IsNull())
+					hndlr.Execute<u32, f32, f32, f32, u32>(mevent->Event, mevent->X, mevent->Y, mevent->Wheel, mevent->Buttons);
 			}
 			else
 			if(ievent->InputType == CInputEvent::EIT_KEYBOARD)
@@ -137,8 +137,8 @@ public:
 				CKeyboardEvent* kevent = (CKeyboardEvent*)ievent;
 
 				Sqrat::Function hndlr(m_Object, "InputKeyboard");
-
-				hndlr.Execute<u32, bool, u32>(kevent->Key, kevent->PressedDown, ((u8)kevent->Control << 1) | (u8)kevent->Shift);
+				if (!hndlr.IsNull())
+					hndlr.Execute<u32, bool, u32>(kevent->Key, kevent->PressedDown, ((u8)kevent->Control << 1) | (u8)kevent->Shift);
 			}
 			else
 			if(ievent->InputType == CInputEvent::EIT_GESTURE)
@@ -146,8 +146,8 @@ public:
 				CGestureEvent* gevent = (CGestureEvent*)ievent;
 				
 				Sqrat::Function hndlr(m_Object, "InputGesture");
-
-				hndlr.Execute<u32, f32, f32>(gevent->Gesture, gevent->Param1, gevent->Param2);
+				if (!hndlr.IsNull())
+					hndlr.Execute<u32, f32, f32>(gevent->Gesture, gevent->Param1, gevent->Param2);
 			}
 		}
 	}

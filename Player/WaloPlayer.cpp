@@ -349,7 +349,7 @@ void CPlayer::_RegisterScriptClasses(HSQUIRRELVM _vm)
 	CInputSystemWrapper::Register(_vm);
 	CSaveFileWrapper::Register(_vm);
 
-	Sqrat::DerivedClass<CPlayer, CNodeWrapper, Sqrat::NoCopy<CPlayer> > cl(_vm);
+	Sqrat::DerivedClass<CPlayer, CNodeWrapper, Sqrat::NoCopy<CPlayer> > cl(_vm, "CGame");
 
 	cl.Func("SetScreenSize", &CPlayer::sqSetScreenSize);
 	cl.Func("EnableDebug", &CPlayer::sqEnableDebug);
@@ -359,8 +359,8 @@ void CPlayer::_RegisterScriptClasses(HSQUIRRELVM _vm)
     cl.Prop("ScreenWidth", &CPlayer::sqGetScreenWidth);
     cl.Prop("ScreenHeight", &CPlayer::sqGetScreenHeight);
     
-	cl.Prop<CAssetsDB*>("AssetsDB", &CPlayer::sqGetAssetsDB);
-	cl.Prop<CInputSystem*>("Input", &CPlayer::sqGetInputSystem);
+	cl.Prop("AssetsDB", &CPlayer::sqGetAssetsDB);
+	cl.Prop("Input", &CPlayer::sqGetInputSystem);
 
 	Sqrat::RootTable(_vm).Bind("CGame", cl);
 }

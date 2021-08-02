@@ -14,7 +14,7 @@ public:
 
 	static void Register(HSQUIRRELVM _vm)
 	{
-		Sqrat::DerivedClass<CSprite2DWrapper, CNode2DWrapper, Sqrat::NoCopy<CSprite2DWrapper> > cl(_vm);
+		Sqrat::DerivedClass<CSprite2DWrapper, CNode2DWrapper, Sqrat::NoCopy<CSprite2DWrapper> > cl(_vm, "CSprite2D");
 
 		cl.Func("SetFrame", &CSprite2DWrapper::sqSetFrame);
 		cl.Func("SetTexture", &CSprite2DWrapper::sqSetTexture);

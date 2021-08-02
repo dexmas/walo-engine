@@ -1,5 +1,5 @@
-//
-// Sqrat: Squirrel C++ Binding Utility
+// Sqrat: altered version by Gaijin Entertainment Corp.
+// Sqrat: Quirrel C++ Binding Utility
 //
 
 //
@@ -25,18 +25,16 @@
 //  distribution.
 //
 
-#if !defined(_SCRAT_MAIN_H_)
-#define _SCRAT_MAIN_H_
-
-#include <squirrel.h>
+#pragma once
+#if !defined(_SQRAT_MAIN_H_)
+#define _SQRAT_MAIN_H_
 
 #include "sqrat/sqratTable.h"
 #include "sqrat/sqratClass.h"
 #include "sqrat/sqratFunction.h"
 #include "sqrat/sqratConst.h"
 #include "sqrat/sqratUtil.h"
+#include "sqrat/sqratScript.h"
 #include "sqrat/sqratArray.h"
-#include "sqrat/sqratImpClass.h"
-#include "sqratimport.h"
 
 #endif

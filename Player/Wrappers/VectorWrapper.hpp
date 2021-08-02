@@ -8,7 +8,7 @@ class CVector2Wrapper: public CVector2
 public:
 	static void Register(HSQUIRRELVM _vm)
 	{
-		Sqrat::ImprovedClass<CVector2> cl(_vm);
+		Sqrat::Class<CVector2> cl(_vm, "CVector2");
 
 		cl.Ctor<f32, f32>();
 
@@ -46,7 +46,7 @@ class CVector3Wrapper: public CVector3
 public:
 	static void Register(HSQUIRRELVM _vm)
 	{
-		Sqrat::ImprovedClass<CVector3> cl(_vm);
+		Sqrat::Class<CVector3> cl(_vm, "CVector3");
 
 		cl.Ctor<f32, f32, f32>();
 

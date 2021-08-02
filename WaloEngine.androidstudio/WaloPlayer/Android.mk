@@ -34,8 +34,7 @@ LOCAL_SRC_FILES := \
 	$(EXTERNS_PATH)/squirrel3/squirrel/sqobject.cpp \
 	$(EXTERNS_PATH)/squirrel3/squirrel/sqstate.cpp \
 	$(EXTERNS_PATH)/squirrel3/squirrel/sqtable.cpp \
-	$(EXTERNS_PATH)/squirrel3/squirrel/sqvm.cpp \
-	$(EXTERNS_PATH)/sqrat/sqratimport.cpp
+	$(EXTERNS_PATH)/squirrel3/squirrel/sqvm.cpp 
 	
 LOCAL_C_INCLUDES :=	\
     $(PLAYER_PATH) \

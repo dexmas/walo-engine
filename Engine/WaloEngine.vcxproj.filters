@@ -181,6 +181,9 @@
     <Filter Include="Externs\tinythread">
       <UniqueIdentifier>{9a28b7cb-1bb8-43d4-be6f-894ce6e00713}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Sources\Debugger">
+      <UniqueIdentifier>{565bdad5-6afd-4b02-b841-f6d2378cf43b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Externs\Civetweb\src\civetweb.c">

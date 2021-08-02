@@ -8,7 +8,7 @@ class CAssetsDBWrapper: public CAssetsDB
 public:
 	static void Register(HSQUIRRELVM _vm)
 	{
-		Sqrat::Class<CAssetsDB, Sqrat::NoConstructor> cl(_vm);
+		Sqrat::Class<CAssetsDB, Sqrat::NoConstructor<CAssetsDB> > cl(_vm, "CAssetsDB");
 
 		cl.Func("GetTexture", &CAssetsDBWrapper::GetTexture);
 		cl.Func("GetFont", &CAssetsDBWrapper::GetFont2D);

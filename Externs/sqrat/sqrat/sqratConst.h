@@ -1,4 +1,4 @@
-//
+// Sqrat: altered version by Gaijin Entertainment Corp.
 // SqratConst: Constant and Enumeration Binding
 //
 
@@ -25,8 +25,9 @@
 //  distribution.
 //
 
-#if !defined(_SCRAT_CONST_H_)
-#define _SCRAT_CONST_H_
+#pragma once
+#if !defined(_SQRAT_CONST_H_)
+#define _SQRAT_CONST_H_
 
 #include <squirrel.h>
 #include <string.h>
@@ -35,27 +36,24 @@
 
 namespace Sqrat {
 
-//
-// Enumerations
-//
-
 class Enumeration : public Object {
 public:
-    Enumeration(HSQUIRRELVM v = DefaultVM::Get(), bool createTable = true) : Object(v, false) {
+    Enumeration(HSQUIRRELVM v, bool createTable = true) : Object(v, false) {
         if(createTable) {
             sq_newtable(vm);
-            sq_getstackobj(vm,-1,&obj);
+            SQRAT_VERIFY(SQ_SUCCEEDED(sq_getstackobj(vm,-1,&obj)));
             sq_addref(vm, &obj);
             sq_pop(vm,1);
         }
     }
 
-    //
-    // Bind Constants
-    //
-
     virtual Enumeration& Const(const SQChar* name, const int val) {
         BindValue<int>(name, val, false);
+        return *this;
+    }
+
+    virtual Enumeration& Const(const SQChar* name, const int64_t val) {
+        BindValue<int64_t>(name, val, false);
         return *this;
     }
 
@@ -68,26 +66,23 @@ public:
         BindValue<const SQChar*>(name, val, false);
         return *this;
     }
-
 };
 
-//
-// Constants
-//
 
 class ConstTable : public Enumeration {
 public:
-    ConstTable(HSQUIRRELVM v = DefaultVM::Get()) : Enumeration(v, false) {
+    ConstTable(HSQUIRRELVM v) : Enumeration(v, false) {
         sq_pushconsttable(vm);
-        sq_getstackobj(vm,-1, &obj);
+        SQRAT_VERIFY(SQ_SUCCEEDED(sq_getstackobj(vm,-1, &obj)));
         sq_pop(v,1); // No addref needed, since the consttable is always around
     }
 
-    //
-    // Bind Constants
-    //
-
     virtual ConstTable& Const(const SQChar* name, const int val) {
+        Enumeration::Const(name, val);
+        return *this;
+    }
+
+    virtual ConstTable& Const(const SQChar* name, const int64_t val) {
         Enumeration::Const(name, val);
         return *this;
     }
@@ -102,19 +97,16 @@ public:
         return *this;
     }
 
-    //
-    // Bind Enumerations
-    //
-
     ConstTable& Enum(const SQChar* name, Enumeration& en) {
         sq_pushobject(vm, GetObject());
         sq_pushstring(vm, name, -1);
         sq_pushobject(vm, en.GetObject());
-        sq_newslot(vm, -3, false);
+        SQRAT_VERIFY(SQ_SUCCEEDED(sq_newslot(vm, -3, false)));
         sq_pop(vm,1); // pop table
         return *this;
     }
 };
+
 }
 
 #endif

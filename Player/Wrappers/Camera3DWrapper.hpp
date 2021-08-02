@@ -14,7 +14,7 @@ public:
 
 	static void Register(HSQUIRRELVM _vm)
 	{
-		Sqrat::DerivedClass<CCamera3DWrapper, CNode3DWrapper, Sqrat::NoCopy<CCamera3DWrapper> > cl(_vm);
+		Sqrat::DerivedClass<CCamera3DWrapper, CNode3DWrapper, Sqrat::NoCopy<CCamera3DWrapper> > cl(_vm, "CCamera3D");
 		
 		Sqrat::RootTable(_vm).Bind("CCamera3D", cl);
 	}

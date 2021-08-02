@@ -39,8 +39,8 @@ public:
 	bool GetEnabled() {return m_Enabled;}
 	void SetEnabled(bool _enabled);
 
-	CString GetName() const {return m_Name;}
-	void SetName(const CString& _name){m_Name = _name;}
+	const char* GetName() const {return m_Name.CStr();}
+	void SetName(const char* _name){m_Name = _name;}
 
 	const CMatrix4& GetTransform() { return m_Transform; }
 

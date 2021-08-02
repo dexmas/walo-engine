@@ -11,15 +11,15 @@ public:
 	CColor3Wrapper(f32 _r, f32 _g, f32 _b, f32 _a):CColor(_r,_g,_b,_a){}
 	static void Register(HSQUIRRELVM _vm)
 	{
-		Sqrat::ImprovedClass<CColor3Wrapper> cl(_vm);
+		Sqrat::Class<CColor3Wrapper> cl(_vm, "CColor");
 
 		cl.Ctor<u32>();
 		cl.Ctor<f32, f32, f32, f32>();
 
-		cl.Prop<f32>("R", &CColor3Wrapper::sqGetR, &CColor3Wrapper::sqSetR);
-		cl.Prop<f32>("G", &CColor3Wrapper::sqGetG, &CColor3Wrapper::sqSetG);
-		cl.Prop<f32>("B", &CColor3Wrapper::sqGetB, &CColor3Wrapper::sqSetB);
-		cl.Prop<f32>("A", &CColor3Wrapper::sqGetA, &CColor3Wrapper::sqSetA);
+		cl.Prop("R", &CColor3Wrapper::sqGetR, &CColor3Wrapper::sqSetR);
+		cl.Prop("G", &CColor3Wrapper::sqGetG, &CColor3Wrapper::sqSetG);
+		cl.Prop("B", &CColor3Wrapper::sqGetB, &CColor3Wrapper::sqSetB);
+		cl.Prop("A", &CColor3Wrapper::sqGetA, &CColor3Wrapper::sqSetA);
 
 		cl.GlobalFunc("_tostring", &CColor3Wrapper::sqToString);
 

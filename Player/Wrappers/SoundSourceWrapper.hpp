@@ -8,7 +8,7 @@ class CSoundSourceWrapper: public CSoundSource
 public:
 	static void Register(HSQUIRRELVM _vm)
 	{
-		Sqrat::DerivedClass<CSoundSource, CComponent, Sqrat::NoCopy<CSoundSource> > cl(_vm);
+		Sqrat::DerivedClass<CSoundSource, CComponent, Sqrat::NoCopy<CSoundSource> > cl(_vm, "CSoundSource");
 
 		cl.Func("SetSound", &CSoundSourceWrapper::SetSound);
 		cl.Func("Play", &CSoundSourceWrapper::Play);
