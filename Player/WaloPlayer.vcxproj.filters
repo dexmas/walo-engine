@@ -79,6 +79,18 @@
     <Filter Include="Games\Breakout\screens">
       <UniqueIdentifier>{bf1ac15e-cb8f-4e93-900e-2510a6f0a090}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Games\Hordes">
+      <UniqueIdentifier>{06e29d47-097a-414e-b23c-6341fc9cf4a1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Games\Hordes\ui">
+      <UniqueIdentifier>{66fa8f99-2923-401b-97af-9a8084279b9e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Games\Hordes\screens">
+      <UniqueIdentifier>{e7b0f44d-7f79-4c85-b748-bbd7b7b17862}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Games\Hordes\gameplay">
+      <UniqueIdentifier>{1f18d67c-867b-4e02-852b-de6df9900c4e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Externs\sqrat\sqmodule.h">
@@ -898,6 +910,54 @@
     </None>
     <None Include="..\..\breakout-game\ball.nut">
       <Filter>Games\Breakout</Filter>
+    </None>
+    <None Include="..\..\hordes-game\screens\game.nut">
+      <Filter>Games\Hordes\screens</Filter>
+    </None>
+    <None Include="..\..\hordes-game\screens\screen.nut">
+      <Filter>Games\Hordes\screens</Filter>
+    </None>
+    <None Include="..\..\hordes-game\screens\start.nut">
+      <Filter>Games\Hordes\screens</Filter>
+    </None>
+    <None Include="..\..\hordes-game\ui\button.nut">
+      <Filter>Games\Hordes\ui</Filter>
+    </None>
+    <None Include="..\..\hordes-game\ui\icon.nut">
+      <Filter>Games\Hordes\ui</Filter>
+    </None>
+    <None Include="..\..\hordes-game\ui\iconbutton.nut">
+      <Filter>Games\Hordes\ui</Filter>
+    </None>
+    <None Include="..\..\hordes-game\ui\panel.nut">
+      <Filter>Games\Hordes\ui</Filter>
+    </None>
+    <None Include="..\..\hordes-game\ui\skinbutton.nut">
+      <Filter>Games\Hordes\ui</Filter>
+    </None>
+    <None Include="..\..\hordes-game\ui\skinpanel.nut">
+      <Filter>Games\Hordes\ui</Filter>
+    </None>
+    <None Include="..\..\hordes-game\ui\skintext.nut">
+      <Filter>Games\Hordes\ui</Filter>
+    </None>
+    <None Include="..\..\hordes-game\ui\textbox.nut">
+      <Filter>Games\Hordes\ui</Filter>
+    </None>
+    <None Include="..\..\hordes-game\ui\ui.nut">
+      <Filter>Games\Hordes\ui</Filter>
+    </None>
+    <None Include="..\..\hordes-game\main.nut">
+      <Filter>Games\Hordes</Filter>
+    </None>
+    <None Include="..\..\hordes-game\gameplay\cell.nut">
+      <Filter>Games\Hordes\gameplay</Filter>
+    </None>
+    <None Include="..\..\hordes-game\gameplay\player.nut">
+      <Filter>Games\Hordes\gameplay</Filter>
+    </None>
+    <None Include="..\..\hordes-game\gameplay\enemy.nut">
+      <Filter>Games\Hordes\gameplay</Filter>
     </None>
   </ItemGroup>
 </Project>

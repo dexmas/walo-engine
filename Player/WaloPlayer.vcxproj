@@ -283,6 +283,22 @@
     <None Include="..\..\deflektor-game\ui\button.nut" />
     <None Include="..\..\deflektor-game\ui\hud.nut" />
     <None Include="..\..\deflektor-game\ui\progressbar.nut" />
+    <None Include="..\..\hordes-game\gameplay\cell.nut" />
+    <None Include="..\..\hordes-game\gameplay\enemy.nut" />
+    <None Include="..\..\hordes-game\gameplay\player.nut" />
+    <None Include="..\..\hordes-game\main.nut" />
+    <None Include="..\..\hordes-game\screens\game.nut" />
+    <None Include="..\..\hordes-game\screens\screen.nut" />
+    <None Include="..\..\hordes-game\screens\start.nut" />
+    <None Include="..\..\hordes-game\ui\button.nut" />
+    <None Include="..\..\hordes-game\ui\icon.nut" />
+    <None Include="..\..\hordes-game\ui\iconbutton.nut" />
+    <None Include="..\..\hordes-game\ui\panel.nut" />
+    <None Include="..\..\hordes-game\ui\skinbutton.nut" />
+    <None Include="..\..\hordes-game\ui\skinpanel.nut" />
+    <None Include="..\..\hordes-game\ui\skintext.nut" />
+    <None Include="..\..\hordes-game\ui\textbox.nut" />
+    <None Include="..\..\hordes-game\ui\ui.nut" />
     <None Include="..\..\tds-game\ammo.nut" />
     <None Include="..\..\tds-game\bullet.nut" />
     <None Include="..\..\tds-game\enemy.nut" />
@@ -328,13 +344,13 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <OutDir>..\..\deepspace-game\</OutDir>
+    <OutDir>..\..\hordes-game\</OutDir>
     <IntDir>..\Build\Temp\Bin\Win32\</IntDir>
     <PostBuildEventUseInBuild>true</PostBuildEventUseInBuild>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
-    <OutDir>..\..\breakout-game\</OutDir>
+    <OutDir>..\..\hordes-game\</OutDir>
     <IntDir>..\Build\Temp\Bin\Win32\</IntDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
