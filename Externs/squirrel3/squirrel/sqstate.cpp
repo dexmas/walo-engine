@@ -12,12 +12,15 @@
 #include "squserdata.h"
 #include "sqclass.h"
 
-SQSharedState::SQSharedState()
+SQSharedState::SQSharedState() :
+    defaultLangFeatures(0)
 {
     _compilererrorhandler = NULL;
     _printfunc = NULL;
     _errorfunc = NULL;
     _debuginfo = false;
+    _lineInfoInExpressions = false;
+    _varTraceEnabled = false;
     _notifyallexceptions = false;
     _foreignptr = NULL;
     _releasehook = NULL;
@@ -96,11 +99,12 @@ void SQSharedState::Init()
 #ifndef NO_GARBAGE_COLLECTOR
     _gc_chain=NULL;
 #endif
+
     _stringtable = (SQStringTable*)SQ_MALLOC(sizeof(SQStringTable));
     new (_stringtable) SQStringTable(this);
-    sq_new(_metamethods,SQObjectPtrVec);
-    sq_new(_systemstrings,SQObjectPtrVec);
-    sq_new(_types,SQObjectPtrVec);
+    sq_new(_metamethods, SQObjectPtrVec);
+    sq_new(_systemstrings, SQObjectPtrVec);
+    sq_new(_types, SQObjectPtrVec);
     _metamethodsmap = SQTable::Create(this,MT_LAST-1);
     //adding type strings to avoid memory trashing
     //types names
@@ -152,6 +156,8 @@ void SQSharedState::Init()
     _class_default_delegate = CreateDefaultDelegate(this,_class_default_delegate_funcz);
     _instance_default_delegate = CreateDefaultDelegate(this,_instance_default_delegate_funcz);
     _weakref_default_delegate = CreateDefaultDelegate(this,_weakref_default_delegate_funcz);
+    _userdata_default_delegate = CreateDefaultDelegate(this,_userdata_default_delegate_funcz);
+
 }
 
 SQSharedState::~SQSharedState()
@@ -180,6 +186,7 @@ SQSharedState::~SQSharedState()
     _class_default_delegate.Null();
     _instance_default_delegate.Null();
     _weakref_default_delegate.Null();
+    _userdata_default_delegate.Null();
     _refs_table.Finalize();
 #ifndef NO_GARBAGE_COLLECTOR
     SQCollectable *t = _gc_chain;
@@ -261,6 +268,7 @@ void SQSharedState::RunMark(SQVM* SQ_UNUSED_ARG(vm),SQCollectable **tchain)
     MarkObject(_class_default_delegate,tchain);
     MarkObject(_instance_default_delegate,tchain);
     MarkObject(_weakref_default_delegate,tchain);
+    MarkObject(_userdata_default_delegate,tchain);
 
 }
 
@@ -377,12 +385,12 @@ SQChar* SQSharedState::GetScratchPad(SQInteger size)
     if(size>0) {
         if(_scratchpadsize < size) {
             newsize = size + (size>>1);
-            _scratchpad = (SQChar *)SQ_REALLOC(_scratchpad,_scratchpadsize,newsize);
+            _scratchpad = (SQChar *)SQ_REALLOC(_scratchpad,_scratchpadsize, newsize);
             _scratchpadsize = newsize;
 
         }else if(_scratchpadsize >= (size<<5)) {
             newsize = _scratchpadsize >> 1;
-            _scratchpad = (SQChar *)SQ_REALLOC(_scratchpad,_scratchpadsize,newsize);
+            _scratchpad = (SQChar *)SQ_REALLOC(_scratchpad,_scratchpadsize, newsize);
             _scratchpadsize = newsize;
         }
     }
@@ -433,8 +441,8 @@ SQUnsignedInteger RefTable::GetRefCount(SQObject &obj)
 {
      SQHash mainpos;
      RefNode *prev;
-     RefNode *ref = Get(obj,mainpos,&prev,true);
-     return ref->refs;
+     RefNode *ref = Get(obj,mainpos,&prev,false);
+     return ref ? ref->refs : 0;
 }
 
 

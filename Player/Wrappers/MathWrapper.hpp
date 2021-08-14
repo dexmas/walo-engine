@@ -10,7 +10,7 @@ class CMathWrapper: public CMath
 public:
 	static void Register(HSQUIRRELVM vm)
 	{
-		Sqrat::Class<CMathWrapper, Sqrat::NoConstructor> cl(vm);
+		Sqrat::Class<CMathWrapper, Sqrat::NoConstructor<CMathWrapper> > cl(vm, "Math");
 
 		cl.SetStaticValue<f32>("PI", CMathWrapper::PI);
 		cl.SetStaticValue<f32>("TWO_PI", CMathWrapper::TWO_PI);

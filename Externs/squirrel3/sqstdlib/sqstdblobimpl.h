@@ -97,6 +97,7 @@ struct SQBlob : public SQStream
     SQInteger Tell() { return _ptr; }
     SQInteger Len() { return _size; }
     SQUserPointer GetBuf(){ return _buf; }
+
 private:
     SQInteger _size;
     SQInteger _allocated;

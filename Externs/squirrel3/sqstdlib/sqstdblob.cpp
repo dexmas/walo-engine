@@ -124,7 +124,7 @@ static SQInteger _blob_releasehook(SQUserPointer p, SQInteger SQ_UNUSED_ARG(size
 {
     SQBlob *self = (SQBlob*)p;
     self->~SQBlob();
-    sq_free(self,sizeof(SQBlob));
+    sq_free(self, sizeof(SQBlob));
     return 1;
 }
 
@@ -141,7 +141,7 @@ static SQInteger _blob_constructor(HSQUIRRELVM v)
     SQBlob *b = new (sq_malloc(sizeof(SQBlob)))SQBlob(size);
     if(SQ_FAILED(sq_setinstanceup(v,1,b))) {
         b->~SQBlob();
-        sq_free(b,sizeof(SQBlob));
+        sq_free(b, sizeof(SQBlob));
         return sq_throwerror(v, _SC("cannot create blob"));
     }
     sq_setreleasehook(v,1,_blob_releasehook);
@@ -160,11 +160,18 @@ static SQInteger _blob__cloned(HSQUIRRELVM v)
     memcpy(thisone->GetBuf(),other->GetBuf(),thisone->Len());
     if(SQ_FAILED(sq_setinstanceup(v,1,thisone))) {
         thisone->~SQBlob();
-        sq_free(thisone,sizeof(SQBlob));
+        sq_free(thisone, sizeof(SQBlob));
         return sq_throwerror(v, _SC("cannot clone blob"));
     }
     sq_setreleasehook(v,1,_blob_releasehook);
     return 0;
+}
+
+static SQInteger _blob_tostring(HSQUIRRELVM v)
+{
+    SETUP_BLOB(v);
+    sq_pushstring(v, (const SQChar *)self->GetBuf(), self->Len() / sizeof(SQChar));
+    return 1;
 }
 
 #define _DECL_BLOB_FUNC(name,nparams,typecheck) {_SC(#name),_blob_##name,nparams,typecheck}
@@ -173,6 +180,7 @@ static const SQRegFunction _blob_methods[] = {
     _DECL_BLOB_FUNC(resize,2,_SC("xn")),
     _DECL_BLOB_FUNC(swap2,1,_SC("x")),
     _DECL_BLOB_FUNC(swap4,1,_SC("x")),
+    _DECL_BLOB_FUNC(tostring,1,_SC("x")),
     _DECL_BLOB_FUNC(_set,3,_SC("xnn")),
     _DECL_BLOB_FUNC(_get,2,_SC("x.")),
     _DECL_BLOB_FUNC(_typeof,1,_SC("x")),

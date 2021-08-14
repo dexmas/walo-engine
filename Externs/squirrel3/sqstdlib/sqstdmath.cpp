@@ -3,6 +3,7 @@
 #include <math.h>
 #include <stdlib.h>
 #include <sqstdmath.h>
+#include <float.h>
 
 #define SINGLE_ARG_FUNC(_funcname) static SQInteger math_##_funcname(HSQUIRRELVM v){ \
     SQFloat f; \
@@ -56,6 +57,7 @@ TWO_ARGS_FUNC(atan2)
 TWO_ARGS_FUNC(pow)
 SINGLE_ARG_FUNC(floor)
 SINGLE_ARG_FUNC(ceil)
+SINGLE_ARG_FUNC(round)
 SINGLE_ARG_FUNC(exp)
 
 #define _DECL_FUNC(name,nparams,tycheck) {_SC(#name),math_##name,nparams,tycheck}
@@ -73,6 +75,7 @@ static const SQRegFunction mathlib_funcs[] = {
     _DECL_FUNC(pow,3,_SC(".nn")),
     _DECL_FUNC(floor,2,_SC(".n")),
     _DECL_FUNC(ceil,2,_SC(".n")),
+    _DECL_FUNC(round,2,_SC(".n")),
     _DECL_FUNC(exp,2,_SC(".n")),
     _DECL_FUNC(srand,2,_SC(".n")),
     _DECL_FUNC(rand,1,NULL),
@@ -102,6 +105,9 @@ SQRESULT sqstd_register_mathlib(HSQUIRRELVM v)
     sq_newslot(v,-3,SQFalse);
     sq_pushstring(v,_SC("PI"),-1);
     sq_pushfloat(v,(SQFloat)M_PI);
+    sq_newslot(v,-3,SQFalse);
+    sq_pushstring(v,_SC("FLT_MAX"),-1);
+    sq_pushfloat(v,(SQFloat)FLT_MAX);
     sq_newslot(v,-3,SQFalse);
     return SQ_OK;
 }

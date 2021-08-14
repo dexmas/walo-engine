@@ -9,6 +9,15 @@ enum SQOuterType {
     otOUTER = 1
 };
 
+enum SQLangFeature {
+    LF_STRICT_BOOL = 0x01,
+    LF_EXPLICIT_ROOT_LOOKUP = 0x02,
+    LF_NO_FUNC_DECL_SUGAR = 0x04,
+    LF_NO_CLASS_DECL_SUGAR = 0x08,
+    LF_NO_PLUS_CONCAT = 0x10,
+    LF_EXPLICIT_THIS = 0x20
+};
+
 struct SQOuterVar
 {
 
@@ -66,7 +75,9 @@ private:
     ~SQFunctionProto();
 
 public:
-    static SQFunctionProto *Create(SQSharedState *ss,SQInteger ninstructions,
+    static SQFunctionProto *Create(SQSharedState *ss,
+        SQUnsignedInteger lang_features,
+        SQInteger ninstructions,
         SQInteger nliterals,SQInteger nparameters,
         SQInteger nfunctions,SQInteger noutervalues,
         SQInteger nlineinfos,SQInteger nlocalvarinfos,SQInteger ndefaultparams)
@@ -75,6 +86,7 @@ public:
         //I compact the whole class and members in a single memory allocation
         f = (SQFunctionProto *)sq_vm_malloc(_FUNC_SIZE(ninstructions,nliterals,nparameters,nfunctions,noutervalues,nlineinfos,nlocalvarinfos,ndefaultparams));
         new (f) SQFunctionProto(ss);
+        f->lang_features = lang_features;
         f->_ninstructions = ninstructions;
         f->_literals = (SQObjectPtr*)&f->_instructions[ninstructions];
         f->_nliterals = nliterals;
@@ -121,7 +133,10 @@ public:
     SQObjectType GetType() {return OT_FUNCPROTO;}
 #endif
     SQObjectPtr _sourcename;
+    const SQChar * _sourcename_ptr;
     SQObjectPtr _name;
+    SQObjectPtr _docstring;
+    SQUnsignedInteger   lang_features;
     SQInteger _stacksize;
     bool _bgenerator;
     SQInteger _varparams;

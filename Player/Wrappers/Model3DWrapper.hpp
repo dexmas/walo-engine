@@ -14,7 +14,7 @@ public:
 
 	static void Register(HSQUIRRELVM _vm)
 	{
-		Sqrat::DerivedClass<CModel3DWrapper, CNode3DWrapper, Sqrat::NoCopy<CModel3DWrapper> > cl(_vm);
+		Sqrat::DerivedClass<CModel3DWrapper, CNode3DWrapper, Sqrat::NoCopy<CModel3DWrapper> > cl(_vm, "CModel3D");
 
 		cl.Func("SetMesh", &CModel3DWrapper::sqSetMesh);
 		

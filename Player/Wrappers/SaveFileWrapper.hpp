@@ -25,7 +25,7 @@ public:
 		delete m_Stream;
 	}
 
-	const Sqrat::Object Read()
+	Sqrat::Object Read() const
 	{
 		HSQOBJECT obj;
 
@@ -82,7 +82,7 @@ public:
 
 	static void Register(HSQUIRRELVM _vm)
 	{
-		Sqrat::ImprovedClass<CSaveFileWrapper, Sqrat::ImprovedAllocator<CSaveFileWrapper> > cl(_vm);
+		Sqrat::Class<CSaveFileWrapper> cl(_vm, "CSaveFile");
 
 		cl.Ctor<char*, bool>();
 		cl.Func("Read", &CSaveFileWrapper::Read);

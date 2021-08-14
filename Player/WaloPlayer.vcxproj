@@ -11,9 +11,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\Externs\sqrat\sqmodule.h" />
     <ClInclude Include="..\Externs\sqrat\sqrat.h" />
-    <ClInclude Include="..\Externs\sqrat\sqratimport.h" />
     <ClInclude Include="..\Externs\sqrat\sqrat\sqratAllocator.h" />
     <ClInclude Include="..\Externs\sqrat\sqrat\sqratArray.h" />
     <ClInclude Include="..\Externs\sqrat\sqrat\sqratClass.h" />
@@ -21,14 +19,12 @@
     <ClInclude Include="..\Externs\sqrat\sqrat\sqratConst.h" />
     <ClInclude Include="..\Externs\sqrat\sqrat\sqratFunction.h" />
     <ClInclude Include="..\Externs\sqrat\sqrat\sqratGlobalMethods.h" />
-    <ClInclude Include="..\Externs\sqrat\sqrat\sqratImpClass.h" />
     <ClInclude Include="..\Externs\sqrat\sqrat\sqratMemberMethods.h" />
     <ClInclude Include="..\Externs\sqrat\sqrat\sqratObject.h" />
     <ClInclude Include="..\Externs\sqrat\sqrat\sqratOverloadMethods.h" />
     <ClInclude Include="..\Externs\sqrat\sqrat\sqratTable.h" />
     <ClInclude Include="..\Externs\sqrat\sqrat\sqratTypes.h" />
     <ClInclude Include="..\Externs\sqrat\sqrat\sqratUtil.h" />
-    <ClInclude Include="..\Externs\sqrat\sqrat\sqratVM.h" />
     <ClInclude Include="..\Externs\squirrel3\sqconfig.h" />
     <ClInclude Include="..\Externs\squirrel3\sqstdaux.h" />
     <ClInclude Include="..\Externs\squirrel3\sqstdblob.h" />
@@ -56,6 +52,7 @@
     <ClInclude Include="..\Externs\squirrel3\squirrel\squtf8.h" />
     <ClInclude Include="..\Externs\squirrel3\squirrel\squtils.h" />
     <ClInclude Include="..\Externs\squirrel3\squirrel\sqvm.h" />
+    <ClInclude Include="..\Externs\squirrel3\squirrel\vartrace.h" />
     <ClInclude Include="Utils\Serializer.hpp" />
     <ClInclude Include="WaloPlayer.hpp" />
     <ClInclude Include="Wrappers\CollisionBox2DWrapper.hpp" />
@@ -76,7 +73,6 @@
     <ClInclude Include="Wrappers\Node2DWrapper.hpp" />
     <ClInclude Include="Wrappers\Node3DWrapper.hpp" />
     <ClInclude Include="Wrappers\NodeWrapper.hpp" />
-    <ClInclude Include="Wrappers\PathMap.hpp" />
     <ClInclude Include="Wrappers\RectWrapper.hpp" />
     <ClInclude Include="Wrappers\AssetsDBWrapper.hpp" />
     <ClInclude Include="Wrappers\AssetWrapper.hpp" />
@@ -88,7 +84,6 @@
     <ClInclude Include="Wrappers\VectorWrapper.hpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\Externs\sqrat\sqratimport.cpp" />
     <ClCompile Include="..\Externs\squirrel3\sqstdlib\sqstdaux.cpp" />
     <ClCompile Include="..\Externs\squirrel3\sqstdlib\sqstdblob.cpp" />
     <ClCompile Include="..\Externs\squirrel3\sqstdlib\sqstdio.cpp" />
@@ -102,6 +97,7 @@
     <ClCompile Include="..\Externs\squirrel3\squirrel\sqclass.cpp" />
     <ClCompile Include="..\Externs\squirrel3\squirrel\sqcompiler.cpp" />
     <ClCompile Include="..\Externs\squirrel3\squirrel\sqdebug.cpp" />
+    <ClCompile Include="..\Externs\squirrel3\squirrel\sqdirect.cpp" />
     <ClCompile Include="..\Externs\squirrel3\squirrel\sqfuncstate.cpp" />
     <ClCompile Include="..\Externs\squirrel3\squirrel\sqlexer.cpp" />
     <ClCompile Include="..\Externs\squirrel3\squirrel\sqmem.cpp" />
@@ -109,6 +105,8 @@
     <ClCompile Include="..\Externs\squirrel3\squirrel\sqstate.cpp" />
     <ClCompile Include="..\Externs\squirrel3\squirrel\sqtable.cpp" />
     <ClCompile Include="..\Externs\squirrel3\squirrel\sqvm.cpp" />
+    <ClCompile Include="..\Externs\squirrel3\squirrel\vartrace.cpp" />
+    <ClCompile Include="..\Externs\squirrel3\squirrel\vartracestub.cpp" />
     <ClCompile Include="WaloPlayer.cpp" />
   </ItemGroup>
   <ItemGroup>

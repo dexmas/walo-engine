@@ -65,15 +65,22 @@ struct SQVM;
 #define TK_MULEQ 317
 #define TK_DIVEQ 318
 #define TK_MODEQ 319
-#define TK_ATTR_OPEN 320
-#define TK_ATTR_CLOSE 321
 #define TK_STATIC 322
 #define TK_ENUM 323
 #define TK_CONST 324
 #define TK_RAWCALL 325
-
+#define TK_NULLGETSTR 326
+#define TK_NULLGETOBJ 327
+#define TK_NULLCOALESCE 328
+#define TK_NULLCALL 329
+#define TK_DOCSTRING 330
+#define TK_GLOBAL 331
+#define TK_DIRECTIVE 332
+#define TK_READERMACRO 333
+#define TK_NOT 334
+#define TK_INEXPR_ASSIGNMENT 335
 
 
 typedef void(*CompilerErrorFunc)(void *ud, const SQChar *s);
-bool Compile(SQVM *vm, SQLEXREADFUNC rg, SQUserPointer up, const SQChar *sourcename, SQObjectPtr &out, bool raiseerror, bool lineinfo);
+bool Compile(SQVM *vm, SQLEXREADFUNC rg, SQUserPointer up, const HSQOBJECT *bindings, const SQChar *sourcename, SQObjectPtr &out, bool raiseerror, bool lineinfo);
 #endif //_SQCOMPILER_H_

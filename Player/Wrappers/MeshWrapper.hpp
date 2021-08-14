@@ -10,7 +10,7 @@ class CMeshWrapper: public CMesh
 public:
 	static void Register(HSQUIRRELVM _vm)
 	{
-		Sqrat::DerivedClass<CMesh, CAsset, Sqrat::NoConstructor> cl(_vm);
+		Sqrat::DerivedClass<CMesh, CAsset, Sqrat::NoConstructor<CMesh> > cl(_vm, "CMesh");
 
 		cl.Func("SetMaterial", &CMesh::SetMaterial);
 

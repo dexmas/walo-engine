@@ -8,7 +8,7 @@ class CRectWrapper: public CRect
 public:
 	static void Register(HSQUIRRELVM _vm)
 	{
-		Sqrat::ImprovedClass<CRect> cl(_vm);
+		Sqrat::Class<CRect> cl(_vm, "CRect");
 
 		cl.Ctor<s32, s32, u32, u32>();
 

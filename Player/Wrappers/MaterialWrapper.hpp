@@ -10,7 +10,7 @@ class CMaterialWrapper: public CMaterial
 public:
 	static void Register(HSQUIRRELVM _vm)
 	{
-		Sqrat::DerivedClass<CMaterial, CAsset, Sqrat::NoConstructor> cl(_vm);
+		Sqrat::DerivedClass<CMaterial, CAsset, Sqrat::NoConstructor<CMaterial> > cl(_vm, "CMaterial");
 
 		Sqrat::RootTable(_vm).Bind("CMaterial", cl);
 	}

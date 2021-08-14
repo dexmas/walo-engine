@@ -49,6 +49,9 @@ struct SQFuncState
     SQObject CreateString(const SQChar *s,SQInteger len = -1);
     SQObject CreateTable();
     bool IsConstant(const SQObject &name,SQObject &e);
+    bool IsLocalConstant(const SQObject &name,SQObject &e);
+    bool IsGlobalConstant(const SQObject &name,SQObject &e);
+    SQUnsignedInteger lang_features;
     SQInteger _returnexp;
     SQLocalVarInfoVec _vlocals;
     SQIntVec _targetstack;
@@ -65,6 +68,8 @@ struct SQFuncState
     SQObjectPtr _literals;
     SQObjectPtr _strings;
     SQObjectPtr _name;
+    SQObjectPtr _docstring;
+    const SQChar * _sourcename_ptr;
     SQObjectPtr _sourcename;
     SQInteger _nliterals;
     SQLineInfoVec _lineinfos;
@@ -72,6 +77,7 @@ struct SQFuncState
     SQIntVec _scope_blocks;
     SQIntVec _breaktargets;
     SQIntVec _continuetargets;
+    SQIntVec _blockstacksizes;
     SQIntVec _defaultparams;
     SQInteger _lastline;
     SQInteger _traps; //contains number of nested exception traps

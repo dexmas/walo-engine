@@ -81,13 +81,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\Externs\sqrat\sqmodule.h">
-      <Filter>Externs\sqrat</Filter>
-    </ClInclude>
     <ClInclude Include="..\Externs\sqrat\sqrat.h">
-      <Filter>Externs\sqrat</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Externs\sqrat\sqratimport.h">
       <Filter>Externs\sqrat</Filter>
     </ClInclude>
     <ClInclude Include="..\Externs\sqrat\sqrat\sqratAllocator.h">
@@ -111,9 +105,6 @@
     <ClInclude Include="..\Externs\sqrat\sqrat\sqratGlobalMethods.h">
       <Filter>Externs\sqrat\sqrat</Filter>
     </ClInclude>
-    <ClInclude Include="..\Externs\sqrat\sqrat\sqratImpClass.h">
-      <Filter>Externs\sqrat\sqrat</Filter>
-    </ClInclude>
     <ClInclude Include="..\Externs\sqrat\sqrat\sqratMemberMethods.h">
       <Filter>Externs\sqrat\sqrat</Filter>
     </ClInclude>
@@ -130,9 +121,6 @@
       <Filter>Externs\sqrat\sqrat</Filter>
     </ClInclude>
     <ClInclude Include="..\Externs\sqrat\sqrat\sqratUtil.h">
-      <Filter>Externs\sqrat\sqrat</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Externs\sqrat\sqrat\sqratVM.h">
       <Filter>Externs\sqrat\sqrat</Filter>
     </ClInclude>
     <ClInclude Include="WaloPlayer.hpp" />
@@ -179,9 +167,6 @@
       <Filter>Wrappers</Filter>
     </ClInclude>
     <ClInclude Include="Wrappers\TileMap2DWrapper.hpp">
-      <Filter>Wrappers</Filter>
-    </ClInclude>
-    <ClInclude Include="Wrappers\PathMap.hpp">
       <Filter>Wrappers</Filter>
     </ClInclude>
     <ClInclude Include="Wrappers\MathWrapper.hpp">
@@ -304,11 +289,11 @@
     <ClInclude Include="..\Externs\squirrel3\squirrel\sqvm.h">
       <Filter>Externs\squirrel3\squirrel</Filter>
     </ClInclude>
+    <ClInclude Include="..\Externs\squirrel3\squirrel\vartrace.h">
+      <Filter>Externs\squirrel3\squirrel</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\Externs\sqrat\sqratimport.cpp">
-      <Filter>Externs\sqrat</Filter>
-    </ClCompile>
     <ClCompile Include="WaloPlayer.cpp" />
     <ClCompile Include="..\Externs\squirrel3\sqstdlib\sqstdaux.cpp">
       <Filter>Externs\squirrel3\sqstdlib</Filter>
@@ -368,6 +353,15 @@
       <Filter>Externs\squirrel3\squirrel</Filter>
     </ClCompile>
     <ClCompile Include="..\Externs\squirrel3\squirrel\sqvm.cpp">
+      <Filter>Externs\squirrel3\squirrel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\squirrel3\squirrel\sqdirect.cpp">
+      <Filter>Externs\squirrel3\squirrel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\squirrel3\squirrel\vartrace.cpp">
+      <Filter>Externs\squirrel3\squirrel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externs\squirrel3\squirrel\vartracestub.cpp">
       <Filter>Externs\squirrel3\squirrel</Filter>
     </ClCompile>
   </ItemGroup>

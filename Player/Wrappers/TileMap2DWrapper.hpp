@@ -14,7 +14,7 @@ public:
 
 	static void Register(HSQUIRRELVM _vm)
 	{
-		Sqrat::Class<CTile, Sqrat::NoConstructor > tcl(_vm);
+		Sqrat::Class<CTile, Sqrat::NoConstructor<CTile> > tcl(_vm, "CTile");
 
 		tcl.Var<u32>("ID", &CTile::ID);
 		tcl.Var<s32>("I", &CTile::I);
@@ -26,7 +26,7 @@ public:
 
 		Sqrat::RootTable(_vm).Bind("CTile", tcl);
 
-		Sqrat::DerivedClass<CTileMap2DWrapper, CNode2DWrapper, Sqrat::NoCopy<CTileMap2DWrapper> > cl(_vm);
+		Sqrat::DerivedClass<CTileMap2DWrapper, CNode2DWrapper, Sqrat::NoCopy<CTileMap2DWrapper> > cl(_vm, "CTileMap2D");
 
 		cl.Func("Init", &CTileMap2DWrapper::sqInit);
 		cl.Func("GetTileXY", &CTileMap2DWrapper::sqGetTileXY);

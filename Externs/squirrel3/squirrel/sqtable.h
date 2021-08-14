@@ -8,9 +8,9 @@
 */
 
 #include "sqstring.h"
+#include "vartrace.h"
 
-
-#define hashptr(p)  ((SQHash)(((SQInteger)p) >> 3))
+#define hashptr(p)  (SQHash((SQInteger(p) >> 4)))
 
 inline SQHash HashObj(const SQObject &key)
 {
@@ -31,11 +31,12 @@ private:
         SQObjectPtr val;
         SQObjectPtr key;
         _HashNode *next;
+        VT_DECL_SINGLE;
     };
     _HashNode *_firstfree;
     _HashNode *_nodes;
-    SQInteger _numofnodes;
-    SQInteger _usednodes;
+    uint32_t _numofnodes_minus_one;
+    uint32_t _usednodes;
 
 ///////////////////////////
     void AllocNodes(SQInteger nSize);
@@ -56,13 +57,24 @@ public:
     {
         SetDelegate(NULL);
         REMOVE_FROM_CHAIN(&_sharedstate->_gc_chain, this);
-        for (SQInteger i = 0; i < _numofnodes; i++) _nodes[i].~_HashNode();
-        SQ_FREE(_nodes, _numofnodes * sizeof(_HashNode));
+        for (uint32_t i = 0; i <= _numofnodes_minus_one; i++)
+          _nodes[i].~_HashNode();
+        SQ_FREE(_nodes, (_numofnodes_minus_one + 1) * sizeof(_HashNode));
     }
 #ifndef NO_GARBAGE_COLLECTOR
     void Mark(SQCollectable **chain);
     SQObjectType GetType() {return OT_TABLE;}
 #endif
+    inline _HashNode *_GetStr(const SQRawObjectVal key, SQHash hash)
+    {
+        _HashNode *n = &_nodes[hash];
+        do {
+            if(_rawval(n->key) == key && sq_type(n->key) == OT_STRING){
+                return n;
+            }
+        } while((n = n->next));
+        return NULL;
+    }
     inline _HashNode *_Get(const SQObjectPtr &key,SQHash hash)
     {
         _HashNode *n = &_nodes[hash];
@@ -77,10 +89,12 @@ public:
     inline bool GetStr(const SQChar* key,SQInteger keylen,SQObjectPtr &val)
     {
         SQHash hash = _hashstr(key,keylen);
-        _HashNode *n = &_nodes[hash & (_numofnodes - 1)];
+        _HashNode *n = &_nodes[hash & _numofnodes_minus_one];
         _HashNode *res = NULL;
         do{
-            if(sq_type(n->key) == OT_STRING && (scstrcmp(_stringval(n->key),key) == 0)){
+            if (sq_type(n->key) == OT_STRING &&
+               (keylen == _string(n->key)->_len && scstrncmp(_stringval(n->key), key, keylen) == 0))
+            {
                 res = n;
                 break;
             }
@@ -92,10 +106,13 @@ public:
         return false;
     }
     bool Get(const SQObjectPtr &key,SQObjectPtr &val);
+
+    VT_CODE(VarTrace * GetVarTracePtr(const SQObjectPtr &key));
+
     void Remove(const SQObjectPtr &key);
     bool Set(const SQObjectPtr &key, const SQObjectPtr &val);
     //returns true if a new slot has been created false if it was already present
-    bool NewSlot(const SQObjectPtr &key,const SQObjectPtr &val);
+    bool NewSlot(const SQObjectPtr &key,const SQObjectPtr &val  VT_DECL_ARG_DEF);
     SQInteger Next(bool getweakrefs,const SQObjectPtr &refpos, SQObjectPtr &outkey, SQObjectPtr &outval);
 
     SQInteger CountUsed(){ return _usednodes;}

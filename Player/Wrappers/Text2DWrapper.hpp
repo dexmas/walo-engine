@@ -14,7 +14,7 @@ public:
 
 	static void Register(HSQUIRRELVM _vm)
 	{
-		Sqrat::DerivedClass<CText2DWrapper, CNode2DWrapper, Sqrat::NoCopy<CText2DWrapper> > cl(_vm);
+		Sqrat::DerivedClass<CText2DWrapper, CNode2DWrapper, Sqrat::NoCopy<CText2DWrapper> > cl(_vm, "CText2D");
 
 		cl.Func("SetText", &CText2DWrapper::sqSetText);
 		cl.Func("SetFont", &CText2DWrapper::sqSetFont);

@@ -29,7 +29,7 @@ void SQLexer::Init(SQSharedState *ss, SQLEXREADFUNC rg, SQUserPointer up,Compile
     _errfunc = efunc;
     _errtarget = ed;
     _sharedstate = ss;
-    _keywords = SQTable::Create(ss, 37);
+    _keywords = SQTable::Create(ss, 38);
     ADD_KEYWORD(while, TK_WHILE);
     ADD_KEYWORD(do, TK_DO);
     ADD_KEYWORD(if, TK_IF);
@@ -68,8 +68,11 @@ void SQLexer::Init(SQSharedState *ss, SQLEXREADFUNC rg, SQUserPointer up,Compile
     ADD_KEYWORD(__LINE__,TK___LINE__);
     ADD_KEYWORD(__FILE__,TK___FILE__);
     ADD_KEYWORD(rawcall, TK_RAWCALL);
+    ADD_KEYWORD(global, TK_GLOBAL);
+    ADD_KEYWORD(not, TK_NOT);
 
 
+    macroState.reset();
     _readf = rg;
     _up = up;
     _lasttokenline = _currentline = 1;
@@ -125,7 +128,204 @@ void SQLexer::LexLineComment()
     do { NEXT(); } while (CUR_CHAR != _SC('\n') && (!IS_EOB()));
 }
 
+
+static void append_string_to_vec(sqvector<SQChar> & vec, const SQChar * str)
+{
+    while (*str)
+    {
+        vec.push_back(*str);
+        str++;
+    }
+}
+
+
+void SQLexer::AppendPosDirective(sqvector<SQChar> & vec)
+{
+    append_string_to_vec(vec, _SC("#pos:"));
+    SQChar buf[16] = { 0 };
+    scsprintf(buf, sizeof(buf)/sizeof(buf[0]), _SC("%d"), int(_currentline));
+    append_string_to_vec(vec, buf);
+    vec.push_back(_SC(':'));
+    scsprintf(buf, sizeof(buf)/sizeof(buf[0]), _SC("%d"), int(_currentcolumn - 1));
+    append_string_to_vec(vec, buf);
+    vec.push_back(_SC(' '));
+}
+
+
+bool SQLexer::ProcessReaderMacro()
+{
+    if (macroState.prevReadF) {
+        Error(_SC("recursion in reader macro"));
+        return false;
+    }
+
+    if (CUR_CHAR != _SC('"')) {
+        Error(_SC("expected string"));
+        return false;
+    }
+
+    macroState.insideStringInterpolation = true;
+    SQChar prevChar = CUR_CHAR;
+
+    macroState.macroParams.resize(0);
+    macroState.macroStr.resize(0);
+    macroState.macroStr.push_back(_SC('"'));
+
+    int depth = 0;
+    int braceCount = 0;
+    int paramCount = 0;
+    bool insideStr1 = false;
+    bool insideStr2 = false;
+
+    while (CUR_CHAR != SQUIRREL_EOB)
+    {
+        if (CUR_CHAR == _SC('\\') && prevChar == _SC('\\'))
+          prevChar = 0;
+        else
+          prevChar = CUR_CHAR;
+
+        NEXT();
+
+        if (prevChar != _SC('\\'))
+        {
+            if (!insideStr1 && !insideStr2)
+            {
+                if (depth > 0 && (prevChar == _SC('/') && (CUR_CHAR == _SC('/') || CUR_CHAR == _SC('*')))) {
+                    Error(_SC("comments inside interpolated string are not supported"));
+                    return false;
+                }
+
+                if (CUR_CHAR == _SC('{'))
+                {
+                    if (!depth)
+                    {
+                        if (macroState.macroParams.size())
+                            macroState.macroParams.push_back(_SC(','));
+
+                        macroState.macroParams.push_back(_SC('('));
+                        AppendPosDirective(macroState.macroParams);
+                        depth++;
+                        continue;
+                    }
+                    depth++;
+                }
+                else if (CUR_CHAR == _SC('}'))
+                {
+                    depth--;
+
+                    if ((braceCount != 0 && depth == 0) || depth < 0) {
+                        Error(_SC("in brace order"));
+                        break;
+                    }
+
+                    if (!depth)  {
+                        macroState.macroParams.push_back(_SC(')'));
+                        macroState.macroStr.push_back('{');
+                        SQChar buf[16] = { 0 };
+                        scsprintf(buf, sizeof(buf)/sizeof(buf[0]), _SC("%d"), paramCount);
+                        append_string_to_vec(macroState.macroStr, buf);
+                        paramCount++;
+                    }
+                }
+
+                if (depth > 0) {
+                    if (CUR_CHAR == _SC('(') || CUR_CHAR == _SC('['))
+                        braceCount++;
+                    else if (CUR_CHAR == _SC(')') || CUR_CHAR == _SC(']'))
+                        braceCount--;
+                }
+            }
+
+            if (depth > 0)
+            {
+                if (CUR_CHAR == _SC('"') && !insideStr1)
+                    insideStr2 = !insideStr2;
+
+                if (CUR_CHAR == _SC('\'') && !insideStr2)
+                    insideStr1 = !insideStr1;
+            }
+
+        }
+        else //  prevChar == '\'
+        {
+            if (CUR_CHAR == _SC('{') || CUR_CHAR == _SC('}')) {
+                if (depth == 0)
+                    macroState.macroStr.pop_back();
+                else
+                    macroState.macroParams.pop_back();
+            }
+        }
+
+        if (depth == 0)
+            macroState.macroStr.push_back(CUR_CHAR);
+        else
+            macroState.macroParams.push_back(CUR_CHAR);
+
+        if (depth <= 0 && CUR_CHAR == _SC('"') && prevChar != _SC('\\') && !insideStr1 && !insideStr2)
+            break;
+    }
+
+    if (macroState.macroParams.size() != 0) {
+        append_string_to_vec(macroState.macroStr, ".subst(");
+
+        for (SQUnsignedInteger i = 0; i < macroState.macroParams.size(); i++)
+            macroState.macroStr.push_back(macroState.macroParams[i]);
+
+        macroState.macroStr.push_back(_SC(')'));
+    }
+    else if (paramCount) {
+        Error(_SC("no params collected for string interpolation"));
+        return false;
+    }
+
+    AppendPosDirective(macroState.macroStr);
+    macroState.macroStr.push_back(0);
+
+    macroState.prevReadF = _readf;
+    macroState.prevUserPointer = _up;
+    macroState.prevCurrdata = _currdata;
+    macroState.macroStrPos = 0;
+    _up = (void *)&macroState;
+    _readf = SQLexerMacroState::macroReadF;
+    return true;
+}
+
+
+void SQLexer::ExitReaderMacro()
+{
+    _readf = macroState.prevReadF;
+    _up = macroState.prevUserPointer;
+    _currdata = macroState.prevCurrdata;
+    macroState.prevUserPointer = nullptr;
+    macroState.prevReadF = nullptr;
+    macroState.insideStringInterpolation = false;
+}
+
+
 SQInteger SQLexer::Lex()
+{
+    SQInteger tk = LexSingleToken();
+
+    if (tk == TK_READERMACRO) {
+        if (!ProcessReaderMacro())
+            return 0;
+
+        NEXT();
+        tk = LexSingleToken();
+    }
+
+
+    if (!tk && macroState.insideStringInterpolation) {
+        ExitReaderMacro();
+        NEXT();
+        tk = LexSingleToken();
+    }
+
+    return tk;
+}
+
+
+SQInteger SQLexer::LexSingleToken()
 {
     _lasttokenline = _currentline;
     while(CUR_CHAR != SQUIRREL_EOB) {
@@ -138,7 +338,6 @@ SQInteger SQLexer::Lex()
             NEXT();
             _currentcolumn=1;
             continue;
-        case _SC('#'): LexLineComment(); continue;
         case _SC('/'):
             NEXT();
             switch(CUR_CHAR){
@@ -152,10 +351,6 @@ SQInteger SQLexer::Lex()
             case _SC('='):
                 NEXT();
                 RETURN_TOKEN(TK_DIVEQ);
-                continue;
-            case _SC('>'):
-                NEXT();
-                RETURN_TOKEN(TK_ATTR_CLOSE);
                 continue;
             default:
                 RETURN_TOKEN('/');
@@ -177,7 +372,6 @@ SQInteger SQLexer::Lex()
                 break;
             case _SC('-'): NEXT(); RETURN_TOKEN(TK_NEWSLOT); break;
             case _SC('<'): NEXT(); RETURN_TOKEN(TK_SHIFTL); break;
-            case _SC('/'): NEXT(); RETURN_TOKEN(TK_ATTR_OPEN); break;
             }
             RETURN_TOKEN('<');
         case _SC('>'):
@@ -196,9 +390,27 @@ SQInteger SQLexer::Lex()
             NEXT();
             if (CUR_CHAR != _SC('=')){ RETURN_TOKEN('!')}
             else { NEXT(); RETURN_TOKEN(TK_NE); }
+        case _SC('#'): {
+            NEXT();
+            SQInteger stype = ReadDirective();
+            if (stype < 0)
+                Error(_SC("error parsing directive"));
+            RETURN_TOKEN(TK_DIRECTIVE);
+            }
+        case _SC('$'): {
+            NEXT();
+            RETURN_TOKEN(TK_READERMACRO);
+            }
         case _SC('@'): {
             SQInteger stype;
             NEXT();
+            if(CUR_CHAR == _SC('@')) {
+                NEXT();
+                stype = ReadString('"',true);
+                if (stype != TK_STRING_LITERAL)
+                    Error(_SC("error parsing docstring"));
+                RETURN_TOKEN(TK_DOCSTRING);
+            }
             if(CUR_CHAR != _SC('"')) {
                 RETURN_TOKEN('@');
             }
@@ -216,9 +428,16 @@ SQInteger SQLexer::Lex()
             Error(_SC("error parsing the string"));
             }
         case _SC('{'): case _SC('}'): case _SC('('): case _SC(')'): case _SC('['): case _SC(']'):
-        case _SC(';'): case _SC(','): case _SC('?'): case _SC('^'): case _SC('~'):
+        case _SC(';'): case _SC(','): case _SC('^'): case _SC('~'):
             {SQInteger ret = CUR_CHAR;
             NEXT(); RETURN_TOKEN(ret); }
+        case _SC('?'):
+            {NEXT();
+            if (CUR_CHAR == _SC('.')) { NEXT(); RETURN_TOKEN(TK_NULLGETSTR); }
+            if (CUR_CHAR == _SC('[')) { NEXT(); RETURN_TOKEN(TK_NULLGETOBJ); }
+            if (CUR_CHAR == _SC('(')) { NEXT(); RETURN_TOKEN(TK_NULLCALL); }
+            if (CUR_CHAR == _SC('?')) { NEXT(); RETURN_TOKEN(TK_NULLCOALESCE); }
+            RETURN_TOKEN('?'); }
         case _SC('.'):
             NEXT();
             if (CUR_CHAR != _SC('.')){ RETURN_TOKEN('.') }
@@ -236,7 +455,8 @@ SQInteger SQLexer::Lex()
             else { NEXT(); RETURN_TOKEN(TK_OR); }
         case _SC(':'):
             NEXT();
-            if (CUR_CHAR != _SC(':')){ RETURN_TOKEN(':') }
+            if (CUR_CHAR == '=') { NEXT(); RETURN_TOKEN(TK_INEXPR_ASSIGNMENT) }
+            else if (CUR_CHAR != _SC(':')){ RETURN_TOKEN(':') }
             else { NEXT(); RETURN_TOKEN(TK_DOUBLE_COLON); }
         case _SC('*'):
             NEXT();
@@ -508,7 +728,7 @@ SQInteger SQLexer::ReadNumber()
         }
     }
     else {
-        APPEND_CHAR((int)firstchar);
+        APPEND_CHAR((SQChar)firstchar);
         while (CUR_CHAR == _SC('.') || scisdigit(CUR_CHAR) || isexponent(CUR_CHAR)) {
             if(CUR_CHAR == _SC('.') || isexponent(CUR_CHAR)) type = TFLOAT;
             if(isexponent(CUR_CHAR)) {
@@ -560,4 +780,18 @@ SQInteger SQLexer::ReadID()
         _svalue = &_longstr[0];
     }
     return res;
+}
+
+SQInteger SQLexer::ReadDirective()
+{
+    INIT_TEMP_STRING();
+    do {
+        APPEND_CHAR(CUR_CHAR);
+        NEXT();
+    } while(scisalnum(CUR_CHAR) || CUR_CHAR == _SC('_') || CUR_CHAR == _SC('-') || CUR_CHAR == _SC(':'));
+    TERMINATE_BUFFER();
+    if (!_longstr[0])
+        return -1;
+    _svalue = &_longstr[0];
+    return TK_DIRECTIVE;
 }

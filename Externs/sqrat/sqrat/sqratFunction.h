@@ -1,5 +1,5 @@
-//
-// SqObject: Referenced Squirrel Object Wrapper
+// Sqrat: altered version by Gaijin Entertainment Corp.
+// sqratFunction: Quirrel Function Wrapper
 //
 
 //
@@ -26,45 +26,79 @@
 //  distribution.
 //
 
-#if !defined(_SCRAT_SQFUNC_H_)
-#define _SCRAT_SQFUNC_H_
+#pragma once
+#if !defined(_SQRAT_SQFUNC_H_)
+#define _SQRAT_SQFUNC_H_
 
 #include <squirrel.h>
 #include "sqratObject.h"
+#include "sqratUtil.h"
 
-namespace Sqrat 
-{
+namespace Sqrat {
 
-class Function  
-{
+
+class Function  {
+
     friend class TableBase;
     friend class Table;
     friend class ArrayBase;
     friend struct Var<Function>;
+
 private:
+
     HSQUIRRELVM vm;
     HSQOBJECT env, obj;
 
-    Function(HSQUIRRELVM v, HSQOBJECT e, HSQOBJECT o) : vm(v), env(e), obj(o) {
-        //sq_addref(vm, &env);
-        sq_addref(vm, &obj);
-    }
-
 public:
     Function() {
+        vm = NULL;
         sq_resetobject(&env);
         sq_resetobject(&obj);
     }
 
     Function(const Function& sf) : vm(sf.vm), env(sf.env), obj(sf.obj) {
-        //sq_addref(vm, &env);
+        sq_addref(vm, &env);
         sq_addref(vm, &obj);
     }
 
+    Function(Function&& sf) : vm(sf.vm), env(sf.env), obj(sf.obj)
+    {
+      sf.vm = nullptr; // don't try release in moved from state
+    }
+
+    Function(const Function&&)=delete;
+
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    /// Constructs a Function from a slot in an Object
+    ///
+    /// \param e    Object that potentially contains a Squirrel function in a slot
+    /// \param slot Name of the slot to look for the Squirrel function in
+    ///
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     Function(const Object& e, const SQChar* slot) : vm(e.GetVM()), env(e.GetObject()) {
-        //sq_addref(vm, &env);
+        sq_addref(vm, &env);
         Object so = e.GetSlot(slot);
         obj = so.GetObject();
+        sq_addref(vm, &obj);
+
+        SQObjectType value_type = so.GetType();
+        if (value_type != OT_CLOSURE && value_type != OT_NATIVECLOSURE
+          && value_type != OT_CLASS && value_type != OT_NULL) {
+            // Note that classes can also be considered functions in Squirrel
+            SQRAT_ASSERTF(0, _SC("function not found in slot"));
+        }
+    }
+
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    /// Constructs a Function from two Squirrel objects (one is the environment object and the other is the function object)
+    ///
+    /// \param v VM that the function will exist in
+    /// \param e Squirrel object that should represent the environment of the function
+    /// \param o Squirrel object that should already represent a Squirrel function
+    ///
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    Function(HSQUIRRELVM v, HSQOBJECT e, HSQOBJECT o) : vm(v), env(e), obj(o) {
+        sq_addref(vm, &env);
         sq_addref(vm, &obj);
     }
 
@@ -73,25 +107,53 @@ public:
     }
 
     Function& operator=(const Function& sf) {
+      if (&sf != this)
+      {
         Release();
         vm = sf.vm;
         env = sf.env;
         obj = sf.obj;
         sq_addref(vm, &env);
         sq_addref(vm, &obj);
+      }
         return *this;
     }
 
-    bool IsNull() {
+    Function& operator=(Function&& sf)
+    {
+      if (&sf != this)
+      {
+        Release();
+        vm = sf.vm;
+        env = sf.env;
+        obj = sf.obj;
+        sf.vm = nullptr; // don't try release in moved from state
+      }
+      return *this;
+    }
+
+    bool IsNull() const {
         return sq_isnull(obj);
+    }
+
+    HSQOBJECT GetEnv() const {
+        return env;
     }
 
     HSQOBJECT& GetEnv() {
         return env;
     }
 
+    HSQOBJECT GetFunc() const {
+        return obj;
+    }
+
     HSQOBJECT& GetFunc() {
         return obj;
+    }
+
+    HSQUIRRELVM GetVM() const {
+        return vm;
     }
 
     HSQUIRRELVM& GetVM() {
@@ -99,655 +161,206 @@ public:
     }
 
     void Release() {
-        if(!IsNull()) {
-            //sq_release(vm, &env);
-            sq_release(vm, &obj);
-            sq_resetobject(&env);
-            sq_resetobject(&obj);
+        if (vm)
+        {
+          sq_release(vm, &env);
+          sq_release(vm, &obj);
+          sq_resetobject(&env);
+          sq_resetobject(&obj);
+          vm = nullptr;
         }
     }
 
-    template <class R>
-    R Evaluate() {
+    template<class R>
+    bool EvaluateDynArgs(SQObject const* args, size_t args_count, R& ret) const {
+        SQInteger top = sq_gettop(vm);
+
         sq_pushobject(vm, obj);
         sq_pushobject(vm, env);
 
-        sq_call(vm, 1, true, ErrorHandling::IsEnabled());
-        R ret = Var<R>(vm, -1).value;
-        sq_pop(vm, 2);
-        return ret;
+        for (size_t i = 0; i < args_count; ++i)
+          sq_pushobject(vm, args[i]);
+
+        HSQUIRRELVM savedVm = vm; // vm can be nulled in sq_call()
+        SQRESULT result = sq_call(vm, args_count+1, true, SQTrue);
+        if (SQ_FAILED(result)) {
+            ReportCallError();
+            sq_settop(savedVm, top);
+            return false;
+        }
+
+        ret = Var<R>(savedVm, -1).value;
+        sq_settop(savedVm, top);
+        return true;
     }
 
-    template <class R, class A1>
-    R Evaluate(A1 a1) {
+    bool ExecuteDynArgs(SQObject const* args, size_t args_count) const {
+        SQInteger top = sq_gettop(vm);
+
         sq_pushobject(vm, obj);
         sq_pushobject(vm, env);
 
-        PushVar(vm, a1);
+        for (size_t i = 0; i < args_count; ++i)
+          sq_pushobject(vm, args[i]);
 
-        sq_call(vm, 2, true, ErrorHandling::IsEnabled());
-        Var<R> ret(vm, -1);
-        sq_pop(vm, 2);
-        return ret.value;
+        HSQUIRRELVM savedVm = vm; // vm can be nulled in sq_call()
+        SQRESULT result = sq_call(vm, args_count + 1, false, SQTrue);
+        if (SQ_FAILED(result))
+            ReportCallError();
+
+        sq_settop(savedVm, top);
+
+        return SQ_SUCCEEDED(result);
     }
 
-    template <class R, class A1, class A2>
-    R Evaluate(A1 a1, A2 a2) {
-        sq_pushobject(vm, obj);
-        sq_pushobject(vm, env);
+    template<typename... ArgsAndRet>
+    bool Evaluate(ArgsAndRet&&... args_and_ret) const {
+      static constexpr size_t nArgs = sizeof...(ArgsAndRet) - 1;
 
-        PushVar(vm, a1);
-        PushVar(vm, a2);
+      SQInteger top = sq_gettop(vm);
 
-        sq_call(vm, 3, true, ErrorHandling::IsEnabled());
-        R ret = Var<R>(vm, -1).value;
-        sq_pop(vm, 2);
-        return ret;
+      sq_pushobject(vm, obj);
+      sq_pushobject(vm, env);
+
+      PushArgsWithoutRet(SQRAT_STD::forward<ArgsAndRet>(args_and_ret)...);
+
+      HSQUIRRELVM savedVm = vm; // vm can be nulled in sq_call()
+      SQRESULT result = sq_call(vm, nArgs + 1, true, SQTrue);
+      if (SQ_FAILED(result)) {
+          ReportCallError();
+
+          sq_settop(savedVm, top);
+          return false;
+      }
+
+      typedef typename SQRAT_STD::remove_reference<
+                          vargs::TailElem_t<ArgsAndRet...>>::type R;
+
+      R& ret = vargs::tail(SQRAT_STD::forward<ArgsAndRet>(args_and_ret)...);
+      ret = Var<R>(savedVm, -1).value;
+      sq_settop(savedVm, top);
+      return true;
     }
 
-    template <class R, class A1, class A2, class A3>
-    R Evaluate(A1 a1, A2 a2, A3 a3) {
+    template <typename... Args>
+    bool Execute(Args const&... args) const {
+        static constexpr size_t nArgs = sizeof...(Args);
+        SQInteger top = sq_gettop(vm);
+
         sq_pushobject(vm, obj);
         sq_pushobject(vm, env);
 
-        PushVar(vm, a1);
-        PushVar(vm, a2);
-        PushVar(vm, a3);
+        PushArgs(args...);
 
-        sq_call(vm, 4, true, ErrorHandling::IsEnabled());
-        R ret = Var<R>(vm, -1).value;
-        sq_pop(vm, 2);
-        return ret;
+        HSQUIRRELVM savedVm = vm; // vm can be nulled in sq_call()
+        SQRESULT result = sq_call(vm, nArgs + 1, false, SQTrue);
+        if (SQ_FAILED(result))
+            ReportCallError();
+
+        sq_settop(savedVm, top);
+
+        return SQ_SUCCEEDED(result);
     }
 
-    template <class R, class A1, class A2, class A3, class A4>
-    R Evaluate(A1 a1, A2 a2, A3 a3, A4 a4) {
-        sq_pushobject(vm, obj);
-        sq_pushobject(vm, env);
-
-        PushVar(vm, a1);
-        PushVar(vm, a2);
-        PushVar(vm, a3);
-        PushVar(vm, a4);
-
-        sq_call(vm, 5, true, ErrorHandling::IsEnabled());
-        R ret = Var<R>(vm, -1).value;
-        sq_pop(vm, 2);
-        return ret;
+    template <typename... Args>
+    bool operator()(Args const&... args) const {
+        return Execute(args...);
     }
 
-
-    template <class R, class A1, class A2, class A3, class A4, class A5>
-    R Evaluate(A1 a1, A2 a2, A3 a3, A4 a4, A5 a5) {
-        sq_pushobject(vm, obj);
-        sq_pushobject(vm, env);
-
-        PushVar(vm, a1);
-        PushVar(vm, a2);
-        PushVar(vm, a3);
-        PushVar(vm, a4);
-        PushVar(vm, a5);
-
-        sq_call(vm, 6, true, ErrorHandling::IsEnabled());
-        R ret = Var<R>(vm, -1).value;
-        sq_pop(vm, 2);
-        return ret;
+private:
+    template<class Arg, typename... Tail>
+    void PushArgs(Arg const& arg, Tail const&... tail) const
+    {
+      PushVar(vm, arg);
+      PushArgs(tail...);
     }
 
-    template <class R, class A1, class A2, class A3, class A4, class A5, class A6>
-    R Evaluate(A1 a1, A2 a2, A3 a3, A4 a4, A5 a5, A6 a6) {
-        sq_pushobject(vm, obj);
-        sq_pushobject(vm, env);
-
-        PushVar(vm, a1);
-        PushVar(vm, a2);
-        PushVar(vm, a3);
-        PushVar(vm, a4);
-        PushVar(vm, a5);
-        PushVar(vm, a6);
-
-        sq_call(vm, 7, true, ErrorHandling::IsEnabled());
-        R ret = Var<R>(vm, -1).value;
-        sq_pop(vm, 2);
-        return ret;
+    void PushArgs() const
+    {
     }
 
-    template <class R, class A1, class A2, class A3, class A4, class A5, class A6, class A7>
-    R Evaluate(A1 a1, A2 a2, A3 a3, A4 a4, A5 a5, A6 a6, A7 a7) {
-        sq_pushobject(vm, obj);
-        sq_pushobject(vm, env);
-
-        PushVar(vm, a1);
-        PushVar(vm, a2);
-        PushVar(vm, a3);
-        PushVar(vm, a4);
-        PushVar(vm, a5);
-        PushVar(vm, a6);
-        PushVar(vm, a7);
-
-        sq_call(vm, 8, true, ErrorHandling::IsEnabled());
-        R ret = Var<R>(vm, -1).value;
-        sq_pop(vm, 2);
-        return ret;
+    template<class Arg, typename... Tail>
+    void PushArgsWithoutRet(Arg const& arg, Tail const&... tail) const
+    {
+      PushVar(vm, arg);
+      PushArgsWithoutRet(tail...);
     }
 
-    template <class R, class A1, class A2, class A3, class A4, class A5, class A6, class A7, class A8>
-    R Evaluate(A1 a1, A2 a2, A3 a3, A4 a4, A5 a5, A6 a6, A7 a7, A8 a8) {
-        sq_pushobject(vm, obj);
-        sq_pushobject(vm, env);
-
-        PushVar(vm, a1);
-        PushVar(vm, a2);
-        PushVar(vm, a3);
-        PushVar(vm, a4);
-        PushVar(vm, a5);
-        PushVar(vm, a6);
-        PushVar(vm, a7);
-        PushVar(vm, a8);
-
-        sq_call(vm, 9, true, ErrorHandling::IsEnabled());
-        R ret = Var<R>(vm, -1).value;
-        sq_pop(vm, 2);
-        return ret;
+    template<class R>
+    void PushArgsWithoutRet(R const&) const
+    {
     }
 
-    template <class R, class A1, class A2, class A3, class A4, class A5, class A6, class A7, class A8, class A9>
-    R Evaluate(A1 a1, A2 a2, A3 a3, A4 a4, A5 a5, A6 a6, A7 a7, A8 a8, A9 a9) {
+    void ReportCallError() const
+    {
+        if (!vm)
+            return;
+        SQPRINTFUNCTION errpf = sq_geterrorfunc(vm);
+        if (!errpf)
+            return;
         sq_pushobject(vm, obj);
-        sq_pushobject(vm, env);
-
-        PushVar(vm, a1);
-        PushVar(vm, a2);
-        PushVar(vm, a3);
-        PushVar(vm, a4);
-        PushVar(vm, a5);
-        PushVar(vm, a6);
-        PushVar(vm, a7);
-        PushVar(vm, a8);
-        PushVar(vm, a9);
-
-        sq_call(vm, 10, true, ErrorHandling::IsEnabled());
-        R ret = Var<R>(vm, -1).value;
-        sq_pop(vm, 2);
-        return ret;
-    }
-
-    template <class R, class A1, class A2, class A3, class A4, class A5, class A6, class A7, class A8, class A9, class A10>
-    R Evaluate(A1 a1, A2 a2, A3 a3, A4 a4, A5 a5, A6 a6, A7 a7, A8 a8, A9 a9, A10 a10) {
-        sq_pushobject(vm, obj);
-        sq_pushobject(vm, env);
-
-        PushVar(vm, a1);
-        PushVar(vm, a2);
-        PushVar(vm, a3);
-        PushVar(vm, a4);
-        PushVar(vm, a5);
-        PushVar(vm, a6);
-        PushVar(vm, a7);
-        PushVar(vm, a8);
-        PushVar(vm, a9);
-        PushVar(vm, a10);
-
-        sq_call(vm, 11, true, ErrorHandling::IsEnabled());
-        R ret = Var<R>(vm, -1).value;
-        sq_pop(vm, 2);
-        return ret;
-    }
-
-    template <class R, class A1, class A2, class A3, class A4, class A5, class A6, class A7, class A8, class A9, class A10, class A11>
-    R Evaluate(A1 a1, A2 a2, A3 a3, A4 a4, A5 a5, A6 a6, A7 a7, A8 a8, A9 a9, A10 a10, A11 a11) {
-        sq_pushobject(vm, obj);
-        sq_pushobject(vm, env);
-
-        PushVar(vm, a1);
-        PushVar(vm, a2);
-        PushVar(vm, a3);
-        PushVar(vm, a4);
-        PushVar(vm, a5);
-        PushVar(vm, a6);
-        PushVar(vm, a7);
-        PushVar(vm, a8);
-        PushVar(vm, a9);
-        PushVar(vm, a10);
-        PushVar(vm, a11);
-
-        sq_call(vm, 12, true, ErrorHandling::IsEnabled());
-        R ret = Var<R>(vm, -1).value;
-        sq_pop(vm, 2);
-        return ret;
-    }
-
-    template <class R, class A1, class A2, class A3, class A4, class A5, class A6, class A7, class A8, class A9, class A10, class A11, class A12>
-    R Evaluate(A1 a1, A2 a2, A3 a3, A4 a4, A5 a5, A6 a6, A7 a7, A8 a8, A9 a9, A10 a10, A11 a11, A12 a12) {
-        sq_pushobject(vm, obj);
-        sq_pushobject(vm, env);
-
-        PushVar(vm, a1);
-        PushVar(vm, a2);
-        PushVar(vm, a3);
-        PushVar(vm, a4);
-        PushVar(vm, a5);
-        PushVar(vm, a6);
-        PushVar(vm, a7);
-        PushVar(vm, a8);
-        PushVar(vm, a9);
-        PushVar(vm, a10);
-        PushVar(vm, a11);
-        PushVar(vm, a12);
-
-        sq_call(vm, 13, true, ErrorHandling::IsEnabled());
-        R ret = Var<R>(vm, -1).value;
-        sq_pop(vm, 2);
-        return ret;
-    }
-
-    template <class R, class A1, class A2, class A3, class A4, class A5, class A6, class A7, class A8, class A9, class A10, class A11, class A12, class A13>
-    R Evaluate(A1 a1, A2 a2, A3 a3, A4 a4, A5 a5, A6 a6, A7 a7, A8 a8, A9 a9, A10 a10, A11 a11, A12 a12, A13 a13) {
-        sq_pushobject(vm, obj);
-        sq_pushobject(vm, env);
-
-        PushVar(vm, a1);
-        PushVar(vm, a2);
-        PushVar(vm, a3);
-        PushVar(vm, a4);
-        PushVar(vm, a5);
-        PushVar(vm, a6);
-        PushVar(vm, a7);
-        PushVar(vm, a8);
-        PushVar(vm, a9);
-        PushVar(vm, a10);
-        PushVar(vm, a11);
-        PushVar(vm, a12);
-        PushVar(vm, a13);
-
-        sq_call(vm, 14, true, ErrorHandling::IsEnabled());
-        R ret = Var<R>(vm, -1).value;
-        sq_pop(vm, 2);
-        return ret;
-    }
-
-    template <class R, class A1, class A2, class A3, class A4, class A5, class A6, class A7, class A8, class A9, class A10, class A11, class A12, class A13, class A14>
-    R Evaluate(A1 a1, A2 a2, A3 a3, A4 a4, A5 a5, A6 a6, A7 a7, A8 a8, A9 a9, A10 a10, A11 a11, A12 a12, A13 a13, A14 a14) {
-        sq_pushobject(vm, obj);
-        sq_pushobject(vm, env);
-
-        PushVar(vm, a1);
-        PushVar(vm, a2);
-        PushVar(vm, a3);
-        PushVar(vm, a4);
-        PushVar(vm, a5);
-        PushVar(vm, a6);
-        PushVar(vm, a7);
-        PushVar(vm, a8);
-        PushVar(vm, a9);
-        PushVar(vm, a10);
-        PushVar(vm, a11);
-        PushVar(vm, a12);
-        PushVar(vm, a13);
-        PushVar(vm, a14);
-
-        sq_call(vm, 15, true, ErrorHandling::IsEnabled());
-        R ret = Var<R>(vm, -1).value;
-        sq_pop(vm, 2);
-        return ret;
-    }
-
-    //
-    // void returns
-    //
-
-    void Execute() {
-        sq_pushobject(vm, obj);
-        sq_pushobject(vm, env);
-
-        sq_call(vm, 1, false, ErrorHandling::IsEnabled());
+        if (SQ_SUCCEEDED(sq_getclosurename(vm, -1)))
+        {
+            const SQChar *name;
+            if (SQ_SUCCEEDED(sq_getstring(vm, -1, &name)))
+                errpf(vm, _SC("Failed to call squirrel function %s\n"), name);
+            sq_pop(vm, 1);
+        }
         sq_pop(vm, 1);
-    }
-
-    template <class A1>
-    void Execute(A1 a1) {
-        sq_pushobject(vm, obj);
-        sq_pushobject(vm, env);
-
-        PushVar(vm, a1);
-
-        sq_call(vm, 2, false, ErrorHandling::IsEnabled());
-        sq_pop(vm, 1);
-    }
-
-    template <class A1, class A2>
-    void Execute(A1 a1, A2 a2) {
-        sq_pushobject(vm, obj);
-        sq_pushobject(vm, env);
-
-        PushVar(vm, a1);
-        PushVar(vm, a2);
-
-        sq_call(vm, 3, false, ErrorHandling::IsEnabled());
-        sq_pop(vm, 1);
-    }
-
-    template <class A1, class A2, class A3>
-    void Execute(A1 a1, A2 a2, A3 a3) {
-        sq_pushobject(vm, obj);
-        sq_pushobject(vm, env);
-
-        PushVar(vm, a1);
-        PushVar(vm, a2);
-        PushVar(vm, a3);
-
-        sq_call(vm, 4, false, ErrorHandling::IsEnabled());
-        sq_pop(vm, 1);
-    }
-
-    template <class A1, class A2, class A3, class A4>
-    void Execute(A1 a1, A2 a2, A3 a3, A4 a4) {
-        sq_pushobject(vm, obj);
-        sq_pushobject(vm, env);
-
-        PushVar(vm, a1);
-        PushVar(vm, a2);
-        PushVar(vm, a3);
-        PushVar(vm, a4);
-
-        sq_call(vm, 5, false, ErrorHandling::IsEnabled());
-        sq_pop(vm, 1);
-    }
-
-
-    template <class A1, class A2, class A3, class A4, class A5>
-    void Execute(A1 a1, A2 a2, A3 a3, A4 a4, A5 a5) {
-        sq_pushobject(vm, obj);
-        sq_pushobject(vm, env);
-
-        PushVar(vm, a1);
-        PushVar(vm, a2);
-        PushVar(vm, a3);
-        PushVar(vm, a4);
-        PushVar(vm, a5);
-
-        sq_call(vm, 6, false, ErrorHandling::IsEnabled());
-        sq_pop(vm, 1);
-    }
-
-    template <class A1, class A2, class A3, class A4, class A5, class A6>
-    void Execute(A1 a1, A2 a2, A3 a3, A4 a4, A5 a5, A6 a6) {
-        sq_pushobject(vm, obj);
-        sq_pushobject(vm, env);
-
-        PushVar(vm, a1);
-        PushVar(vm, a2);
-        PushVar(vm, a3);
-        PushVar(vm, a4);
-        PushVar(vm, a5);
-        PushVar(vm, a6);
-
-        sq_call(vm, 7, false, ErrorHandling::IsEnabled());
-        sq_pop(vm, 1);
-    }
-
-    template <class A1, class A2, class A3, class A4, class A5, class A6, class A7>
-    void Execute(A1 a1, A2 a2, A3 a3, A4 a4, A5 a5, A6 a6, A7 a7) {
-        sq_pushobject(vm, obj);
-        sq_pushobject(vm, env);
-
-        PushVar(vm, a1);
-        PushVar(vm, a2);
-        PushVar(vm, a3);
-        PushVar(vm, a4);
-        PushVar(vm, a5);
-        PushVar(vm, a6);
-        PushVar(vm, a7);
-
-        sq_call(vm, 8, false, ErrorHandling::IsEnabled());
-        sq_pop(vm, 1);
-    }
-
-    template <class A1, class A2, class A3, class A4, class A5, class A6, class A7, class A8>
-    void Execute(A1 a1, A2 a2, A3 a3, A4 a4, A5 a5, A6 a6, A7 a7, A8 a8) {
-        sq_pushobject(vm, obj);
-        sq_pushobject(vm, env);
-
-        PushVar(vm, a1);
-        PushVar(vm, a2);
-        PushVar(vm, a3);
-        PushVar(vm, a4);
-        PushVar(vm, a5);
-        PushVar(vm, a6);
-        PushVar(vm, a7);
-        PushVar(vm, a8);
-
-        sq_call(vm, 9, false, ErrorHandling::IsEnabled());
-        sq_pop(vm, 1);
-    }
-
-    template <class A1, class A2, class A3, class A4, class A5, class A6, class A7, class A8, class A9>
-    void Execute(A1 a1, A2 a2, A3 a3, A4 a4, A5 a5, A6 a6, A7 a7, A8 a8, A9 a9) {
-        sq_pushobject(vm, obj);
-        sq_pushobject(vm, env);
-
-        PushVar(vm, a1);
-        PushVar(vm, a2);
-        PushVar(vm, a3);
-        PushVar(vm, a4);
-        PushVar(vm, a5);
-        PushVar(vm, a6);
-        PushVar(vm, a7);
-        PushVar(vm, a8);
-        PushVar(vm, a9);
-
-        sq_call(vm, 10, false, ErrorHandling::IsEnabled());
-        sq_pop(vm, 1);
-    }
-
-    template <class A1, class A2, class A3, class A4, class A5, class A6, class A7, class A8, class A9, class A10>
-    void Execute(A1 a1, A2 a2, A3 a3, A4 a4, A5 a5, A6 a6, A7 a7, A8 a8, A9 a9, A10 a10) {
-        sq_pushobject(vm, obj);
-        sq_pushobject(vm, env);
-
-        PushVar(vm, a1);
-        PushVar(vm, a2);
-        PushVar(vm, a3);
-        PushVar(vm, a4);
-        PushVar(vm, a5);
-        PushVar(vm, a6);
-        PushVar(vm, a7);
-        PushVar(vm, a8);
-        PushVar(vm, a9);
-        PushVar(vm, a10);
-
-        sq_call(vm, 11, false, ErrorHandling::IsEnabled());
-        sq_pop(vm, 1);
-    }
-
-    template <class A1, class A2, class A3, class A4, class A5, class A6, class A7, class A8, class A9, class A10, class A11>
-    void Execute(A1 a1, A2 a2, A3 a3, A4 a4, A5 a5, A6 a6, A7 a7, A8 a8, A9 a9, A10 a10, A11 a11) {
-        sq_pushobject(vm, obj);
-        sq_pushobject(vm, env);
-
-        PushVar(vm, a1);
-        PushVar(vm, a2);
-        PushVar(vm, a3);
-        PushVar(vm, a4);
-        PushVar(vm, a5);
-        PushVar(vm, a6);
-        PushVar(vm, a7);
-        PushVar(vm, a8);
-        PushVar(vm, a9);
-        PushVar(vm, a10);
-        PushVar(vm, a11);
-
-        sq_call(vm, 12, false, ErrorHandling::IsEnabled());
-        sq_pop(vm, 1);
-    }
-
-    template <class A1, class A2, class A3, class A4, class A5, class A6, class A7, class A8, class A9, class A10, class A11, class A12>
-    void Execute(A1 a1, A2 a2, A3 a3, A4 a4, A5 a5, A6 a6, A7 a7, A8 a8, A9 a9, A10 a10, A11 a11, A12 a12) {
-        sq_pushobject(vm, obj);
-        sq_pushobject(vm, env);
-
-        PushVar(vm, a1);
-        PushVar(vm, a2);
-        PushVar(vm, a3);
-        PushVar(vm, a4);
-        PushVar(vm, a5);
-        PushVar(vm, a6);
-        PushVar(vm, a7);
-        PushVar(vm, a8);
-        PushVar(vm, a9);
-        PushVar(vm, a10);
-        PushVar(vm, a11);
-        PushVar(vm, a12);
-
-        sq_call(vm, 13, false, ErrorHandling::IsEnabled());
-        sq_pop(vm, 1);
-    }
-
-    template <class A1, class A2, class A3, class A4, class A5, class A6, class A7, class A8, class A9, class A10, class A11, class A12, class A13>
-    void Execute(A1 a1, A2 a2, A3 a3, A4 a4, A5 a5, A6 a6, A7 a7, A8 a8, A9 a9, A10 a10, A11 a11, A12 a12, A13 a13) {
-        sq_pushobject(vm, obj);
-        sq_pushobject(vm, env);
-
-        PushVar(vm, a1);
-        PushVar(vm, a2);
-        PushVar(vm, a3);
-        PushVar(vm, a4);
-        PushVar(vm, a5);
-        PushVar(vm, a6);
-        PushVar(vm, a7);
-        PushVar(vm, a8);
-        PushVar(vm, a9);
-        PushVar(vm, a10);
-        PushVar(vm, a11);
-        PushVar(vm, a12);
-        PushVar(vm, a13);
-
-        sq_call(vm, 14, false, ErrorHandling::IsEnabled());
-        sq_pop(vm, 1);
-    }
-
-    template <class A1, class A2, class A3, class A4, class A5, class A6, class A7, class A8, class A9, class A10, class A11, class A12, class A13, class A14>
-    void Execute(A1 a1, A2 a2, A3 a3, A4 a4, A5 a5, A6 a6, A7 a7, A8 a8, A9 a9, A10 a10, A11 a11, A12 a12, A13 a13, A14 a14) {
-        sq_pushobject(vm, obj);
-        sq_pushobject(vm, env);
-
-        PushVar(vm, a1);
-        PushVar(vm, a2);
-        PushVar(vm, a3);
-        PushVar(vm, a4);
-        PushVar(vm, a5);
-        PushVar(vm, a6);
-        PushVar(vm, a7);
-        PushVar(vm, a8);
-        PushVar(vm, a9);
-        PushVar(vm, a10);
-        PushVar(vm, a11);
-        PushVar(vm, a12);
-        PushVar(vm, a13);
-        PushVar(vm, a14);
-
-        sq_call(vm, 15, false, ErrorHandling::IsEnabled());
-        sq_pop(vm, 1);
-    }
-
-    //
-    // Operator overloads for ease of use (calls Execute)
-    //
-
-    void operator()() {
-        Execute();
-    }
-
-    template <class A1>
-    void operator()(A1 a1) {
-        Execute(a1);
-    }
-
-    template <class A1, class A2>
-    void operator()(A1 a1, A2 a2) {
-        Execute(a1, a2);
-    }
-
-    template <class A1, class A2, class A3>
-    void operator()(A1 a1, A2 a2, A3 a3) {
-        Execute(a1, a2, a3);
-    }
-
-    template <class A1, class A2, class A3, class A4>
-    void operator()(A1 a1, A2 a2, A3 a3, A4 a4) {
-        Execute(a1, a2, a3, a4);
-    }
-
-
-    template <class A1, class A2, class A3, class A4, class A5>
-    void operator()(A1 a1, A2 a2, A3 a3, A4 a4, A5 a5) {
-        Execute(a1, a2, a3, a4, a5);
-    }
-
-    template <class A1, class A2, class A3, class A4, class A5, class A6>
-    void operator()(A1 a1, A2 a2, A3 a3, A4 a4, A5 a5, A6 a6) {
-        Execute(a1, a2, a3, a4, a5, a6);
-    }
-
-    template <class A1, class A2, class A3, class A4, class A5, class A6, class A7>
-    void operator()(A1 a1, A2 a2, A3 a3, A4 a4, A5 a5, A6 a6, A7 a7) {
-        Execute(a1, a2, a3, a4, a5, a6, a7);
-    }
-
-    template <class A1, class A2, class A3, class A4, class A5, class A6, class A7, class A8>
-    void operator()(A1 a1, A2 a2, A3 a3, A4 a4, A5 a5, A6 a6, A7 a7, A8 a8) {
-        Execute(a1, a2, a3, a4, a5, a6, a7, a8);
-    }
-
-    template <class A1, class A2, class A3, class A4, class A5, class A6, class A7, class A8, class A9>
-    void operator()(A1 a1, A2 a2, A3 a3, A4 a4, A5 a5, A6 a6, A7 a7, A8 a8, A9 a9) {
-        Execute(a1, a2, a3, a4, a5, a6, a7, a8, a9);
-    }
-
-    template <class A1, class A2, class A3, class A4, class A5, class A6, class A7, class A8, class A9, class A10>
-    void operator()(A1 a1, A2 a2, A3 a3, A4 a4, A5 a5, A6 a6, A7 a7, A8 a8, A9 a9, A10 a10) {
-        Execute(a1, a2, a3, a4, a5, a6, a7, a8, a9, a10);
-    }
-
-    template <class A1, class A2, class A3, class A4, class A5, class A6, class A7, class A8, class A9, class A10, class A11>
-    void operator()(A1 a1, A2 a2, A3 a3, A4 a4, A5 a5, A6 a6, A7 a7, A8 a8, A9 a9, A10 a10, A11 a11) {
-        Execute(a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11);
-    }
-
-    template <class A1, class A2, class A3, class A4, class A5, class A6, class A7, class A8, class A9, class A10, class A11, class A12>
-    void operator()(A1 a1, A2 a2, A3 a3, A4 a4, A5 a5, A6 a6, A7 a7, A8 a8, A9 a9, A10 a10, A11 a11, A12 a12) {
-        Execute(a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12);
-    }
-
-    template <class A1, class A2, class A3, class A4, class A5, class A6, class A7, class A8, class A9, class A10, class A11, class A12, class A13>
-    void operator()(A1 a1, A2 a2, A3 a3, A4 a4, A5 a5, A6 a6, A7 a7, A8 a8, A9 a9, A10 a10, A11 a11, A12 a12, A13 a13) {
-        Execute(a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13);
-    }
-
-    template <class A1, class A2, class A3, class A4, class A5, class A6, class A7, class A8, class A9, class A10, class A11, class A12, class A13, class A14>
-    void operator()(A1 a1, A2 a2, A3 a3, A4 a4, A5 a5, A6 a6, A7 a7, A8 a8, A9 a9, A10 a10, A11 a11, A12 a12, A13 a13, A14 a14) {
-        Execute(a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14);
     }
 };
 
-//
-// Overridden Getter/Setter
-//
 
+/// Used to get and push Function instances to and from the stack as references (functions are always references in Squirrel)
 template<>
 struct Var<Function> {
-    Function value;
+
+    Function value; ///< The actual value of get operations
+
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    /// Attempts to get the value off the stack at idx as a Function
+    ///
+    /// \param vm  Target VM
+    /// \param idx Index trying to be read
+    ///
+    /// \remarks
+    /// Assumes the Function environment is at index 1.
+    ///
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     Var(HSQUIRRELVM vm, SQInteger idx) {
         HSQOBJECT sqEnv;
         HSQOBJECT sqValue;
-        sq_getstackobj(vm, 1, &sqEnv);
-        sq_getstackobj(vm, idx, &sqValue);
+        SQRAT_VERIFY(SQ_SUCCEEDED(sq_getstackobj(vm, 1, &sqEnv)));
+        SQRAT_VERIFY(SQ_SUCCEEDED(sq_getstackobj(vm, idx, &sqValue)));
         value = Function(vm, sqEnv, sqValue);
+
+        SQObjectType value_type = sq_gettype(vm, idx);
+        if (value_type != OT_CLOSURE && value_type != OT_NATIVECLOSURE
+          && value_type != OT_CLASS && value_type != OT_NULL)
+        {
+            SQRAT_ASSERTF(0, FormatTypeError(vm, idx, _SC("closure")).c_str());
+        }
     }
-    static void push(HSQUIRRELVM vm, Function& value) {
+
+    /// Called by Sqrat::PushVar to put a Function on the stack
+    static void push(HSQUIRRELVM vm, const Function& value) {
         sq_pushobject(vm, value.GetFunc());
     }
+
+
+    static const SQChar * getVarTypeName() { return _SC("closure"); }
+    static bool check_type(HSQUIRRELVM vm, SQInteger idx) {
+        SQObjectType type = sq_gettype(vm, idx);
+        return type == OT_CLOSURE || type == OT_NATIVECLOSURE || type == OT_NULL || type == OT_CLASS;
+    }
 };
+
+template<>
+struct Var<Function&> : Var<Function> {Var(HSQUIRRELVM vm, SQInteger idx) : Var<Function>(vm, idx) {}};
+
+template<>
+struct Var<const Function&> : Var<Function> {Var(HSQUIRRELVM vm, SQInteger idx) : Var<Function>(vm, idx) {}};
+
 }
 
 #endif

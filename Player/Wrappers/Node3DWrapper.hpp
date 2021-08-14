@@ -29,7 +29,7 @@ public:
 
 	static void Register(HSQUIRRELVM _vm)
 	{
-		Sqrat::DerivedClass<CNode3DWrapper, CNodeWrapper, Sqrat::NoCopy<CNode3DWrapper> > cl(_vm);
+		Sqrat::DerivedClass<CNode3DWrapper, CNodeWrapper, Sqrat::NoCopy<CNode3DWrapper> > cl(_vm, "CNode3D");
 
 		cl.Func("SetPosition", &CNode3DWrapper::sqSetPosition);
 		cl.Func("SetRotation", &CNode3DWrapper::sqSetRotation);

@@ -25,11 +25,11 @@ CPlayer::CPlayer()
 {
 	sq_getstackobj(Sqrat::DefaultVM::Get(), -1, &m_Object);
 
-	m_ConfHandler	 = Sqrat::Function(m_Object, "Configure");
-	m_InitHandler	 = Sqrat::Function(m_Object, "Init");
-	m_FreeHandler	 = Sqrat::Function(m_Object, "Free");
-	m_SuspendHandler = Sqrat::Function(m_Object, "Suspend");
-	m_ResumeHandler  = Sqrat::Function(m_Object, "Resume");
+	m_ConfHandler	 = Sqrat::Function(Sqrat::Object(m_Object, Sqrat::DefaultVM::Get()), "Configure");
+	m_InitHandler	 = Sqrat::Function(Sqrat::Object(m_Object, Sqrat::DefaultVM::Get()), "Init");
+	m_FreeHandler	 = Sqrat::Function(Sqrat::Object(m_Object, Sqrat::DefaultVM::Get()), "Free");
+	m_SuspendHandler = Sqrat::Function(Sqrat::Object(m_Object, Sqrat::DefaultVM::Get()), "Suspend");
+	m_ResumeHandler  = Sqrat::Function(Sqrat::Object(m_Object, Sqrat::DefaultVM::Get()), "Resume");
 }
 
 bool CPlayer::OnInit()
@@ -349,7 +349,7 @@ void CPlayer::_RegisterScriptClasses(HSQUIRRELVM _vm)
 	CInputSystemWrapper::Register(_vm);
 	CSaveFileWrapper::Register(_vm);
 
-	Sqrat::DerivedClass<CPlayer, CNodeWrapper, Sqrat::NoCopy<CPlayer> > cl(_vm);
+	Sqrat::DerivedClass<CPlayer, CNodeWrapper, Sqrat::NoCopy<CPlayer> > cl(_vm, "CGame");
 
 	cl.Func("SetScreenSize", &CPlayer::sqSetScreenSize);
 	cl.Func("EnableDebug", &CPlayer::sqEnableDebug);
@@ -359,8 +359,8 @@ void CPlayer::_RegisterScriptClasses(HSQUIRRELVM _vm)
     cl.Prop("ScreenWidth", &CPlayer::sqGetScreenWidth);
     cl.Prop("ScreenHeight", &CPlayer::sqGetScreenHeight);
     
-	cl.Prop<CAssetsDB*>("AssetsDB", &CPlayer::sqGetAssetsDB);
-	cl.Prop<CInputSystem*>("Input", &CPlayer::sqGetInputSystem);
+	cl.Prop("AssetsDB", &CPlayer::sqGetAssetsDB);
+	cl.Prop("Input", &CPlayer::sqGetInputSystem);
 
 	Sqrat::RootTable(_vm).Bind("CGame", cl);
 }

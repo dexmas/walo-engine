@@ -8,6 +8,40 @@ typedef SQChar LexChar;
 typedef unsigned char LexChar;
 #endif
 
+struct SQLexerMacroState
+{
+    bool insideStringInterpolation;
+    SQLEXREADFUNC prevReadF;
+    SQUserPointer prevUserPointer;
+    LexChar prevCurrdata;
+    sqvector<SQChar> macroStr;
+    sqvector<SQChar> macroParams;
+    int macroStrPos;
+
+    SQLexerMacroState()
+    {
+        reset();
+    }
+
+    void reset()
+    {
+        insideStringInterpolation = false;
+        prevReadF = NULL;
+        prevUserPointer = NULL;
+        macroStrPos = 0;
+        prevCurrdata = 0;
+        macroStr.resize(0);
+        macroParams.resize(0);
+    }
+
+    static SQInteger macroReadF(SQUserPointer self)
+    {
+        SQLexerMacroState * s = (SQLexerMacroState *) self;
+        return s->macroStr[s->macroStrPos++];
+    }
+};
+
+
 struct SQLexer
 {
     SQLexer();
@@ -17,13 +51,18 @@ struct SQLexer
     SQInteger Lex();
     const SQChar *Tok2Str(SQInteger tok);
 private:
+    SQInteger LexSingleToken();
     SQInteger GetIDType(const SQChar *s,SQInteger len);
     SQInteger ReadString(SQInteger ndelim,bool verbatim);
     SQInteger ReadNumber();
     void LexBlockComment();
     void LexLineComment();
     SQInteger ReadID();
+    SQInteger ReadDirective();
     void Next();
+    void AppendPosDirective(sqvector<SQChar> & vec);
+    bool ProcessReaderMacro();
+    void ExitReaderMacro();
 #ifdef SQUNICODE
 #if WCHAR_SIZE == 2
     SQInteger AddUTF16(SQUnsignedInteger ch);
@@ -35,6 +74,7 @@ private:
     SQInteger _curtoken;
     SQTable *_keywords;
     SQBool _reached_eof;
+    SQLexerMacroState macroState;
 public:
     SQInteger _prevtoken;
     SQInteger _currentline;

@@ -14,10 +14,9 @@ public:
 	CNodeWrapper()
 	{
 		m_InputComponent = 0;
-
 		sq_getstackobj(Sqrat::DefaultVM::Get(), -1, &m_Object);
 
-		m_UpdateHandler = !Sqrat::Function(m_Object, "Update").IsNull();
+		m_UpdateHandler = !Sqrat::Function(Sqrat::Object(m_Object, Sqrat::DefaultVM::Get()), "Update").IsNull();
 
 		if(m_UpdateHandler)
 		{
@@ -26,28 +25,28 @@ public:
 
 		u32 icntr = 0;
 
-		m_InputHandler_Touch = !Sqrat::Function(m_Object, "InputTouch").IsNull();
+		m_InputHandler_Touch = !Sqrat::Function(Sqrat::Object(m_Object, Sqrat::DefaultVM::Get()), "InputTouch").IsNull();
 
 		if(m_InputHandler_Touch)
 		{
 			icntr++;
 		}
 
-		m_InputHandler_Mouse = !Sqrat::Function(m_Object, "InputMouse").IsNull();
+		m_InputHandler_Mouse = !Sqrat::Function(Sqrat::Object(m_Object, Sqrat::DefaultVM::Get()), "InputMouse").IsNull();
 
 		if(m_InputHandler_Mouse)
 		{
 			icntr++;
 		}
 
-		m_InputHandler_Keyboard	= !Sqrat::Function(m_Object, "InputKeyboard").IsNull();
+		m_InputHandler_Keyboard	= !Sqrat::Function(Sqrat::Object(m_Object, Sqrat::DefaultVM::Get()), "InputKeyboard").IsNull();
 
 		if(m_InputHandler_Keyboard)
 		{
 			icntr++;
 		}
 
-		m_InputHandler_Gesture = !Sqrat::Function(m_Object, "InputGesture").IsNull();
+		m_InputHandler_Gesture = !Sqrat::Function(Sqrat::Object(m_Object, Sqrat::DefaultVM::Get()), "InputGesture").IsNull();
 
 		if(m_InputHandler_Gesture)
 		{
@@ -63,10 +62,10 @@ public:
 
 	static void Register(HSQUIRRELVM _vm)
 	{
-		Sqrat::Class<CNodeWrapper, Sqrat::NoCopy<CNodeWrapper> > cl(_vm);
+		Sqrat::Class<CNodeWrapper, Sqrat::NoCopy<CNodeWrapper> > cl(_vm, "CNode");
 
-		cl.Func("AddChild", &CNodeWrapper::AddChild);
-		cl.Func("RemoveChild", &CNodeWrapper::RemoveChild);
+		cl.Func("AddChild", &CNodeWrapper::sqAddChild);
+		cl.Func("RemoveChild", &CNodeWrapper::sqRemoveChild);
 
 		cl.Func("AddComponent", &CNodeWrapper::sqAddComponent);
 		cl.Func("RemoveComponent", &CNodeWrapper::sqRemoveComponent);
@@ -77,10 +76,13 @@ public:
 		cl.Func("SetName", &CNodeWrapper::SetName);
 		cl.Func("GetName", &CNodeWrapper::GetName);
 
-		cl.Prop<CComponent*>("Input", &CNodeWrapper::GetInputComponent);
+		cl.Prop("Input", &CNodeWrapper::GetInputComponent);
 
 		Sqrat::RootTable(_vm).Bind("CNode", cl);
 	}
+
+	void sqAddChild(CNodeWrapper* _child) { AddChild(_child); }
+	void sqRemoveChild(CNodeWrapper* _child) { RemoveChild(_child); }
 
 	void sqAddComponent(const Sqrat::Object& _obj)
 	{
@@ -100,7 +102,7 @@ public:
 	{
 		if(m_UpdateHandler)
 		{
-			Sqrat::Function hndlr(m_Object, "Update");
+			Sqrat::Function hndlr(Sqrat::Object(m_Object, Sqrat::DefaultVM::Get()), "Update");
 			hndlr.Execute<f32>(_dt);
 		}
 	}
@@ -115,7 +117,7 @@ public:
 			{
 				CTouchEvent* tevent = (CTouchEvent*)ievent;
 
-				Sqrat::Function hndlr(m_Object, "InputTouch");
+				Sqrat::Function hndlr(Sqrat::Object(m_Object, Sqrat::DefaultVM::Get()), "InputTouch");
 
 				for(u32 i = 0; i < tevent->TouchCount; i++)
 				{
@@ -127,7 +129,7 @@ public:
 			{
 				CMouseEvent* mevent = (CMouseEvent*)ievent;
 
-				Sqrat::Function hndlr(m_Object, "InputMouse");
+				Sqrat::Function hndlr(Sqrat::Object(m_Object, Sqrat::DefaultVM::Get()), "InputMouse");
 
 				hndlr.Execute<u32, f32, f32, f32, u32>(mevent->Event, mevent->X, mevent->Y, mevent->Wheel, mevent->Buttons);
 			}
@@ -136,7 +138,7 @@ public:
 			{
 				CKeyboardEvent* kevent = (CKeyboardEvent*)ievent;
 
-				Sqrat::Function hndlr(m_Object, "InputKeyboard");
+				Sqrat::Function hndlr(Sqrat::Object(m_Object, Sqrat::DefaultVM::Get()), "InputKeyboard");
 
 				hndlr.Execute<u32, bool, u32>(kevent->Key, kevent->PressedDown, ((u8)kevent->Control << 1) | (u8)kevent->Shift);
 			}
@@ -145,7 +147,7 @@ public:
 			{
 				CGestureEvent* gevent = (CGestureEvent*)ievent;
 				
-				Sqrat::Function hndlr(m_Object, "InputGesture");
+				Sqrat::Function hndlr(Sqrat::Object(m_Object, Sqrat::DefaultVM::Get()), "InputGesture");
 
 				hndlr.Execute<u32, f32, f32>(gevent->Gesture, gevent->Param1, gevent->Param2);
 			}

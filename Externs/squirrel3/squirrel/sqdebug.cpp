@@ -38,7 +38,7 @@ SQRESULT sq_stackinfos(HSQUIRRELVM v, SQInteger level, SQStackInfos *si)
             if (sq_type(func->_name) == OT_STRING)
                 si->funcname = _stringval(func->_name);
             if (sq_type(func->_sourcename) == OT_STRING)
-                si->source = _stringval(func->_sourcename);
+                si->source = func->_sourcename_ptr;
             si->line = func->GetLine(ci._ip);
                         }
             break;
@@ -114,5 +114,6 @@ void SQVM::Raise_ParamTypeError(SQInteger nparam,SQInteger typemask,SQInteger ty
             StringCat(exptypes,SQString::Create(_ss(this), IdType2Name((SQObjectType)mask), -1), exptypes);
         }
     }
-    Raise_Error(_SC("parameter %d has an invalid type '%s' ; expected: '%s'"), nparam, IdType2Name((SQObjectType)type), _stringval(exptypes));
+    Raise_Error(_SC("parameter %d has an invalid type '%s' ; expected: '%s'"), (int)nparam,
+                IdType2Name((SQObjectType)type), _stringval(exptypes));
 }

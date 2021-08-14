@@ -104,6 +104,7 @@ struct SQFile : public SQStream {
     bool IsValid() { return _handle?true:false; }
     bool EOS() { return Tell()==Len()?true:false;}
     SQFILE GetHandle() {return _handle;}
+
 private:
     SQFILE _handle;
     bool _owns;
@@ -144,7 +145,7 @@ static SQInteger _file_constructor(HSQUIRRELVM v)
     f = new (sq_malloc(sizeof(SQFile)))SQFile(newf,owns);
     if(SQ_FAILED(sq_setinstanceup(v,1,f))) {
         f->~SQFile();
-        sq_free(f,sizeof(SQFile));
+        sq_free(f, sizeof(SQFile));
         return sq_throwerror(v, _SC("cannot create blob with negative size"));
     }
     sq_setreleasehook(v,1,_file_releasehook);

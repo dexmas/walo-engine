@@ -19,10 +19,6 @@
 #define scremove remove
 #define screname rename
 #endif
-#ifdef IOS
-	#include <spawn.h>
-	extern char **environ;
-#endif
 
 static SQInteger _system_getenv(HSQUIRRELVM v)
 {
@@ -34,21 +30,17 @@ static SQInteger _system_getenv(HSQUIRRELVM v)
     return 0;
 }
 
+
 static SQInteger _system_system(HSQUIRRELVM v)
 {
     const SQChar *s;
     if(SQ_SUCCEEDED(sq_getstring(v,2,&s))){
-#ifdef IOS
-		pid_t pid;
-		posix_spawn(&pid, s, NULL, NULL, NULL, environ);
-		sq_pushinteger(v, 0);
-#else
         sq_pushinteger(v,scsystem(s));
-#endif
         return 1;
     }
     return sq_throwerror(v,_SC("wrong param"));
 }
+
 
 static SQInteger _system_clock(HSQUIRRELVM v)
 {
@@ -138,7 +130,25 @@ static const SQRegFunction systemlib_funcs[]={
 };
 #undef _DECL_FUNC
 
-SQInteger sqstd_register_systemlib(HSQUIRRELVM v)
+
+SQRESULT sqstd_register_command_line_args(HSQUIRRELVM v, int argc, char ** argv)
+{
+    sq_pushroottable(v);
+    sq_pushstring(v, "__argv", -1);
+    sq_newarray(v, 0);
+    for (int idx = 0; idx < argc; idx++)
+    {
+        sq_pushstring(v, argv[idx], -1);
+        sq_arrayappend(v, -2);
+    }
+    sq_newslot(v, -3, SQFalse);
+    sq_pop(v,1);
+
+    return SQ_OK;
+}
+
+
+SQRESULT sqstd_register_systemlib(HSQUIRRELVM v)
 {
     SQInteger i=0;
     while(systemlib_funcs[i].name!=0)
@@ -150,5 +160,5 @@ SQInteger sqstd_register_systemlib(HSQUIRRELVM v)
         sq_newslot(v,-3,SQFalse);
         i++;
     }
-    return 1;
+    return SQ_OK;
 }

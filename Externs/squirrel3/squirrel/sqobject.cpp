@@ -60,7 +60,7 @@ void SQString::Release()
 SQInteger SQString::Next(const SQObjectPtr &refpos, SQObjectPtr &outkey, SQObjectPtr &outval)
 {
     SQInteger idx = (SQInteger)TranslateIndex(refpos);
-    while(idx < _len){
+    if(idx < _len) {
         outkey = (SQInteger)idx;
         outval = (SQInteger)((SQUnsignedInteger)_val[idx]);
         //return idx for the next iteration
@@ -85,10 +85,8 @@ SQUnsignedInteger TranslateIndex(const SQObjectPtr &idx)
 SQWeakRef *SQRefCounted::GetWeakRef(SQObjectType type)
 {
     if(!_weakref) {
-        sq_new(_weakref,SQWeakRef);
-#if defined(SQUSEDOUBLE) && !defined(_SQ64)
-        _weakref->_obj._unVal.raw = 0; //clean the whole union on 32 bits with double
-#endif
+        sq_new(_weakref, SQWeakRef);
+        _weakref->_obj._unVal.raw = 0;
         _weakref->_obj._type = type;
         _weakref->_obj._unVal.pRefCounted = this;
     }
@@ -99,7 +97,7 @@ SQRefCounted::~SQRefCounted()
 {
     if(_weakref) {
         _weakref->_obj._type = OT_NULL;
-        _weakref->_obj._unVal.pRefCounted = NULL;
+        _weakref->_obj._unVal.raw = 0;
     }
 }
 
@@ -107,7 +105,7 @@ void SQWeakRef::Release() {
     if(ISREFCOUNTED(_obj._type)) {
         _obj._unVal.pRefCounted->_weakref = NULL;
     }
-    sq_delete(this,SQWeakRef);
+    sq_delete(this, SQWeakRef);
 }
 
 bool SQDelegable::GetMetaMethod(SQVM *v,SQMetaMethod mm,SQObjectPtr &res) {
@@ -276,7 +274,7 @@ SQClosure::~SQClosure()
 }
 
 #define _CHECK_IO(exp)  { if(!exp)return false; }
-bool SafeWrite(HSQUIRRELVM v,SQWRITEFUNC write,SQUserPointer up,SQUserPointer dest,SQInteger size)
+static bool SafeWrite(HSQUIRRELVM v,SQWRITEFUNC write,SQUserPointer up,SQUserPointer dest,SQInteger size)
 {
     if(write(up,dest,size) != size) {
         v->Raise_Error(_SC("io error (write function failure)"));
@@ -285,7 +283,7 @@ bool SafeWrite(HSQUIRRELVM v,SQWRITEFUNC write,SQUserPointer up,SQUserPointer de
     return true;
 }
 
-bool SafeRead(HSQUIRRELVM v,SQREADFUNC read,SQUserPointer up,SQUserPointer dest,SQInteger size)
+static bool SafeRead(HSQUIRRELVM v,SQREADFUNC read,SQUserPointer up,SQUserPointer dest,SQInteger size)
 {
     if(size && read(up,dest,size) != size) {
         v->Raise_Error(_SC("io error, read function failure, the origin stream could be corrupted/trucated"));
@@ -294,12 +292,12 @@ bool SafeRead(HSQUIRRELVM v,SQREADFUNC read,SQUserPointer up,SQUserPointer dest,
     return true;
 }
 
-bool WriteTag(HSQUIRRELVM v,SQWRITEFUNC write,SQUserPointer up,SQUnsignedInteger32 tag)
+static bool WriteTag(HSQUIRRELVM v,SQWRITEFUNC write,SQUserPointer up,SQUnsignedInteger32 tag)
 {
     return SafeWrite(v,write,up,&tag,sizeof(tag));
 }
 
-bool CheckTag(HSQUIRRELVM v,SQREADFUNC read,SQUserPointer up,SQUnsignedInteger32 tag)
+static bool CheckTag(HSQUIRRELVM v,SQREADFUNC read,SQUserPointer up,SQUnsignedInteger32 tag)
 {
     SQUnsignedInteger32 t;
     _CHECK_IO(SafeRead(v,read,up,&t,sizeof(t)));
@@ -310,7 +308,7 @@ bool CheckTag(HSQUIRRELVM v,SQREADFUNC read,SQUserPointer up,SQUnsignedInteger32
     return true;
 }
 
-bool WriteObject(HSQUIRRELVM v,SQUserPointer up,SQWRITEFUNC write,SQObjectPtr &o)
+static bool WriteObject(HSQUIRRELVM v,SQUserPointer up,SQWRITEFUNC write,SQObjectPtr &o)
 {
     SQUnsignedInteger32 _type = (SQUnsignedInteger32)sq_type(o);
     _CHECK_IO(SafeWrite(v,write,up,&_type,sizeof(_type)));
@@ -333,7 +331,7 @@ bool WriteObject(HSQUIRRELVM v,SQUserPointer up,SQWRITEFUNC write,SQObjectPtr &o
     return true;
 }
 
-bool ReadObject(HSQUIRRELVM v,SQUserPointer up,SQREADFUNC read,SQObjectPtr &o)
+static bool ReadObject(HSQUIRRELVM v,SQUserPointer up,SQREADFUNC read,SQObjectPtr &o)
 {
     SQUnsignedInteger32 _type;
     _CHECK_IO(SafeRead(v,read,up,&_type,sizeof(_type)));
@@ -415,6 +413,7 @@ bool SQFunctionProto::Save(SQVM *v,SQUserPointer up,SQWRITEFUNC write)
     _CHECK_IO(WriteObject(v,up,write,_sourcename));
     _CHECK_IO(WriteObject(v,up,write,_name));
     _CHECK_IO(WriteTag(v,write,up,SQ_CLOSURESTREAM_PART));
+    _CHECK_IO(SafeWrite(v,write,up, &lang_features, sizeof(lang_features)));
     _CHECK_IO(SafeWrite(v,write,up,&nliterals,sizeof(nliterals)));
     _CHECK_IO(SafeWrite(v,write,up,&nparameters,sizeof(nparameters)));
     _CHECK_IO(SafeWrite(v,write,up,&noutervalues,sizeof(noutervalues)));
@@ -471,6 +470,7 @@ bool SQFunctionProto::Save(SQVM *v,SQUserPointer up,SQWRITEFUNC write)
 bool SQFunctionProto::Load(SQVM *v,SQUserPointer up,SQREADFUNC read,SQObjectPtr &ret)
 {
     SQInteger i, nliterals,nparameters;
+    SQUnsignedInteger langFeatures;
     SQInteger noutervalues ,nlocalvarinfos ;
     SQInteger nlineinfos,ninstructions ,nfunctions,ndefaultparams ;
     SQObjectPtr sourcename, name;
@@ -480,6 +480,7 @@ bool SQFunctionProto::Load(SQVM *v,SQUserPointer up,SQREADFUNC read,SQObjectPtr 
     _CHECK_IO(ReadObject(v, up, read, name));
 
     _CHECK_IO(CheckTag(v,read,up,SQ_CLOSURESTREAM_PART));
+    _CHECK_IO(SafeRead(v,read,up, &langFeatures, sizeof(langFeatures)));
     _CHECK_IO(SafeRead(v,read,up, &nliterals, sizeof(nliterals)));
     _CHECK_IO(SafeRead(v,read,up, &nparameters, sizeof(nparameters)));
     _CHECK_IO(SafeRead(v,read,up, &noutervalues, sizeof(noutervalues)));
@@ -490,10 +491,12 @@ bool SQFunctionProto::Load(SQVM *v,SQUserPointer up,SQREADFUNC read,SQObjectPtr 
     _CHECK_IO(SafeRead(v,read,up, &nfunctions, sizeof(nfunctions)));
 
 
-    SQFunctionProto *f = SQFunctionProto::Create(_opt_ss(v),ninstructions,nliterals,nparameters,
+    SQFunctionProto *f = SQFunctionProto::Create(_opt_ss(v), langFeatures,
+            ninstructions,nliterals,nparameters,
             nfunctions,noutervalues,nlineinfos,nlocalvarinfos,ndefaultparams);
     SQObjectPtr proto = f; //gets a ref in case of failure
     f->_sourcename = sourcename;
+    f->_sourcename_ptr = v->constStrings.perpetuate(_stringval(sourcename));
     f->_name = name;
 
     _CHECK_IO(CheckTag(v,read,up,SQ_CLOSURESTREAM_PART));
@@ -582,8 +585,8 @@ void SQTable::Mark(SQCollectable **chain)
 {
     START_MARK()
         if(_delegate) _delegate->Mark(chain);
-        SQInteger len = _numofnodes;
-        for(SQInteger i = 0; i < len; i++){
+        SQInteger len = _numofnodes_minus_one;
+        for(SQInteger i = 0; i <= len; i++){
             SQSharedState::MarkObject(_nodes[i].key, chain);
             SQSharedState::MarkObject(_nodes[i].val, chain);
         }
@@ -595,14 +598,11 @@ void SQClass::Mark(SQCollectable **chain)
     START_MARK()
         _members->Mark(chain);
         if(_base) _base->Mark(chain);
-        SQSharedState::MarkObject(_attributes, chain);
         for(SQUnsignedInteger i =0; i< _defaultvalues.size(); i++) {
             SQSharedState::MarkObject(_defaultvalues[i].val, chain);
-            SQSharedState::MarkObject(_defaultvalues[i].attrs, chain);
         }
         for(SQUnsignedInteger j =0; j< _methods.size(); j++) {
             SQSharedState::MarkObject(_methods[j].val, chain);
-            SQSharedState::MarkObject(_methods[j].attrs, chain);
         }
         for(SQUnsignedInteger k =0; k< MT_LAST; k++) {
             SQSharedState::MarkObject(_metamethods[k], chain);

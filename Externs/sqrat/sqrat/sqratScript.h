@@ -1,4 +1,4 @@
-//
+// Sqrat: altered version by Gaijin Entertainment Corp.
 // SqratScript: Script Compilation and Execution
 //
 
@@ -25,8 +25,9 @@
 //  distribution.
 //
 
-#if !defined(_SCRAT_SCRIPT_H_)
-#define _SCRAT_SCRIPT_H_
+#pragma once
+#if !defined(_SQRAT_SCRIPT_H_)
+#define _SQRAT_SCRIPT_H_
 
 #include <squirrel.h>
 #include <sqstdio.h>
@@ -34,122 +35,97 @@
 
 #include "sqratObject.h"
 
+
 namespace Sqrat {
 
+/// Helper class for managing Squirrel scripts
 class Script : public Object {
 public:
-    Script(HSQUIRRELVM v = DefaultVM::Get()) : Object(v, false) {
+
+    Script(HSQUIRRELVM v) : Object(v, true) {
     }
- 
-    ~Script()
+
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    /// Sets up the Script using a string containing a Squirrel script
+    ///
+    /// \param script String containing a file path to a Squirrel script
+    /// \param errMsg String that is filled with any errors that may occur
+    /// \param name   Optional string containing the script's name (for errors)
+    ///
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    bool CompileString(const string_view &script, string &errMsg,
+                       const string_view &name = string_view())
     {
         if(!sq_isnull(obj)) {
             sq_release(vm, &obj);
+            sq_resetobject(&obj);
         }
-    }
-    void CompileString(const string& script) {
-        if(!sq_isnull(obj)) {
-            sq_release(vm, &obj);
-        }
-        if(SQ_FAILED(sq_compilebuffer(vm, script.CStr(), static_cast<SQInteger>(script.Size() * sizeof(SQChar)), _SC(""), true))) {
-            throw Exception(LastErrorString(vm));
-        }
-        sq_getstackobj(vm,-1,&obj);
-        sq_addref(vm, &obj);
-        sq_pop(vm, 1);
-    }
-    
-    bool CompileString(const string& script, string& errMsg) {
-        if(!sq_isnull(obj)) {
-            sq_release(vm, &obj);
-        }
-        if(SQ_FAILED(sq_compilebuffer(vm, script.CStr(), static_cast<SQInteger>(script.Size() * sizeof(SQChar)), _SC(""), true))) {
+
+        if(SQ_FAILED(sq_compilebuffer(vm, script.data(), static_cast<SQInteger>(script.size() /** sizeof(SQChar)*/), name.data(), true))) {
             errMsg = LastErrorString(vm);
             return false;
         }
+
         sq_getstackobj(vm,-1,&obj);
         sq_addref(vm, &obj);
         sq_pop(vm, 1);
         return true;
     }
 
-    void CompileFile(const string& path) {
-        if(!sq_isnull(obj)) {
-            sq_release(vm, &obj);
-        }
-        if(SQ_FAILED(sqstd_loadfile(vm, path.CStr(), true))) {
-            throw Exception(LastErrorString(vm));
-        }
-        sq_getstackobj(vm,-1,&obj);
-        sq_addref(vm, &obj);
-        sq_pop(vm, 1);
-    }
-
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    /// Sets up the Script using a file containing a Squirrel script
+    ///
+    /// \param path   File path containing a Squirrel script
+    /// \param errMsg String that is filled with any errors that may occur
+    ///
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     bool CompileFile(const string& path, string& errMsg) {
         if(!sq_isnull(obj)) {
             sq_release(vm, &obj);
+            sq_resetobject(&obj);
         }
-        if(SQ_FAILED(sqstd_loadfile(vm, path.CStr(), true))) {
+
+        if(SQ_FAILED(sqstd_loadfile(vm, path.c_str(), true))) {
             errMsg = LastErrorString(vm);
             return false;
         }
+
         sq_getstackobj(vm,-1,&obj);
         sq_addref(vm, &obj);
         sq_pop(vm, 1);
         return true;
     }
 
-    bool CompileBuffer(const char* fname, void* buffer, SQInt32 size, string& errMsg) {
-        if(!sq_isnull(obj)) {
-            sq_release(vm, &obj);
-        }
-        if(SQ_FAILED(sqstd_loadbuffer(vm, fname, buffer, size, true))) {
-            errMsg = LastErrorString(vm);
-            return false;
-        }
-        sq_getstackobj(vm,-1,&obj);
-        sq_addref(vm, &obj);
-        sq_pop(vm, 1);
-        return true;
-    }
 
-    void Run() {
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    /// Runs the script
+    ///
+    /// \param errMsg String that is filled with any errors that may occur
+    ///
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    bool Run(string& errMsg, Object * context = NULL) {
         if(!sq_isnull(obj)) {
             SQRESULT result;
+            SQInteger top = sq_gettop(vm);
             sq_pushobject(vm, obj);
-            sq_pushroottable(vm);
-            result = sq_call(vm, 1, false, true);
-            sq_pop(vm, 1);
-            if(SQ_FAILED(result)) {
-                throw Exception(LastErrorString(vm));
-            }
-        }
-    }
 
-    bool Run(string& errMsg) {
-        if(!sq_isnull(obj)) {
-            SQRESULT result;
-            sq_pushobject(vm, obj);
-            sq_pushroottable(vm);
+            if (!context)
+              sq_pushroottable(vm);
+            else
+              sq_pushobject(vm, context->GetObject());
+
             result = sq_call(vm, 1, false, true);
-            sq_pop(vm, 1);
+            sq_settop(vm, top);
             if(SQ_FAILED(result)) {
                 errMsg = LastErrorString(vm);
                 return false;
             }
+            return true;
         }
-        return true;
-    }
-
-
-    void WriteCompiledFile(const string& path) {
-        if(!sq_isnull(obj)) {
-            sq_pushobject(vm, obj);
-            sqstd_writeclosuretofile(vm, path.CStr());
-            //sq_pop(vm, 1);  // needed?
-        }
+        return false;
     }
 };
+
 }
 
 #endif

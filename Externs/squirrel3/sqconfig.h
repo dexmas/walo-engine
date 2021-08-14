@@ -20,8 +20,13 @@ typedef unsigned int SQUnsignedInteger;
 typedef unsigned int SQHash; /*should be the same size of a pointer*/
 #endif
 
+
 #define SQUTF8
 #define NO_GARBAGE_COLLECTOR
+
+#ifndef __forceinline
+#define __forceinline inline
+#endif
 
 #ifdef SQUSEDOUBLE
 typedef double SQFloat;
@@ -62,6 +67,7 @@ typedef wchar_t SQChar;
 
 
 #define scstrcmp    wcscmp
+#define scstrncmp   wcsncmp
 #ifdef _WIN32
 #define scsprintf   _snwprintf
 #else
@@ -78,6 +84,7 @@ typedef wchar_t SQChar;
 #define scvsprintf  vswprintf
 #define scstrstr    wcsstr
 #define scprintf    wprintf
+#define scstrrchr   wcsrchr
 
 #ifdef _WIN32
 #define WCHAR_SIZE 2
@@ -107,6 +114,7 @@ typedef wchar_t SQChar;
 typedef char SQChar;
 #define _SC(a) a
 #define scstrcmp    strcmp
+#define scstrncmp   strncmp
 #ifdef _MSC_VER
 #define scsprintf   _snprintf
 #else
@@ -126,6 +134,7 @@ typedef char SQChar;
 #define scstrtoul   strtoul
 #define scvsprintf  vsnprintf
 #define scstrstr    strstr
+#define scstrrchr   strrchr
 #define scisspace   isspace
 #define scisdigit   isdigit
 #define scisprint   isprint

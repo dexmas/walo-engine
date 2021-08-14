@@ -11,69 +11,15 @@
 #include "sqfuncstate.h"
 
 #ifdef _DEBUG_DUMP
+
+#define SQ_OPCODE(id) {_SC(#id)},
+
 SQInstructionDesc g_InstrDesc[]={
-    {_SC("_OP_LINE")},
-    {_SC("_OP_LOAD")},
-    {_SC("_OP_LOADINT")},
-    {_SC("_OP_LOADFLOAT")},
-    {_SC("_OP_DLOAD")},
-    {_SC("_OP_TAILCALL")},
-    {_SC("_OP_CALL")},
-    {_SC("_OP_PREPCALL")},
-    {_SC("_OP_PREPCALLK")},
-    {_SC("_OP_GETK")},
-    {_SC("_OP_MOVE")},
-    {_SC("_OP_NEWSLOT")},
-    {_SC("_OP_DELETE")},
-    {_SC("_OP_SET")},
-    {_SC("_OP_GET")},
-    {_SC("_OP_EQ")},
-    {_SC("_OP_NE")},
-    {_SC("_OP_ADD")},
-    {_SC("_OP_SUB")},
-    {_SC("_OP_MUL")},
-    {_SC("_OP_DIV")},
-    {_SC("_OP_MOD")},
-    {_SC("_OP_BITW")},
-    {_SC("_OP_RETURN")},
-    {_SC("_OP_LOADNULLS")},
-    {_SC("_OP_LOADROOT")},
-    {_SC("_OP_LOADBOOL")},
-    {_SC("_OP_DMOVE")},
-    {_SC("_OP_JMP")},
-    {_SC("_OP_JCMP")},
-    {_SC("_OP_JZ")},
-    {_SC("_OP_SETOUTER")},
-    {_SC("_OP_GETOUTER")},
-    {_SC("_OP_NEWOBJ")},
-    {_SC("_OP_APPENDARRAY")},
-    {_SC("_OP_COMPARITH")},
-    {_SC("_OP_INC")},
-    {_SC("_OP_INCL")},
-    {_SC("_OP_PINC")},
-    {_SC("_OP_PINCL")},
-    {_SC("_OP_CMP")},
-    {_SC("_OP_EXISTS")},
-    {_SC("_OP_INSTANCEOF")},
-    {_SC("_OP_AND")},
-    {_SC("_OP_OR")},
-    {_SC("_OP_NEG")},
-    {_SC("_OP_NOT")},
-    {_SC("_OP_BWNOT")},
-    {_SC("_OP_CLOSURE")},
-    {_SC("_OP_YIELD")},
-    {_SC("_OP_RESUME")},
-    {_SC("_OP_FOREACH")},
-    {_SC("_OP_POSTFOREACH")},
-    {_SC("_OP_CLONE")},
-    {_SC("_OP_TYPEOF")},
-    {_SC("_OP_PUSHTRAP")},
-    {_SC("_OP_POPTRAP")},
-    {_SC("_OP_THROW")},
-    {_SC("_OP_NEWSLOTA")},
-    {_SC("_OP_GETBASE")},
-    {_SC("_OP_CLOSE")},
+    SQ_OPCODES_LIST
 };
+
+#undef SQ_OPCODE
+
 #endif
 void DumpLiteral(SQObjectPtr &o)
 {
@@ -104,7 +50,7 @@ SQFuncState::SQFuncState(SQSharedState *ss,SQFuncState *parent,CompilerErrorFunc
         _bgenerator = false;
         _outers = 0;
         _ss = ss;
-
+        lang_features = parent ? parent->lang_features : ss->defaultLangFeatures;
 }
 
 void SQFuncState::Error(const SQChar *err)
@@ -124,7 +70,7 @@ void SQFuncState::Dump(SQFunctionProto *func)
     scprintf(_SC("-----LITERALS\n"));
     SQObjectPtr refidx,key,val;
     SQInteger idx;
-    SQObjectPtrVec templiterals;
+    SQObjectPtrVec templiterals(_ss->_alloc_ctx);
     templiterals.resize(_nliterals);
     while((idx=_table(_literals)->Next(false,refidx,key,val))!=-1) {
         refidx=idx;
@@ -333,15 +279,6 @@ void SQFuncState::SetStackSize(SQInteger n)
     }
 }
 
-bool SQFuncState::IsConstant(const SQObject &name,SQObject &e)
-{
-    SQObjectPtr val;
-    if(_table(_sharedstate->_consts)->Get(name,val)) {
-        e = val;
-        return true;
-    }
-    return false;
-}
 
 bool SQFuncState::IsLocal(SQUnsignedInteger stkpos)
 {
@@ -438,7 +375,7 @@ void SQFuncState::DiscardTarget()
     if(size > 0 && _optimization){
         SQInstruction &pi = _instructions[size-1];//previous instruction
         switch(pi.op) {
-        case _OP_SET:case _OP_NEWSLOT:case _OP_SETOUTER:case _OP_CALL:
+        case _OP_SET:case _OP_NEWSLOT:case _OP_SETOUTER:case _OP_CALL:case _OP_NULLCALL:
             if(pi._arg0 == discardedtarget) {
                 pi._arg0 = 0xFF;
             }
@@ -484,7 +421,7 @@ void SQFuncState::AddInstruction(SQInstruction &i)
                 pi._arg2 = (unsigned char)i._arg1;
                 pi.op = _OP_GETK;
                 pi._arg0 = i._arg0;
-
+                pi._arg3 = i._arg3;
                 return;
             }
         break;
@@ -591,8 +528,7 @@ SQObject SQFuncState::CreateTable()
 
 SQFunctionProto *SQFuncState::BuildProto()
 {
-
-    SQFunctionProto *f=SQFunctionProto::Create(_ss,_instructions.size(),
+    SQFunctionProto *f=SQFunctionProto::Create(_ss,lang_features,_instructions.size(),
         _nliterals,_parameters.size(),_functions.size(),_outervalues.size(),
         _lineinfos.size(),_localvarinfos.size(),_defaultparams.size());
 
@@ -601,8 +537,10 @@ SQFunctionProto *SQFuncState::BuildProto()
 
     f->_stacksize = _stacksize;
     f->_sourcename = _sourcename;
+    f->_sourcename_ptr = _sourcename_ptr;
     f->_bgenerator = _bgenerator;
     f->_name = _name;
+    f->_docstring = _docstring;
 
     while((idx=_table(_literals)->Next(false,refidx,key,val))!=-1) {
         f->_literals[_integer(val)]=key;
