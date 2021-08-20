@@ -10,7 +10,7 @@ include $(CLEAR_VARS)
 
 LOCAL_MODULE    := waloplayer
 
-LOCAL_CFLAGS := -O0 -w -D_ANDROID -D_DEBUG -fpermissive -Wno-address-of-temporary
+LOCAL_CFLAGS := -O0 -w -D_ANDROID -fpermissive -Wno-address-of-temporary
 
 LOCAL_SRC_FILES := \
     $(JNI_SRC_PATH)/jni_interface.cpp \

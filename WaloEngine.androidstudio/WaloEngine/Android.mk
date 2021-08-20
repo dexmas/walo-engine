@@ -8,7 +8,7 @@ include $(CLEAR_VARS)
 
 LOCAL_MODULE    := waloengine
 
-LOCAL_CFLAGS := -O0 -w -D_ANDROID -D_DEBUG -fpermissive -Wno-address-of-temporary
+LOCAL_CFLAGS := -O0 -w -D_ANDROID -fpermissive -Wno-address-of-temporary
 
 LOCAL_SRC_FILES := \
 	$(EXTERNS_PATH)/box2d/box2d/Collision/Shapes/b2ChainShape.cpp \
