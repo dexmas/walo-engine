@@ -17,6 +17,8 @@
 #include "Scene/Scene3D/Scene3D.hpp"
 #include "Scene/Input/InputSystem.hpp"
 #include "Scene/Update/UpdateSystem.hpp"
+#include "Scene/Physics2D/Physics2D.hpp"
+#include "Scene/Sound/SoundSystem.hpp"
 
 CGame* CGame::m_pInstance = 0;
 
@@ -74,9 +76,11 @@ void CGame::Activate(bool _act)
 		if(m_Active)
 		{
 			OnResume();
+			GetSystem<CSoundSystem>()->OnResume();
 		}
 		else
 		{
+			GetSystem<CSoundSystem>()->OnSuspend();
 			OnSuspend();
 		}
 	}
@@ -142,6 +146,7 @@ void CGame::Run(f32 _dt)
 	{
 		GetSystem<CUpdateSystem>()->Update(fdt);
 		GetSystem<CInputSystem>()->Update(fdt);
+		GetSystem<CPhysics2D>()->Update(fdt);
 
 		m_Render->BeginFrame();
 		{
@@ -149,6 +154,7 @@ void CGame::Run(f32 _dt)
         
 			GetSystem<CScene3D>()->Render();
 			GetSystem<CScene2D>()->Render();
+			GetSystem<CPhysics2D>()->Render();
 		}
 		m_Render->EndFrame();
 	}

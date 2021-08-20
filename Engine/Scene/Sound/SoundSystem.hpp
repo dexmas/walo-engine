@@ -27,6 +27,8 @@ public:
 	void RemoveComponent(CComponent* _comp);
 
 	void UpdateSound();
+	void OnSuspend();
+	void OnResume();
 
 private:
 	

@@ -79,3 +79,37 @@ void CSoundSystem::UpdateSound()
 		}
 	}
 }
+
+void CSoundSystem::OnSuspend()
+{
+	tthread::lock_guard<tthread::mutex> guard(*m_Mutex);
+
+	m_Iterator = GetHead();
+
+	while (m_Iterator)
+	{
+		m_Iterator->Pause();
+
+		if (m_Iterator)
+		{
+			m_Iterator = m_Iterator->GetNext();
+		}
+	}
+}
+
+void CSoundSystem::OnResume()
+{
+	tthread::lock_guard<tthread::mutex> guard(*m_Mutex);
+
+	m_Iterator = GetHead();
+
+	while (m_Iterator)
+	{
+		m_Iterator->Resume();
+
+		if (m_Iterator)
+		{
+			m_Iterator = m_Iterator->GetNext();
+		}
+	}
+}
