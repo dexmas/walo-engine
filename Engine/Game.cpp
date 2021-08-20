@@ -41,7 +41,7 @@ CGame::CGame()
 	m_Render = CRender::CreateRender();
 
 	m_HeirarhyEnabled = true;
-	m_Active = false;
+	m_Active = true;
 }
 
 CGame* CGame::Instance()
