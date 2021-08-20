@@ -5,6 +5,7 @@
 *.user
 /WaloEngine.androidstudio/WaloPlayer/.cxx
 /WaloEngine.androidstudio/WaloPlayer/build
+/WaloEngine.androidstudio/WaloPlayer/release
 /WaloEngine.androidstudio/WaloPlayer/libs
 /WaloEngine.androidstudio/WaloPlayer/obj
 /WaloEngine.androidstudio/WaloEngine/.cxx
@@ -14,3 +15,4 @@
 /WaloEngine.androidstudio/.gradle
 /WaloEngine.androidstudio/.idea
 /WaloEngine.androidstudio/WaloPlayer/assets/*
+/WaloEngine.androidstudio/build
