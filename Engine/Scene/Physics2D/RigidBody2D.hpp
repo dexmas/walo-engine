@@ -16,13 +16,12 @@ public:
 
 	b2Body* GetBody() {return m_Body;}
 
+	void ApplyForce(const CVector2& _force);
+
 protected:
-	void SetEnabled(bool _enabled);
-
+	void OnEnabled(bool _enabled);
 	void OnTransformed();
-
 	void OnAttached(CComponent* _component);
-
 	void OnDetached(CComponent* _component);
 
 private:

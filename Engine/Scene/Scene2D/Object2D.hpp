@@ -175,7 +175,7 @@ public:
 
 	virtual void OnEvent(CEvent* _event)
 	{
-		if(_event->Type == EIT_CLIP)
+		if(_event->Type == EET_CLIP)
 		{
 			if(m_ClipChild)
 				return;

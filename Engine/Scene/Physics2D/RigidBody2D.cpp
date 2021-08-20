@@ -7,12 +7,12 @@ CRigidBody2D::CRigidBody2D():CComponentImpl(ECT_RIGIDBODY2D)
 { 
 	b2BodyDef bodyDef;
 
-    bodyDef.active = false;
+    bodyDef.active = true;
     bodyDef.allowSleep = true;
     bodyDef.angle = 0.0f;
     bodyDef.angularDamping = 0.0f;
     bodyDef.angularVelocity = 0.0f;
-    bodyDef.awake = false;
+    bodyDef.awake = true;
     bodyDef.bullet = false;
     bodyDef.fixedRotation = false;
     bodyDef.gravityScale = 1.0f;
@@ -30,7 +30,12 @@ CRigidBody2D::~CRigidBody2D()
     m_System->GetWorld()->DestroyBody(m_Body);
 }
 
-void CRigidBody2D::SetEnabled(bool _enabled)
+void CRigidBody2D::ApplyForce(const CVector2& _force)
+{
+	m_Body->ApplyForceToCenter(b2Vec2(_force.X, _force.Y), true);
+}
+
+void CRigidBody2D::OnEnabled(bool _enabled)
 {
 	if(m_Enabled == _enabled)
 	{

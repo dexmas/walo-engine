@@ -1,4 +1,6 @@
 #include "Physics2D.hpp"
+#include "RigidBody2D.hpp"
+
 #include <Box2d.h>
 
 const b2Vec2 cDefaultGravi = b2Vec2(0, 0);
@@ -10,7 +12,7 @@ public:
 	{
 #ifdef _DEBUG
 		m_DebugRender = CDebugRenderer::Instance();
-		SetFlags(/*e_shapeBit|*/e_jointBit|e_aabbBit|e_pairBit|e_centerOfMassBit);
+		SetFlags(e_shapeBit|/*e_jointBit |*/ e_aabbBit | e_pairBit | e_centerOfMassBit);
 #endif
 	}
 	/// Called when two fixtures begin to touch.
@@ -165,10 +167,46 @@ void CPhysics2D::Render()
 
 void CPhysics2D::BeginContact(b2Contact* contact)
 {
-		
+	if (contact && contact->GetFixtureA() && contact->GetFixtureB())
+	{
+		CRigidBody2D* rb1 = (CRigidBody2D*)(contact->GetFixtureA()->GetUserData());
+		CRigidBody2D* rb2 = (CRigidBody2D*)(contact->GetFixtureB()->GetUserData());
+
+		CCollisionEvent cevent;
+		cevent.CollisionType = CCollisionEvent::ECT_BEGIN;
+
+		if (rb1->GetNode())
+		{
+			cevent.Data = rb2->GetNode();
+			rb1->GetNode()->OnEvent(&cevent);
+		}
+		if (rb2->GetNode())
+		{
+			cevent.Data = rb1->GetNode();
+			rb2->GetNode()->OnEvent(&cevent);
+		}
+	}
 }
 
 void CPhysics2D::EndContact(b2Contact* contact) 
 { 
-		
+	if (contact && contact->GetFixtureA() && contact->GetFixtureB())
+	{
+		CRigidBody2D* rb1 = (CRigidBody2D*)(contact->GetFixtureA()->GetUserData());
+		CRigidBody2D* rb2 = (CRigidBody2D*)(contact->GetFixtureB()->GetUserData());
+
+		CCollisionEvent cevent;
+		cevent.CollisionType = CCollisionEvent::ECT_END;
+
+		if (rb1->GetNode())
+		{
+			cevent.Data = rb2->GetNode();
+			rb1->GetNode()->OnEvent(&cevent);
+		}
+		if (rb2->GetNode())
+		{
+			cevent.Data = rb1->GetNode();
+			rb2->GetNode()->OnEvent(&cevent);
+		}
+	}
 }

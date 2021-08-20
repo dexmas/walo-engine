@@ -150,9 +150,30 @@ public:
 				hndlr.Execute<u32, f32, f32>(gevent->Gesture, gevent->Param1, gevent->Param2);
 			}
 		}
+		else
+		if (_event->Type == EET_COLLISION)
+		{
+			CCollisionEvent* cevent = (CCollisionEvent*)_event;
+
+			if (cevent->CollisionType == CCollisionEvent::ECT_BEGIN)
+			{
+				Sqrat::Function hndlr(m_Object, "CollisionBegin");
+				CNodeWrapper* node = (CNodeWrapper*)(cevent->Data);
+				hndlr.Execute<Sqrat::Object>(node->GetObject());
+			}
+			else
+			if (cevent->CollisionType == CCollisionEvent::ECT_END)
+			{
+				Sqrat::Function hndlr(m_Object, "CollisionEnd");
+				CNodeWrapper* node = (CNodeWrapper*)(cevent->Data);
+				hndlr.Execute<Sqrat::Object>(node->GetObject());
+			}
+		}
 	}
 
 	CComponent* GetInputComponent(){return m_InputComponent;}
+
+	Sqrat::Object GetObject() { return Sqrat::Object(m_Object); }
 
 private:
 	HSQOBJECT m_Object;

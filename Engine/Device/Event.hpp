@@ -8,7 +8,8 @@
 enum EEventType
 {
 	EET_INPUT,
-	EIT_CLIP,
+	EET_CLIP,
+	EET_COLLISION,
 	EET_USER
 };
 
@@ -296,7 +297,7 @@ public:
 class CClipEvent: public CEvent
 {
 public:
-	CClipEvent(bool _clip, const CRect& _rect):CEvent(EIT_CLIP)
+	CClipEvent(bool _clip, const CRect& _rect):CEvent(EET_CLIP)
 	{
 		m_ClipRect = _rect;
 		m_Clip = _clip;
@@ -304,4 +305,19 @@ public:
 
 	CRect m_ClipRect;
 	bool  m_Clip;
+};
+
+class CCollisionEvent: public CEvent
+{
+public:
+	CCollisionEvent() :CEvent(EET_COLLISION) {}
+
+	enum ECollisionEventType
+	{
+		ECT_BEGIN,
+		ECT_END
+	};
+
+	ECollisionEventType CollisionType;
+	void* Data;
 };
