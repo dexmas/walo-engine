@@ -1,6 +1,14 @@
 apply plugin: 'com.android.application'
 
 android {
+    signingConfigs {
+        release {
+            storeFile file('../keystore.jks')
+            storePassword '2HlorEtan'
+            keyPassword '2HlorEtan'
+            keyAlias 'waloplayer'
+        }
+    }
     compileSdkVersion 29
     buildToolsVersion '30.0.3'
     ndkVersion '22.1.7171670'
@@ -18,6 +26,7 @@ android {
         ndk {
             abiFilters 'armeabi-v7a', 'arm64-v8a'
         }
+        signingConfig signingConfigs.release
     }
     buildTypes {
         release {
@@ -41,6 +50,7 @@ task copy_assets(type: Copy) {
     into 'assets'
     include '**/*.nut'
     include '**/*.png'
+    include '**/*.jpg'
     include '**/*.mat'
     include '**/*.xml'
     include '**/*.ogg'
