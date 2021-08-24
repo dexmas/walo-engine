@@ -146,7 +146,10 @@ void CScene2D::Render()
 		batch->Render();
 
 #ifdef _DEBUG
-		batch->DebugRender();
+		if (CGame::Instance()->GetDebug())
+		{
+			batch->DebugRender();
+		}
 #endif
 		++jt;
 	}

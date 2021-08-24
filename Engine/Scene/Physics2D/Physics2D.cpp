@@ -161,7 +161,10 @@ void CPhysics2D::Update(f32 _dt)
 void CPhysics2D::Render()
 {
 #ifdef _DEBUG
-	m_World->DrawDebugData();
+	if (CGame::Instance()->GetDebug())
+	{
+		m_World->DrawDebugData();
+	}
 #endif
 }
 

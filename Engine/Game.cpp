@@ -42,6 +42,7 @@ CGame::CGame()
 
 	m_HeirarhyEnabled = true;
 	m_Active = true;
+	m_bDebug = false;
 }
 
 CGame* CGame::Instance()

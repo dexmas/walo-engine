@@ -75,14 +75,20 @@ void CScene3D::Render()
 		drw->Render();
 
 #ifdef _DEBUG
-		drw->DebugRender();
+		if (CGame::Instance()->GetDebug())
+		{
+			drw->DebugRender();
+		}
 #endif
 		++its;
 	}
 
 #ifdef _DEBUG
-	m_Octree.DebugRender(frustum);
-	m_Render->SetTransform(ETT_MODEL, CMatrix4::IDENTY);
-    CDebugRenderer::Instance()->Render();
+	if (CGame::Instance()->GetDebug())
+	{
+		m_Octree.DebugRender(frustum);
+		m_Render->SetTransform(ETT_MODEL, CMatrix4::IDENTY);
+		CDebugRenderer::Instance()->Render();
+	}
 #endif
 }
