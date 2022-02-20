@@ -306,7 +306,7 @@ u32 CPlayer::sqGetScreenHeight()
 
 void CPlayer::sqEnableDebug(bool _enable)
 {
-	//#TODO
+	SetDebug(_enable);
 }
 void CPlayer::sqEnableConsole(bool _enable)
 {

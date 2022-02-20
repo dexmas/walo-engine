@@ -44,6 +44,8 @@ public:
 	}
 
 	static CGame* Instance();
+	bool GetDebug() const { return m_bDebug; }
+	void SetDebug(bool _debug) { m_bDebug = _debug; }
 
 private:
 	static CGame*  m_pInstance;
@@ -62,4 +64,5 @@ private:
 	u32		m_FPSLimitMin;
 
 	bool    m_Active;
+	bool	m_bDebug;
 };
